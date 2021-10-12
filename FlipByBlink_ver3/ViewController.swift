@@ -44,7 +44,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         let 💾 = FileManager.default
-        let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "SelectedBook.pdf")!
+        let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "ImportedBook.pdf")!
         do{ try 💾.removeItem(at: 📍) } catch { print("🚨") }
         do{ try 💾.copyItem(at: urls.first!, to: 📍) } catch { print("🚨") }
         if let 📓 = PDFDocument(url: 📍) {
