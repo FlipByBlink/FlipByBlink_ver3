@@ -4,8 +4,6 @@ import PDFKit
 
 class ViewController: UIViewController, UIDocumentPickerDelegate {
 
-    @IBOutlet weak var Button_OpenBook: UIButton!
-
     //MARK: 📄
     @IBAction func ReadDocument(_ sender: Any) {
         
@@ -41,6 +39,8 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         🗃.delegate = self
         self.present(🗃, animated: true)
     }
+    
+    @IBOutlet weak var Button_OpenBook: UIButton!
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         let 💾 = FileManager.default
