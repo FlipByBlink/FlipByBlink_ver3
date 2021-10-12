@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="AppDocument">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="ReadDocument">
                                 <rect key="frame" x="33" y="44" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="prH-ik-hV5"/>
@@ -28,8 +28,11 @@
                                 <state key="normal" image="doc.text" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
+                                <connections>
+                                    <action selector="ReadDocument:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k2y-Mt-2g9"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-gx-m0J" userLabel="AppVideo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-gx-m0J" userLabel="PlayVideo">
                                 <rect key="frame" x="30" y="164" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="5qu-5W-8jv"/>
@@ -40,6 +43,9 @@
                                 <state key="normal" image="play.rectangle" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
+                                <connections>
+                                    <action selector="PlayVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KTo-c4-yJw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foG-Jf-dmC" userLabel="JumpSetting">
                                 <rect key="frame" x="264" y="45" width="120" height="120"/>
@@ -52,6 +58,9 @@
                                 <state key="normal" image="gearshape" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
+                                <connections>
+                                    <action selector="JumpSetting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bfQ-yk-8ew"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="JumpAppStore">
                                 <rect key="frame" x="263" y="165" width="120" height="120"/>
@@ -64,10 +73,9 @@
                                 <state key="normal" image="a.square" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="ReadBook">
-                                <rect key="frame" x="0.0" y="453" width="414" height="409"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="JumpAppStore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b1w-yN-tjM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-C8-s6t" userLabel="SelectBook">
                                 <rect key="frame" x="147" y="333" width="120" height="120"/>
@@ -79,6 +87,17 @@
                                 <state key="normal" image="folder" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
+                                <connections>
+                                    <action selector="SelectBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6lA-Ro-wnp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="OpenBook">
+                                <rect key="frame" x="0.0" y="453" width="414" height="409"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="OpenBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4wb-34-9R4"/>
+                                    <action selector="ReadBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Lm-jr-ZlE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -100,6 +119,9 @@
                             <constraint firstItem="Jjx-C8-s6t" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zVZ-we-m8h"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Button_OpenBook" destination="Xqj-zg-dTH" id="MhU-Vk-u7L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
