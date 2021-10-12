@@ -40,8 +40,6 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         self.present(🗃, animated: true)
     }
     
-    @IBOutlet weak var Button_OpenBook: UIButton!
-    
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         let 💾 = FileManager.default
         let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "ImportedBook.pdf")!
@@ -54,6 +52,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     //MARK: Button_OpenBook
+    @IBOutlet weak var Button_OpenBook: UIButton!
     @IBAction func OpenBook(_ sender: Any) {
         
         //TODO: code
