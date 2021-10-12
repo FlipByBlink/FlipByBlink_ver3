@@ -45,22 +45,16 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        
-        let 🗂 = FileManager.default
-        let 📍 = URL(string: 🗂.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "SelectedPDF.pdf")!
-        
-        do{ try 🗂.removeItem(at: 📍)
-        }catch{ print("🚨") }
-        
-        do{ try 🗂.copyItem(at: urls.first!, to: 📍)
-        }catch{ print("🚨") }
-        
+        let 💾 = FileManager.default
+        let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "SelectedBook.pdf")!
+        do{ try 💾.removeItem(at: 📍) } catch { print("🚨") }
+        do{ try 💾.copyItem(at: urls.first!, to: 📍) } catch { print("🚨") }
         if let 📓 = PDFDocument(url: 📍) {
             Button_OpenBook.setImage(📓.page(at: 0)?.thumbnail(of: Button_OpenBook.frame.size, for: .artBox), for: .normal)
         }
     }
     
-    //MARK: OpenBook
+    //MARK: Button_OpenBook
     @IBAction func OpenBook(_ sender: Any) {
     }
     
