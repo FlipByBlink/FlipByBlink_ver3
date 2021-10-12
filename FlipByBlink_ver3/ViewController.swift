@@ -13,7 +13,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     //MARK: ▶️
     @IBAction func PlayVideo(_ sender: Any) {
-        guard let 📍 = Bundle.main.url(forResource: "VIDEO", withExtension: "mp4") else { return }
+        guard let 📍 = Bundle.main.url(forResource: "📼", withExtension: "mp4") else { return }
         let 🎞 = AVPlayer(url: 📍)
         let 📺 = AVPlayerViewController()
         📺.player = 🎞
