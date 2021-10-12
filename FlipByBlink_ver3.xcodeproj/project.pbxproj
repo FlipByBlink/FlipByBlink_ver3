@@ -16,6 +16,7 @@
 		127E611A27150CAD00B44096 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 127E611927150CAD00B44096 /* README.md */; };
 		127E611C271568E600B44096 /* 📼.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 127E611B271568E600B44096 /* 📼.mp4 */; };
 		127E611E271568F700B44096 /* 📗.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 127E611D271568F700B44096 /* 📗.pdf */; };
+		12EA5A3A2715A90E00DF39D6 /* ReadBook_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EA5A392715A90E00DF39D6 /* ReadBook_ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		127E611927150CAD00B44096 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		127E611B271568E600B44096 /* 📼.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "📼.mp4"; sourceTree = "<group>"; };
 		127E611D271568F700B44096 /* 📗.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "📗.pdf"; sourceTree = "<group>"; };
+		12EA5A392715A90E00DF39D6 /* ReadBook_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBook_ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				127E610527150C6E00B44096 /* AppDelegate.swift */,
 				127E610727150C6E00B44096 /* SceneDelegate.swift */,
 				127E610927150C6E00B44096 /* ViewController.swift */,
+				12EA5A392715A90E00DF39D6 /* ReadBook_ViewController.swift */,
 				127E610E27150C7100B44096 /* Assets.xcassets */,
 				127E611027150C7100B44096 /* LaunchScreen.storyboard */,
 				127E611327150C7100B44096 /* Info.plist */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				127E610A27150C6E00B44096 /* ViewController.swift in Sources */,
+				12EA5A3A2715A90E00DF39D6 /* ReadBook_ViewController.swift in Sources */,
 				127E610627150C6E00B44096 /* AppDelegate.swift in Sources */,
 				127E610827150C6E00B44096 /* SceneDelegate.swift in Sources */,
 			);
