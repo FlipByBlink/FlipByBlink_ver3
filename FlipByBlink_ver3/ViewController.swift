@@ -46,13 +46,14 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         do{ try 💾.removeItem(at: 📍) } catch { print("🚨") }
         do{ try 💾.copyItem(at: urls.first!, to: 📍) } catch { print("🚨") }
         if let 📓 = PDFDocument(url: 📍) {
-            Button_OpenBook.setImage(📓.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
-            Button_OpenBook.imageView?.contentMode = .scaleAspectFit
+            📖.setImage(📓.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
+            📖.imageView?.contentMode = .scaleAspectFit
         }
     }
     
-    //MARK: Button_OpenBook
-    @IBOutlet weak var Button_OpenBook: UIButton!
+    //MARK: OpenBook
+    @IBOutlet weak var 📖: UIButton!
+    
     @IBAction func OpenBook(_ sender: Any) {
         
         //TODO: code
