@@ -35,7 +35,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     //MARK: 📁
-    @IBAction func SelectBook(_ sender: Any) {
+    @IBAction func ImportBook(_ sender: Any) {
         guard let 📚 = UTType(filenameExtension: "pdf") else { return }
         let 🗃 = UIDocumentPickerViewController(forOpeningContentTypes: [📚], asCopy: true)
         🗃.delegate = self

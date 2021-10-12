@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-C8-s6t" userLabel="SelectBook">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-C8-s6t" userLabel="ImportBook">
                                 <rect key="frame" x="147" y="333" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="BOl-uS-8R9"/>
@@ -28,7 +28,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="SelectBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6lA-Ro-wnp"/>
+                                    <action selector="ImportBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YoI-dm-SfH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="OpenBook">
