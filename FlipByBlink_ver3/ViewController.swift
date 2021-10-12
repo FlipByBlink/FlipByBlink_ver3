@@ -5,13 +5,12 @@ import PDFKit
 class ViewController: UIViewController, UIDocumentPickerDelegate {
 
     @IBOutlet weak var Button_OpenBook: UIButton!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     //MARK: 📄
     @IBAction func ReadDocument(_ sender: Any) {
+        
+        //TODO: code
+        
     }
     
     //MARK: ▶️
@@ -20,7 +19,6 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         let 🎞 = AVPlayer(url: 📍)
         let 📺 = AVPlayerViewController()
         📺.player = 🎞
-        📺.modalTransitionStyle = .partialCurl
         self.present(📺, animated: true)
     }
     
@@ -56,6 +54,9 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     //MARK: Button_OpenBook
     @IBAction func OpenBook(_ sender: Any) {
+        
+        //TODO: code
+        
     }
     
 }
