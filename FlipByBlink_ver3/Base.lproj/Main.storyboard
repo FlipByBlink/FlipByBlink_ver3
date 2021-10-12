@@ -17,6 +17,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-C8-s6t" userLabel="SelectBook">
+                                <rect key="frame" x="147" y="333" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="BOl-uS-8R9"/>
+                                    <constraint firstAttribute="width" constant="120" id="Zl9-9c-RDS"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="folder" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
+                                </state>
+                                <connections>
+                                    <action selector="SelectBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6lA-Ro-wnp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="OpenBook">
+                                <rect key="frame" x="0.0" y="453" width="414" height="409"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="OpenBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4wb-34-9R4"/>
+                                    <action selector="ReadBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Lm-jr-ZlE"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="ReadDocument">
                                 <rect key="frame" x="33" y="44" width="120" height="120"/>
                                 <constraints>
@@ -75,28 +97,6 @@
                                 </state>
                                 <connections>
                                     <action selector="JumpAppStore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b1w-yN-tjM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-C8-s6t" userLabel="SelectBook">
-                                <rect key="frame" x="147" y="333" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="BOl-uS-8R9"/>
-                                    <constraint firstAttribute="width" constant="120" id="Zl9-9c-RDS"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="folder" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
-                                </state>
-                                <connections>
-                                    <action selector="SelectBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6lA-Ro-wnp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="OpenBook">
-                                <rect key="frame" x="0.0" y="453" width="414" height="409"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <connections>
-                                    <action selector="OpenBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4wb-34-9R4"/>
-                                    <action selector="ReadBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Lm-jr-ZlE"/>
                                 </connections>
                             </button>
                         </subviews>
