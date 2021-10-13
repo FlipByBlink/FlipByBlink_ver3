@@ -15,6 +15,7 @@ class ReadBook_ViewController:UIViewController{
         📖.displayMode = .singlePage
         📖.displaysPageBreaks = false
         📖.isUserInteractionEnabled = false
+        📖.accessibilityElementsHidden = true
         
         switch 🏷 {
         case "Imported.pdf":
@@ -36,8 +37,23 @@ class ReadBook_ViewController:UIViewController{
                 }
             }
         }
+        
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
+    @IBAction func nextPage(_ sender: Any) {
+        🗒()
+    }
+    
+    @IBAction func previousPage(_ sender: Any) {
+        🗒🔙()
+    }
+    
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        📖.autoScales = true
+    }
     
     override var prefersHomeIndicatorAutoHidden: Bool {
         return true
@@ -45,6 +61,14 @@ class ReadBook_ViewController:UIViewController{
 
     override var prefersStatusBarHidden: Bool{
         return true
+    }
+    
+    @objc func 🗒(){
+        📖.goToNextPage(nil)
+    }
+    
+    @objc func 🗒🔙(){
+        📖.goToPreviousPage(nil)
     }
     
 }
