@@ -32,7 +32,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="OpenBook">
-                                <rect key="frame" x="0.0" y="453" width="414" height="409"/>
+                                <rect key="frame" x="0.0" y="453" width="414" height="379"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -110,7 +110,7 @@
                             <constraint firstItem="Xqj-zg-dTH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I8K-tZ-ih8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TBA-gG-LHE" secondAttribute="trailing" constant="31" id="Mj4-tv-ZSg"/>
                             <constraint firstItem="fss-gx-m0J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="RXc-eY-x16"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xqj-zg-dTH" secondAttribute="bottom" id="Zqy-pM-Iml"/>
+                            <constraint firstAttribute="bottom" secondItem="Xqj-zg-dTH" secondAttribute="bottom" constant="64" id="Zqy-pM-Iml"/>
                             <constraint firstItem="pdT-1r-y2w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="hJq-g6-h0C"/>
                             <constraint firstItem="pdT-1r-y2w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="j94-oU-Dlh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="foG-Jf-dmC" secondAttribute="trailing" constant="30" id="jkp-LK-Xd4"/>
