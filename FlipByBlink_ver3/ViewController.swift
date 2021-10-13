@@ -8,7 +8,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         super.viewWillAppear(animated)
         
         let 💾 = FileManager.default
-        let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "ImportedBook.pdf")!
+        let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "Imported.pdf")!
         if PDFDocument(url: 📍) == nil {
             Set(🖼: Bundle.main.url(forResource: "📗", withExtension: "pdf")!)
         }else{
@@ -51,7 +51,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         let 💾 = FileManager.default
-        let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "ImportedBook.pdf")!
+        let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "Imported.pdf")!
         do{ try 💾.removeItem(at: 📍) } catch { print("🚨") }
         do{ try 💾.copyItem(at: urls.first!, to: 📍) } catch { print("🚨") }
         Set(🖼: 📍)
@@ -65,11 +65,11 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         if (segue.identifier == "OpenBookSegue") {
             let 🎮:ReadBook_ViewController = segue.destination as! ReadBook_ViewController
             let 💾 = FileManager.default
-            let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "ImportedBook.pdf")!
+            let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "Imported.pdf")!
             if PDFDocument(url: 📍) == nil {
                 🎮.🏷 = "📗"
             }else{
-                🎮.🏷 = "ImportedBook.pdf"
+                🎮.🏷 = "Imported.pdf"
             }
         }
     }
