@@ -4,7 +4,7 @@ import PDFKit
 
 class ViewController: UIViewController, UIDocumentPickerDelegate {
 
-    @IBOutlet weak var 📔: UIButton!
+    @IBOutlet weak var 📘: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -17,10 +17,10 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             Set(🖼: 📍)
         }
         
-        📔.layer.shadowColor = UIColor.gray.cgColor
-        📔.layer.shadowOpacity = 0.8
-        📔.layer.shadowRadius = 4
-        📔.layer.shadowOffset = .zero
+        📘.layer.shadowColor = UIColor.gray.cgColor
+        📘.layer.shadowOpacity = 0.8
+        📘.layer.shadowRadius = 4
+        📘.layer.shadowOffset = .zero
     }
     
     
@@ -82,8 +82,8 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     func Set(🖼:URL){
         if let 📓 = PDFDocument(url: 🖼){
-            📔.setImage(📓.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
-            📔.imageView?.contentMode = .scaleAspectFit
+            📘.setImage(📓.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
+            📘.imageView?.contentMode = .scaleAspectFit
         }
     }
     

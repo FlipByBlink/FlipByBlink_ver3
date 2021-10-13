@@ -122,7 +122,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="📔" destination="Xqj-zg-dTH" id="MhU-Vk-u7L"/>
+                        <outlet property="📘" destination="Xqj-zg-dTH" id="MhU-Vk-u7L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
