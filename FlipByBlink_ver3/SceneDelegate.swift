@@ -34,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UserDefaults.standard.set(0, forKey: "🔖")
         
         if let 🎮:ViewController = window?.rootViewController as? ViewController{
-            🎮.Set(🖼: 📍)
+            🎮.📘thumbnail(📍)
         }
     }
 

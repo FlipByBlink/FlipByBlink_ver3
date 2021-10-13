@@ -12,9 +12,9 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         let 💾 = FileManager.default
         let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "Imported.pdf")!
         if PDFDocument(url: 📍) == nil {
-            Set(🖼: Bundle.main.url(forResource: "🌃", withExtension: "pdf")!)
+            📘thumbnail(Bundle.main.url(forResource: "🌃", withExtension: "pdf")!)
         }else{
-            Set(🖼: 📍)
+            📘thumbnail(📍)
         }
         
         📘.layer.shadowColor = UIColor.gray.cgColor
@@ -62,7 +62,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         do{ try 💾.removeItem(at: 📍) } catch { print("🚨") }
         do{ try 💾.copyItem(at: urls.first!, to: 📍) } catch { print("🚨") }
         UserDefaults.standard.set(0, forKey: "🔖")
-        Set(🖼: 📍)
+        📘thumbnail(📍)
     }
     
     
@@ -81,8 +81,8 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     
-    func Set(🖼:URL){
-        if let 📓 = PDFDocument(url: 🖼){
+    func 📘thumbnail(_ 📍:URL){
+        if let 📓 = PDFDocument(url: 📍){
             📘.setImage(📓.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
             📘.imageView?.contentMode = .scaleAspectFit
         }
