@@ -19,6 +19,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-C8-s6t" userLabel="ImportBook">
                                 <rect key="frame" x="147" y="333" width="120" height="120"/>
+                                <accessibility key="accessibilityConfiguration" label="ImportBook"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="BOl-uS-8R9"/>
                                     <constraint firstAttribute="width" constant="120" id="Zl9-9c-RDS"/>
@@ -33,6 +34,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="OpenBook">
                                 <rect key="frame" x="0.0" y="453" width="414" height="379"/>
+                                <accessibility key="accessibilityConfiguration" label="OpenBook"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,6 +45,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="ReadDocument">
                                 <rect key="frame" x="33" y="44" width="120" height="120"/>
+                                <accessibility key="accessibilityConfiguration" label="ReadDocument"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="prH-ik-hV5"/>
                                     <constraint firstAttribute="height" constant="120" id="zr1-BI-Jrw"/>
@@ -58,6 +61,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-gx-m0J" userLabel="PlayVideo">
                                 <rect key="frame" x="30" y="164" width="120" height="120"/>
+                                <accessibility key="accessibilityConfiguration" label="PlayVideo"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="5qu-5W-8jv"/>
                                     <constraint firstAttribute="height" constant="120" id="fOJ-B6-Du4"/>
@@ -73,6 +77,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foG-Jf-dmC" userLabel="JumpSetting">
                                 <rect key="frame" x="264" y="45" width="120" height="120"/>
+                                <accessibility key="accessibilityConfiguration" label="JumpSetting"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="gog-cX-Dmw"/>
                                     <constraint firstAttribute="width" constant="120" id="v0F-kK-vZq"/>
@@ -88,6 +93,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="JumpAppStore">
                                 <rect key="frame" x="263" y="165" width="120" height="120"/>
+                                <accessibility key="accessibilityConfiguration" label="JumpAppStore"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="LKx-h8-gu9"/>
                                     <constraint firstAttribute="width" constant="120" id="SnX-PQ-gYa"/>
