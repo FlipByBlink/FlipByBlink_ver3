@@ -38,6 +38,11 @@ class ReadBook_ViewController:UIViewController{
             }
         }
         
+        let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
+        if let a = 📖.document?.page(at: 🔖-1){
+            📖.go(to: a)
+        }
+        
         if ARFaceTrackingConfiguration.isSupported == false{
             let 💬 = UIAlertController(title: "Sorry😱", message: "your device can't work facetracking. \"Face tracking supports devices with Apple Neural Engine in iOS 14 and iPadOS 14 and requires a device with a TrueDepth camera on iOS 13 and iPadOS 13 and earlier.\" source:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration", preferredStyle: .alert)
             💬.addAction(UIAlertAction(title: "OK", style: .default))
@@ -64,22 +69,27 @@ class ReadBook_ViewController:UIViewController{
     override var prefersHomeIndicatorAutoHidden: Bool {
         return true
     }
-
+    
     override var prefersStatusBarHidden: Bool{
         return true
     }
     
     @objc func 🗒(){
         if 📖.canGoToNextPage == false{
-        let 💬 = UIAlertController(title: "🎉 Finish!", message: nil, preferredStyle: .alert)
-        present(💬, animated: true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2){ 💬.dismiss(animated: true) }
+            let 💬 = UIAlertController(title: "🎉 Finish!", message: nil, preferredStyle: .alert)
+            present(💬, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2){ 💬.dismiss(animated: true) }
         }
         📖.goToNextPage(nil)
     }
     
     @objc func 🗒🔙(){
         📖.goToPreviousPage(nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UserDefaults.standard.set(📖.currentPage!.pageRef!.pageNumber, forKey: "🔖")
     }
     
 }
