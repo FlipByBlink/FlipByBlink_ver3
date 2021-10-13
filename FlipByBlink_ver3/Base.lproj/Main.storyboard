@@ -161,18 +161,18 @@
                         <viewLayoutGuide key="safeArea" id="gsE-Ko-KT3"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5Dg-OU-deB" firstAttribute="leading" secondItem="Ia4-iP-RyQ" secondAttribute="leading" id="2Sq-zS-cNR"/>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="width" secondItem="rYi-nH-sce" secondAttribute="width" id="3Kc-GZ-FQH"/>
-                            <constraint firstItem="yQw-dI-Scp" firstAttribute="top" secondItem="Ia4-iP-RyQ" secondAttribute="top" id="F5H-XR-SAH"/>
-                            <constraint firstItem="yQw-dI-Scp" firstAttribute="height" secondItem="Ia4-iP-RyQ" secondAttribute="height" id="FOe-dy-K2G"/>
-                            <constraint firstItem="5Dg-OU-deB" firstAttribute="height" secondItem="Ia4-iP-RyQ" secondAttribute="height" id="N9Y-If-UVr"/>
-                            <constraint firstItem="Ia4-iP-RyQ" firstAttribute="trailing" secondItem="yQw-dI-Scp" secondAttribute="trailing" id="erG-Xe-A3o"/>
-                            <constraint firstItem="yQw-dI-Scp" firstAttribute="width" secondItem="Ia4-iP-RyQ" secondAttribute="width" multiplier="0.5" id="lyQ-05-U8B"/>
+                            <constraint firstItem="5Dg-OU-deB" firstAttribute="leading" secondItem="Ia4-iP-RyQ" secondAttribute="leading" id="BaM-5x-Cnh"/>
+                            <constraint firstItem="yQw-dI-Scp" firstAttribute="top" secondItem="Ia4-iP-RyQ" secondAttribute="top" id="Br4-T9-RZW"/>
+                            <constraint firstItem="yQw-dI-Scp" firstAttribute="trailing" secondItem="Ia4-iP-RyQ" secondAttribute="trailing" id="H0R-xH-eEp"/>
+                            <constraint firstItem="5Dg-OU-deB" firstAttribute="top" secondItem="Ia4-iP-RyQ" secondAttribute="top" id="VPZ-ig-KrW"/>
+                            <constraint firstItem="yQw-dI-Scp" firstAttribute="leading" secondItem="Ia4-iP-RyQ" secondAttribute="centerX" id="b7h-hO-Reg"/>
+                            <constraint firstItem="5Dg-OU-deB" firstAttribute="trailing" secondItem="Ia4-iP-RyQ" secondAttribute="centerX" id="fVs-ih-Yd3"/>
+                            <constraint firstItem="5Dg-OU-deB" firstAttribute="bottom" secondItem="Ia4-iP-RyQ" secondAttribute="bottom" id="kVK-C9-Mbm"/>
+                            <constraint firstItem="yQw-dI-Scp" firstAttribute="bottom" secondItem="Ia4-iP-RyQ" secondAttribute="bottom" id="odF-y6-73m"/>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="centerX" secondItem="rYi-nH-sce" secondAttribute="centerX" id="r0B-9N-x1c"/>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="centerY" secondItem="rYi-nH-sce" secondAttribute="centerY" id="slM-cy-tsg"/>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="height" secondItem="rYi-nH-sce" secondAttribute="height" id="tw8-CL-JdV"/>
-                            <constraint firstItem="5Dg-OU-deB" firstAttribute="top" secondItem="Ia4-iP-RyQ" secondAttribute="top" id="vgu-ra-4qF"/>
-                            <constraint firstItem="5Dg-OU-deB" firstAttribute="width" secondItem="Ia4-iP-RyQ" secondAttribute="width" multiplier="1:2" id="wQu-be-E7m"/>
                         </constraints>
                     </view>
                     <connections>
