@@ -6,7 +6,7 @@ class ReadBook_ViewController:UIViewController{
     
     @IBOutlet weak var 📖: PDFView!
     
-    var 🏷 = "📰"
+    var 🏷 = "📄"
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -24,7 +24,7 @@ class ReadBook_ViewController:UIViewController{
             if let 📓 = PDFDocument(url: 📍) {
                 📖.document = 📓
             }
-        case "📗":
+        case "🌃":
             if let 📍 = Bundle.main.url(forResource: 🏷, withExtension: "pdf") {
                 if let 📓 = PDFDocument(url: 📍) {
                     📖.document = 📓

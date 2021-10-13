@@ -12,7 +12,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         let 💾 = FileManager.default
         let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "Imported.pdf")!
         if PDFDocument(url: 📍) == nil {
-            Set(🖼: Bundle.main.url(forResource: "📗", withExtension: "pdf")!)
+            Set(🖼: Bundle.main.url(forResource: "🌃", withExtension: "pdf")!)
         }else{
             Set(🖼: 📍)
         }
@@ -26,7 +26,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     // ▶️
     @IBAction func PlayVideo(_ sender: Any) {
-        guard let 📍 = Bundle.main.url(forResource: "📼", withExtension: "mp4") else { return }
+        guard let 📍 = Bundle.main.url(forResource: "▶️", withExtension: "mp4") else { return }
         let 🎞 = AVPlayer(url: 📍)
         let 📺 = AVPlayerViewController()
         📺.player = 🎞
@@ -72,7 +72,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             let 💾 = FileManager.default
             let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "Imported.pdf")!
             if PDFDocument(url: 📍) == nil {
-                🎮.🏷 = "📗"
+                🎮.🏷 = "🌃"
             }else{
                 🎮.🏷 = "Imported.pdf"
             }
