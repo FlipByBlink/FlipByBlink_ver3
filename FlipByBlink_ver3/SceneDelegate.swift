@@ -1,4 +1,5 @@
 import UIKit
+import PDFKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,6 +23,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        let 💾 = FileManager.default
+        let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "Imported.pdf")!
+        do{ try 💾.removeItem(at: 📍) } catch { print("🚨") }
+        do{ try 💾.copyItem(at: URLContexts.first!.url, to: 📍) } catch { print("🚨") }
+        
+        if let 🎮:ViewController = window?.rootViewController as? ViewController{
+            🎮.Set(🖼: 📍)
+        }
     }
 
 

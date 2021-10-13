@@ -6,7 +6,7 @@ class ReadBook_ViewController:UIViewController{
     
     @IBOutlet weak var 📖: PDFView!
     
-    var 🏷:String = "📰"
+    var 🏷 = "📰"
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -21,8 +21,8 @@ class ReadBook_ViewController:UIViewController{
         case "Imported.pdf":
             let 💾 = FileManager.default
             let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + 🏷)!
-            if let 📘 = PDFDocument(url: 📍) {
-                📖.document = 📘
+            if let 📓 = PDFDocument(url: 📍) {
+                📖.document = 📓
             }
         case "📗":
             if let 📍 = Bundle.main.url(forResource: 🏷, withExtension: "pdf") {
@@ -36,6 +36,12 @@ class ReadBook_ViewController:UIViewController{
                     📖.document = 📓
                 }
             }
+        }
+        
+        if ARFaceTrackingConfiguration.isSupported == false{
+            let 💬 = UIAlertController(title: "Sorry😱", message: "your device can't work facetracking. \"Face tracking supports devices with Apple Neural Engine in iOS 14 and iPadOS 14 and requires a device with a TrueDepth camera on iOS 13 and iPadOS 13 and earlier.\" source:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration", preferredStyle: .alert)
+            💬.addAction(UIAlertAction(title: "OK", style: .default))
+            present(💬, animated: true)
         }
         
         UIApplication.shared.isIdleTimerDisabled = true
@@ -64,6 +70,11 @@ class ReadBook_ViewController:UIViewController{
     }
     
     @objc func 🗒(){
+        if 📖.canGoToNextPage == false{
+        let 💬 = UIAlertController(title: "🎉 Finish!", message: nil, preferredStyle: .alert)
+        present(💬, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2){ 💬.dismiss(animated: true) }
+        }
         📖.goToNextPage(nil)
     }
     
