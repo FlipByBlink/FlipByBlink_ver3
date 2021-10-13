@@ -65,7 +65,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     
-    // 📄 , OpenBook
+    // OpenBook
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "OpenBookSegue") {
             let 🎮:ReadBook_ViewController = segue.destination as! ReadBook_ViewController
