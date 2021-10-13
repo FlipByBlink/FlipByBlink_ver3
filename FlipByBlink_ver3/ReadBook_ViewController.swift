@@ -23,6 +23,10 @@ class ReadBook_ViewController:UIViewController{
             let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + 🏷)!
             if let 📓 = PDFDocument(url: 📍) {
                 📖.document = 📓
+                let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
+                if let a = 📖.document?.page(at: 🔖-1){
+                    📖.go(to: a)
+                }
             }
         case "🌃":
             if let 📍 = Bundle.main.url(forResource: 🏷, withExtension: "pdf") {
@@ -36,11 +40,6 @@ class ReadBook_ViewController:UIViewController{
                     📖.document = 📓
                 }
             }
-        }
-        
-        let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
-        if let a = 📖.document?.page(at: 🔖-1){
-            📖.go(to: a)
         }
         
         if ARFaceTrackingConfiguration.isSupported == false{
@@ -89,7 +88,9 @@ class ReadBook_ViewController:UIViewController{
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        UserDefaults.standard.set(📖.currentPage!.pageRef!.pageNumber, forKey: "🔖")
+        if 🏷 == "Imported.pdf"{
+            UserDefaults.standard.set(📖.currentPage!.pageRef!.pageNumber, forKey: "🔖")
+        }
     }
     
 }

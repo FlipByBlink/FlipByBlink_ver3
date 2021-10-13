@@ -31,6 +31,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         do{ try 💾.removeItem(at: 📍) } catch { print("🚨") }
         do{ try 💾.copyItem(at: URLContexts.first!.url, to: 📍) } catch { print("🚨") }
         
+        UserDefaults.standard.set(0, forKey: "🔖")
+        
         if let 🎮:ViewController = window?.rootViewController as? ViewController{
             🎮.Set(🖼: 📍)
         }

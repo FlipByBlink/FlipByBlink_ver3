@@ -61,6 +61,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "Imported.pdf")!
         do{ try 💾.removeItem(at: 📍) } catch { print("🚨") }
         do{ try 💾.copyItem(at: urls.first!, to: 📍) } catch { print("🚨") }
+        UserDefaults.standard.set(0, forKey: "🔖")
         Set(🖼: 📍)
     }
     
