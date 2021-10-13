@@ -4,12 +4,13 @@ import PDFKit
 
 class ViewController: UIViewController, UIDocumentPickerDelegate {
 
-    //MARK: 📄
-    @IBAction func ReadDocument(_ sender: Any) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        //TODO: code
-        
+        let 📍 = Bundle.main.url(forResource: "📗", withExtension: "pdf")!
+        Set(🖼: 📍)
     }
+    
     
     //MARK: ▶️
     @IBAction func PlayVideo(_ sender: Any) {
@@ -20,17 +21,20 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         self.present(📺, animated: true)
     }
     
+    
     //MARK: ⚙️
     @IBAction func JumpSetting(_ sender: Any) {
         let 📍 = URL(string: UIApplication.openSettingsURLString)!
         UIApplication.shared.open(📍)
     }
     
+    
     //MARK: 🄰
     @IBAction func JumpAppStore(_ sender: Any) {
         let 📍 = URL(string: "https://apps.apple.com/jp/app/id1444571751")!
         UIApplication.shared.open(📍)
     }
+    
     
     //MARK: 📁
     @IBAction func ImportBook(_ sender: Any) {
@@ -45,20 +49,26 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "ImportedBook.pdf")!
         do{ try 💾.removeItem(at: 📍) } catch { print("🚨") }
         do{ try 💾.copyItem(at: urls.first!, to: 📍) } catch { print("🚨") }
-        if let 📓 = PDFDocument(url: 📍) {
-            📖.setImage(📓.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
-            📖.imageView?.contentMode = .scaleAspectFit
+        Set(🖼: 📍)
+    }
+    
+    
+    //MARK: OpenBook , 📄
+    @IBOutlet weak var 📔: UIButton!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "OpenBookSegue") {
+            let 🎮:ReadBook_ViewController = segue.destination as! ReadBook_ViewController
+            🎮.🏷 = "📗"
         }
     }
     
-    //MARK: OpenBook
-    @IBOutlet weak var 📖: UIButton!
     
-    @IBAction func OpenBook(_ sender: Any) {
-        
-        //TODO: code
-        
+    func Set(🖼:URL){
+        if let a = PDFDocument(url: 🖼){
+            📔.setImage(a.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
+            📔.imageView?.contentMode = .scaleAspectFit
+        }
     }
-    
 }
 
