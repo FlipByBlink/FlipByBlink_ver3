@@ -7,8 +7,13 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let 📍 = Bundle.main.url(forResource: "📗", withExtension: "pdf")!
-        Set(🖼: 📍)
+        let 💾 = FileManager.default
+        let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "ImportedBook.pdf")!
+        if PDFDocument(url: 📍) == nil {
+            Set(🖼: Bundle.main.url(forResource: "📗", withExtension: "pdf")!)
+        }else{
+            Set(🖼: 📍)
+        }
     }
     
     
@@ -59,16 +64,24 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "OpenBookSegue") {
             let 🎮:ReadBook_ViewController = segue.destination as! ReadBook_ViewController
-            🎮.🏷 = "📗"
+            let 💾 = FileManager.default
+            let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "ImportedBook.pdf")!
+            if PDFDocument(url: 📍) == nil {
+                🎮.🏷 = "📗"
+            }else{
+                🎮.🏷 = "ImportedBook.pdf"
+            }
         }
     }
     
     
     func Set(🖼:URL){
-        if let a = PDFDocument(url: 🖼){
-            📔.setImage(a.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
+        if let 📓 = PDFDocument(url: 🖼){
+            📔.setImage(📓.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
             📔.imageView?.contentMode = .scaleAspectFit
         }
     }
+    
+    
 }
 

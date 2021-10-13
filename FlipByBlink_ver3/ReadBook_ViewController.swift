@@ -6,7 +6,7 @@ class ReadBook_ViewController:UIViewController{
     
     @IBOutlet weak var 📖: PDFView!
     
-    var 🏷 = "📰"
+    var 🏷:String = "📰"
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -16,9 +16,24 @@ class ReadBook_ViewController:UIViewController{
         📖.displaysPageBreaks = false
         📖.isUserInteractionEnabled = false
         
-        if let 📍 = Bundle.main.url(forResource: 🏷, withExtension: "pdf") {
+        switch 🏷 {
+        case "ImportedBook.pdf":
+            let 💾 = FileManager.default
+            let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + 🏷)!
             if let 📘 = PDFDocument(url: 📍) {
                 📖.document = 📘
+            }
+        case "📗":
+            if let 📍 = Bundle.main.url(forResource: 🏷, withExtension: "pdf") {
+                if let 📓 = PDFDocument(url: 📍) {
+                    📖.document = 📓
+                }
+            }
+        default:
+            if let 📍 = Bundle.main.url(forResource: 🏷, withExtension: "pdf") {
+                if let 📓 = PDFDocument(url: 📍) {
+                    📖.document = 📓
+                }
             }
         }
     }
