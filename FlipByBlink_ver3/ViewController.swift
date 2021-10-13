@@ -4,6 +4,8 @@ import PDFKit
 
 class ViewController: UIViewController, UIDocumentPickerDelegate {
 
+    @IBOutlet weak var 📔: UIButton!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -14,10 +16,15 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         }else{
             Set(🖼: 📍)
         }
+        
+        📔.layer.shadowColor = UIColor.gray.cgColor
+        📔.layer.shadowOpacity = 0.8
+        📔.layer.shadowRadius = 4
+        📔.layer.shadowOffset = .zero
     }
     
     
-    //MARK: ▶️
+    // ▶️
     @IBAction func PlayVideo(_ sender: Any) {
         guard let 📍 = Bundle.main.url(forResource: "📼", withExtension: "mp4") else { return }
         let 🎞 = AVPlayer(url: 📍)
@@ -27,21 +34,21 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     
-    //MARK: ⚙️
+    // ⚙️
     @IBAction func JumpSetting(_ sender: Any) {
         let 📍 = URL(string: UIApplication.openSettingsURLString)!
         UIApplication.shared.open(📍)
     }
     
     
-    //MARK: 🄰
+    // 🄰
     @IBAction func JumpAppStore(_ sender: Any) {
         let 📍 = URL(string: "https://apps.apple.com/jp/app/id1444571751")!
         UIApplication.shared.open(📍)
     }
     
     
-    //MARK: 📁
+    // 📁
     @IBAction func ImportBook(_ sender: Any) {
         guard let 📚 = UTType(filenameExtension: "pdf") else { return }
         let 🗃 = UIDocumentPickerViewController(forOpeningContentTypes: [📚], asCopy: true)
@@ -58,9 +65,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     
-    //MARK: OpenBook , 📄
-    @IBOutlet weak var 📔: UIButton!
-    
+    // 📄 , OpenBook
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "OpenBookSegue") {
             let 🎮:ReadBook_ViewController = segue.destination as! ReadBook_ViewController
