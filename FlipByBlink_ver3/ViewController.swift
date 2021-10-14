@@ -3,7 +3,7 @@ import AVKit
 import PDFKit
 
 class ViewController: UIViewController, UIDocumentPickerDelegate {
-
+    
     @IBOutlet weak var 📘: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,9 +28,9 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     @IBAction func PlayVideo(_ sender: Any) {
         guard let 📍 = Bundle.main.url(forResource: "▶️", withExtension: "mp4") else { return }
         let 🎞 = AVPlayer(url: 📍)
-        let 📺 = AVPlayerViewController()
-        📺.player = 🎞
-        self.present(📺, animated: true)
+        let 🎮 = AVPlayerViewController()
+        🎮.player = 🎞
+        self.present(🎮, animated: true)
     }
     
     
@@ -66,7 +66,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     
-    // OpenBook
+    // 📘 OpenBook
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "OpenBookSegue") {
             let 🎮:ReadBook_ViewController = segue.destination as! ReadBook_ViewController

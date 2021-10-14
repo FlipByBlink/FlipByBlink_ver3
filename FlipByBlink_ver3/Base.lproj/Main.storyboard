@@ -26,14 +26,14 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="folder" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="60"/>
                                 </state>
                                 <connections>
                                     <action selector="ImportBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YoI-dm-SfH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="OpenBook">
-                                <rect key="frame" x="0.0" y="453" width="414" height="379"/>
+                                <rect key="frame" x="30" y="453" width="354" height="379"/>
                                 <accessibility key="accessibilityConfiguration" label="OpenBook"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
@@ -112,8 +112,8 @@
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Jjx-C8-s6t" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="EU0-Iw-6KX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xqj-zg-dTH" secondAttribute="trailing" id="Hqz-KG-U8o"/>
-                            <constraint firstItem="Xqj-zg-dTH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I8K-tZ-ih8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xqj-zg-dTH" secondAttribute="trailing" constant="30" id="Hqz-KG-U8o"/>
+                            <constraint firstItem="Xqj-zg-dTH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="I8K-tZ-ih8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TBA-gG-LHE" secondAttribute="trailing" constant="31" id="Mj4-tv-ZSg"/>
                             <constraint firstItem="fss-gx-m0J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="RXc-eY-x16"/>
                             <constraint firstAttribute="bottom" secondItem="Xqj-zg-dTH" secondAttribute="bottom" constant="64" id="Zqy-pM-Iml"/>

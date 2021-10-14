@@ -24,7 +24,7 @@ class ReadBook_ViewController:UIViewController{
             if let 📓 = PDFDocument(url: 📍) {
                 📖.document = 📓
                 let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
-                if let a = 📖.document?.page(at: 🔖-1){
+                if let a = 📖.document?.page(at: 🔖-1){ //FIXME: 変数名
                     📖.go(to: a)
                 }
             }
