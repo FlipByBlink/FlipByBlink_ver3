@@ -6,7 +6,7 @@ class ReadBook_ViewController:UIViewController{
     
     @IBOutlet weak var 📖: PDFView!
     
-    var 🏷 = "📄"
+    var 🏷:URL!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -17,27 +17,11 @@ class ReadBook_ViewController:UIViewController{
         📖.isUserInteractionEnabled = false
         📖.accessibilityElementsHidden = true
         
-        switch 🏷 {
-        case "Imported.pdf":
-            let 💾 = FileManager.default
-            let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + 🏷)!
-            if let 📓 = PDFDocument(url: 📍) {
-                📖.document = 📓
-                let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
-                if let a = 📖.document?.page(at: 🔖-1){ //FIXME: 変数名
-                    📖.go(to: a)
-                }
-            }
-        case "🌃":
-            if let 📍 = Bundle.main.url(forResource: 🏷, withExtension: "pdf") {
-                if let 📓 = PDFDocument(url: 📍) {
-                    📖.document = 📓
-                }
-            }
-        default:
-            if let 📍 = Bundle.main.url(forResource: 🏷, withExtension: "pdf") {
-                if let 📓 = PDFDocument(url: 📍) {
-                    📖.document = 📓
+        if let 📓 = PDFDocument(url: 🏷) {
+            📖.document = 📓
+            if 🏷.lastPathComponent == "Imported.pdf"{
+                if let 🔖 = 📓.page(at: UserDefaults.standard.integer(forKey: "🔖") - 1){
+                    📖.go(to: 🔖)
                 }
             }
         }
@@ -88,7 +72,7 @@ class ReadBook_ViewController:UIViewController{
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if 🏷 == "Imported.pdf"{
+        if 🏷.lastPathComponent == "Imported.pdf"{
             UserDefaults.standard.set(📖.currentPage!.pageRef!.pageNumber, forKey: "🔖")
         }
     }

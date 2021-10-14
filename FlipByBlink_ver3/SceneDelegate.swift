@@ -26,17 +26,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        let 💾 = FileManager.default
-        let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "Imported.pdf")!
-        if 💾.fileExists(atPath: 📍.path){
-            do{ try 💾.removeItem(at: 📍) } catch { print("🚨") }
-        }
-        do{ try 💾.copyItem(at: URLContexts.first!.url, to: 📍) } catch { print("🚨") }
-        
-        UserDefaults.standard.set(0, forKey: "🔖")
         
         if let 🎮:ViewController = window?.rootViewController as? ViewController{
-            🎮.📘thumbnail(📍)
+            if 🎮.💾.fileExists(atPath: 🎮.📍📘.path){
+                do{ try 🎮.💾.removeItem(at: 🎮.📍📘) } catch { print("🚨") }
+            }
+            do{ try 🎮.💾.copyItem(at: URLContexts.first!.url, to: 🎮.📍📘) } catch { print("🚨") }
+            UserDefaults.standard.set(0, forKey: "🔖")
+            🎮.📘thumbnail(🎮.📍📘)
         }
     }
 

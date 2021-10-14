@@ -6,15 +6,19 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     @IBOutlet weak var 📘: UIButton!
     
+    let 📍📘 = URL(string: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "Imported.pdf")!
+    let 📍📄 = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
+    let 📍🌃 = Bundle.main.url(forResource: "🌃", withExtension: "pdf")!
+    
+    let 💾 = FileManager.default
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let 💾 = FileManager.default
-        let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "Imported.pdf")!
-        if 💾.fileExists(atPath: 📍.path) {
-            📘thumbnail(📍)
+        if 💾.fileExists(atPath: 📍📘.path) {
+            📘thumbnail(📍📘)
         }else{
-            📘thumbnail(Bundle.main.url(forResource: "🌃", withExtension: "pdf")!)
+            📘thumbnail(📍🌃)
         }
         
         📘.layer.shadowColor = UIColor.gray.cgColor
@@ -57,28 +61,26 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        let 💾 = FileManager.default
-        let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "Imported.pdf")!
-        if 💾.fileExists(atPath: 📍.path){
-            do{ try 💾.removeItem(at: 📍) } catch { print("🚨") }
+        if 💾.fileExists(atPath: 📍📘.path){
+            do{ try 💾.removeItem(at: 📍📘) } catch { print("🚨") }
         }
-        do{ try 💾.copyItem(at: urls.first!, to: 📍) } catch { print("🚨") }
+        do{ try 💾.copyItem(at: urls.first!, to: 📍📘) } catch { print("🚨") }
         UserDefaults.standard.set(0, forKey: "🔖")
-        📘thumbnail(📍)
+        📘thumbnail(📍📘)
     }
     
     
     // 📘 OpenBook
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let 🎮:ReadBook_ViewController = segue.destination as! ReadBook_ViewController
         if (segue.identifier == "OpenBookSegue") {
-            let 🎮:ReadBook_ViewController = segue.destination as! ReadBook_ViewController
-            let 💾 = FileManager.default
-            let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "Imported.pdf")!
-            if PDFDocument(url: 📍) == nil {
-                🎮.🏷 = "🌃"
+            if 💾.fileExists(atPath: 📍📘.path) {
+                🎮.🏷 = 📍📘
             }else{
-                🎮.🏷 = "Imported.pdf"
+                🎮.🏷 = 📍🌃
             }
+        }else{
+            🎮.🏷 = 📍📄
         }
     }
     
