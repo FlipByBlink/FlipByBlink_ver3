@@ -80,6 +80,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         if (segue.identifier == "OpenBookSegue") {
             if 💾.fileExists(atPath: 📍📘.path) {
                 🎮.🏷 = 📍📘
+                🎮.modalPresentationStyle = .fullScreen
             }else{
                 🎮.🏷 = 📍🌃
             }
