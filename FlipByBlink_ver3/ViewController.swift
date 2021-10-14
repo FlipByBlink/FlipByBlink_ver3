@@ -61,10 +61,14 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        store📘(urls.first!)
+    }
+    
+    func store📘(_ 📍:URL){
         if 💾.fileExists(atPath: 📍📘.path){
             do{ try 💾.removeItem(at: 📍📘) } catch { print("🚨") }
         }
-        do{ try 💾.copyItem(at: urls.first!, to: 📍📘) } catch { print("🚨") }
+        do{ try 💾.copyItem(at: 📍, to: 📍📘) } catch { print("🚨") }
         UserDefaults.standard.set(0, forKey: "🔖")
         📘thumbnail(📍📘)
     }

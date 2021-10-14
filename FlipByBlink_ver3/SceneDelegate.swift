@@ -28,12 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         
         if let 🎮:ViewController = window?.rootViewController as? ViewController{
-            if 🎮.💾.fileExists(atPath: 🎮.📍📘.path){
-                do{ try 🎮.💾.removeItem(at: 🎮.📍📘) } catch { print("🚨") }
-            }
-            do{ try 🎮.💾.copyItem(at: URLContexts.first!.url, to: 🎮.📍📘) } catch { print("🚨") }
-            UserDefaults.standard.set(0, forKey: "🔖")
-            🎮.📘thumbnail(🎮.📍📘)
+            🎮.store📘(URLContexts.first!.url)
         }
     }
 
