@@ -11,10 +11,10 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         
         let 💾 = FileManager.default
         let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "Imported.pdf")!
-        if PDFDocument(url: 📍) == nil {
-            📘thumbnail(Bundle.main.url(forResource: "🌃", withExtension: "pdf")!)
-        }else{
+        if 💾.fileExists(atPath: 📍.path) {
             📘thumbnail(📍)
+        }else{
+            📘thumbnail(Bundle.main.url(forResource: "🌃", withExtension: "pdf")!)
         }
         
         📘.layer.shadowColor = UIColor.gray.cgColor
@@ -27,8 +27,8 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     // ▶️
     @IBAction func PlayVideo(_ sender: Any) {
         guard let 📍 = Bundle.main.url(forResource: "▶️", withExtension: "mp4") else { return }
-        let 🎞 = AVPlayer(url: 📍)
         let 🎮 = AVPlayerViewController()
+        let 🎞 = AVPlayer(url: 📍)
         🎮.player = 🎞
         self.present(🎮, animated: true)
     }
@@ -51,15 +51,17 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     // 📁
     @IBAction func ImportBook(_ sender: Any) {
         guard let 📚 = UTType(filenameExtension: "pdf") else { return }
-        let 🗃 = UIDocumentPickerViewController(forOpeningContentTypes: [📚], asCopy: true)
-        🗃.delegate = self
-        self.present(🗃, animated: true)
+        let 🎮 = UIDocumentPickerViewController(forOpeningContentTypes: [📚], asCopy: true)
+        🎮.delegate = self
+        self.present(🎮, animated: true)
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         let 💾 = FileManager.default
         let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "Imported.pdf")!
-        do{ try 💾.removeItem(at: 📍) } catch { print("🚨") }
+        if 💾.fileExists(atPath: 📍.path){
+            do{ try 💾.removeItem(at: 📍) } catch { print("🚨") }
+        }
         do{ try 💾.copyItem(at: urls.first!, to: 📍) } catch { print("🚨") }
         UserDefaults.standard.set(0, forKey: "🔖")
         📘thumbnail(📍)

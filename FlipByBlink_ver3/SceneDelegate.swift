@@ -28,7 +28,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         let 💾 = FileManager.default
         let 📍 = URL(string: 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "Imported.pdf")!
-        do{ try 💾.removeItem(at: 📍) } catch { print("🚨") }
+        if 💾.fileExists(atPath: 📍.path){
+            do{ try 💾.removeItem(at: 📍) } catch { print("🚨") }
+        }
         do{ try 💾.copyItem(at: URLContexts.first!.url, to: 📍) } catch { print("🚨") }
         
         UserDefaults.standard.set(0, forKey: "🔖")
