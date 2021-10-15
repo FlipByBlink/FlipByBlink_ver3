@@ -34,7 +34,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="OpenBook">
                                 <rect key="frame" x="30" y="453" width="354" height="379"/>
-                                <accessibility key="accessibilityConfiguration" label="OpenBook"/>
+                                <accessibility key="accessibilityConfiguration" label="Open Book"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,7 +45,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="📄">
                                 <rect key="frame" x="33" y="44" width="120" height="120"/>
-                                <accessibility key="accessibilityConfiguration" label="ReadDocument"/>
+                                <accessibility key="accessibilityConfiguration" label="AppDocument"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="prH-ik-hV5"/>
                                     <constraint firstAttribute="height" constant="120" id="zr1-BI-Jrw"/>
@@ -61,7 +61,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-gx-m0J" userLabel="ᐅ⃣">
                                 <rect key="frame" x="30" y="164" width="120" height="120"/>
-                                <accessibility key="accessibilityConfiguration" label="Play Video"/>
+                                <accessibility key="accessibilityConfiguration" label="AppVideo"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="5qu-5W-8jv"/>
                                     <constraint firstAttribute="height" constant="120" id="fOJ-B6-Du4"/>
@@ -75,9 +75,9 @@
                                     <action selector="ᐅ⃣:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KTo-c4-yJw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foG-Jf-dmC" userLabel="JumpSetting">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foG-Jf-dmC" userLabel="⚙️">
                                 <rect key="frame" x="264" y="45" width="120" height="120"/>
-                                <accessibility key="accessibilityConfiguration" label="JumpSetting"/>
+                                <accessibility key="accessibilityConfiguration" label="Jump Setting"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="gog-cX-Dmw"/>
                                     <constraint firstAttribute="width" constant="120" id="v0F-kK-vZq"/>
@@ -88,7 +88,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="JumpSetting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bfQ-yk-8ew"/>
+                                    <action selector="𝗝𝘂𝗺𝗽𝗦𝗲𝘁𝘁𝗶𝗻𝗴:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bfQ-yk-8ew"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="A⃣">

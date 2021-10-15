@@ -28,7 +28,6 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     
-    // ▶️
     @IBAction func ᐅ⃣(_ sender: Any) {
         guard let 📍 = Bundle.main.url(forResource: "▶️", withExtension: "mp4") else { return }
         let 🎮 = AVPlayerViewController()
@@ -39,20 +38,18 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     
     // ⚙️
-    @IBAction func JumpSetting(_ sender: Any) {
+    @IBAction func 𝗝𝘂𝗺𝗽𝗦𝗲𝘁𝘁𝗶𝗻𝗴(_ sender: Any) {
         let 📍 = URL(string: UIApplication.openSettingsURLString)!
         UIApplication.shared.open(📍)
     }
     
     
-    // 🄰
     @IBAction func A⃣(_ sender: Any) {
         let 📍 = URL(string: "https://apps.apple.com/jp/app/id1444571751")!
         UIApplication.shared.open(📍)
     }
     
     
-    // 📁
     @IBAction func 📁(_ sender: Any) {
         guard let 📚 = UTType(filenameExtension: "pdf") else { return }
         let 🎮 = UIDocumentPickerViewController(forOpeningContentTypes: [📚], asCopy: true)
