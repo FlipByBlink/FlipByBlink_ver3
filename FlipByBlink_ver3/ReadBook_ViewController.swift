@@ -19,7 +19,7 @@ class ReadBook_ViewController:UIViewController{
         
         if let 📓 = PDFDocument(url: 🏷) {
             📖.document = 📓
-            if 🏷.lastPathComponent == "𝙄𝙈𝙋𝙊𝙍𝙏.pdf"{
+            if 🏷.lastPathComponent == "𝙄𝙢𝙥𝙤𝙧𝙩𝙚𝙙.pdf"{
                 if let 🔖 = 📓.page(at: UserDefaults.standard.integer(forKey: "🔖") - 1){
                     📖.go(to: 🔖)
                 }
@@ -72,7 +72,7 @@ class ReadBook_ViewController:UIViewController{
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if 🏷.lastPathComponent == "𝙄𝙈𝙋𝙊𝙍𝙏.pdf"{
+        if 🏷.lastPathComponent == "𝙄𝙢𝙥𝙤𝙧𝙩𝙚𝙙.pdf"{
             UserDefaults.standard.set(📖.currentPage!.pageRef!.pageNumber, forKey: "🔖")
         }
     }

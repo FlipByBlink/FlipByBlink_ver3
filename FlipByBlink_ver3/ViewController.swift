@@ -6,19 +6,19 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     @IBOutlet weak var 📘: UIButton!
     
-    let 📍📘 = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("𝙄𝙈𝙋𝙊𝙍𝙏.pdf")
-    let 📍📄 = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
-    let 📍🌃 = Bundle.main.url(forResource: "🌃", withExtension: "pdf")!
+    let 📘ᵁᴿᴸ = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("𝙄𝙢𝙥𝙤𝙧𝙩𝙚𝙙.pdf")
+    let 📄ᵁᴿᴸ = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
+    let 🌃ᵁᴿᴸ = Bundle.main.url(forResource: "🌃", withExtension: "pdf")!
     
     let 💾 = FileManager.default
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if 💾.fileExists(atPath: 📍📘.path) {
-            📘thumbnail(📍📘)
+        if 💾.fileExists(atPath: 📘ᵁᴿᴸ.path) {
+            📘ᵀᴴᵁᴹᴮᴺᴬᴵᴸ(📘ᵁᴿᴸ)
         }else{
-            📘thumbnail(📍🌃)
+            📘ᵀᴴᵁᴹᴮᴺᴬᴵᴸ(🌃ᵁᴿᴸ)
         }
         
         📘.layer.shadowColor = UIColor.gray.cgColor
@@ -61,36 +61,36 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        store📘(urls.first!)
+        📘𝚜𝚝𝚘𝚛𝚎(urls.first!)
     }
     
-    func store📘(_ 📍:URL){
-        if 💾.fileExists(atPath: 📍📘.path){
-            do{ try 💾.removeItem(at: 📍📘) } catch { print("🚨") }
+    func 📘𝚜𝚝𝚘𝚛𝚎(_ 📍:URL){
+        if 💾.fileExists(atPath: 📘ᵁᴿᴸ.path){
+            do{ try 💾.removeItem(at: 📘ᵁᴿᴸ) } catch { print("🚨") }
         }
-        do{ try 💾.copyItem(at: 📍, to: 📍📘) } catch { print("🚨") }
+        do{ try 💾.copyItem(at: 📍, to: 📘ᵁᴿᴸ) } catch { print("🚨") }
         UserDefaults.standard.set(0, forKey: "🔖")
-        📘thumbnail(📍📘)
+        📘ᵀᴴᵁᴹᴮᴺᴬᴵᴸ(📘ᵁᴿᴸ)
     }
     
     
-    // 📘 OpenBook
+    // 📘 OpenBook 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let 🎮:ReadBook_ViewController = segue.destination as! ReadBook_ViewController
         if (segue.identifier == "OpenBookSegue") {
-            if 💾.fileExists(atPath: 📍📘.path) {
-                🎮.🏷 = 📍📘
+            if 💾.fileExists(atPath: 📘ᵁᴿᴸ.path) {
+                🎮.🏷 = 📘ᵁᴿᴸ
                 🎮.modalPresentationStyle = .fullScreen
             }else{
-                🎮.🏷 = 📍🌃
+                🎮.🏷 = 🌃ᵁᴿᴸ
             }
         }else{
-            🎮.🏷 = 📍📄
+            🎮.🏷 = 📄ᵁᴿᴸ
         }
     }
     
     
-    func 📘thumbnail(_ 📍:URL){
+    func 📘ᵀᴴᵁᴹᴮᴺᴬᴵᴸ(_ 📍:URL){
         if let 📓 = PDFDocument(url: 📍){
             📘.setImage(📓.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
             📘.imageView?.contentMode = .scaleAspectFit
