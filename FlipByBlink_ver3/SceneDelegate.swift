@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         
         if let 🎮:ViewController = window?.rootViewController as? ViewController{
-            🎮.📘𝚜𝚝𝚘𝚛𝚎(URLContexts.first!.url)
+            🎮.𝗦𝘁𝗼𝗿𝗲📘(URLContexts.first!.url)
         }
     }
 
