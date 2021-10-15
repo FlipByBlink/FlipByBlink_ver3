@@ -19,7 +19,7 @@ class ReadBook_ViewController:UIViewController{
         
         if let 📓 = PDFDocument(url: 🏷) {
             📖.document = 📓
-            if 🏷.lastPathComponent == "𝙄𝙢𝙥𝙤𝙧𝙩𝙚𝙙.pdf"{
+            if 🏷.lastPathComponent == "𝗜𝗺𝗽𝗼𝗿𝘁𝗲𝗱.pdf"{
                 if let 🔖 = 📓.page(at: UserDefaults.standard.integer(forKey: "🔖") - 1){
                     📖.go(to: 🔖)
                 }
@@ -27,7 +27,7 @@ class ReadBook_ViewController:UIViewController{
         }
         
         if ARFaceTrackingConfiguration.isSupported == false{
-            let 💬 = UIAlertController(title: "Sorry😱", message: "your device can't work facetracking. \"Face tracking supports devices with Apple Neural Engine in iOS 14 and iPadOS 14 and requires a device with a TrueDepth camera on iOS 13 and iPadOS 13 and earlier.\" source:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration", preferredStyle: .alert)
+            let 💬 = UIAlertController(title: "Sorry 😱", message: "your device can't work facetracking. \"Face tracking supports devices with Apple Neural Engine in iOS 14 and iPadOS 14 and requires a device with a TrueDepth camera on iOS 13 and iPadOS 13 and earlier.\" source:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration", preferredStyle: .alert)
             💬.addAction(UIAlertAction(title: "OK", style: .default))
             present(💬, animated: true)
         }
@@ -72,7 +72,7 @@ class ReadBook_ViewController:UIViewController{
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if 🏷.lastPathComponent == "𝙄𝙢𝙥𝙤𝙧𝙩𝙚𝙙.pdf"{
+        if 🏷.lastPathComponent == "𝗜𝗺𝗽𝗼𝗿𝘁𝗲𝗱.pdf"{
             UserDefaults.standard.set(📖.currentPage!.pageRef!.pageNumber, forKey: "🔖")
         }
     }
