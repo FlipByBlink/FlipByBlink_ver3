@@ -6,19 +6,19 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     @IBOutlet weak var 📘: UIButton!
     
-    let 📘𝘂𝗿𝗹 = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("𝙄𝙢𝙥𝙤𝙧𝙩𝙚𝙙.pdf")
-    let 📄𝘂𝗿𝗹 = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
-    let 🌃𝘂𝗿𝗹 = Bundle.main.url(forResource: "🌃", withExtension: "pdf")!
+    let 📘url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("𝙄𝙢𝙥𝙤𝙧𝙩𝙚𝙙.pdf")
+    let 📄url = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
+    let 🌃url = Bundle.main.url(forResource: "🌃", withExtension: "pdf")!
     
     let 💾 = FileManager.default
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if 💾.fileExists(atPath: 📘𝘂𝗿𝗹.path) {
-            𝗧𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹📘(📘𝘂𝗿𝗹)
+        if 💾.fileExists(atPath: 📘url.path) {
+            𝗧𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹📘(📘url)
         }else{
-            𝗧𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹📘(🌃𝘂𝗿𝗹)
+            𝗧𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹📘(🌃url)
         }
         
         📘.layer.shadowColor = UIColor.gray.cgColor
@@ -65,12 +65,12 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     func 𝗦𝘁𝗼𝗿𝗲📘(_ 📍:URL){
-        if 💾.fileExists(atPath: 📘𝘂𝗿𝗹.path){
-            do{ try 💾.removeItem(at: 📘𝘂𝗿𝗹) } catch { print("🚨") }
+        if 💾.fileExists(atPath: 📘url.path){
+            do{ try 💾.removeItem(at: 📘url) } catch { print("🚨") }
         }
-        do{ try 💾.copyItem(at: 📍, to: 📘𝘂𝗿𝗹) } catch { print("🚨") }
+        do{ try 💾.copyItem(at: 📍, to: 📘url) } catch { print("🚨") }
         UserDefaults.standard.set(0, forKey: "🔖")
-        𝗧𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹📘(📘𝘂𝗿𝗹)
+        𝗧𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹📘(📘url)
     }
     
     
@@ -78,14 +78,14 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let 🎮:ReadBook_ViewController = segue.destination as! ReadBook_ViewController
         if (segue.identifier == "OpenBookSegue") {
-            if 💾.fileExists(atPath: 📘𝘂𝗿𝗹.path) {
-                🎮.🏷 = 📘𝘂𝗿𝗹
+            if 💾.fileExists(atPath: 📘url.path) {
+                🎮.🏷 = 📘url
                 🎮.modalPresentationStyle = .fullScreen
             }else{
-                🎮.🏷 = 🌃𝘂𝗿𝗹
+                🎮.🏷 = 🌃url
             }
         }else{
-            🎮.🏷 = 📄𝘂𝗿𝗹
+            🎮.🏷 = 📄url
         }
     }
     
