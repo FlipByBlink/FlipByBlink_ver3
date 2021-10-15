@@ -46,14 +46,14 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     
     // 🄰
-    @IBAction func JumpAppStore(_ sender: Any) {
+    @IBAction func A⃣(_ sender: Any) {
         let 📍 = URL(string: "https://apps.apple.com/jp/app/id1444571751")!
         UIApplication.shared.open(📍)
     }
     
     
     // 📁
-    @IBAction func ImportBook(_ sender: Any) {
+    @IBAction func 📁(_ sender: Any) {
         guard let 📚 = UTType(filenameExtension: "pdf") else { return }
         let 🎮 = UIDocumentPickerViewController(forOpeningContentTypes: [📚], asCopy: true)
         🎮.delegate = self

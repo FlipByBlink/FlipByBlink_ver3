@@ -17,9 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-C8-s6t" userLabel="ImportBook">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-C8-s6t" userLabel="📁">
                                 <rect key="frame" x="147" y="333" width="120" height="120"/>
-                                <accessibility key="accessibilityConfiguration" label="ImportBook"/>
+                                <accessibility key="accessibilityConfiguration" label="Import Book"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="BOl-uS-8R9"/>
                                     <constraint firstAttribute="width" constant="120" id="Zl9-9c-RDS"/>
@@ -29,7 +29,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="60"/>
                                 </state>
                                 <connections>
-                                    <action selector="ImportBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YoI-dm-SfH"/>
+                                    <action selector="📁:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YoI-dm-SfH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="OpenBook">
@@ -43,7 +43,7 @@
                                     <segue destination="IjJ-xR-P41" kind="presentation" identifier="OpenBookSegue" id="2D6-ez-ffp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="ReadDocument">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="📄">
                                 <rect key="frame" x="33" y="44" width="120" height="120"/>
                                 <accessibility key="accessibilityConfiguration" label="ReadDocument"/>
                                 <constraints>
@@ -59,9 +59,9 @@
                                     <segue destination="IjJ-xR-P41" kind="presentation" id="MG5-0J-yhC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-gx-m0J" userLabel="PlayVideo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-gx-m0J" userLabel="ᐅ⃣">
                                 <rect key="frame" x="30" y="164" width="120" height="120"/>
-                                <accessibility key="accessibilityConfiguration" label="PlayVideo"/>
+                                <accessibility key="accessibilityConfiguration" label="Play Video"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="5qu-5W-8jv"/>
                                     <constraint firstAttribute="height" constant="120" id="fOJ-B6-Du4"/>
@@ -91,9 +91,9 @@
                                     <action selector="JumpSetting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bfQ-yk-8ew"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="JumpAppStore">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="A⃣">
                                 <rect key="frame" x="263" y="165" width="120" height="120"/>
-                                <accessibility key="accessibilityConfiguration" label="JumpAppStore"/>
+                                <accessibility key="accessibilityConfiguration" label="Jump AppStore"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="LKx-h8-gu9"/>
                                     <constraint firstAttribute="width" constant="120" id="SnX-PQ-gYa"/>
@@ -104,7 +104,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="JumpAppStore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b1w-yN-tjM"/>
+                                    <action selector="A⃣:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b1w-yN-tjM"/>
                                 </connections>
                             </button>
                         </subviews>
