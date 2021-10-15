@@ -72,7 +72,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="PlayVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KTo-c4-yJw"/>
+                                    <action selector="ᐅ⃣:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KTo-c4-yJw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foG-Jf-dmC" userLabel="JumpSetting">
