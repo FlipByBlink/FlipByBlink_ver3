@@ -73,7 +73,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     // 📘 OpenBook 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let 🎮:ReadBook_ViewController = segue.destination as! ReadBook_ViewController
+        let 🎮:B⃣ook_ViewController = segue.destination as! B⃣ook_ViewController
         if (segue.identifier == "OpenBookSegue") {
             if 💾.fileExists(atPath: 📘url.path) {
                 🎮.🏷 = 📘url
