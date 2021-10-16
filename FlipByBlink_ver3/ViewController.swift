@@ -16,9 +16,9 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         super.viewWillAppear(animated)
         
         if 💾.fileExists(atPath: 📘url.path) {
-            𝗧𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹📘(📘url)
+            T⃣humbnail(📘url)
         }else{
-            𝗧𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹📘(🌃url)
+            T⃣humbnail(🌃url)
         }
         
         📘.layer.shadowColor = UIColor.gray.cgColor
@@ -58,16 +58,16 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        𝗦𝘁𝗼𝗿𝗲📘(urls.first!)
+        S⃣tore(urls.first!)
     }
     
-    func 𝗦𝘁𝗼𝗿𝗲📘(_ 📍:URL){
+    func S⃣tore(_ 📍:URL){
         if 💾.fileExists(atPath: 📘url.path){
             do{ try 💾.removeItem(at: 📘url) } catch { print("🚨") }
         }
         do{ try 💾.copyItem(at: 📍, to: 📘url) } catch { print("🚨") }
         UserDefaults.standard.set(0, forKey: "🔖")
-        𝗧𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹📘(📘url)
+        T⃣humbnail(📘url)
     }
     
     
@@ -87,7 +87,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     
-    func 𝗧𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹📘(_ 📍:URL){
+    func T⃣humbnail(_ 📍:URL){
         if let 📓 = PDFDocument(url: 📍){
             📘.setImage(📓.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
             📘.imageView?.contentMode = .scaleAspectFit

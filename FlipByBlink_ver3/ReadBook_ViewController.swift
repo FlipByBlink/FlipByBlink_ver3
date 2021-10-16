@@ -26,23 +26,30 @@ class ReadBook_ViewController:UIViewController{
             }
         }
         
-        if ARFaceTrackingConfiguration.isSupported == false{
-            let 💬 = UIAlertController(title: "Sorry 😱", message: "your device can't work facetracking. \"Face tracking supports devices with Apple Neural Engine in iOS 14 and iPadOS 14 and requires a device with a TrueDepth camera on iOS 13 and iPadOS 13 and earlier.\" source:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration", preferredStyle: .alert)
-            💬.addAction(UIAlertAction(title: "OK", style: .default))
-            present(💬, animated: true)
-        }
-        
         UIApplication.shared.isIdleTimerDisabled = true
     }
     
-    @IBAction func nextPage(_ sender: Any) {
-        🗒()
+    @IBAction func G⃣oToNextPage() {
+        if 📖.canGoToNextPage == false{
+            let 💬 = UIAlertController(title: "🎉 Finish!", message: nil, preferredStyle: .alert)
+            present(💬, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2){ 💬.dismiss(animated: true) }
+        }
+        📖.goToNextPage(nil)
     }
     
-    @IBAction func previousPage(_ sender: Any) {
-        🗒🔙()
+    
+    @IBAction func G⃣oToPreviousPage() {
+        📖.goToPreviousPage(nil)
     }
     
+    @IBAction func Tap(_ sender: UITapGestureRecognizer) {
+        if sender.location(in: view).x > view.center.x{
+            G⃣oToNextPage()
+        }else{
+            G⃣oToPreviousPage()
+        }
+    }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
@@ -57,23 +64,21 @@ class ReadBook_ViewController:UIViewController{
         return true
     }
     
-    @objc func 🗒(){
-        if 📖.canGoToNextPage == false{
-            let 💬 = UIAlertController(title: "🎉 Finish!", message: nil, preferredStyle: .alert)
-            present(💬, animated: true)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2){ 💬.dismiss(animated: true) }
-        }
-        📖.goToNextPage(nil)
-    }
-    
-    @objc func 🗒🔙(){
-        📖.goToPreviousPage(nil)
-    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if 🏷.lastPathComponent == "𝗜𝗺𝗽𝗼𝗿𝘁𝗲𝗱.pdf"{
             UserDefaults.standard.set(📖.currentPage!.pageRef!.pageNumber, forKey: "🔖")
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if ARFaceTrackingConfiguration.isSupported == false{
+            let 💬 = UIAlertController(title: "Sorry 😱", message: "your device can't work facetracking. \"Face tracking supports devices with Apple Neural Engine in iOS 14 and iPadOS 14 and requires a device with a TrueDepth camera on iOS 13 and iPadOS 13 and earlier.\" source:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration", preferredStyle: .alert)
+            💬.addAction(UIAlertAction(title: "OK", style: .default))
+            present(💬, animated: true)
         }
     }
     

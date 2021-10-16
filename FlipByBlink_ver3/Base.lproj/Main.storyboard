@@ -32,7 +32,7 @@
                                     <action selector="📁:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YoI-dm-SfH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="OpenBook">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="📘">
                                 <rect key="frame" x="30" y="453" width="354" height="379"/>
                                 <accessibility key="accessibilityConfiguration" label="Open Book"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -147,45 +147,44 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQw-dI-Scp" userLabel="next">
-                                <rect key="frame" x="207" y="0.0" width="207" height="842"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="next"/>
-                                <connections>
-                                    <action selector="nextPage:" destination="IjJ-xR-P41" eventType="touchUpInside" id="NgS-fk-Wdj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dg-OU-deB" userLabel="previous">
-                                <rect key="frame" x="0.0" y="0.0" width="207" height="842"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="previous"/>
-                                <connections>
-                                    <action selector="previousPage:" destination="IjJ-xR-P41" eventType="touchUpInside" id="t9G-NE-SEP"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gsE-Ko-KT3"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="width" secondItem="rYi-nH-sce" secondAttribute="width" id="3Kc-GZ-FQH"/>
-                            <constraint firstItem="5Dg-OU-deB" firstAttribute="leading" secondItem="Ia4-iP-RyQ" secondAttribute="leading" id="BaM-5x-Cnh"/>
-                            <constraint firstItem="yQw-dI-Scp" firstAttribute="top" secondItem="Ia4-iP-RyQ" secondAttribute="top" id="Br4-T9-RZW"/>
-                            <constraint firstItem="yQw-dI-Scp" firstAttribute="trailing" secondItem="Ia4-iP-RyQ" secondAttribute="trailing" id="H0R-xH-eEp"/>
-                            <constraint firstItem="5Dg-OU-deB" firstAttribute="top" secondItem="Ia4-iP-RyQ" secondAttribute="top" id="VPZ-ig-KrW"/>
-                            <constraint firstItem="yQw-dI-Scp" firstAttribute="leading" secondItem="Ia4-iP-RyQ" secondAttribute="centerX" id="b7h-hO-Reg"/>
-                            <constraint firstItem="5Dg-OU-deB" firstAttribute="trailing" secondItem="Ia4-iP-RyQ" secondAttribute="centerX" id="fVs-ih-Yd3"/>
-                            <constraint firstItem="5Dg-OU-deB" firstAttribute="bottom" secondItem="Ia4-iP-RyQ" secondAttribute="bottom" id="kVK-C9-Mbm"/>
-                            <constraint firstItem="yQw-dI-Scp" firstAttribute="bottom" secondItem="Ia4-iP-RyQ" secondAttribute="bottom" id="odF-y6-73m"/>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="centerX" secondItem="rYi-nH-sce" secondAttribute="centerX" id="r0B-9N-x1c"/>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="centerY" secondItem="rYi-nH-sce" secondAttribute="centerY" id="slM-cy-tsg"/>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="height" secondItem="rYi-nH-sce" secondAttribute="height" id="tw8-CL-JdV"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="YPd-mr-dWd" appends="YES" id="JG2-KR-Cvm"/>
+                            <outletCollection property="gestureRecognizers" destination="m3i-fT-Cye" appends="YES" id="Yg0-ZU-jJL"/>
+                            <outletCollection property="gestureRecognizers" destination="JT0-9W-Dfh" appends="YES" id="89Z-iY-tm8"/>
+                            <outletCollection property="gestureRecognizers" destination="nPK-qC-y9t" appends="YES" id="NvU-zR-FvZ"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="📖" destination="Ia4-iP-RyQ" id="irD-ua-aSI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFC-sz-BSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="JT0-9W-Dfh">
+                    <connections>
+                        <action selector="Tap:" destination="IjJ-xR-P41" id="En5-Og-7qc"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="YPd-mr-dWd">
+                    <connections>
+                        <action selector="G⃣oToPreviousPage" destination="IjJ-xR-P41" id="FUY-ur-azX"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="m3i-fT-Cye">
+                    <connections>
+                        <action selector="G⃣oToNextPage" destination="IjJ-xR-P41" id="GSK-yV-ky1"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="nPK-qC-y9t"/>
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="75.669642857142847"/>
         </scene>
