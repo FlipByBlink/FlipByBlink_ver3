@@ -88,10 +88,10 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="S⃣etting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bfQ-yk-8ew"/>
+                                    <action selector="🅂etting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bfQ-yk-8ew"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="A⃣">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="🄰">
                                 <rect key="frame" x="263" y="165" width="120" height="120"/>
                                 <accessibility key="accessibilityConfiguration" label="AppStore link"/>
                                 <constraints>
@@ -104,7 +104,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="A⃣:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b1w-yN-tjM"/>
+                                    <action selector="🄰:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b1w-yN-tjM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -135,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="139" y="77"/>
         </scene>
-        <!--B⃣ook View Controller-->
+        <!--View Controller-->
         <scene sceneID="fjY-Rb-ag9">
             <objects>
-                <viewController id="IjJ-xR-P41" customClass="B⃣ook_ViewController" customModule="FlipByBlink_ver3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IjJ-xR-P41" customClass="🄱ook_ViewController" customModule="FlipByBlink_ver3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rYi-nH-sce">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,12 +176,12 @@
                 </tapGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="YPd-mr-dWd" userLabel="三三👆">
                     <connections>
-                        <action selector="G⃣oToPreviousPage" destination="IjJ-xR-P41" id="FUY-ur-azX"/>
+                        <action selector="🄶oToPreviousPage" destination="IjJ-xR-P41" id="FUY-ur-azX"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="m3i-fT-Cye" userLabel="👆三三">
                     <connections>
-                        <action selector="G⃣oToNextPage" destination="IjJ-xR-P41" id="GSK-yV-ky1"/>
+                        <action selector="🄶oToNextPage" destination="IjJ-xR-P41" id="GSK-yV-ky1"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="down" id="nPK-qC-y9t" userLabel="ミ👆🏼彡"/>

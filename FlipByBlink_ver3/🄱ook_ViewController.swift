@@ -2,7 +2,7 @@ import UIKit
 import PDFKit
 import ARKit
 
-class B⃣ook_ViewController:UIViewController{
+class 🄱ook_ViewController:UIViewController{
     
     @IBOutlet weak var 📖: PDFView!
     
@@ -19,7 +19,7 @@ class B⃣ook_ViewController:UIViewController{
         
         if let 📓 = PDFDocument(url: 🏷) {
             📖.document = 📓
-            if 🏷.lastPathComponent == "I⃣mported.pdf"{
+            if 🏷.lastPathComponent == "🄸mported.pdf"{
                 if let 🔖 = 📓.page(at: UserDefaults.standard.integer(forKey: "🔖") - 1){
                     📖.go(to: 🔖)
                 }
@@ -29,7 +29,7 @@ class B⃣ook_ViewController:UIViewController{
         UIApplication.shared.isIdleTimerDisabled = true
     }
     
-    @IBAction func G⃣oToNextPage() {
+    @IBAction func 🄶oToNextPage() {
         if 📖.canGoToNextPage == false{
             let 💬 = UIAlertController(title: "🎉 Finish!", message: nil, preferredStyle: .alert)
             present(💬, animated: true)
@@ -39,15 +39,15 @@ class B⃣ook_ViewController:UIViewController{
     }
     
     
-    @IBAction func G⃣oToPreviousPage() {
+    @IBAction func 🄶oToPreviousPage() {
         📖.goToPreviousPage(nil)
     }
     
     @IBAction func T⃣ap(_ sender: UITapGestureRecognizer) {
         if sender.location(in: view).x > view.center.x{
-            G⃣oToNextPage()
+            🄶oToNextPage()
         }else{
-            G⃣oToPreviousPage()
+            🄶oToPreviousPage()
         }
     }
     
@@ -67,7 +67,7 @@ class B⃣ook_ViewController:UIViewController{
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if 🏷.lastPathComponent == "I⃣mported.pdf"{
+        if 🏷.lastPathComponent == "🄸mported.pdf"{
             UserDefaults.standard.set(📖.currentPage!.pageRef!.pageNumber, forKey: "🔖")
         }
     }
