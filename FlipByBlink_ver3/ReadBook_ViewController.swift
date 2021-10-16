@@ -19,7 +19,7 @@ class ReadBook_ViewController:UIViewController{
         
         if let 📓 = PDFDocument(url: 🏷) {
             📖.document = 📓
-            if 🏷.lastPathComponent == "𝗜𝗺𝗽𝗼𝗿𝘁𝗲𝗱.pdf"{
+            if 🏷.lastPathComponent == "I⃣mported.pdf"{
                 if let 🔖 = 📓.page(at: UserDefaults.standard.integer(forKey: "🔖") - 1){
                     📖.go(to: 🔖)
                 }
@@ -43,7 +43,7 @@ class ReadBook_ViewController:UIViewController{
         📖.goToPreviousPage(nil)
     }
     
-    @IBAction func Tap(_ sender: UITapGestureRecognizer) {
+    @IBAction func T⃣ap(_ sender: UITapGestureRecognizer) {
         if sender.location(in: view).x > view.center.x{
             G⃣oToNextPage()
         }else{
@@ -67,7 +67,7 @@ class ReadBook_ViewController:UIViewController{
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if 🏷.lastPathComponent == "𝗜𝗺𝗽𝗼𝗿𝘁𝗲𝗱.pdf"{
+        if 🏷.lastPathComponent == "I⃣mported.pdf"{
             UserDefaults.standard.set(📖.currentPage!.pageRef!.pageNumber, forKey: "🔖")
         }
     }

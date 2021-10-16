@@ -45,7 +45,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="📄">
                                 <rect key="frame" x="33" y="44" width="120" height="120"/>
-                                <accessibility key="accessibilityConfiguration" label="AppDocument"/>
+                                <accessibility key="accessibilityConfiguration" label="Document"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="prH-ik-hV5"/>
                                     <constraint firstAttribute="height" constant="120" id="zr1-BI-Jrw"/>
@@ -61,7 +61,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-gx-m0J" userLabel="ᐅ⃣">
                                 <rect key="frame" x="30" y="164" width="120" height="120"/>
-                                <accessibility key="accessibilityConfiguration" label="AppVideo"/>
+                                <accessibility key="accessibilityConfiguration" label="Video"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="5qu-5W-8jv"/>
                                     <constraint firstAttribute="height" constant="120" id="fOJ-B6-Du4"/>
@@ -77,7 +77,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foG-Jf-dmC" userLabel="⚙️">
                                 <rect key="frame" x="264" y="45" width="120" height="120"/>
-                                <accessibility key="accessibilityConfiguration" label="Jump Setting"/>
+                                <accessibility key="accessibilityConfiguration" label="Setting"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="gog-cX-Dmw"/>
                                     <constraint firstAttribute="width" constant="120" id="v0F-kK-vZq"/>
@@ -88,12 +88,12 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="𝗝𝘂𝗺𝗽𝗦𝗲𝘁𝘁𝗶𝗻𝗴:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bfQ-yk-8ew"/>
+                                    <action selector="S⃣etting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bfQ-yk-8ew"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="A⃣">
                                 <rect key="frame" x="263" y="165" width="120" height="120"/>
-                                <accessibility key="accessibilityConfiguration" label="Jump AppStore"/>
+                                <accessibility key="accessibilityConfiguration" label="AppStore link"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="LKx-h8-gu9"/>
                                     <constraint firstAttribute="width" constant="120" id="SnX-PQ-gYa"/>
@@ -169,22 +169,22 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFC-sz-BSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="JT0-9W-Dfh">
+                <tapGestureRecognizer id="JT0-9W-Dfh" userLabel="👆🏼゛">
                     <connections>
-                        <action selector="Tap:" destination="IjJ-xR-P41" id="En5-Og-7qc"/>
+                        <action selector="T⃣ap:" destination="IjJ-xR-P41" id="En5-Og-7qc"/>
                     </connections>
                 </tapGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="YPd-mr-dWd">
+                <swipeGestureRecognizer direction="right" id="YPd-mr-dWd" userLabel="三三👆">
                     <connections>
                         <action selector="G⃣oToPreviousPage" destination="IjJ-xR-P41" id="FUY-ur-azX"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="m3i-fT-Cye">
+                <swipeGestureRecognizer direction="left" id="m3i-fT-Cye" userLabel="👆三三">
                     <connections>
                         <action selector="G⃣oToNextPage" destination="IjJ-xR-P41" id="GSK-yV-ky1"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="nPK-qC-y9t"/>
+                <swipeGestureRecognizer direction="down" id="nPK-qC-y9t" userLabel="ミ👆🏼彡"/>
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="75.669642857142847"/>
         </scene>

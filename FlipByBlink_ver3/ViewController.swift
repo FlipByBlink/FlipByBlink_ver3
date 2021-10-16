@@ -6,7 +6,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     @IBOutlet weak var 📘: UIButton!
     
-    let 📘url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("𝗜𝗺𝗽𝗼𝗿𝘁𝗲𝗱.pdf")
+    let 📘url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("I⃣mported.pdf")
     let 📄url = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
     let 🌃url = Bundle.main.url(forResource: "🌃", withExtension: "pdf")!
     
@@ -38,7 +38,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     
     // ⚙️
-    @IBAction func 𝗝𝘂𝗺𝗽𝗦𝗲𝘁𝘁𝗶𝗻𝗴(_ sender: Any) {
+    @IBAction func S⃣etting(_ sender: Any) {
         let 📍 = URL(string: UIApplication.openSettingsURLString)!
         UIApplication.shared.open(📍)
     }
