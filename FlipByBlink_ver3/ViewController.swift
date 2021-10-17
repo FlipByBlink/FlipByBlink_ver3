@@ -6,8 +6,8 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     @IBOutlet weak var 📘: UIButton!
     
-    let 📘url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("🄸mported.pdf")
-    let 📄url = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
+    let 🄸mportedBook = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("🄸mported.pdf")
+    let 📄 = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
     let 🄿reset = Bundle.main.url(forResource: "🄿reset", withExtension: "pdf")!
     
     let 💾 = FileManager.default
@@ -15,8 +15,8 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if 💾.fileExists(atPath: 📘url.path) {
-            🅃humbnail(📘url)
+        if 💾.fileExists(atPath: 🄸mportedBook.path) {
+            🅃humbnail(🄸mportedBook)
         }else{
             🅃humbnail(🄿reset)
         }
@@ -62,12 +62,12 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     func 🅂tore(_ 📍:URL){
-        if 💾.fileExists(atPath: 📘url.path){
-            do{ try 💾.removeItem(at: 📘url) } catch { print("🚨") }
+        if 💾.fileExists(atPath: 🄸mportedBook.path){
+            do{ try 💾.removeItem(at: 🄸mportedBook) } catch { print("🚨") }
         }
-        do{ try 💾.copyItem(at: 📍, to: 📘url) } catch { print("🚨") }
+        do{ try 💾.copyItem(at: 📍, to: 🄸mportedBook) } catch { print("🚨") }
         UserDefaults.standard.set(0, forKey: "🔖")
-        🅃humbnail(📘url)
+        🅃humbnail(🄸mportedBook)
     }
     
     
@@ -75,14 +75,14 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let 🎮 = segue.destination as! 🄱ook_ViewController
         if (segue.identifier == "OpenBookSegue") {
-            if 💾.fileExists(atPath: 📘url.path) {
-                🎮.🏷 = 📘url
+            if 💾.fileExists(atPath: 🄸mportedBook.path) {
+                🎮.🏷 = 🄸mportedBook
                 🎮.modalPresentationStyle = .fullScreen
             }else{
                 🎮.🏷 = 🄿reset
             }
         }else{
-            🎮.🏷 = 📄url
+            🎮.🏷 = 📄
         }
     }
     
