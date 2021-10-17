@@ -59,9 +59,9 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     func 🅂tore(_ 📍:URL){
         if 💾.fileExists(atPath: 🄸mportedBook.path){
-            do{ try 💾.removeItem(at: 🄸mportedBook) } catch { print("🚨") }
+            try! 💾.removeItem(at: 🄸mportedBook)
         }
-        do{ try 💾.copyItem(at: 📍, to: 🄸mportedBook) } catch { print("🚨") }
+        try! 💾.copyItem(at: 📍, to: 🄸mportedBook)
         UserDefaults.standard.set(0, forKey: "🔖")
         🅃humbnail()
     }
