@@ -7,19 +7,15 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     @IBOutlet weak var 📘: UIButton!
     
     let 🄸mportedBook = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("🄸mported.pdf")
-    let 📄 = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
     let 🄿reset = Bundle.main.url(forResource: "🄿reset", withExtension: "pdf")!
+    let 📄 = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
     
     let 💾 = FileManager.default
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if 💾.fileExists(atPath: 🄸mportedBook.path) {
-            🅃humbnail(🄸mportedBook)
-        }else{
-            🅃humbnail(🄿reset)
-        }
+        🅃humbnail()
         
         📘.layer.shadowColor = UIColor.gray.cgColor
         📘.layer.shadowOpacity = 0.8
@@ -67,7 +63,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         }
         do{ try 💾.copyItem(at: 📍, to: 🄸mportedBook) } catch { print("🚨") }
         UserDefaults.standard.set(0, forKey: "🔖")
-        🅃humbnail(🄸mportedBook)
+        🅃humbnail()
     }
     
     
@@ -87,11 +83,16 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     
-    func 🅃humbnail(_ 📍:URL){
-        if let 📓 = PDFDocument(url: 📍){
-            📘.setImage(📓.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
-            📘.imageView?.contentMode = .scaleAspectFit
+    func 🅃humbnail(){
+        var 📓:PDFDocument
+        if 💾.fileExists(atPath: 🄸mportedBook.path) {
+            📓 = PDFDocument(url: 🄸mportedBook)!
+        }else{
+            📓 = PDFDocument(url: 🄿reset)!
         }
+        
+        📘.setImage(📓.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
+        📘.imageView?.contentMode = .scaleAspectFit
     }
     
     
