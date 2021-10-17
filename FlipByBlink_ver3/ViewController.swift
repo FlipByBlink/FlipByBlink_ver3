@@ -70,7 +70,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     // 📘 OpenBook 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let 🎮 = segue.destination as! 🄱ook_ViewController
-        if (segue.identifier == "OpenBookSegue") {
+        if (segue.identifier == "🄾pen_Book") {
             if 💾.fileExists(atPath: 🄸mportedBook.path) {
                 🎮.🏷 = 🄸mportedBook
                 🎮.modalPresentationStyle = .fullScreen
@@ -89,7 +89,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             📓 = PDFDocument(url: 🄸mportedBook)!
         }else{
             📓 = PDFDocument(url: 🄿reset)!
-        }
+        }//FIXME: この辺もうすこし最適化できるかも
         
         📘.setImage(📓.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
         📘.imageView?.contentMode = .scaleAspectFit
