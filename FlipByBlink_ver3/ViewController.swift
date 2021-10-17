@@ -8,7 +8,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     let 📘url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("🄸mported.pdf")
     let 📄url = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
-    let 🌃url = Bundle.main.url(forResource: "🌃", withExtension: "pdf")!
+    let 🄿reset = Bundle.main.url(forResource: "🄿reset", withExtension: "pdf")!
     
     let 💾 = FileManager.default
     
@@ -18,7 +18,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         if 💾.fileExists(atPath: 📘url.path) {
             🅃humbnail(📘url)
         }else{
-            🅃humbnail(🌃url)
+            🅃humbnail(🄿reset)
         }
         
         📘.layer.shadowColor = UIColor.gray.cgColor
@@ -27,13 +27,12 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         📘.layer.shadowOffset = .zero
     }
     
-    // B B⃣ B⃝ B⃞ B⃤ 🄱 Ⓑ ⓑ 🅑 🅱 Ḃ Ḅ 𝗕 𝘽 𝐁 𝑩
-    // ᐅ ᐅ⃣ ᐅ⃞ ᐅ⃝ ᐅ⃤ ᐅ
+
     @IBAction func ᐅ⃣(_ sender: Any) {
         guard let 📍 = Bundle.main.url(forResource: "▶️", withExtension: "mp4") else { return }
         let 🎮 = AVPlayerViewController()
-        let 🎞 = AVPlayer(url: 📍)
-        🎮.player = 🎞
+        let 📺 = AVPlayer(url: 📍)
+        🎮.player = 📺
         self.present(🎮, animated: true)
     }
     
@@ -80,7 +79,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
                 🎮.🏷 = 📘url
                 🎮.modalPresentationStyle = .fullScreen
             }else{
-                🎮.🏷 = 🌃url
+                🎮.🏷 = 🄿reset
             }
         }else{
             🎮.🏷 = 📄url
