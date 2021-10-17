@@ -67,7 +67,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     
-    // 📘 OpenBook 
+    // 📘 Open book
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let 🎮 = segue.destination as! 🄱ook_ViewController
         if (segue.identifier == "🄾pen_Book") {
@@ -84,13 +84,12 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     
     func 🅃humbnail(){
-        var 📓:PDFDocument
+        let 📓:PDFDocument
         if 💾.fileExists(atPath: 🄸mportedBook.path) {
             📓 = PDFDocument(url: 🄸mportedBook)!
         }else{
             📓 = PDFDocument(url: 🄿reset)!
-        }//FIXME: この辺もうすこし最適化できるかも
-        
+        }
         📘.setImage(📓.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
         📘.imageView?.contentMode = .scaleAspectFit
     }
