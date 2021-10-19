@@ -70,7 +70,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     // 📘 Open book
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let 🎮 = segue.destination as! 🄱ook_ViewController
-        if (segue.identifier == "🄾pen_Book") {
+        if (segue.identifier == "🄾pen_book") {
             if 💾.fileExists(atPath: 🄸mportedBook.path) {
                 🎮.🏷 = 🄸mportedBook
                 🎮.modalPresentationStyle = .fullScreen
