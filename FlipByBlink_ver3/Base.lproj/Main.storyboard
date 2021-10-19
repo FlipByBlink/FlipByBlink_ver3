@@ -32,7 +32,7 @@
                                     <action selector="📁:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YoI-dm-SfH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="Open_book">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="📘">
                                 <rect key="frame" x="40" y="453" width="334" height="383"/>
                                 <accessibility key="accessibilityConfiguration" label="Open book"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
