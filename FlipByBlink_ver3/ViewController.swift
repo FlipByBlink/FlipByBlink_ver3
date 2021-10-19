@@ -36,8 +36,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         📘.setImage(📚.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
     }
     
-    
-    @IBAction func ᐅ⃣(_ sender: Any) {
+    @IBAction func ᐅ⃣() {
         guard let 📍 = Bundle.main.url(forResource: "▶️", withExtension: "mp4") else { return }
         let 🎮 = AVPlayerViewController()
         let 📺 = AVPlayer(url: 📍)
@@ -47,19 +46,19 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     
     // ⚙️
-    @IBAction func 🅂etting(_ sender: Any) {
+    @IBAction func 🅂etting() {
         let 📍 = URL(string: UIApplication.openSettingsURLString)!
         UIApplication.shared.open(📍)
     }
     
     
-    @IBAction func 🄰(_ sender: Any) {
+    @IBAction func 🄰() {
         let 📍 = URL(string: "https://apps.apple.com/jp/app/id1444571751")!
         UIApplication.shared.open(📍)
     }
     
     
-    @IBAction func 📁(_ sender: Any) {
+    @IBAction func 📁() {
         guard let 🏷 = UTType(filenameExtension: "pdf") else { return }
         let 🎮 = UIDocumentPickerViewController(forOpeningContentTypes: [🏷], asCopy: true)
         🎮.delegate = self

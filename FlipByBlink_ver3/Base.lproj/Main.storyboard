@@ -29,7 +29,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="60"/>
                                 </state>
                                 <connections>
-                                    <action selector="📁:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YoI-dm-SfH"/>
+                                    <action selector="📁" destination="BYZ-38-t0r" eventType="touchUpInside" id="s5n-UT-kHY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="📘">
@@ -72,7 +72,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="ᐅ⃣:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KTo-c4-yJw"/>
+                                    <action selector="ᐅ⃣" destination="BYZ-38-t0r" eventType="touchUpInside" id="456-tk-tab"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foG-Jf-dmC" userLabel="⚙️">
@@ -88,7 +88,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="🅂etting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bfQ-yk-8ew"/>
+                                    <action selector="🅂etting" destination="BYZ-38-t0r" eventType="touchUpInside" id="bgy-Lw-G3T"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="🄰">
@@ -104,7 +104,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="🄰:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b1w-yN-tjM"/>
+                                    <action selector="🄰" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mqx-1T-IYS"/>
                                 </connections>
                             </button>
                         </subviews>
