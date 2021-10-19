@@ -19,6 +19,8 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         📘.layer.shadowOpacity = 0.8
         📘.layer.shadowRadius = 4
         📘.layer.shadowOffset = .zero
+        
+        📘.imageView?.contentMode = .scaleAspectFit
     }
     
 
@@ -86,7 +88,6 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             📚 = PDFDocument(url: 📍)
         }
         📘.setImage(📚.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
-        📘.imageView?.contentMode = .scaleAspectFit
     }
     
     
