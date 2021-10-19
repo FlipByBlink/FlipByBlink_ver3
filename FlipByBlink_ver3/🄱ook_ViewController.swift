@@ -41,7 +41,7 @@ class 🄱ook_ViewController:UIViewController{
         📖.goToPreviousPage(nil)
     }
     
-    @IBAction func T⃣ap(_ sender: UITapGestureRecognizer) {
+    @IBAction func 👆゛(_ sender: UITapGestureRecognizer) {
         if sender.location(in: view).x > view.center.x{
             🄶oToNextPage()
         }else{

@@ -170,7 +170,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFC-sz-BSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="JT0-9W-Dfh" userLabel="👆゛">
                     <connections>
-                        <action selector="T⃣ap:" destination="IjJ-xR-P41" id="En5-Og-7qc"/>
+                        <action selector="👆゛:" destination="IjJ-xR-P41" id="En5-Og-7qc"/>
                     </connections>
                 </tapGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="YPd-mr-dWd" userLabel="三三👆">
