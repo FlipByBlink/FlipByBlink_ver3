@@ -54,7 +54,9 @@ class 🄱ook_ViewController:UIViewController{
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        📖.autoScales = true
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+            self.📖.sizeToFit()
+        }
     }
     
     override var prefersHomeIndicatorAutoHidden: Bool {
