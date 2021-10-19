@@ -13,6 +13,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         
         let 📍 = Bundle.main.url(forResource: "🄿reset", withExtension: "pdf")!
         📚 = PDFDocument(url: 📍)!
+        
         🅃humbnail()
         
         📘.layer.shadowColor = UIColor.gray.cgColor
@@ -23,7 +24,17 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         📘.imageView?.contentMode = .scaleAspectFit
     }
     
-
+    
+    func 🅃humbnail(){
+        let 💾 = FileManager.default
+        let 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("🄸mported.pdf")
+        if 💾.fileExists(atPath: 📍.path){
+            📚 = PDFDocument(url: 📍)
+        }
+        📘.setImage(📚.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
+    }
+    
+    
     @IBAction func ᐅ⃣(_ sender: Any) {
         guard let 📍 = Bundle.main.url(forResource: "▶️", withExtension: "mp4") else { return }
         let 🎮 = AVPlayerViewController()
@@ -69,7 +80,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     
-    // 📘 Open book
+    // 📘 "Open book"
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let 🎮 = segue.destination as! 🄱ook_ViewController
         if (segue.identifier == "🄾pen_book") {
@@ -78,16 +89,6 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             let 📍 = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
             🎮.📚 = PDFDocument(url: 📍)
         }
-    }
-    
-    
-    func 🅃humbnail(){
-        let 💾 = FileManager.default
-        let 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("🄸mported.pdf")
-        if 💾.fileExists(atPath: 📍.path){
-            📚 = PDFDocument(url: 📍)
-        }
-        📘.setImage(📚.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
     }
     
     
