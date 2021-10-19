@@ -2,11 +2,14 @@ import UIKit
 import PDFKit
 import ARKit
 
+
 class 🄱ook_ViewController:UIViewController{
+    
     
     @IBOutlet weak var 📖: PDFView!
     
     var 📚:PDFDocument!
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -18,6 +21,7 @@ class 🄱ook_ViewController:UIViewController{
         📖.accessibilityElementsHidden = true
         
         📖.document = 📚
+        
         if 📚.documentURL?.lastPathComponent == "🄸mported.pdf"{
             if let 🔖 = 📚.page(at: UserDefaults.standard.integer(forKey: "🔖") - 1){
                 📖.go(to: 🔖)
@@ -26,6 +30,7 @@ class 🄱ook_ViewController:UIViewController{
         
         UIApplication.shared.isIdleTimerDisabled = true
     }
+    
     
     @IBAction func 🄶oToNextPage() {
         if 📖.canGoToNextPage == false{
@@ -41,6 +46,7 @@ class 🄱ook_ViewController:UIViewController{
         📖.goToPreviousPage(nil)
     }
     
+    
     @IBAction func 👆゛(_ sender: UITapGestureRecognizer) {
         if sender.location(in: view).x > view.center.x{
             🄶oToNextPage()
@@ -48,20 +54,17 @@ class 🄱ook_ViewController:UIViewController{
             🄶oToPreviousPage()
         }
     }
+    
+    
     @IBAction func ミ👆彡(_ sender: Any) {
         self.dismiss(animated: true)
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
-            self.📖.sizeToFit()
-        }
-    }
     
     override var prefersHomeIndicatorAutoHidden: Bool {
         return true
     }
+    
     
     override var prefersStatusBarHidden: Bool{
         return true
@@ -71,9 +74,11 @@ class 🄱ook_ViewController:UIViewController{
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if 📚.documentURL?.lastPathComponent == "🄸mported.pdf"{
-            UserDefaults.standard.set(📖.currentPage!.pageRef!.pageNumber, forKey: "🔖")
+            let 🔖 = 📖.currentPage!.pageRef!.pageNumber
+            UserDefaults.standard.set(🔖, forKey: "🔖")
         }
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -84,5 +89,14 @@ class 🄱ook_ViewController:UIViewController{
             present(💬, animated: true)
         }
     }
+    
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+            self.📖.sizeToFit()
+        }
+    }
+    
     
 }
