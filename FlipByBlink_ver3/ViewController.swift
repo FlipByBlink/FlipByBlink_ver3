@@ -6,15 +6,13 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     @IBOutlet weak var 📘: UIButton!
     
-    let 🄸mportedBook = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("🄸mported.pdf")
-    let 🄿reset = Bundle.main.url(forResource: "🄿reset", withExtension: "pdf")!
-    let 📄 = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
+    var 📚:PDFDocument!
     
-    let 💾 = FileManager.default
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        let 📍 = Bundle.main.url(forResource: "🄿reset", withExtension: "pdf")!
+        📚 = PDFDocument(url: 📍)!
         🅃humbnail()
         
         📘.layer.shadowColor = UIColor.gray.cgColor
@@ -47,8 +45,8 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     
     @IBAction func 📁(_ sender: Any) {
-        guard let 📚 = UTType(filenameExtension: "pdf") else { return }
-        let 🎮 = UIDocumentPickerViewController(forOpeningContentTypes: [📚], asCopy: true)
+        guard let PDF = UTType(filenameExtension: "pdf") else { return }
+        let 🎮 = UIDocumentPickerViewController(forOpeningContentTypes: [PDF], asCopy: true)
         🎮.delegate = self
         self.present(🎮, animated: true)
     }
@@ -57,11 +55,13 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         🅂tore(urls.first!)
     }
     
-    func 🅂tore(_ 📍:URL){
-        if 💾.fileExists(atPath: 🄸mportedBook.path){
-            try! 💾.removeItem(at: 🄸mportedBook)
+    func 🅂tore(_ 📦:URL){
+        let 💾 = FileManager.default
+        let 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("🄸mported.pdf")
+        if 💾.fileExists(atPath: 📍.path){
+            try! 💾.removeItem(at: 📍)
         }
-        try! 💾.copyItem(at: 📍, to: 🄸mportedBook)
+        try! 💾.copyItem(at: 📦, to: 📍)
         UserDefaults.standard.set(0, forKey: "🔖")
         🅃humbnail()
     }
@@ -71,26 +71,21 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let 🎮 = segue.destination as! 🄱ook_ViewController
         if (segue.identifier == "🄾pen_book") {
-            if 💾.fileExists(atPath: 🄸mportedBook.path) {
-                🎮.🏷 = 🄸mportedBook
-                🎮.modalPresentationStyle = .fullScreen
-            }else{
-                🎮.🏷 = 🄿reset
-            }
+            🎮.📚 = 📚
         }else{
-            🎮.🏷 = 📄
+            let 📍 = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
+            🎮.📚 = PDFDocument(url: 📍)
         }
     }
     
     
     func 🅃humbnail(){
-        let 📓:PDFDocument
-        if 💾.fileExists(atPath: 🄸mportedBook.path) {
-            📓 = PDFDocument(url: 🄸mportedBook)!
-        }else{
-            📓 = PDFDocument(url: 🄿reset)!
+        let 💾 = FileManager.default
+        let 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("🄸mported.pdf")
+        if 💾.fileExists(atPath: 📍.path){
+            📚 = PDFDocument(url: 📍)
         }
-        📘.setImage(📓.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
+        📘.setImage(📚.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
         📘.imageView?.contentMode = .scaleAspectFit
     }
     

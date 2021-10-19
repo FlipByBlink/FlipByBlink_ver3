@@ -6,7 +6,7 @@ class 🄱ook_ViewController:UIViewController{
     
     @IBOutlet weak var 📖: PDFView!
     
-    var 🏷:URL!
+    var 📚:PDFDocument!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -17,12 +17,10 @@ class 🄱ook_ViewController:UIViewController{
         📖.isUserInteractionEnabled = false
         📖.accessibilityElementsHidden = true
         
-        if let 📓 = PDFDocument(url: 🏷) {
-            📖.document = 📓
-            if 🏷.lastPathComponent == "🄸mported.pdf"{
-                if let 🔖 = 📓.page(at: UserDefaults.standard.integer(forKey: "🔖") - 1){
-                    📖.go(to: 🔖)
-                }
+        📖.document = 📚
+        if 📚.documentURL?.lastPathComponent == "🄸mported.pdf"{
+            if let 🔖 = 📚.page(at: UserDefaults.standard.integer(forKey: "🔖") - 1){
+                📖.go(to: 🔖)
             }
         }
         
@@ -70,7 +68,7 @@ class 🄱ook_ViewController:UIViewController{
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if 🏷.lastPathComponent == "🄸mported.pdf"{
+        if 📚.documentURL?.lastPathComponent == "🄸mported.pdf"{
             UserDefaults.standard.set(📖.currentPage!.pageRef!.pageNumber, forKey: "🔖")
         }
     }
