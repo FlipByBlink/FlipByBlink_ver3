@@ -58,8 +58,8 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     
     @IBAction func 📁(_ sender: Any) {
-        guard let PDF = UTType(filenameExtension: "pdf") else { return }
-        let 🎮 = UIDocumentPickerViewController(forOpeningContentTypes: [PDF], asCopy: true)
+        guard let 🏷 = UTType(filenameExtension: "pdf") else { return }
+        let 🎮 = UIDocumentPickerViewController(forOpeningContentTypes: [🏷], asCopy: true)
         🎮.delegate = self
         self.present(🎮, animated: true)
     }
