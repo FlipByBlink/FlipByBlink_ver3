@@ -149,7 +149,6 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gsE-Ko-KT3"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="width" secondItem="rYi-nH-sce" secondAttribute="width" id="3Kc-GZ-FQH"/>
@@ -169,7 +168,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFC-sz-BSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="JT0-9W-Dfh" userLabel="👆🏼゛">
+                <tapGestureRecognizer id="JT0-9W-Dfh" userLabel="👆゛">
                     <connections>
                         <action selector="T⃣ap:" destination="IjJ-xR-P41" id="En5-Og-7qc"/>
                     </connections>
@@ -184,7 +183,11 @@
                         <action selector="🄶oToNextPage" destination="IjJ-xR-P41" id="GSK-yV-ky1"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="nPK-qC-y9t" userLabel="ミ👆🏼彡"/>
+                <swipeGestureRecognizer direction="down" id="nPK-qC-y9t" userLabel="ミ👆彡">
+                    <connections>
+                        <action selector="ミ👆彡:" destination="IjJ-xR-P41" id="5P1-3J-dA0"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="75.669642857142847"/>
         </scene>

@@ -50,6 +50,9 @@ class 🄱ook_ViewController:UIViewController{
             🄶oToPreviousPage()
         }
     }
+    @IBAction func ミ👆彡(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
