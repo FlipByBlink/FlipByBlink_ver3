@@ -83,7 +83,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     // 📘 "Open book"
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let 🎮 = segue.destination as! 🄱ook_ViewController
-        if (segue.identifier == "🄾pen_book") {
+        if (segue.identifier == "📘") {
             🎮.📚 = 📚
         }else{
             let 📍 = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
