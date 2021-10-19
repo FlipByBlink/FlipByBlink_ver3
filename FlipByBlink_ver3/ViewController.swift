@@ -33,11 +33,12 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         if 💾.fileExists(atPath: 📍.path){
             📚 = PDFDocument(url: 📍)
         }
-        📘.setImage(📚.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .artBox), for: .normal)
+        let 🖼 = 📚.page(at: 0)?.thumbnail(of: .init(width: 3000, height: 3000), for: .mediaBox)
+        📘.setImage(🖼, for: .normal)
     }
     
     @IBAction func ᐅ⃣() {
-        guard let 📍 = Bundle.main.url(forResource: "▶️", withExtension: "mp4") else { return }
+        let 📍 = Bundle.main.url(forResource: "▶️", withExtension: "mp4")!
         let 🎮 = AVPlayerViewController()
         let 📺 = AVPlayer(url: 📍)
         🎮.player = 📺
@@ -59,7 +60,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     
     @IBAction func 📁() {
-        guard let 🏷 = UTType(filenameExtension: "pdf") else { return }
+        let 🏷 = UTType(filenameExtension: "pdf")!
         let 🎮 = UIDocumentPickerViewController(forOpeningContentTypes: [🏷], asCopy: true)
         🎮.delegate = self
         self.present(🎮, animated: true)
