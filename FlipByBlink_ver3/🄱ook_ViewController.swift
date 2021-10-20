@@ -22,8 +22,8 @@ class 🄱ook_ViewController:UIViewController{
         
         📖.document = 📚
         
-        if UserDefaults.standard.bool(forKey: "Logo"){
-            🄿R_Logo.isHidden = false
+        if UserDefaults.standard.bool(forKey: "🪧"){
+            🪧.isHidden = false
         }
         
         if 📚.documentURL?.lastPathComponent == "🄸mported.pdf"{
@@ -130,6 +130,6 @@ class 🄱ook_ViewController:UIViewController{
         }
     }
     
-    @IBOutlet weak var 🄿R_Logo: UIImageView!
+    @IBOutlet weak var 🪧: UIImageView!
     
 }
