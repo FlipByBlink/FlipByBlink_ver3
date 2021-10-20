@@ -36,8 +36,9 @@
                                 <rect key="frame" x="40" y="453" width="334" height="383"/>
                                 <accessibility key="accessibilityConfiguration" label="Open book"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal">
+                                <state key="normal" image="book.closed.fill" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="200"/>
                                 </state>
                                 <connections>
                                     <segue destination="IjJ-xR-P41" kind="presentation" identifier="📘" modalPresentationStyle="fullScreen" id="2D6-ez-ffp"/>
@@ -185,16 +186,16 @@
                         <action selector="三三👆:" destination="IjJ-xR-P41" id="ywO-3G-dfw"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="nPK-qC-y9t" userLabel="ミ👆彡">
-                    <connections>
-                        <action selector="ミ👆彡:" destination="IjJ-xR-P41" id="5P1-3J-dA0"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <pinchGestureRecognizer id="EaB-8y-eM4" userLabel="氵👌">
                     <connections>
                         <action selector="氵👌:" destination="IjJ-xR-P41" id="VL5-gq-hfG"/>
                     </connections>
                 </pinchGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="nPK-qC-y9t" userLabel="ミ👆彡">
+                    <connections>
+                        <action selector="ミ👆彡:" destination="IjJ-xR-P41" id="5P1-3J-dA0"/>
+                    </connections>
+                </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="up" id="7Ax-W5-ZQm" userLabel="彡👆ミ">
                     <connections>
                         <action selector="彡👆ミ:" destination="IjJ-xR-P41" id="Xw1-uY-Ypd"/>
@@ -209,6 +210,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="a.square" catalog="system" width="128" height="114"/>
+        <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="folder" catalog="system" width="128" height="97"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
