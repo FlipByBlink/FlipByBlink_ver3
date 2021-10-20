@@ -22,6 +22,10 @@ class 🄱ook_ViewController:UIViewController{
         
         📖.document = 📚
         
+        if UserDefaults.standard.bool(forKey: "🪧"){
+            🪧.isHidden = false
+        }
+        
         if 📚.documentURL?.lastPathComponent == "🄸mported.pdf"{
             if let 🔖 = 📚.page(at: UserDefaults.standard.integer(forKey: "🔖")){
                 📖.go(to: 🔖)
@@ -126,5 +130,6 @@ class 🄱ook_ViewController:UIViewController{
         }
     }
     
+    @IBOutlet weak var 🪧: UIImageView!
     
 }
