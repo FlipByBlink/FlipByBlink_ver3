@@ -22,6 +22,13 @@ class 🄱ook_ViewController:UIViewController{
         
         📖.document = 📚
         
+        if UserDefaults.standard.bool(forKey: "Logo"){
+            let a = UIImage(named: "PR_Logo")
+            let b = UIImageView(image: a)
+            b.frame = .init(x: 0, y: 50, width: 400, height: 200)
+            view.addSubview(b)
+        }
+        
         if 📚.documentURL?.lastPathComponent == "🄸mported.pdf"{
             if let 🔖 = 📚.page(at: UserDefaults.standard.integer(forKey: "🔖")){
                 📖.go(to: 🔖)
