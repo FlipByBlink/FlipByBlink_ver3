@@ -58,6 +58,14 @@ class 🄱ook_ViewController:UIViewController{
         📖.goToPreviousPage(nil)
     }
     
+    @IBAction func 氵👌(_ sender: UIPinchGestureRecognizer) {
+        if sender.velocity > 0 {
+            🄶oToNextPage()
+        }else{
+            📖.goToPreviousPage(nil)
+        }
+    }
+    
     @IBAction func ミ👆彡(_ sender: Any) {
         self.dismiss(animated: true)
     }

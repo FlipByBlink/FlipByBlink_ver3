@@ -161,6 +161,7 @@
                             <outletCollection property="gestureRecognizers" destination="m3i-fT-Cye" appends="YES" id="Yg0-ZU-jJL"/>
                             <outletCollection property="gestureRecognizers" destination="JT0-9W-Dfh" appends="YES" id="89Z-iY-tm8"/>
                             <outletCollection property="gestureRecognizers" destination="nPK-qC-y9t" appends="YES" id="NvU-zR-FvZ"/>
+                            <outletCollection property="gestureRecognizers" destination="EaB-8y-eM4" appends="YES" id="XyV-qC-TyJ"/>
                         </connections>
                     </view>
                     <connections>
@@ -188,6 +189,11 @@
                         <action selector="ミ👆彡:" destination="IjJ-xR-P41" id="5P1-3J-dA0"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <pinchGestureRecognizer id="EaB-8y-eM4" userLabel="氵👌">
+                    <connections>
+                        <action selector="氵👌:" destination="IjJ-xR-P41" id="VL5-gq-hfG"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="75.669642857142847"/>
         </scene>
