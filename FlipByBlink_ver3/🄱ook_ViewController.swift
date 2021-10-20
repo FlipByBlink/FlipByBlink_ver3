@@ -73,7 +73,7 @@ class 🄱ook_ViewController:UIViewController{
     }
     
     @IBAction func 彡👆ミ(_ sender: Any) {
-        let 💬 = "1 ~ " + 📚.pageCount.description
+        let 💬 = "1 〜 " + 📚.pageCount.description
         let 🗣 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
         🗣.addTextField { 📋 in
             📋.keyboardType = .numberPad
