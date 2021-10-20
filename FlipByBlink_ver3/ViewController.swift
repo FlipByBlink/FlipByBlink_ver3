@@ -29,7 +29,8 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     func 🅃humbnail(){
         let 💾 = FileManager.default
-        let 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("🄸mported.pdf")
+        var 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        📍.appendPathComponent("🄸mported.pdf")
         if 💾.fileExists(atPath: 📍.path){
             📚 = PDFDocument(url: 📍)
         }
@@ -73,7 +74,8 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     func 🅂tore(_ 📦:URL){
         let 💾 = FileManager.default
-        let 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("🄸mported.pdf")
+        var 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        📍.appendPathComponent("🄸mported.pdf")
         if 💾.fileExists(atPath: 📍.path){
             try! 💾.removeItem(at: 📍)
         }
