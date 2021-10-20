@@ -23,7 +23,7 @@ class 🄱ook_ViewController:UIViewController{
         📖.document = 📚
         
         if 📚.documentURL?.lastPathComponent == "🄸mported.pdf"{
-            if let 🔖 = 📚.page(at: UserDefaults.standard.integer(forKey: "🔖") - 1){
+            if let 🔖 = 📚.page(at: UserDefaults.standard.integer(forKey: "🔖")){
                 📖.go(to: 🔖)
             }
         }
@@ -81,7 +81,7 @@ class 🄱ook_ViewController:UIViewController{
         }
         🗣.addAction(UIAlertAction(title: "Go!", style: .default){ _ in
             guard let 📝 = Int((🗣.textFields?.first?.text)!) else { return }
-            guard let 🔖 = self.📖.document?.page(at: 📝) else { return }
+            guard let 🔖 = self.📖.document?.page(at: 📝 - 1 ) else { return }
             self.📖.go(to: 🔖)
         })
         🗣.addAction(UIAlertAction(title: "cancel", style: .cancel))
@@ -102,7 +102,7 @@ class 🄱ook_ViewController:UIViewController{
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if 📚.documentURL?.lastPathComponent == "🄸mported.pdf"{
-            let 🔖 = 📖.currentPage!.pageRef!.pageNumber
+            let 🔖 = 📖.currentPage!.pageRef!.pageNumber - 1
             UserDefaults.standard.set(🔖, forKey: "🔖")
         }
     }
