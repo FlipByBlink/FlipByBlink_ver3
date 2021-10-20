@@ -42,19 +42,21 @@ class 🄱ook_ViewController:UIViewController{
     }
     
     
-    @IBAction func 🄶oToPreviousPage() {
-        📖.goToPreviousPage(nil)
-    }
-    
-    
     @IBAction func 👆゛(_ sender: UITapGestureRecognizer) {
         if sender.location(in: view).x > view.center.x{
             🄶oToNextPage()
         }else{
-            🄶oToPreviousPage()
+            📖.goToPreviousPage(nil)
         }
     }
     
+    @IBAction func 👆三三(_ sender: Any) {
+        🄶oToNextPage()
+    }
+    
+    @IBAction func 三三👆(_ sender: Any) {
+        📖.goToPreviousPage(nil)
+    }
     
     @IBAction func ミ👆彡(_ sender: Any) {
         self.dismiss(animated: true)

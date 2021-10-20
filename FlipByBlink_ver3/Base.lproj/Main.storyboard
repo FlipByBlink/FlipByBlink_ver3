@@ -173,14 +173,14 @@
                         <action selector="👆゛:" destination="IjJ-xR-P41" id="En5-Og-7qc"/>
                     </connections>
                 </tapGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="YPd-mr-dWd" userLabel="三三👆">
-                    <connections>
-                        <action selector="🄶oToPreviousPage" destination="IjJ-xR-P41" id="FUY-ur-azX"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="m3i-fT-Cye" userLabel="👆三三">
                     <connections>
-                        <action selector="🄶oToNextPage" destination="IjJ-xR-P41" id="GSK-yV-ky1"/>
+                        <action selector="👆三三:" destination="IjJ-xR-P41" id="dKJ-L1-jo3"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="YPd-mr-dWd" userLabel="三三👆">
+                    <connections>
+                        <action selector="三三👆:" destination="IjJ-xR-P41" id="ywO-3G-dfw"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="down" id="nPK-qC-y9t" userLabel="ミ👆彡">
