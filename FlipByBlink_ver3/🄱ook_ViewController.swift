@@ -32,7 +32,7 @@ class 🄱ook_ViewController:UIViewController{
     }
     
     
-    @IBAction func 🄶oToNextPage() {
+    func 🄶oToNextPage() {
         if 📖.canGoToNextPage == false{
             let 🗣 = UIAlertController(title: "🎉 Finish!", message: nil, preferredStyle: .alert)
             present(🗣, animated: true)
