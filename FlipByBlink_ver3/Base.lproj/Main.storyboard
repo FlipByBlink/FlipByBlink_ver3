@@ -219,7 +219,7 @@
         <segue reference="MG5-0J-yhC"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="PR_Logo" width="300" height="300"/>
+        <image name="PR_Logo" width="200" height="200"/>
         <image name="a.square" catalog="system" width="128" height="114"/>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
