@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="📘">
-                                <rect key="frame" x="40" y="453" width="334" height="383"/>
+                                <rect key="frame" x="50" y="453" width="314" height="383"/>
                                 <accessibility key="accessibilityConfiguration" label="Open book"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="book.closed.fill" catalog="system">
@@ -113,8 +113,8 @@
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Jjx-C8-s6t" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="EU0-Iw-6KX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xqj-zg-dTH" secondAttribute="trailing" constant="40" id="Hqz-KG-U8o"/>
-                            <constraint firstItem="Xqj-zg-dTH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="I8K-tZ-ih8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xqj-zg-dTH" secondAttribute="trailing" constant="50" id="Hqz-KG-U8o"/>
+                            <constraint firstItem="Xqj-zg-dTH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="I8K-tZ-ih8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TBA-gG-LHE" secondAttribute="trailing" constant="31" id="Mj4-tv-ZSg"/>
                             <constraint firstItem="fss-gx-m0J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="RXc-eY-x16"/>
                             <constraint firstAttribute="bottom" secondItem="Xqj-zg-dTH" secondAttribute="bottom" constant="60" id="Zqy-pM-Iml"/>
@@ -149,7 +149,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="🪧" translatesAutoresizingMaskIntoConstraints="NO" id="mZk-e0-0Gm" userLabel="🪧">
-                                <rect key="frame" x="0.0" y="642" width="200" height="200"/>
+                                <rect key="frame" x="-10" y="652" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="GW2-R6-Etf"/>
                                     <constraint firstAttribute="height" constant="200" id="Tfr-Fl-cJq"/>
@@ -160,8 +160,8 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="width" secondItem="rYi-nH-sce" secondAttribute="width" id="3Kc-GZ-FQH"/>
-                            <constraint firstItem="mZk-e0-0Gm" firstAttribute="leading" secondItem="rYi-nH-sce" secondAttribute="leading" id="XMU-Xk-aE3"/>
-                            <constraint firstAttribute="bottom" secondItem="mZk-e0-0Gm" secondAttribute="bottom" id="mO8-UL-rrl"/>
+                            <constraint firstItem="mZk-e0-0Gm" firstAttribute="leading" secondItem="rYi-nH-sce" secondAttribute="leading" constant="-10" id="XMU-Xk-aE3"/>
+                            <constraint firstAttribute="bottom" secondItem="mZk-e0-0Gm" secondAttribute="bottom" constant="-10" id="mO8-UL-rrl"/>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="centerX" secondItem="rYi-nH-sce" secondAttribute="centerX" id="r0B-9N-x1c"/>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="centerY" secondItem="rYi-nH-sce" secondAttribute="centerY" id="slM-cy-tsg"/>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="height" secondItem="rYi-nH-sce" secondAttribute="height" id="tw8-CL-JdV"/>
