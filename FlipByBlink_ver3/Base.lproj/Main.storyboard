@@ -17,32 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-C8-s6t" userLabel="ImportBook">
-                                <rect key="frame" x="147" y="333" width="120" height="120"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-C8-s6t" userLabel="📁">
+                                <rect key="frame" x="137" y="313" width="140" height="140"/>
+                                <accessibility key="accessibilityConfiguration" label="Import book"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="BOl-uS-8R9"/>
-                                    <constraint firstAttribute="width" constant="120" id="Zl9-9c-RDS"/>
+                                    <constraint firstAttribute="height" constant="140" id="BOl-uS-8R9"/>
+                                    <constraint firstAttribute="width" constant="140" id="Zl9-9c-RDS"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="folder" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="60"/>
                                 </state>
                                 <connections>
-                                    <action selector="ImportBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YoI-dm-SfH"/>
+                                    <action selector="📁" destination="BYZ-38-t0r" eventType="touchUpInside" id="s5n-UT-kHY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="OpenBook">
-                                <rect key="frame" x="0.0" y="453" width="414" height="409"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="📘">
+                                <rect key="frame" x="40" y="453" width="334" height="383"/>
+                                <accessibility key="accessibilityConfiguration" label="Open book"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="OpenBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4wb-34-9R4"/>
+                                    <segue destination="IjJ-xR-P41" kind="presentation" identifier="📘" modalPresentationStyle="fullScreen" id="2D6-ez-ffp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="ReadDocument">
-                                <rect key="frame" x="33" y="44" width="120" height="120"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="📄">
+                                <rect key="frame" x="33" y="54" width="120" height="120"/>
+                                <accessibility key="accessibilityConfiguration" label="Document"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="prH-ik-hV5"/>
                                     <constraint firstAttribute="height" constant="120" id="zr1-BI-Jrw"/>
@@ -53,11 +56,12 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="ReadDocument:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k2y-Mt-2g9"/>
+                                    <segue destination="IjJ-xR-P41" kind="presentation" id="MG5-0J-yhC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-gx-m0J" userLabel="PlayVideo">
-                                <rect key="frame" x="30" y="164" width="120" height="120"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-gx-m0J" userLabel="ᐅ⃣">
+                                <rect key="frame" x="30" y="174" width="120" height="120"/>
+                                <accessibility key="accessibilityConfiguration" label="Video"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="5qu-5W-8jv"/>
                                     <constraint firstAttribute="height" constant="120" id="fOJ-B6-Du4"/>
@@ -68,11 +72,12 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="PlayVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KTo-c4-yJw"/>
+                                    <action selector="ᐅ⃣" destination="BYZ-38-t0r" eventType="touchUpInside" id="456-tk-tab"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foG-Jf-dmC" userLabel="JumpSetting">
-                                <rect key="frame" x="264" y="45" width="120" height="120"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foG-Jf-dmC" userLabel="⚙️">
+                                <rect key="frame" x="264" y="54" width="120" height="120"/>
+                                <accessibility key="accessibilityConfiguration" label="Setting"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="gog-cX-Dmw"/>
                                     <constraint firstAttribute="width" constant="120" id="v0F-kK-vZq"/>
@@ -83,11 +88,12 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="JumpSetting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bfQ-yk-8ew"/>
+                                    <action selector="🅂etting" destination="BYZ-38-t0r" eventType="touchUpInside" id="bgy-Lw-G3T"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="JumpAppStore">
-                                <rect key="frame" x="263" y="165" width="120" height="120"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="🄰">
+                                <rect key="frame" x="263" y="174" width="120" height="120"/>
+                                <accessibility key="accessibilityConfiguration" label="AppStore link"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="LKx-h8-gu9"/>
                                     <constraint firstAttribute="width" constant="120" id="SnX-PQ-gYa"/>
@@ -98,7 +104,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="JumpAppStore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b1w-yN-tjM"/>
+                                    <action selector="🄰" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mqx-1T-IYS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -106,15 +112,15 @@
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Jjx-C8-s6t" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="EU0-Iw-6KX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xqj-zg-dTH" secondAttribute="trailing" id="Hqz-KG-U8o"/>
-                            <constraint firstItem="Xqj-zg-dTH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I8K-tZ-ih8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xqj-zg-dTH" secondAttribute="trailing" constant="40" id="Hqz-KG-U8o"/>
+                            <constraint firstItem="Xqj-zg-dTH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="I8K-tZ-ih8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TBA-gG-LHE" secondAttribute="trailing" constant="31" id="Mj4-tv-ZSg"/>
                             <constraint firstItem="fss-gx-m0J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="RXc-eY-x16"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xqj-zg-dTH" secondAttribute="bottom" id="Zqy-pM-Iml"/>
+                            <constraint firstAttribute="bottom" secondItem="Xqj-zg-dTH" secondAttribute="bottom" constant="60" id="Zqy-pM-Iml"/>
                             <constraint firstItem="pdT-1r-y2w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="hJq-g6-h0C"/>
-                            <constraint firstItem="pdT-1r-y2w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="j94-oU-Dlh"/>
+                            <constraint firstItem="pdT-1r-y2w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="j94-oU-Dlh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="foG-Jf-dmC" secondAttribute="trailing" constant="30" id="jkp-LK-Xd4"/>
-                            <constraint firstItem="foG-Jf-dmC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="1" id="llz-y4-CkK"/>
+                            <constraint firstItem="foG-Jf-dmC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="llz-y4-CkK"/>
                             <constraint firstItem="fss-gx-m0J" firstAttribute="top" secondItem="pdT-1r-y2w" secondAttribute="bottom" id="p4h-Zv-TkM"/>
                             <constraint firstItem="Xqj-zg-dTH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="rIG-tk-AgN"/>
                             <constraint firstItem="TBA-gG-LHE" firstAttribute="top" secondItem="foG-Jf-dmC" secondAttribute="bottom" id="x4I-g0-zQ3"/>
@@ -122,14 +128,85 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="📖" destination="Xqj-zg-dTH" id="MhU-Vk-u7L"/>
+                        <outlet property="📘" destination="Xqj-zg-dTH" id="MhU-Vk-u7L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="77"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="fjY-Rb-ag9">
+            <objects>
+                <viewController id="IjJ-xR-P41" customClass="🄱ook_ViewController" customModule="FlipByBlink_ver3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rYi-nH-sce">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ia4-iP-RyQ" customClass="PDFView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gsE-Ko-KT3"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Ia4-iP-RyQ" firstAttribute="width" secondItem="rYi-nH-sce" secondAttribute="width" id="3Kc-GZ-FQH"/>
+                            <constraint firstItem="Ia4-iP-RyQ" firstAttribute="centerX" secondItem="rYi-nH-sce" secondAttribute="centerX" id="r0B-9N-x1c"/>
+                            <constraint firstItem="Ia4-iP-RyQ" firstAttribute="centerY" secondItem="rYi-nH-sce" secondAttribute="centerY" id="slM-cy-tsg"/>
+                            <constraint firstItem="Ia4-iP-RyQ" firstAttribute="height" secondItem="rYi-nH-sce" secondAttribute="height" id="tw8-CL-JdV"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="YPd-mr-dWd" appends="YES" id="JG2-KR-Cvm"/>
+                            <outletCollection property="gestureRecognizers" destination="m3i-fT-Cye" appends="YES" id="Yg0-ZU-jJL"/>
+                            <outletCollection property="gestureRecognizers" destination="JT0-9W-Dfh" appends="YES" id="89Z-iY-tm8"/>
+                            <outletCollection property="gestureRecognizers" destination="nPK-qC-y9t" appends="YES" id="NvU-zR-FvZ"/>
+                            <outletCollection property="gestureRecognizers" destination="EaB-8y-eM4" appends="YES" id="XyV-qC-TyJ"/>
+                            <outletCollection property="gestureRecognizers" destination="7Ax-W5-ZQm" appends="YES" id="znI-8P-t4e"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="📖" destination="Ia4-iP-RyQ" id="irD-ua-aSI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QFC-sz-BSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="JT0-9W-Dfh" userLabel="👆゛">
+                    <connections>
+                        <action selector="👆゛:" destination="IjJ-xR-P41" id="En5-Og-7qc"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="m3i-fT-Cye" userLabel="👆三三">
+                    <connections>
+                        <action selector="👆三三:" destination="IjJ-xR-P41" id="dKJ-L1-jo3"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="YPd-mr-dWd" userLabel="三三👆">
+                    <connections>
+                        <action selector="三三👆:" destination="IjJ-xR-P41" id="ywO-3G-dfw"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="nPK-qC-y9t" userLabel="ミ👆彡">
+                    <connections>
+                        <action selector="ミ👆彡:" destination="IjJ-xR-P41" id="5P1-3J-dA0"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <pinchGestureRecognizer id="EaB-8y-eM4" userLabel="氵👌">
+                    <connections>
+                        <action selector="氵👌:" destination="IjJ-xR-P41" id="VL5-gq-hfG"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="7Ax-W5-ZQm" userLabel="彡👆ミ">
+                    <connections>
+                        <action selector="彡👆ミ:" destination="IjJ-xR-P41" id="Xw1-uY-Ypd"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1050.7246376811595" y="75.669642857142847"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="MG5-0J-yhC"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="a.square" catalog="system" width="128" height="114"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
@@ -141,6 +218,9 @@
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
