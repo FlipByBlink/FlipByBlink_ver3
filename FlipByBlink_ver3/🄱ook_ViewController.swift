@@ -11,8 +11,8 @@ class 🄱ook_ViewController:UIViewController{
     var 📚:PDFDocument!
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         📖.autoScales = true
         📖.displayMode = .singlePage
