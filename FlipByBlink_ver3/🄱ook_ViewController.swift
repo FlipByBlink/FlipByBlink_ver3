@@ -79,12 +79,12 @@ class 🄱ook_ViewController:UIViewController{
             📋.keyboardType = .numberPad
             📋.placeholder = "Page No."
         }
-        🗣.addAction(UIAlertAction(title: "Go!", style: .default){ _ in
+        🗣.addAction(UIAlertAction(title: "Jump", style: .default){ _ in
             guard let 📝 = Int((🗣.textFields?.first?.text)!) else { return }
             guard let 🔖 = self.📖.document?.page(at: 📝 - 1 ) else { return }
             self.📖.go(to: 🔖)
         })
-        🗣.addAction(UIAlertAction(title: "cancel", style: .cancel))
+        🗣.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         self.present(🗣, animated: true)
     }
     

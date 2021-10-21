@@ -34,7 +34,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         if 💾.fileExists(atPath: 📍.path){
             📚 = PDFDocument(url: 📍)
         }
-        let 🖼 = 📚.page(at: 0)?.thumbnail(of: .init(width: 3000, height: 3000), for: .mediaBox)
+        let 🖼 = 📚.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .mediaBox)
         📘.setImage(🖼, for: .normal)
     }
     
