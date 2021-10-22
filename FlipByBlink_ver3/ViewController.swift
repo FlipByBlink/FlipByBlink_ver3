@@ -5,37 +5,38 @@ import PDFKit
 class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     
-    @IBOutlet weak var 📘: UIButton!
+    @IBOutlet weak var 📘: UIButton!{
+        didSet{
+            📘.layer.shadowColor = UIColor.gray.cgColor
+            📘.layer.shadowOpacity = 0.8
+            📘.layer.shadowRadius = 4
+            📘.layer.shadowOffset = .zero
+            📘.imageView?.contentMode = .scaleAspectFit
+        }
+    }
     
-    var 📚:PDFDocument!
+    
+    var 📚:PDFDocument!{
+        didSet{
+            let 🔲 = CGSize(width: 2000, height: 2000)
+            let 🖼 = 📚.page(at: 0)?.thumbnail(of: 🔲, for: .mediaBox)
+            📘.setImage(🖼, for: .normal)
+        }
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let 📍 = Bundle.main.url(forResource: "🄿reset", withExtension: "pdf")!
-        📚 = PDFDocument(url: 📍)!
-        
-        🅃humbnail()
-        
-        📘.layer.shadowColor = UIColor.gray.cgColor
-        📘.layer.shadowOpacity = 0.8
-        📘.layer.shadowRadius = 4
-        📘.layer.shadowOffset = .zero
-        
-        📘.imageView?.contentMode = .scaleAspectFit
-    }
-    
-    
-    func 🅃humbnail(){
         let 💾 = FileManager.default
         var 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0]
         📍.appendPathComponent("🄸mported.pdf")
         if 💾.fileExists(atPath: 📍.path){
             📚 = PDFDocument(url: 📍)
+        }else{
+            📍 = Bundle.main.url(forResource: "🄿reset", withExtension: "pdf")!
+            📚 = PDFDocument(url: 📍)!
         }
-        let 🖼 = 📚.page(at: 0)?.thumbnail(of: .init(width: 2000, height: 2000), for: .mediaBox)
-        📘.setImage(🖼, for: .normal)
     }
     
     
@@ -81,11 +82,11 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         }
         try! 💾.copyItem(at: 📦, to: 📍)
         UserDefaults.standard.set(0, forKey: "🔖")
-        🅃humbnail()
+        📚 = PDFDocument(url: 📍)
     }
     
     
-    // 📘 "Open book"
+    // 📘 or 📄
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let 🎮 = segue.destination as! 🄱ook_ViewController
         if (segue.identifier == "📘") {

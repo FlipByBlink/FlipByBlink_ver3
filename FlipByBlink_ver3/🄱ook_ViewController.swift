@@ -6,19 +6,22 @@ import ARKit
 class 🄱ook_ViewController:UIViewController{
     
     
-    @IBOutlet weak var 📖: PDFView!
+    @IBOutlet weak var 📖: PDFView!{
+        didSet{
+            📖.autoScales = true
+            📖.displayMode = .singlePage
+            📖.displaysPageBreaks = false
+            📖.isUserInteractionEnabled = false
+            📖.accessibilityElementsHidden = true
+        }
+    }
+    
     
     var 📚:PDFDocument!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        📖.autoScales = true
-        📖.displayMode = .singlePage
-        📖.displaysPageBreaks = false
-        📖.isUserInteractionEnabled = false
-        📖.accessibilityElementsHidden = true
         
         📖.document = 📚
         
@@ -52,13 +55,16 @@ class 🄱ook_ViewController:UIViewController{
         }
     }
     
+    
     @IBAction func 👆三三(_ sender: Any) {
         🄶oToNextPage()
     }
     
+    
     @IBAction func 三三👆(_ sender: Any) {
         📖.goToPreviousPage(nil)
     }
+    
     
     @IBAction func 氵👌(_ sender: UIPinchGestureRecognizer) {
         if sender.velocity > 0 {
@@ -68,9 +74,11 @@ class 🄱ook_ViewController:UIViewController{
         }
     }
     
+    
     @IBAction func ミ👆彡(_ sender: Any) {
         self.dismiss(animated: true)
     }
+    
     
     @IBAction func 彡👆ミ(_ sender: Any) {
         let 💬 = "1 〜 " + 📚.pageCount.description
@@ -126,6 +134,7 @@ class 🄱ook_ViewController:UIViewController{
         }
     }
     
+    
     @IBOutlet weak var 🪧: UIImageView!{
         didSet{
             if UserDefaults.standard.bool(forKey: "🪧"){
@@ -133,5 +142,6 @@ class 🄱ook_ViewController:UIViewController{
             }
         }
     }
+    
     
 }
