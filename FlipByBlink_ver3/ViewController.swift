@@ -5,7 +5,15 @@ import PDFKit
 class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     
-    @IBOutlet weak var 📘: UIButton!
+    @IBOutlet weak var 📘: UIButton!{
+        didSet{
+            📘.layer.shadowColor = UIColor.gray.cgColor
+            📘.layer.shadowOpacity = 0.8
+            📘.layer.shadowRadius = 4
+            📘.layer.shadowOffset = .zero
+            📘.imageView?.contentMode = .scaleAspectFit
+        }
+    }
     
     var 📚:PDFDocument!{
         didSet{
@@ -28,13 +36,6 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             📍 = Bundle.main.url(forResource: "🄿reset", withExtension: "pdf")!
             📚 = PDFDocument(url: 📍)!
         }
-        
-        📘.layer.shadowColor = UIColor.gray.cgColor
-        📘.layer.shadowOpacity = 0.8
-        📘.layer.shadowRadius = 4
-        📘.layer.shadowOffset = .zero
-        
-        📘.imageView?.contentMode = .scaleAspectFit
     }
     
     
