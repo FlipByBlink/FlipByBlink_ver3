@@ -86,7 +86,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     
-    // 📘 "Open book"
+    // 📘 or 📄
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let 🎮 = segue.destination as! 🄱ook_ViewController
         if (segue.identifier == "📘") {
