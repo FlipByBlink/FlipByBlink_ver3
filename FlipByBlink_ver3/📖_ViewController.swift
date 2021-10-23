@@ -26,6 +26,7 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
         }
     }
     
+    
     @IBOutlet weak var 👤: ARSCNView!{
         didSet{
             👤.delegate = self
@@ -43,10 +44,10 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     
     func 🄶oToNextPage() {
         if 📖.canGoToNextPage == false{
-            let 🗣 = UIAlertController(title: "🎉 Finish!", message: nil, preferredStyle: .alert)
-            present(🗣, animated: true)
+            let 📢 = UIAlertController(title: "🎉 Finish!", message: nil, preferredStyle: .alert)
+            present(📢, animated: true)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2){
-                🗣.dismiss(animated: true)
+                📢.dismiss(animated: true)
             }
         }
         📖.goToNextPage(nil)
@@ -88,18 +89,18 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     
     @IBAction func 彡👆ミ(_ sender: Any) {
         let 💬 = "1 〜 " + 📚.pageCount.description
-        let 🗣 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
-        🗣.addTextField { 📋 in
+        let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
+        📢.addTextField { 📋 in
             📋.keyboardType = .numberPad
             📋.placeholder = "Page No."
         }
-        🗣.addAction(UIAlertAction(title: "Jump", style: .default){ _ in
-            guard let 📝 = Int((🗣.textFields?.first?.text)!) else { return }
+        📢.addAction(UIAlertAction(title: "Jump", style: .default){ _ in
+            guard let 📝 = Int((📢.textFields?.first?.text)!) else { return }
             guard let 🔖 = self.📖.document?.page(at: 📝 - 1 ) else { return }
             self.📖.go(to: 🔖)
         })
-        🗣.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        self.present(🗣, animated: true)
+        📢.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        self.present(📢, animated: true)
     }
     
     
@@ -128,9 +129,9 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
         
         if ARFaceTrackingConfiguration.isSupported == false{
             let 💬 = "Your device can't work facetracking. \"Face tracking supports devices with Apple Neural Engine in iOS 14 and iPadOS 14 and requires a device with a TrueDepth camera on iOS 13 and iPadOS 13 and earlier.\" source:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration"
-            let 🗣 = UIAlertController(title: "Sorry 😱", message: 💬, preferredStyle: .alert)
-            🗣.addAction(UIAlertAction(title: "OK", style: .default))
-            present(🗣, animated: true)
+            let 📢 = UIAlertController(title: "Sorry 😱", message: 💬, preferredStyle: .alert)
+            📢.addAction(UIAlertAction(title: "OK", style: .default))
+            present(📢, animated: true)
         }
         
         UIApplication.shared.isIdleTimerDisabled = true
