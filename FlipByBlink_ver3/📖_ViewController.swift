@@ -20,9 +20,8 @@ class 📖_ViewController:UIViewController{
             📖.document = 📚
             
             if 📚.documentURL?.lastPathComponent == "🄸mported.pdf"{
-                if let 🔖 = 📚.page(at: UserDefaults.standard.integer(forKey: "🔖")){
-                    📖.go(to: 🔖)
-                }
+                let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
+                📖.go(to: 📚.page(at: 🔖)!)
             }
         }
     }
