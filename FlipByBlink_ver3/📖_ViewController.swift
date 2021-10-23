@@ -146,10 +146,10 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     }
     
     
-    @IBOutlet weak var 🪧: UIImageView!{
+    @IBOutlet weak var 🏁: UIImageView!{
         didSet{
-            if UserDefaults.standard.bool(forKey: "🪧"){
-                🪧.isHidden = false
+            if UserDefaults.standard.bool(forKey: "🏁"){
+                🏁.isHidden = false
             }
         }
     }
