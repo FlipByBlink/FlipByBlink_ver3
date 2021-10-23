@@ -139,7 +139,7 @@
         <!--View Controller-->
         <scene sceneID="fjY-Rb-ag9">
             <objects>
-                <viewController id="IjJ-xR-P41" customClass="🄱ook_ViewController" customModule="FlipByBlink_ver3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IjJ-xR-P41" customClass="📖_ViewController" customModule="FlipByBlink_ver3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rYi-nH-sce">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

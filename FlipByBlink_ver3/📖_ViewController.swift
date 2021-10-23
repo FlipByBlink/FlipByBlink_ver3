@@ -3,7 +3,7 @@ import PDFKit
 import ARKit
 
 
-class 🄱ook_ViewController:UIViewController{
+class 📖_ViewController:UIViewController{
     
     
     var 📚:PDFDocument!
