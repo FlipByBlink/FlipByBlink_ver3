@@ -3,7 +3,7 @@ import PDFKit
 import ARKit
 
 
-class 📖_ViewController:UIViewController{
+class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate{
     
     
     var 📚:PDFDocument!
@@ -24,6 +24,20 @@ class 📖_ViewController:UIViewController{
                 📖.go(to: 📚.page(at: 🔖)!)
             }
         }
+    }
+    
+    @IBOutlet weak var 👤: ARSCNView!{
+        didSet{
+            👤.delegate = self
+            👤.session.delegate = self
+            let 🎛 = ARFaceTrackingConfiguration()
+            👤.session.run(🎛)
+        }
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        guard let a = anchor as? ARFaceAnchor else { return }
+        print("0000 ",a.debugDescription)
     }
     
     
