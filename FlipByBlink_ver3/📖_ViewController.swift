@@ -36,9 +36,10 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
         }
     }
     
+    
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        guard let a = anchor as? ARFaceAnchor else { return }
-        print("0000 ",a.debugDescription)
+        guard let 🪧 = anchor as? ARFaceAnchor else { return }
+        print("🪧 ",🪧.blendShapes.debugDescription)
     }
     
     
