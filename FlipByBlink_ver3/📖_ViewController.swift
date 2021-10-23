@@ -34,8 +34,9 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
             let 🎛 = ARFaceTrackingConfiguration()
             🔘.session.run(🎛)
             
-            🔘.layer.cornerRadius = 🔘.frame.height/2
-            🔘.layer.borderWidth = 6
+            🔘.layer.isOpaque = false
+            🔘.layer.cornerRadius = 40
+            🔘.layer.borderWidth = 4
             🔘.scene.background.contents = UIColor.systemBackground
         }
     }
