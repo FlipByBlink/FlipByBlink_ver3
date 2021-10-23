@@ -149,10 +149,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <arscnView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LyC-I6-pPf">
-                                <rect key="frame" x="184" y="749.5" width="250" height="166.5"/>
+                                <rect key="frame" x="184" y="666" width="280" height="280"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="LyC-I6-pPf" secondAttribute="height" multiplier="3:2" id="3MH-0k-RRc"/>
-                                    <constraint firstAttribute="width" constant="250" id="VDL-i8-e1v"/>
+                                    <constraint firstAttribute="width" secondItem="LyC-I6-pPf" secondAttribute="height" id="3MH-0k-RRc"/>
+                                    <constraint firstAttribute="width" constant="280" id="VDL-i8-e1v"/>
                                 </constraints>
                             </arscnView>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="🏁" translatesAutoresizingMaskIntoConstraints="NO" id="mZk-e0-0Gm" userLabel="🏁">
@@ -168,12 +168,12 @@
                         <constraints>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="width" secondItem="rYi-nH-sce" secondAttribute="width" id="3Kc-GZ-FQH"/>
                             <constraint firstItem="mZk-e0-0Gm" firstAttribute="leading" secondItem="rYi-nH-sce" secondAttribute="leading" constant="-10" id="XMU-Xk-aE3"/>
-                            <constraint firstAttribute="bottom" secondItem="LyC-I6-pPf" secondAttribute="bottom" constant="-20" id="XQf-MQ-5Th"/>
+                            <constraint firstAttribute="bottom" secondItem="LyC-I6-pPf" secondAttribute="bottom" constant="-50" id="XQf-MQ-5Th"/>
                             <constraint firstAttribute="bottom" secondItem="mZk-e0-0Gm" secondAttribute="bottom" constant="-10" id="mO8-UL-rrl"/>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="centerX" secondItem="rYi-nH-sce" secondAttribute="centerX" id="r0B-9N-x1c"/>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="centerY" secondItem="rYi-nH-sce" secondAttribute="centerY" id="slM-cy-tsg"/>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="height" secondItem="rYi-nH-sce" secondAttribute="height" id="tw8-CL-JdV"/>
-                            <constraint firstAttribute="trailing" secondItem="LyC-I6-pPf" secondAttribute="trailing" constant="-20" id="yKc-UJ-Mtm"/>
+                            <constraint firstAttribute="trailing" secondItem="LyC-I6-pPf" secondAttribute="trailing" constant="-50" id="yKc-UJ-Mtm"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="YPd-mr-dWd" appends="YES" id="JG2-KR-Cvm"/>

@@ -34,17 +34,17 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
             let 🎛 = ARFaceTrackingConfiguration()
             🔘.session.run(🎛)
             
-            🔘.layer.isOpaque = false
-            🔘.layer.cornerRadius = 40
-            🔘.layer.borderWidth = 4
-            🔘.scene.background.contents = UIColor.systemBackground
+            🔘.layer.cornerRadius = 🔘.frame.height/2
+            🔘.layer.borderWidth = 12
+            🔘.layer.borderColor = UIColor.systemGray5.cgColor
+            🔘.scene.background.contents = UIColor.secondarySystemBackground
         }
     }
     
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let 👤 = ARSCNFaceGeometry(device: 🔘.device!)!
-        👤.firstMaterial?.diffuse.contents = UIColor.darkGray
+        👤.firstMaterial?.diffuse.contents = UIColor.systemGray4
         return SCNNode(geometry: 👤)
     }
     
