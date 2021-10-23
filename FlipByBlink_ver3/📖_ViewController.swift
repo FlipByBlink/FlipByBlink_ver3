@@ -33,13 +33,27 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
             👤.session.delegate = self
             let 🎛 = ARFaceTrackingConfiguration()
             👤.session.run(🎛)
+            
+            👤.layer.cornerRadius = 👤.frame.height/2
+            👤.layer.borderWidth = 6
+            👤.scene.background.contents = UIColor.systemBackground
         }
+    }
+    
+    
+    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+        guard let 🅁enderer = renderer as? ARSCNView else { return nil }
+        let 🄶eometry = ARSCNFaceGeometry(device: 🅁enderer.device!)!
+        let 🄼aterial = 🄶eometry.firstMaterial!
+        🄼aterial.diffuse.contents = UIColor.darkGray
+        return SCNNode(geometry: 🄶eometry)
     }
     
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let 🪧 = anchor as? ARFaceAnchor else { return }
-        print("🪧 ",🪧.blendShapes.debugDescription)
+        guard let 🄵aceGeometry = node.geometry as? ARSCNFaceGeometry else { return }
+        🄵aceGeometry.update(from: 🪧.geometry)
     }
     
     
