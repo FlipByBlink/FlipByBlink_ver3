@@ -70,17 +70,17 @@
 			isa = PBXGroup;
 			children = (
 				127E610B27150C6E00B44096 /* Main.storyboard */,
+				127E610927150C6E00B44096 /* ViewController.swift */,
+				12EA5A392715A90E00DF39D6 /* 📖_ViewController.swift */,
 				127E610527150C6E00B44096 /* AppDelegate.swift */,
 				127E610727150C6E00B44096 /* SceneDelegate.swift */,
-				127E610927150C6E00B44096 /* ViewController.swift */,
 				127E610E27150C7100B44096 /* Assets.xcassets */,
 				127E611027150C7100B44096 /* LaunchScreen.storyboard */,
 				127E611327150C7100B44096 /* Info.plist */,
-				12EA5A392715A90E00DF39D6 /* 📖_ViewController.swift */,
+				122AC1D42720163700C90ECB /* Settings.bundle */,
 				127E611D271568F700B44096 /* 🄿reset.pdf */,
 				125222AF27166D590013E5ED /* 📄.pdf */,
 				127E611B271568E600B44096 /* ▶️.mp4 */,
-				122AC1D42720163700C90ECB /* Settings.bundle */,
 			);
 			path = FlipByBlink_ver3;
 			sourceTree = "<group>";
