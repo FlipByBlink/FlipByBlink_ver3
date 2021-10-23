@@ -30,8 +30,8 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     var 📚:PDFDocument!{
         didSet{
-            let 🔲 = CGSize(width: 2000, height: 2000)
-            let 🖼 = 📚.page(at: 0)?.thumbnail(of: 🔲, for: .mediaBox)
+            let 📐 = CGSize(width: 2000, height: 2000)
+            let 🖼 = 📚.page(at: 0)?.thumbnail(of: 📐, for: .mediaBox)
             📘.setImage(🖼, for: .normal)
         }
     }
