@@ -27,33 +27,31 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     }
     
     
-    @IBOutlet weak var 👤: ARSCNView!{
+    @IBOutlet weak var 🔘: ARSCNView!{
         didSet{
-            👤.delegate = self
-            👤.session.delegate = self
+            🔘.delegate = self
+            🔘.session.delegate = self
             let 🎛 = ARFaceTrackingConfiguration()
-            👤.session.run(🎛)
+            🔘.session.run(🎛)
             
-            👤.layer.cornerRadius = 👤.frame.height/2
-            👤.layer.borderWidth = 6
-            👤.scene.background.contents = UIColor.systemBackground
+            🔘.layer.cornerRadius = 🔘.frame.height/2
+            🔘.layer.borderWidth = 6
+            🔘.scene.background.contents = UIColor.systemBackground
         }
     }
     
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        guard let 🅁enderer = renderer as? ARSCNView else { return nil }
-        let 🄶eometry = ARSCNFaceGeometry(device: 🅁enderer.device!)!
-        let 🄼aterial = 🄶eometry.firstMaterial!
-        🄼aterial.diffuse.contents = UIColor.darkGray
-        return SCNNode(geometry: 🄶eometry)
+        let 👤 = ARSCNFaceGeometry(device: 🔘.device!)!
+        👤.firstMaterial?.diffuse.contents = UIColor.darkGray
+        return SCNNode(geometry: 👤)
     }
     
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let 🪧 = anchor as? ARFaceAnchor else { return }
-        guard let 🄵aceGeometry = node.geometry as? ARSCNFaceGeometry else { return }
-        🄵aceGeometry.update(from: 🪧.geometry)
+        guard let 👤 = node.geometry as? ARSCNFaceGeometry else { return }
+        👤.update(from: 🪧.geometry)
     }
     
     

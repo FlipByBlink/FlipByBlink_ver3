@@ -186,8 +186,8 @@
                     </view>
                     <connections>
                         <outlet property="🏁" destination="mZk-e0-0Gm" id="GE2-63-tw0"/>
-                        <outlet property="👤" destination="LyC-I6-pPf" id="EeC-Dp-o6q"/>
                         <outlet property="📖" destination="Ia4-iP-RyQ" id="irD-ua-aSI"/>
+                        <outlet property="🔘" destination="LyC-I6-pPf" id="EeC-Dp-o6q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFC-sz-BSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
