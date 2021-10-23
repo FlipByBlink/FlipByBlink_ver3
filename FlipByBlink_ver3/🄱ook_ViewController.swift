@@ -6,6 +6,9 @@ import ARKit
 class 🄱ook_ViewController:UIViewController{
     
     
+    var 📚:PDFDocument!
+    
+    
     @IBOutlet weak var 📖: PDFView!{
         didSet{
             📖.autoScales = true
@@ -13,25 +16,15 @@ class 🄱ook_ViewController:UIViewController{
             📖.displaysPageBreaks = false
             📖.isUserInteractionEnabled = false
             📖.accessibilityElementsHidden = true
-        }
-    }
-    
-    
-    var 📚:PDFDocument!
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        📖.document = 📚
-        
-        if 📚.documentURL?.lastPathComponent == "🄸mported.pdf"{
-            if let 🔖 = 📚.page(at: UserDefaults.standard.integer(forKey: "🔖")){
-                📖.go(to: 🔖)
+            
+            📖.document = 📚
+            
+            if 📚.documentURL?.lastPathComponent == "🄸mported.pdf"{
+                if let 🔖 = 📚.page(at: UserDefaults.standard.integer(forKey: "🔖")){
+                    📖.go(to: 🔖)
+                }
             }
         }
-        
-        UIApplication.shared.isIdleTimerDisabled = true
     }
     
     
@@ -109,6 +102,7 @@ class 🄱ook_ViewController:UIViewController{
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         if 📚.documentURL?.lastPathComponent == "🄸mported.pdf"{
             let 🔖 = 📖.currentPage!.pageRef!.pageNumber - 1
             UserDefaults.standard.set(🔖, forKey: "🔖")
@@ -118,17 +112,21 @@ class 🄱ook_ViewController:UIViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         if ARFaceTrackingConfiguration.isSupported == false{
             let 💬 = "Your device can't work facetracking. \"Face tracking supports devices with Apple Neural Engine in iOS 14 and iPadOS 14 and requires a device with a TrueDepth camera on iOS 13 and iPadOS 13 and earlier.\" source:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration"
             let 🗣 = UIAlertController(title: "Sorry 😱", message: 💬, preferredStyle: .alert)
             🗣.addAction(UIAlertAction(title: "OK", style: .default))
             present(🗣, animated: true)
         }
+        
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
+        
         DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
             self.📖.sizeToFit()
         }

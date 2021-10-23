@@ -12,6 +12,16 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             📘.layer.shadowRadius = 4
             📘.layer.shadowOffset = .zero
             📘.imageView?.contentMode = .scaleAspectFit
+            
+            let 💾 = FileManager.default
+            var 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            📍.appendPathComponent("🄸mported.pdf")
+            if 💾.fileExists(atPath: 📍.path){
+                📚 = PDFDocument(url: 📍)
+            }else{
+                📍 = Bundle.main.url(forResource: "🄿reset", withExtension: "pdf")!
+                📚 = PDFDocument(url: 📍)!
+            }
         }
     }
     
@@ -21,21 +31,6 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             let 🔲 = CGSize(width: 2000, height: 2000)
             let 🖼 = 📚.page(at: 0)?.thumbnail(of: 🔲, for: .mediaBox)
             📘.setImage(🖼, for: .normal)
-        }
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let 💾 = FileManager.default
-        var 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        📍.appendPathComponent("🄸mported.pdf")
-        if 💾.fileExists(atPath: 📍.path){
-            📚 = PDFDocument(url: 📍)
-        }else{
-            📍 = Bundle.main.url(forResource: "🄿reset", withExtension: "pdf")!
-            📚 = PDFDocument(url: 📍)!
         }
     }
     
