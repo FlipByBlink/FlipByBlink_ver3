@@ -49,8 +49,40 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     }
     
     
+    var 🕰😑start: Date = Date()
+    var 🕰😑🔛: Date = Date()
+    let 🎚😑sec: Double = 0.15
+    var ex🌡👀: Double = 0.0
+    let 🎚👀: Double = 0.8
+    var not🗒yet: Bool = true
+    
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let 🪧 = anchor as? ARFaceAnchor else { return }
+        
+        guard let 🌡👀left = 🪧.blendShapes[.eyeBlinkLeft]?.doubleValue else { return }
+        guard let 🌡👀right = 🪧.blendShapes[.eyeBlinkRight]?.doubleValue else { return }
+        let 🌡👀 = ( 🌡👀left + 🌡👀right ) / 2
+        
+        if 🌡👀 > 🎚👀 && ex🌡👀 < 🎚👀{
+            🕰😑start = Date()
+        }
+        
+        if 🌡👀 > 🎚👀{
+            🕰😑🔛 = Date()
+            if 🕰😑🔛.timeIntervalSince(🕰😑start) > TimeInterval(🎚😑sec){
+                if not🗒yet{
+                    DispatchQueue.main.async {
+                        self.🄶oToNextPage()
+                    }
+                    not🗒yet = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                        self.not🗒yet = true
+                    }
+                }
+            }
+        }
+        ex🌡👀 = 🌡👀
+        
         guard let 👤 = node.geometry as? ARSCNFaceGeometry else { return }
         👤.update(from: 🪧.geometry)
     }
