@@ -89,10 +89,9 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     
     
     func 🄶oToNextPage() {
-        📖.goToNextPage(nil)
-        
         if 🔘.isHidden == false{
             🔘.isHidden = true
+            return
         }
         
         if 📖.canGoToNextPage == false{
@@ -102,6 +101,8 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
                 📢.dismiss(animated: true)
             }
         }
+        
+        📖.goToNextPage(nil)
     }
     
     
