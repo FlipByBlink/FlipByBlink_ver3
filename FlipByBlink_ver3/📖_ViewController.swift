@@ -35,16 +35,16 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
             🔘.session.run(🎛)
             
             🔘.layer.cornerRadius = 🔘.frame.height/2
-            🔘.layer.borderWidth = 12
-            🔘.layer.borderColor = UIColor.systemGray5.cgColor
-            🔘.scene.background.contents = UIColor.secondarySystemBackground
+            🔘.layer.borderWidth = 6
+            🔘.layer.borderColor = UIColor.darkGray.cgColor
+            🔘.scene.background.contents = UIColor.systemBackground
         }
     }
     
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let 👤 = ARSCNFaceGeometry(device: 🔘.device!)!
-        👤.firstMaterial?.diffuse.contents = UIColor.systemGray4
+        👤.firstMaterial?.diffuse.contents = UIColor.darkGray
         return SCNNode(geometry: 👤)
     }
     
