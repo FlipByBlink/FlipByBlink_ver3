@@ -7,8 +7,8 @@ import ARKit
 class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     
-    @IBOutlet weak var 📘: UIButton!{
-        didSet{
+    @IBOutlet weak var 📘: UIButton! {
+        didSet {
             📘.layer.shadowColor = UIColor.gray.cgColor
             📘.layer.shadowOpacity = 0.8
             📘.layer.shadowRadius = 4
@@ -18,7 +18,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             let 💾 = FileManager.default
             var 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0]
             📍.appendPathComponent("🄸mported.pdf")
-            if 💾.fileExists(atPath: 📍.path) == false{
+            if 💾.fileExists(atPath: 📍.path) == false {
                 📍 = Bundle.main.url(forResource: "🄿reset", withExtension: "pdf")!
             }
             📚 = PDFDocument(url: 📍)
@@ -26,8 +26,8 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     
-    var 📚:PDFDocument!{
-        didSet{
+    var 📚:PDFDocument! {
+        didSet {
             let 📐 = CGSize(width: 2000, height: 2000)
             let 🖼 = 📚.page(at: 0)?.thumbnail(of: 📐, for: .mediaBox)
             📘.setImage(🖼, for: .normal)
@@ -68,11 +68,11 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         🅂tore(urls.first!)
     }
     
-    func 🅂tore(_ 📦:URL){
+    func 🅂tore(_ 📦:URL) {
         let 💾 = FileManager.default
         var 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0]
         📍.appendPathComponent("🄸mported.pdf")
-        if 💾.fileExists(atPath: 📍.path){
+        if 💾.fileExists(atPath: 📍.path) {
             try! 💾.removeItem(at: 📍)
         }
         try! 💾.copyItem(at: 📦, to: 📍)
@@ -86,7 +86,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         let 🎮 = segue.destination as! 📖_ViewController
         if (segue.identifier == "📘") {
             🎮.📚 = 📚
-        }else{
+        } else {
             let 📍 = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
             🎮.📚 = PDFDocument(url: 📍)
         }

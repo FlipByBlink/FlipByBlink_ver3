@@ -3,14 +3,14 @@ import PDFKit
 import ARKit
 
 
-class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate{
+class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
     
     var 📚:PDFDocument!
     
     
-    @IBOutlet weak var 📖: PDFView!{
-        didSet{
+    @IBOutlet weak var 📖: PDFView! {
+        didSet {
             📖.autoScales = true
             📖.displayMode = .singlePage
             📖.displaysPageBreaks = false
@@ -19,7 +19,7 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
             
             📖.document = 📚
             
-            if 📚.documentURL?.lastPathComponent == "🄸mported.pdf"{
+            if 📚.documentURL?.lastPathComponent == "🄸mported.pdf" {
                 let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
                 📖.go(to: 📚.page(at: 🔖)!)
             }
@@ -27,8 +27,8 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     }
     
     
-    @IBOutlet weak var 🔘: ARSCNView!{
-        didSet{
+    @IBOutlet weak var 🔘: ARSCNView! {
+        didSet {
             🔘.delegate = self
             🔘.session.delegate = self
             let 🎛 = ARFaceTrackingConfiguration()
@@ -44,7 +44,7 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         DispatchQueue.main.async {
-            UIView.animate(withDuration: 2, delay: 2){
+            UIView.animate(withDuration: 2, delay: 2) {
                 self.🔘.alpha = 0
             }
         }
@@ -68,14 +68,14 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
         guard let 🌡👀right = 🪧.blendShapes[.eyeBlinkRight]?.doubleValue else { return }
         let 🌡👀 = ( 🌡👀left + 🌡👀right ) / 2
         
-        if 🌡👀 > 🎚👀 && ex🌡👀 < 🎚👀{
+        if 🌡👀 > 🎚👀 && ex🌡👀 < 🎚👀 {
             🕰😑start = Date()
         }
         
         if 🌡👀 > 🎚👀{
             🕰😑🔛 = Date()
-            if 🕰😑🔛.timeIntervalSince(🕰😑start) > TimeInterval(🎚😑sec){
-                if not🗒yet{
+            if 🕰😑🔛.timeIntervalSince(🕰😑start) > TimeInterval(🎚😑sec) {
+                if not🗒yet {
                     DispatchQueue.main.async {
                         self.🄶oToNextPage()
                     }
@@ -94,10 +94,11 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     
     
     func 🄶oToNextPage() {
-        if 📖.canGoToNextPage == false{
-            let 📢 = UIAlertController(title: "🎉 Finish!", message: nil, preferredStyle: .alert)
+        if 📖.canGoToNextPage == false {
+            let 💬 = "🎉 Finish! 🎉"
+            let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
             present(📢, animated: true)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 📢.dismiss(animated: true)
             }
         }
@@ -107,9 +108,9 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     
     
     @IBAction func 👆゛(_ sender: UITapGestureRecognizer) {
-        if sender.location(in: view).x > view.center.x{
+        if sender.location(in: view).x > view.center.x {
             🄶oToNextPage()
-        }else{
+        } else {
             📖.goToPreviousPage(nil)
         }
     }
@@ -128,7 +129,7 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     @IBAction func 氵👌(_ sender: UIPinchGestureRecognizer) {
         if sender.velocity > 0 {
             📖.goToNextPage(nil)
-        }else{
+        } else {
             📖.goToPreviousPage(nil)
         }
     }
@@ -146,7 +147,7 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
             📋.keyboardType = .numberPad
             📋.placeholder = "Page No."
         }
-        📢.addAction(UIAlertAction(title: "Jump", style: .default){ _ in
+        📢.addAction(UIAlertAction(title: "Jump", style: .default) { _ in
             guard let 📝 = Int((📢.textFields?.first?.text)!) else { return }
             guard let 🔖 = self.📖.document?.page(at: 📝 - 1 ) else { return }
             self.📖.go(to: 🔖)
@@ -161,7 +162,7 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     }
     
     
-    override var prefersStatusBarHidden: Bool{
+    override var prefersStatusBarHidden: Bool {
         return true
     }
     
@@ -169,7 +170,7 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if 📚.documentURL?.lastPathComponent == "🄸mported.pdf"{
+        if 📚.documentURL?.lastPathComponent == "🄸mported.pdf" {
             let 🔖 = 📖.currentPage!.pageRef!.pageNumber - 1
             UserDefaults.standard.set(🔖, forKey: "🔖")
         }
@@ -179,9 +180,9 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if ARFaceTrackingConfiguration.isSupported == false{
+        if ARFaceTrackingConfiguration.isSupported == false {
             let 💬 = "Your device can't work facetracking. \"Face tracking supports devices with Apple Neural Engine in iOS 14 and iPadOS 14 and requires a device with a TrueDepth camera on iOS 13 and iPadOS 13 and earlier.\" source:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration"
-            let 📢 = UIAlertController(title: "Sorry 😱", message: 💬, preferredStyle: .alert)
+            let 📢 = UIAlertController(title: "😱 Sorry 😱", message: 💬, preferredStyle: .alert)
             📢.addAction(UIAlertAction(title: "OK", style: .default))
             present(📢, animated: true)
         }
@@ -199,9 +200,9 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     }
     
     
-    @IBOutlet weak var 🏁: UIImageView!{
-        didSet{
-            if UserDefaults.standard.bool(forKey: "🏁"){
+    @IBOutlet weak var 🏁: UIImageView! {
+        didSet {
+            if UserDefaults.standard.bool(forKey: "🏁") {
                 🏁.isHidden = false
             }
         }
