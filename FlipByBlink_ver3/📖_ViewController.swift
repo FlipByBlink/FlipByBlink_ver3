@@ -94,8 +94,6 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     
     
     func 🄶oToNextPage() {
-        📖.goToNextPage(nil)
-        
         if 📖.canGoToNextPage == false{
             let 📢 = UIAlertController(title: "🎉 Finish!", message: nil, preferredStyle: .alert)
             present(📢, animated: true)
@@ -103,6 +101,8 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
                 📢.dismiss(animated: true)
             }
         }
+        
+        📖.goToNextPage(nil)
     }
     
     
