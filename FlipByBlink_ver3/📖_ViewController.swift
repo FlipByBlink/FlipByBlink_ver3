@@ -43,6 +43,11 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 2, delay: 2, options: .curveEaseIn) {
+                self.🔘.alpha = 0
+            }
+        }
         let 👤 = ARSCNFaceGeometry(device: 🔘.device!)!
         👤.firstMaterial?.diffuse.contents = UIColor.darkGray
         return SCNNode(geometry: 👤)
@@ -89,10 +94,7 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     
     
     func 🄶oToNextPage() {
-        if 🔘.isHidden == false{
-            🔘.isHidden = true
-            return
-        }
+        📖.goToNextPage(nil)
         
         if 📖.canGoToNextPage == false{
             let 📢 = UIAlertController(title: "🎉 Finish!", message: nil, preferredStyle: .alert)
@@ -101,8 +103,6 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
                 📢.dismiss(animated: true)
             }
         }
-        
-        📖.goToNextPage(nil)
     }
     
     
