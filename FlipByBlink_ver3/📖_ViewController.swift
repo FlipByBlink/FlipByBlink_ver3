@@ -44,7 +44,7 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         DispatchQueue.main.async {
-            UIView.animate(withDuration: 2, delay: 2, options: .curveEaseIn) {
+            UIView.animate(withDuration: 2, delay: 2) {
                 self.🔘.alpha = 0
             }
         }
