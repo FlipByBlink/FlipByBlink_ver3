@@ -37,7 +37,10 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
             🔘.layer.cornerRadius = 🔘.frame.height/2
             🔘.layer.borderWidth = 6
             🔘.layer.borderColor = UIColor.darkGray.cgColor
-            🔘.scene.background.contents = UIColor.systemBackground
+            
+            if UserDefaults.standard.bool(forKey: "Real👤") == false {
+                🔘.scene.background.contents = UIColor.systemBackground
+            }
             
             if UserDefaults.standard.bool(forKey: "Hide👤") {
                 🔘.isHidden = true
@@ -54,8 +57,14 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
                 }
             }
         }
+        
         let 👤 = ARSCNFaceGeometry(device: renderer.device!)!
         👤.firstMaterial?.diffuse.contents = UIColor.darkGray
+        
+        if UserDefaults.standard.bool(forKey: "Real👤") {
+            👤.firstMaterial?.diffuse.contents = UIColor.clear
+        }
+        
         return SCNNode(geometry: 👤)
     }
     
