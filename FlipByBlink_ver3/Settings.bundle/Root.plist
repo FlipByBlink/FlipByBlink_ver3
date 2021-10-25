@@ -10,9 +10,19 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
+			<string>👤 Hide Preview</string>
+			<key>Key</key>
+			<string>Hide👤</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
 			<string>👤 Always Preview</string>
 			<key>Key</key>
-			<string>👤</string>
+			<string>Always👤</string>
 			<key>DefaultValue</key>
 			<false/>
 		</dict>

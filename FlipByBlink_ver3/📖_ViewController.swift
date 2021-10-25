@@ -38,12 +38,16 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
             🔘.layer.borderWidth = 6
             🔘.layer.borderColor = UIColor.darkGray.cgColor
             🔘.scene.background.contents = UIColor.systemBackground
+            
+            if UserDefaults.standard.bool(forKey: "Hide👤") {
+                🔘.isHidden = true
+            }
         }
     }
     
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        if UserDefaults.standard.bool(forKey: "👤") == false {
+        if UserDefaults.standard.bool(forKey: "Always👤") == false {
             DispatchQueue.main.async {
                 UIView.animate(withDuration: 2, delay: 2) {
                     self.🔘.alpha = 0
