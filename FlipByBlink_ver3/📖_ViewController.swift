@@ -70,7 +70,13 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     
     var 🕰😑start: Date = Date()
-    let 🎚😑second: Double = 0.15
+    var 🎚😑second:Double {
+        let 🎚 = UserDefaults.standard.double(forKey: "🎚😑second")
+        if 🎚 == 0 {
+            return 0.15
+        }
+        return 🎚
+    }
     var ex🌡👀: Double = 0.0
     var not🗒yet: Bool = true
     
@@ -96,7 +102,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
                         self.🄶oToNextPage()
                     }
                     not🗒yet = false
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         self.not🗒yet = true
                     }
                 }

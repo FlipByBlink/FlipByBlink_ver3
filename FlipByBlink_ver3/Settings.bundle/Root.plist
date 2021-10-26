@@ -60,23 +60,25 @@
 			<key>Key</key>
 			<string>🎚😑second</string>
 			<key>DefaultValue</key>
-			<string>0.15</string>
+			<string></string>
 			<key>Titles</key>
 			<array>
-				<string>0.08</string>
+				<string>0.10</string>
 				<string>0.15 ( default )</string>
+				<string>0.20</string>
 				<string>0.25</string>
-				<string>0.50</string>
-				<string>0.75</string>
+				<string>0.40</string>
+				<string>0.60</string>
 				<string>1.00</string>
 			</array>
 			<key>Values</key>
 			<array>
-				<string>0.08</string>
+				<string>0.10</string>
 				<string>0.15</string>
+				<string>0.20</string>
 				<string>0.25</string>
-				<string>0.50</string>
-				<string>0.75</string>
+				<string>0.40</string>
+				<string>0.60</string>
 				<string>1.00</string>
 			</array>
 		</dict>
