@@ -3,10 +3,10 @@ import PDFKit
 import ARKit
 
 
-class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate {
+class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
     
-    var 📚:PDFDocument!
+    var 📚: PDFDocument!
     
     
     @IBOutlet weak var 📖: PDFView! {
@@ -71,7 +71,7 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
     
     var 🕰😑start: Date = Date()
     var 🕰😑🔛: Date = Date()
-    let 🎚😑sec: Double = 0.15
+    let 🎚😑second: Double = 0.15
     var ex🌡👀: Double = 0.0
     let 🎚👀: Double = 0.8
     var not🗒yet: Bool = true
@@ -89,7 +89,7 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
         
         if 🌡👀 > 🎚👀{
             🕰😑🔛 = Date()
-            if 🕰😑🔛.timeIntervalSince(🕰😑start) > TimeInterval(🎚😑sec) {
+            if 🕰😑🔛.timeIntervalSince(🕰😑start) > TimeInterval(🎚😑second) {
                 if not🗒yet {
                     DispatchQueue.main.async {
                         self.🄶oToNextPage()
