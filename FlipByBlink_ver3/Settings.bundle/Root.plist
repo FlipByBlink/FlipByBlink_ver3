@@ -48,9 +48,15 @@
 		</dict>
 		<dict>
 			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>🛠 Experimental Feature</string>
+		</dict>
+		<dict>
+			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>🎚👀 How long Boslowink (second)</string>
+			<string>🎚👀 (second)</string>
 			<key>Key</key>
 			<string>🎚👀</string>
 			<key>KeyboardType</key>
