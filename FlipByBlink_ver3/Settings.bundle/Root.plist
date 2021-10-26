@@ -10,9 +10,67 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Display share-icon</string>
+			<string>👤 Hide Preview</string>
 			<key>Key</key>
-			<string>🪧</string>
+			<string>Hide👤</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>👤 Real Preview</string>
+			<key>Key</key>
+			<string>Real👤</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>👤 Always Preview</string>
+			<key>Key</key>
+			<string>Always👤</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>🏁 Display share-icon</string>
+			<key>Key</key>
+			<string>🏁</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>🛠 Experimental Feature</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>🎚👀 (second)</string>
+			<key>Key</key>
+			<string>🎚👀</string>
+			<key>KeyboardType</key>
+			<string>NumbersAndPunctuation</string>
+			<key>DefaultValue</key>
+			<string>0.15</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>😉 Go to previous page by one eye wink</string>
+			<key>Key</key>
+			<string>😉</string>
 			<key>DefaultValue</key>
 			<false/>
 		</dict>
