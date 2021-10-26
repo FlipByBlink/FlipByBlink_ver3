@@ -36,7 +36,7 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
             
             🔘.layer.cornerRadius = 🔘.frame.height/2
             🔘.layer.borderWidth = 6
-            🔘.layer.borderColor = UIColor.darkGray.cgColor
+            🔘.layer.borderColor = UIColor.separator.cgColor
             
             if UserDefaults.standard.bool(forKey: "Real👤") == false {
                 🔘.scene.background.contents = UIColor.systemBackground
@@ -59,7 +59,7 @@ class 📖_ViewController:UIViewController, ARSCNViewDelegate, ARSessionDelegate
         }
         
         let 👤 = ARSCNFaceGeometry(device: renderer.device!)!
-        👤.firstMaterial?.diffuse.contents = UIColor.darkGray
+        👤.firstMaterial?.diffuse.contents = UIColor.systemGray
         
         if UserDefaults.standard.bool(forKey: "Real👤") {
             👤.firstMaterial?.diffuse.contents = UIColor.clear
