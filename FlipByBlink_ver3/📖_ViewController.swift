@@ -73,7 +73,6 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     var 🕰😑🔛: Date = Date()
     let 🎚😑second: Double = 0.15
     var ex🌡👀: Double = 0.0
-    let 🎚👀: Double = 0.8
     var not🗒yet: Bool = true
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
@@ -82,6 +81,8 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         guard let 🌡👀left = 🪧.blendShapes[.eyeBlinkLeft]?.doubleValue else { return }
         guard let 🌡👀right = 🪧.blendShapes[.eyeBlinkRight]?.doubleValue else { return }
         let 🌡👀 = ( 🌡👀left + 🌡👀right ) / 2
+        
+        let 🎚👀: Double = 0.8
         
         if 🌡👀 > 🎚👀 && ex🌡👀 < 🎚👀 {
             🕰😑start = Date()
@@ -101,6 +102,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
                 }
             }
         }
+        
         ex🌡👀 = 🌡👀
         
         guard let 👤 = node.geometry as? ARSCNFaceGeometry else { return }
