@@ -60,7 +60,7 @@
 			<key>Key</key>
 			<string>🎚😑second</string>
 			<key>DefaultValue</key>
-			<string></string>
+			<string>0.15</string>
 			<key>Titles</key>
 			<array>
 				<string>0.10</string>

@@ -70,12 +70,12 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     
     var 🕰😑start: Date = Date()
-    var 🎚😑second:Double {
-        let 🎚 = UserDefaults.standard.double(forKey: "🎚😑second")
-        if 🎚 == 0 {
+    var 🎚😑second: Double {
+        if let 🎚 = UserDefaults.standard.string(forKey: "🎚😑second"){
+            return Double(🎚)!
+        } else {
             return 0.15
         }
-        return 🎚
     }
     var ex🌡👀: Double = 0.0
     var not🗒yet: Bool = true
