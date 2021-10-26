@@ -84,8 +84,10 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         
         let 🎚👀: Double = 0.8
         
-        if 🌡👀 > 🎚👀 && ex🌡👀 < 🎚👀 {
-            🕰😑start = Date()
+        if ex🌡👀 < 🎚👀 {
+            if 🌡👀 > 🎚👀 {
+                🕰😑start = Date()
+            }
         }
         
         if 🌡👀 > 🎚👀 {
