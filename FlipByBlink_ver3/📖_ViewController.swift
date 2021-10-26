@@ -70,7 +70,6 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     
     var 🕰😑start: Date = Date()
-    var 🕰😑🔛: Date = Date()
     let 🎚😑second: Double = 0.15
     var ex🌡👀: Double = 0.0
     var not🗒yet: Bool = true
@@ -91,8 +90,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         }
         
         if 🌡👀 > 🎚👀 {
-            🕰😑🔛 = Date()
-            if 🕰😑🔛.timeIntervalSince(🕰😑start) > TimeInterval(🎚😑second) {
+            if Date().timeIntervalSince(🕰😑start) > 🎚😑second {
                 if not🗒yet {
                     DispatchQueue.main.async {
                         self.🄶oToNextPage()
