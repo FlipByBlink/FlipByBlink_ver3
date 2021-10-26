@@ -87,7 +87,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             🕰😑start = Date()
         }
         
-        if 🌡👀 > 🎚👀{
+        if 🌡👀 > 🎚👀 {
             🕰😑🔛 = Date()
             if 🕰😑🔛.timeIntervalSince(🕰😑start) > TimeInterval(🎚😑second) {
                 if not🗒yet {
