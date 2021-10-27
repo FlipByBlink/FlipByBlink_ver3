@@ -71,7 +71,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     var 🕰😑start: Date = Date()
     var 🎚😑second: Double {
-        if let 🎚 = UserDefaults.standard.string(forKey: "🎚😑second"){
+        if let 🎚 = UserDefaults.standard.string(forKey: "🎚😑second") {
             return Double(🎚)!
         } else {
             return 0.15
@@ -102,7 +102,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
                         self.🄶oToNextPage()
                     }
                     not🗒yet = false
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
                         self.not🗒yet = true
                     }
                 }
@@ -121,7 +121,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             let 💬 = "🎉 Finish! 🎉"
             let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
             present(📢, animated: true)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2 ) {
                 📢.dismiss(animated: true)
             }
         }
@@ -217,7 +217,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ) {
             self.📖.sizeToFit()
         }
     }

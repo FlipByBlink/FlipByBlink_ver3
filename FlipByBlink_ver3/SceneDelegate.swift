@@ -8,7 +8,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        
         if let 🎮 = window?.rootViewController as? ViewController {
             🎮.🅂tore(URLContexts.first!.url)
         }
