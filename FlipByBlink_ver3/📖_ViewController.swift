@@ -70,6 +70,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     
     var 🕰😑start = Date()
+    
     var 🎚😑second: Double {
         if let 🎚 = UserDefaults.standard.string(forKey: "🎚😑second") {
             return Double(🎚)!
@@ -77,7 +78,9 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             return 0.15
         }
     }
+    
     var 🌡👀 = 0.0
+    
     var 💤 = false
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
