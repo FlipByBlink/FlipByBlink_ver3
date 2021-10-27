@@ -78,7 +78,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         }
     }
     var ex🌡👀 = 0.0
-    var not🗒yet = true
+    var 🔛 = true
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let 🪧 = anchor as? ARFaceAnchor else { return }
@@ -99,13 +99,13 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         
         if 🌡👀 > 🎚👀 {
             if Date().timeIntervalSince(🕰😑start) > 🎚😑second {
-                if not🗒yet {
+                if 🔛 {
                     DispatchQueue.main.async {
                         self.🄶oToNextPage()
                     }
-                    not🗒yet = false
+                    🔛 = false
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
-                        self.not🗒yet = true
+                        self.🔛 = true
                     }
                 }
             }
@@ -115,13 +115,13 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         
         if UserDefaults.standard.bool(forKey: "😉 return") {
             if abs( 🌡👀left - 🌡👀right ) > 0.5 {
-                if not🗒yet {
+                if 🔛 {
                     DispatchQueue.main.async {
                         self.📖.goToPreviousPage(nil)
                     }
-                    not🗒yet = false
+                    🔛 = false
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
-                        self.not🗒yet = true
+                        self.🔛 = true
                     }
                 }
             }
