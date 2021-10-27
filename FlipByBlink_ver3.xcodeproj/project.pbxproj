@@ -316,7 +316,7 @@
 				INFOPLIST_FILE = FlipByBlink_ver3/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FlipByBlink;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
-				INFOPLIST_KEY_NSCameraUsageDescription = "camera ok?";
+				INFOPLIST_KEY_NSCameraUsageDescription = "👀 Blink detection by camera. 📷";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -345,7 +345,7 @@
 				INFOPLIST_FILE = FlipByBlink_ver3/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FlipByBlink;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
-				INFOPLIST_KEY_NSCameraUsageDescription = "camera ok?";
+				INFOPLIST_KEY_NSCameraUsageDescription = "👀 Blink detection by camera. 📷";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
