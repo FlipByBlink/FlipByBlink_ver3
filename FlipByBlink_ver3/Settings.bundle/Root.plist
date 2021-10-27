@@ -40,7 +40,7 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>🏁 Display share-icon</string>
+			<string>🏁 Display share-info</string>
 			<key>Key</key>
 			<string>🏁</string>
 			<key>DefaultValue</key>
@@ -48,49 +48,11 @@
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSGroupSpecifier</string>
+			<string>PSChildPaneSpecifier</string>
+			<key>File</key>
+			<string>🛠</string>
 			<key>Title</key>
 			<string>🛠 Experimental Feature</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSMultiValueSpecifier</string>
-			<key>Title</key>
-			<string>🎚😑second</string>
-			<key>Key</key>
-			<string>🎚😑second</string>
-			<key>DefaultValue</key>
-			<string>0.15</string>
-			<key>Titles</key>
-			<array>
-				<string>0.10</string>
-				<string>0.15 ( default )</string>
-				<string>0.20</string>
-				<string>0.25</string>
-				<string>0.40</string>
-				<string>0.60</string>
-				<string>1.00</string>
-			</array>
-			<key>Values</key>
-			<array>
-				<string>0.10</string>
-				<string>0.15</string>
-				<string>0.20</string>
-				<string>0.25</string>
-				<string>0.40</string>
-				<string>0.60</string>
-				<string>1.00</string>
-			</array>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>😉 return</string>
-			<key>Key</key>
-			<string>😉 return</string>
-			<key>DefaultValue</key>
-			<false/>
 		</dict>
 	</array>
 </dict>

@@ -69,7 +69,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     }
     
     
-    var 🕰😑start: Date = Date()
+    var 🕰😑start = Date()
     var 🎚😑second: Double {
         if let 🎚 = UserDefaults.standard.string(forKey: "🎚😑second") {
             return Double(🎚)!
@@ -77,56 +77,53 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             return 0.15
         }
     }
-    var ex🌡👀: Double = 0.0
-    var not🗒yet: Bool = true
+    var 🌡👀 = 0.0
+    var 💤 = false
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let 🪧 = anchor as? ARFaceAnchor else { return }
+        guard let 👤 = node.geometry as? ARSCNFaceGeometry else { return }
+        👤.update(from: 🪧.geometry)
         
         guard let 🌡👀left = 🪧.blendShapes[.eyeBlinkLeft]?.doubleValue else { return }
         guard let 🌡👀right = 🪧.blendShapes[.eyeBlinkRight]?.doubleValue else { return }
-        let 🌡👀 = ( 🌡👀left + 🌡👀right ) / 2
+        let new🌡👀 = ( 🌡👀left + 🌡👀right ) / 2
         
-        let 🎚👀: Double = 0.8
+        let 🎚👀 = 0.8
         
-        if ex🌡👀 < 🎚👀 {
-            if 🌡👀 > 🎚👀 {
+        if 🌡👀 < 🎚👀 {
+            if new🌡👀 > 🎚👀 {
                 🕰😑start = Date()
             }
         }
         
-        if 🌡👀 > 🎚👀 {
+        🌡👀 = new🌡👀
+        
+        if 💤 { return }
+        
+        if new🌡👀 > 🎚👀 {
             if Date().timeIntervalSince(🕰😑start) > 🎚😑second {
-                if not🗒yet {
-                    DispatchQueue.main.async {
-                        self.🄶oToNextPage()
-                    }
-                    not🗒yet = false
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
-                        self.not🗒yet = true
-                    }
+                DispatchQueue.main.async {
+                    self.🄶oToNextPage()
+                }
+                💤 = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
+                    self.💤 = false
                 }
             }
         }
-        
-        ex🌡👀 = 🌡👀
         
         if UserDefaults.standard.bool(forKey: "😉 return") {
             if abs( 🌡👀left - 🌡👀right ) > 0.5 {
-                if not🗒yet {
-                    DispatchQueue.main.async {
-                        self.📖.goToPreviousPage(nil)
-                    }
-                    not🗒yet = false
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
-                        self.not🗒yet = true
-                    }
+                DispatchQueue.main.async {
+                    self.📖.goToPreviousPage(nil)
+                }
+                💤 = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
+                    self.💤 = false
                 }
             }
         }
-        
-        guard let 👤 = node.geometry as? ARSCNFaceGeometry else { return }
-        👤.update(from: 🪧.geometry)
     }
     
     
