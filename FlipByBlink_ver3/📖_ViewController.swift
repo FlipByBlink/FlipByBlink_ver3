@@ -69,7 +69,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     }
     
     
-    var 🕰😑start: Date = Date()
+    var 🕰😑start = Date()
     var 🎚😑second: Double {
         if let 🎚 = UserDefaults.standard.string(forKey: "🎚😑second") {
             return Double(🎚)!
@@ -77,17 +77,19 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             return 0.15
         }
     }
-    var ex🌡👀: Double = 0.0
-    var not🗒yet: Bool = true
+    var ex🌡👀 = 0.0
+    var not🗒yet = true
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let 🪧 = anchor as? ARFaceAnchor else { return }
+        guard let 👤 = node.geometry as? ARSCNFaceGeometry else { return }
+        👤.update(from: 🪧.geometry)
         
         guard let 🌡👀left = 🪧.blendShapes[.eyeBlinkLeft]?.doubleValue else { return }
         guard let 🌡👀right = 🪧.blendShapes[.eyeBlinkRight]?.doubleValue else { return }
         let 🌡👀 = ( 🌡👀left + 🌡👀right ) / 2
         
-        let 🎚👀: Double = 0.8
+        let 🎚👀 = 0.8
         
         if ex🌡👀 < 🎚👀 {
             if 🌡👀 > 🎚👀 {
@@ -124,9 +126,6 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
                 }
             }
         }
-        
-        guard let 👤 = node.geometry as? ARSCNFaceGeometry else { return }
-        👤.update(from: 🪧.geometry)
     }
     
     
