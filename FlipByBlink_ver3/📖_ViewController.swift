@@ -77,8 +77,8 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             return 0.15
         }
     }
-    var ex🌡👀 = 0.0
-    var 🔛 = true
+    var 🌡👀 = 0.0
+    var 💤 = false
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let 🪧 = anchor as? ARFaceAnchor else { return }
@@ -87,42 +87,40 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         
         guard let 🌡👀left = 🪧.blendShapes[.eyeBlinkLeft]?.doubleValue else { return }
         guard let 🌡👀right = 🪧.blendShapes[.eyeBlinkRight]?.doubleValue else { return }
-        let 🌡👀 = ( 🌡👀left + 🌡👀right ) / 2
+        let new🌡👀 = ( 🌡👀left + 🌡👀right ) / 2
         
         let 🎚👀 = 0.8
         
-        if ex🌡👀 < 🎚👀 {
-            if 🌡👀 > 🎚👀 {
+        if 🌡👀 < 🎚👀 {
+            if new🌡👀 > 🎚👀 {
                 🕰😑start = Date()
             }
         }
         
-        if 🌡👀 > 🎚👀 {
+        🌡👀 = new🌡👀
+        
+        if 💤 { return }
+        
+        if new🌡👀 > 🎚👀 {
             if Date().timeIntervalSince(🕰😑start) > 🎚😑second {
-                if 🔛 {
-                    DispatchQueue.main.async {
-                        self.🄶oToNextPage()
-                    }
-                    🔛 = false
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
-                        self.🔛 = true
-                    }
+                DispatchQueue.main.async {
+                    self.🄶oToNextPage()
+                }
+                💤 = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
+                    self.💤 = false
                 }
             }
         }
         
-        ex🌡👀 = 🌡👀
-        
         if UserDefaults.standard.bool(forKey: "😉 return") {
             if abs( 🌡👀left - 🌡👀right ) > 0.5 {
-                if 🔛 {
-                    DispatchQueue.main.async {
-                        self.📖.goToPreviousPage(nil)
-                    }
-                    🔛 = false
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
-                        self.🔛 = true
-                    }
+                DispatchQueue.main.async {
+                    self.📖.goToPreviousPage(nil)
+                }
+                💤 = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
+                    self.💤 = false
                 }
             }
         }
