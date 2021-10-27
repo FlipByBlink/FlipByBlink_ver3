@@ -40,15 +40,11 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>🏁 Display share-icon</string>
+			<string>🏁 Display share-info</string>
 			<key>Key</key>
 			<string>🏁</string>
 			<key>DefaultValue</key>
 			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
 		</dict>
 		<dict>
 			<key>Type</key>
