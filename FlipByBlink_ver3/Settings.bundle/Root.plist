@@ -88,7 +88,7 @@
 			<key>Title</key>
 			<string>😉 return</string>
 			<key>Key</key>
-			<string>😉</string>
+			<string>😉 return</string>
 			<key>DefaultValue</key>
 			<false/>
 		</dict>

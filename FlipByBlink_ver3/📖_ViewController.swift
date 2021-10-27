@@ -111,6 +111,20 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         
         ex🌡👀 = 🌡👀
         
+        if UserDefaults.standard.bool(forKey: "😉 return") {
+            if abs( 🌡👀left - 🌡👀right ) > 0.5 {
+                if not🗒yet {
+                    DispatchQueue.main.async {
+                        self.📖.goToPreviousPage(nil)
+                    }
+                    not🗒yet = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
+                        self.not🗒yet = true
+                    }
+                }
+            }
+        }
+        
         guard let 👤 = node.geometry as? ARSCNFaceGeometry else { return }
         👤.update(from: 🪧.geometry)
     }
