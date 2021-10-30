@@ -1,0 +1,21 @@
+
+/* Class = "UIViewController"; title = "📖_ViewController"; ObjectID = "IjJ-xR-P41"; */
+"IjJ-xR-P41.title" = "📖_ViewController";
+
+/* Class = "UIButton"; accessibilityLabel = "Import book"; ObjectID = "Jjx-C8-s6t"; */
+"Jjx-C8-s6t.accessibilityLabel" = "本をインポートする";
+
+/* Class = "UIButton"; accessibilityLabel = "AppStore link"; ObjectID = "TBA-gG-LHE"; */
+"TBA-gG-LHE.accessibilityLabel" = "AppStoreを開く";
+
+/* Class = "UIButton"; accessibilityLabel = "Open book"; ObjectID = "Xqj-zg-dTH"; */
+"Xqj-zg-dTH.accessibilityLabel" = "本を開く";
+
+/* Class = "UIButton"; accessibilityLabel = "Setting"; ObjectID = "foG-Jf-dmC"; */
+"foG-Jf-dmC.accessibilityLabel" = "設定する";
+
+/* Class = "UIButton"; accessibilityLabel = "Video"; ObjectID = "fss-gx-m0J"; */
+"fss-gx-m0J.accessibilityLabel" = "動画を見る";
+
+/* Class = "UIButton"; accessibilityLabel = "Document"; ObjectID = "pdT-1r-y2w"; */
+"pdT-1r-y2w.accessibilityLabel" = "ドキュメントを読む";
