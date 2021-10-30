@@ -1,4 +1,7 @@
 
-"Sorry" = "😱 Sorry 😱";
+//"😱 Sorry 😱" = "😱 Sorry 😱";
 "can't work" = "Your device can't work facetracking. \"Face tracking supports devices with Apple Neural Engine in iOS 14 and iPadOS 14 and requires a device with a TrueDepth camera on iOS 13 and iPadOS 13 and earlier.\" source:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration";
-
+//"🎉 Finish! 🎉" = "🎉 Finish! 🎉";
+//"Page No." = "Page No.";
+//"Jump" = "Jump";
+//"Cancel" = "Cancel";

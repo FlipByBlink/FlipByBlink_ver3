@@ -132,7 +132,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     func 🄶oToNextPage() {
         if 📖.canGoToNextPage == false {
-            let 💬 = "🎉 Finish! 🎉"
+            let 💬 = NSLocalizedString("🎉 Finish! 🎉", comment: "")
             let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
             present(📢, animated: true)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2 ) {
@@ -182,14 +182,16 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
         📢.addTextField { 📋 in
             📋.keyboardType = .numberPad
-            📋.placeholder = "Page No."
+            📋.placeholder = NSLocalizedString("Page No.", comment: "")
         }
-        📢.addAction(UIAlertAction(title: "Jump", style: .default) { _ in
+        let 🆗 = NSLocalizedString("Jump", comment: "")
+        📢.addAction(UIAlertAction(title: 🆗, style: .default) { _ in
             guard let 📝 = Int((📢.textFields?.first?.text)!) else { return }
             guard let 🔖 = self.📖.document?.page(at: 📝 - 1 ) else { return }
             self.📖.go(to: 🔖)
         })
-        📢.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        let 🆖 = NSLocalizedString("Cancel", comment: "")
+        📢.addAction(UIAlertAction(title: 🆖, style: .cancel))
         self.present(📢, animated: true)
     }
     
@@ -218,10 +220,11 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         super.viewDidAppear(animated)
         
         if ARFaceTrackingConfiguration.isSupported == false {
-            let 😱 = NSLocalizedString("Sorry", comment: "")
+            let 😱 = NSLocalizedString("😱 Sorry 😱", comment: "")
             let 💬 = NSLocalizedString("can't work", comment: "")
             let 📢 = UIAlertController(title: 😱, message: 💬, preferredStyle: .alert)
-            📢.addAction(UIAlertAction(title: "OK", style: .default))
+            let 🆗 = NSLocalizedString("OK", comment: "")
+            📢.addAction(UIAlertAction(title: 🆗, style: .default))
             present(📢, animated: true)
         }
         
