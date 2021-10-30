@@ -218,8 +218,9 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         super.viewDidAppear(animated)
         
         if ARFaceTrackingConfiguration.isSupported == false {
-            let 💬 = "Your device can't work facetracking. \"Face tracking supports devices with Apple Neural Engine in iOS 14 and iPadOS 14 and requires a device with a TrueDepth camera on iOS 13 and iPadOS 13 and earlier.\" source:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration"
-            let 📢 = UIAlertController(title: "😱 Sorry 😱", message: 💬, preferredStyle: .alert)
+            let 😱 = NSLocalizedString("Sorry", comment: "")
+            let 💬 = NSLocalizedString("can't work", comment: "")
+            let 📢 = UIAlertController(title: 😱, message: 💬, preferredStyle: .alert)
             📢.addAction(UIAlertAction(title: "OK", style: .default))
             present(📢, animated: true)
         }
