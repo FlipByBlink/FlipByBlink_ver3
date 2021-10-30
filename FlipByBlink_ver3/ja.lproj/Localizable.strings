@@ -1,6 +1,6 @@
 
 "😱 Sorry 😱" = "😱 ごめんなさい 😱";
-"can't work" = "残念ながら、このデバイスでは瞬き検知が出来ません。\"Face tracking supports devices with Apple Neural Engine in iOS 14 and iPadOS 14 and requires a device with a TrueDepth camera on iOS 13 and iPadOS 13 and earlier.\" 参照:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration";
+"can't work" = "このデバイスでは瞬き検知が出来ません。\"Face tracking supports devices with Apple Neural Engine in iOS 14 and iPadOS 14 and requires a device with a TrueDepth camera on iOS 13 and iPadOS 13 and earlier.\" 参照:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration";
 "OK" = "了解しました";
 "🎉 Finish! 🎉" = "🎉 おしまい! 🎉";
 "Page No." = "ページ番号";
