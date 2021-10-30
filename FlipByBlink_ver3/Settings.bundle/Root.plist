@@ -10,7 +10,7 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>👤 Hide Preview</string>
+			<string>Hide👤</string>
 			<key>Key</key>
 			<string>Hide👤</string>
 			<key>DefaultValue</key>
@@ -20,7 +20,7 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>👤 Real Preview</string>
+			<string>Real👤</string>
 			<key>Key</key>
 			<string>Real👤</string>
 			<key>DefaultValue</key>
@@ -30,7 +30,7 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>👤 Always Preview</string>
+			<string>Always👤</string>
 			<key>Key</key>
 			<string>Always👤</string>
 			<key>DefaultValue</key>
@@ -40,7 +40,7 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>🏁 Display share-info</string>
+			<string>🏁</string>
 			<key>Key</key>
 			<string>🏁</string>
 			<key>DefaultValue</key>
