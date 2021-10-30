@@ -6,13 +6,13 @@
 "Jjx-C8-s6t.accessibilityLabel" = "本をインポートする";
 
 /* Class = "UIButton"; accessibilityLabel = "AppStore link"; ObjectID = "TBA-gG-LHE"; */
-"TBA-gG-LHE.accessibilityLabel" = "AppStoreを開く";
+"TBA-gG-LHE.accessibilityLabel" = "「AppStore」へ移動";
 
 /* Class = "UIButton"; accessibilityLabel = "Open book"; ObjectID = "Xqj-zg-dTH"; */
 "Xqj-zg-dTH.accessibilityLabel" = "本を開く";
 
 /* Class = "UIButton"; accessibilityLabel = "Setting"; ObjectID = "foG-Jf-dmC"; */
-"foG-Jf-dmC.accessibilityLabel" = "設定する";
+"foG-Jf-dmC.accessibilityLabel" = "「設定」へ移動";
 
 /* Class = "UIButton"; accessibilityLabel = "Video"; ObjectID = "fss-gx-m0J"; */
 "fss-gx-m0J.accessibilityLabel" = "動画を見る";
