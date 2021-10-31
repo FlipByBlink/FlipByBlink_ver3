@@ -1,9 +1,11 @@
 
-"😱 Sorry 😱" = "😱 ごめんなさい 😱";
-"can't work" = "このデバイスでは瞬き検知が出来ません。\"Face tracking supports devices with Apple Neural Engine in iOS 14 and iPadOS 14 and requires a device with a TrueDepth camera on iOS 13 and iPadOS 13 and earlier.\" 参照:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration";
-"OK" = "了解しました";
-"🎉 Finish! 🎉" = "🎉 おしまい! 🎉";
+"🎉 Finish! 🎉" = "🎉 おしまい！ 🎉";
+
 "Page No." = "ページ番号";
-"Jump" = "移動";
+"Jump" = "移動する";
 "Cancel" = "キャンセル";
+
+"😱 Sorry 😱" = "😱 ごめんなさい 😱";
+"can't work" = "このデバイスでは瞬き検知が出来ません。\"表情トラッキングを行うにはApple Neural Engine(第2世代以降)かTrueDepth cameraを搭載したデバイスが必要です。\" 参照:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration";
+"OK" = "了解しました";
 

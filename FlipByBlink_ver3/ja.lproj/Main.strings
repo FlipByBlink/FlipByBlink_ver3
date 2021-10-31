@@ -3,7 +3,7 @@
 "IjJ-xR-P41.title" = "📖_ViewController";
 
 /* Class = "UIButton"; accessibilityLabel = "Import book"; ObjectID = "Jjx-C8-s6t"; */
-"Jjx-C8-s6t.accessibilityLabel" = "本をインポートする";
+"Jjx-C8-s6t.accessibilityLabel" = "本を並べる";
 
 /* Class = "UIButton"; accessibilityLabel = "AppStore link"; ObjectID = "TBA-gG-LHE"; */
 "TBA-gG-LHE.accessibilityLabel" = "「AppStore」へ移動";
