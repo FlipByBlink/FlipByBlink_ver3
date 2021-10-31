@@ -38,11 +38,11 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             🔘.layer.borderWidth = 6
             🔘.layer.borderColor = UIColor.separator.cgColor
             
-            if UserDefaults.standard.bool(forKey: "Real👤") == false {
+            if UserDefaults.standard.bool(forKey: "👤 Real Preview") == false {
                 🔘.scene.background.contents = UIColor.systemBackground
             }
             
-            if UserDefaults.standard.bool(forKey: "Hide👤") {
+            if UserDefaults.standard.bool(forKey: "👤 Hide Preview") {
                 🔘.isHidden = true
             }
         }
@@ -50,7 +50,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        if UserDefaults.standard.bool(forKey: "Always👤") == false {
+        if UserDefaults.standard.bool(forKey: "👤 Always Preview") == false {
             DispatchQueue.main.async {
                 UIView.animate(withDuration: 2, delay: 2) {
                     self.🔘.alpha = 0
@@ -61,7 +61,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         let 👤 = ARSCNFaceGeometry(device: renderer.device!)!
         👤.firstMaterial?.diffuse.contents = UIColor.systemGray
         
-        if UserDefaults.standard.bool(forKey: "Real👤") {
+        if UserDefaults.standard.bool(forKey: "👤 Real Preview") {
             👤.firstMaterial?.diffuse.contents = UIColor.clear
         }
         
@@ -243,7 +243,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     @IBOutlet weak var 🏁: UIImageView! {
         didSet {
-            if UserDefaults.standard.bool(forKey: "🏁") {
+            if UserDefaults.standard.bool(forKey: "🏁 Display share-info") {
                 🏁.isHidden = false
             }
         }

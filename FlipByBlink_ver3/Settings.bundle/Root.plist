@@ -10,9 +10,9 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Hide👤</string>
+			<string>👤 Hide Preview</string>
 			<key>Key</key>
-			<string>Hide👤</string>
+			<string>👤 Hide Preview</string>
 			<key>DefaultValue</key>
 			<false/>
 		</dict>
@@ -20,9 +20,9 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Real👤</string>
+			<string>👤 Real Preview</string>
 			<key>Key</key>
-			<string>Real👤</string>
+			<string>👤 Real Preview</string>
 			<key>DefaultValue</key>
 			<false/>
 		</dict>
@@ -30,9 +30,9 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Always👤</string>
+			<string>👤 Always Preview</string>
 			<key>Key</key>
-			<string>Always👤</string>
+			<string>👤 Always Preview</string>
 			<key>DefaultValue</key>
 			<false/>
 		</dict>
@@ -40,9 +40,9 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>🏁</string>
+			<string>🏁 Display share-info</string>
 			<key>Key</key>
-			<string>🏁</string>
+			<string>🏁 Display share-info</string>
 			<key>DefaultValue</key>
 			<false/>
 		</dict>
