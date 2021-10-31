@@ -38,11 +38,11 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             🔘.layer.borderWidth = 6
             🔘.layer.borderColor = UIColor.separator.cgColor
             
-            if UserDefaults.standard.bool(forKey: "Real👤") == false {
+            if UserDefaults.standard.bool(forKey: "👤 Real Preview") == false {
                 🔘.scene.background.contents = UIColor.systemBackground
             }
             
-            if UserDefaults.standard.bool(forKey: "Hide👤") {
+            if UserDefaults.standard.bool(forKey: "👤 Hide Preview") {
                 🔘.isHidden = true
             }
         }
@@ -50,7 +50,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        if UserDefaults.standard.bool(forKey: "Always👤") == false {
+        if UserDefaults.standard.bool(forKey: "👤 Always Preview") == false {
             DispatchQueue.main.async {
                 UIView.animate(withDuration: 2, delay: 2) {
                     self.🔘.alpha = 0
@@ -61,7 +61,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         let 👤 = ARSCNFaceGeometry(device: renderer.device!)!
         👤.firstMaterial?.diffuse.contents = UIColor.systemGray
         
-        if UserDefaults.standard.bool(forKey: "Real👤") {
+        if UserDefaults.standard.bool(forKey: "👤 Real Preview") {
             👤.firstMaterial?.diffuse.contents = UIColor.clear
         }
         
@@ -132,7 +132,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     func 🄶oToNextPage() {
         if 📖.canGoToNextPage == false {
-            let 💬 = "🎉 Finish! 🎉"
+            let 💬 = NSLocalizedString("🎉 Finish! 🎉", comment: "")
             let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
             present(📢, animated: true)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2 ) {
@@ -182,14 +182,16 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
         📢.addTextField { 📋 in
             📋.keyboardType = .numberPad
-            📋.placeholder = "Page No."
+            📋.placeholder = NSLocalizedString("Page No.", comment: "")
         }
-        📢.addAction(UIAlertAction(title: "Jump", style: .default) { _ in
+        let 🆗 = NSLocalizedString("Jump", comment: "")
+        📢.addAction(UIAlertAction(title: 🆗, style: .default) { _ in
             guard let 📝 = Int((📢.textFields?.first?.text)!) else { return }
             guard let 🔖 = self.📖.document?.page(at: 📝 - 1 ) else { return }
             self.📖.go(to: 🔖)
         })
-        📢.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        let 🆖 = NSLocalizedString("Cancel", comment: "")
+        📢.addAction(UIAlertAction(title: 🆖, style: .cancel))
         self.present(📢, animated: true)
     }
     
@@ -218,9 +220,11 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         super.viewDidAppear(animated)
         
         if ARFaceTrackingConfiguration.isSupported == false {
-            let 💬 = "Your device can't work facetracking. \"Face tracking supports devices with Apple Neural Engine in iOS 14 and iPadOS 14 and requires a device with a TrueDepth camera on iOS 13 and iPadOS 13 and earlier.\" source:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration"
-            let 📢 = UIAlertController(title: "😱 Sorry 😱", message: 💬, preferredStyle: .alert)
-            📢.addAction(UIAlertAction(title: "OK", style: .default))
+            let 😱 = NSLocalizedString("😱 Sorry 😱", comment: "")
+            let 💬 = NSLocalizedString("can't work", comment: "")
+            let 📢 = UIAlertController(title: 😱, message: 💬, preferredStyle: .alert)
+            let 🆗 = NSLocalizedString("OK", comment: "")
+            📢.addAction(UIAlertAction(title: 🆗, style: .default))
             present(📢, animated: true)
         }
         
@@ -239,7 +243,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     @IBOutlet weak var 🏁: UIImageView! {
         didSet {
-            if UserDefaults.standard.bool(forKey: "🏁") {
+            if UserDefaults.standard.bool(forKey: "🏁 Display share-info") {
                 🏁.isHidden = false
             }
         }

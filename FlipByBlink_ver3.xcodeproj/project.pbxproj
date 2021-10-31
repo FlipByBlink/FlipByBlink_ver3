@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		122AC1D52720163700C90ECB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 122AC1D42720163700C90ECB /* Settings.bundle */; };
 		125222B027166D590013E5ED /* 📄.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 125222AF27166D590013E5ED /* 📄.pdf */; };
+		1260AD80272D2ECC00FFC395 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1260AD82272D2ECC00FFC395 /* Localizable.strings */; };
 		127E610627150C6E00B44096 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127E610527150C6E00B44096 /* AppDelegate.swift */; };
 		127E610827150C6E00B44096 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127E610727150C6E00B44096 /* SceneDelegate.swift */; };
 		127E610A27150C6E00B44096 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127E610927150C6E00B44096 /* ViewController.swift */; };
@@ -24,6 +25,9 @@
 /* Begin PBXFileReference section */
 		122AC1D42720163700C90ECB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		125222AF27166D590013E5ED /* 📄.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "📄.pdf"; sourceTree = "<group>"; };
+		1260AD7D272D2E4800FFC395 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		1260AD81272D2ECC00FFC395 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1260AD83272D2F3700FFC395 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		127E610227150C6E00B44096 /* FlipByBlink_ver3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipByBlink_ver3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		127E610527150C6E00B44096 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		127E610727150C6E00B44096 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 				12EA5A392715A90E00DF39D6 /* 📖_ViewController.swift */,
 				127E610527150C6E00B44096 /* AppDelegate.swift */,
 				127E610727150C6E00B44096 /* SceneDelegate.swift */,
+				1260AD82272D2ECC00FFC395 /* Localizable.strings */,
 				127E610E27150C7100B44096 /* Assets.xcassets */,
 				127E611027150C7100B44096 /* LaunchScreen.storyboard */,
 				127E611327150C7100B44096 /* Info.plist */,
@@ -127,6 +132,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 127E60F927150C6E00B44096;
 			productRefGroup = 127E610327150C6E00B44096 /* Products */;
@@ -147,6 +153,7 @@
 				127E611227150C7100B44096 /* LaunchScreen.storyboard in Resources */,
 				127E611E271568F700B44096 /* 🄿reset.pdf in Resources */,
 				127E610F27150C7100B44096 /* Assets.xcassets in Resources */,
+				1260AD80272D2ECC00FFC395 /* Localizable.strings in Resources */,
 				127E611A27150CAD00B44096 /* README.md in Resources */,
 				127E611C271568E600B44096 /* ▶️.mp4 in Resources */,
 				127E610D27150C6E00B44096 /* Main.storyboard in Resources */,
@@ -171,10 +178,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		1260AD82272D2ECC00FFC395 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1260AD81272D2ECC00FFC395 /* ja */,
+				1260AD83272D2F3700FFC395 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		127E610B27150C6E00B44096 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				127E610C27150C6E00B44096 /* Base */,
+				1260AD7D272D2E4800FFC395 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -194,6 +211,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -255,6 +273,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -312,6 +331,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlipByBlink_ver3/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FlipByBlink;
@@ -341,6 +361,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlipByBlink_ver3/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FlipByBlink;

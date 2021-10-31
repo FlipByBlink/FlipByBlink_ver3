@@ -1,0 +1,11 @@
+
+"🎉 Finish! 🎉" = "🎉 おしまい！ 🎉";
+
+"Page No." = "ページ番号";
+"Jump" = "移動する";
+"Cancel" = "キャンセル";
+
+"😱 Sorry 😱" = "😱 ごめんなさい 😱";
+"can't work" = "このデバイスでは瞬き検知が出来ません。\"表情トラッキングを行うにはApple Neural Engine(第2世代以降)かTrueDepth cameraを搭載したデバイスが必要です。\" 参照:https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration";
+"OK" = "了解しました";
+
