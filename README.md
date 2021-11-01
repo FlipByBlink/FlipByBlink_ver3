@@ -7,10 +7,10 @@ Simple and normal ebook reader. Only a special feature. Flip a page with slightl
 ## AppStore link
 https://apps.apple.com/jp/app/id1444571751
 
-# Suport OS
+### Suport OS
 iOS / iPadOS ver 14.7 ~
 
-## Source code link
+### Source code link
 https://github.com/FlipByBlink/FlipByBlink_ver3
 
 ### Note
