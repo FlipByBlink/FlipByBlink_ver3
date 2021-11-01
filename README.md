@@ -1,9 +1,12 @@
 # FlipByBlink
 
+シンプルで一般的な電子書籍リーダー。特殊な機能は1つだけ。意識的に閉瞼をわずかに長くさせた瞬きでページめくりが出来ます
+Simple and normal ebook reader. Only a special feature. Flip a page with slightly longish voluntary blink.
+
 ## AppStore link
 https://apps.apple.com/jp/app/id1444571751
 
-## sourcecode link
+## Source code link
 https://github.com/FlipByBlink/FlipByBlink_ver3
 
 ### Note
