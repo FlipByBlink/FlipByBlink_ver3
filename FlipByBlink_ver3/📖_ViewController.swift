@@ -109,6 +109,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
                 DispatchQueue.main.async {
                     self.🄶oToNextPage()
                 }
+                
                 💤 = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
                     self.💤 = false
@@ -121,6 +122,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
                 DispatchQueue.main.async {
                     self.📖.goToPreviousPage(nil)
                 }
+                
                 💤 = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
                     self.💤 = false
@@ -180,18 +182,22 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     @IBAction func 彡👆ミ(_ sender: Any) {
         let 💬 = "1 〜 " + 📚.pageCount.description
         let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
+        
         📢.addTextField { 📋 in
             📋.keyboardType = .numberPad
             📋.placeholder = NSLocalizedString("Page No.", comment: "")
         }
+        
         let 🆗 = NSLocalizedString("Jump", comment: "")
         📢.addAction(UIAlertAction(title: 🆗, style: .default) { _ in
             guard let 📝 = Int((📢.textFields?.first?.text)!) else { return }
             guard let 🔖 = self.📖.document?.page(at: 📝 - 1 ) else { return }
             self.📖.go(to: 🔖)
         })
+        
         let 🆖 = NSLocalizedString("Cancel", comment: "")
         📢.addAction(UIAlertAction(title: 🆖, style: .cancel))
+        
         self.present(📢, animated: true)
     }
     
@@ -235,7 +241,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
             self.📖.sizeToFit()
         }
     }
@@ -251,3 +257,4 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     
 }
+

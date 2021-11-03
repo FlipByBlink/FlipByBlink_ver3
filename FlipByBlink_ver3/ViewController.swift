@@ -72,18 +72,23 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         let 💾 = FileManager.default
         var 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0]
         📍.appendPathComponent("🄸mported.pdf")
+        
         if 💾.fileExists(atPath: 📍.path) {
             try! 💾.removeItem(at: 📍)
         }
+        
         try! 💾.copyItem(at: 📦, to: 📍)
-        UserDefaults.standard.set(0, forKey: "🔖")
+        
         📚 = PDFDocument(url: 📍)
+        
+        UserDefaults.standard.set(0, forKey: "🔖")
     }
     
     
     // 📘 or 📄
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let 🎮 = segue.destination as! 📖_ViewController
+        
         if (segue.identifier == "📘") {
             🎮.📚 = 📚
         } else {
