@@ -88,23 +88,23 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         guard let 👤 = node.geometry as? ARSCNFaceGeometry else { return }
         👤.update(from: 🪧.geometry)
         
-        guard let 🌡👀left = 🪧.blendShapes[.eyeBlinkLeft]?.doubleValue else { return }
-        guard let 🌡👀right = 🪧.blendShapes[.eyeBlinkRight]?.doubleValue else { return }
-        let new🌡👀 = ( 🌡👀left + 🌡👀right ) / 2
+        guard let 🌡👀L = 🪧.blendShapes[.eyeBlinkLeft]?.doubleValue else { return }
+        guard let 🌡👀R = 🪧.blendShapes[.eyeBlinkRight]?.doubleValue else { return }
+        let New🌡👀 = ( 🌡👀L + 🌡👀R ) / 2
         
         let 🎚👀 = 0.8
         
         if 🌡👀 < 🎚👀 {
-            if new🌡👀 > 🎚👀 {
+            if New🌡👀 > 🎚👀 {
                 🕰😑start = Date()
             }
         }
         
-        🌡👀 = new🌡👀
+        🌡👀 = New🌡👀
         
         if 💤 { return }
         
-        if new🌡👀 > 🎚👀 {
+        if New🌡👀 > 🎚👀 {
             if Date().timeIntervalSince(🕰😑start) > 🎚😑second {
                 DispatchQueue.main.async {
                     self.🄶oToNextPage()
@@ -117,7 +117,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         }
         
         if UserDefaults.standard.bool(forKey: "😉 return") {
-            if abs( 🌡👀left - 🌡👀right ) > 0.5 {
+            if abs( 🌡👀L - 🌡👀R ) > 0.5 {
                 DispatchQueue.main.async {
                     self.📖.goToPreviousPage(nil)
                 }
