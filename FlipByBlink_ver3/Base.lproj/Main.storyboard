@@ -46,7 +46,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="📄">
                                 <rect key="frame" x="33" y="54" width="120" height="120"/>
-                                <accessibility key="accessibilityConfiguration" label="App document"/>
+                                <accessibility key="accessibilityConfiguration" label="App document PDF"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="prH-ik-hV5"/>
                                     <constraint firstAttribute="height" constant="120" id="zr1-BI-Jrw"/>
@@ -62,7 +62,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-gx-m0J" userLabel="ᐅ⃣">
                                 <rect key="frame" x="30" y="174" width="120" height="120"/>
-                                <accessibility key="accessibilityConfiguration" label="App video"/>
+                                <accessibility key="accessibilityConfiguration" label="App document video"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="5qu-5W-8jv"/>
                                     <constraint firstAttribute="height" constant="120" id="fOJ-B6-Du4"/>
