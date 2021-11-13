@@ -148,7 +148,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <arscnView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LyC-I6-pPf">
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LyC-I6-pPf">
                                 <rect key="frame" x="-40" y="696" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LyC-I6-pPf" secondAttribute="height" id="3MH-0k-RRc"/>
