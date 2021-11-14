@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-C8-s6t" userLabel="📁">
-                                <rect key="frame" x="137" y="313" width="140" height="140"/>
+                                <rect key="frame" x="157" y="333" width="100" height="100"/>
                                 <accessibility key="accessibilityConfiguration" label="Import book"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="BOl-uS-8R9"/>
-                                    <constraint firstAttribute="width" constant="140" id="Zl9-9c-RDS"/>
+                                    <constraint firstAttribute="height" constant="100" id="BOl-uS-8R9"/>
+                                    <constraint firstAttribute="width" constant="100" id="Zl9-9c-RDS"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="folder" catalog="system">
@@ -45,11 +45,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="📄">
-                                <rect key="frame" x="33" y="54" width="120" height="120"/>
+                                <rect key="frame" x="40" y="84" width="80" height="80"/>
                                 <accessibility key="accessibilityConfiguration" label="App document PDF"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="prH-ik-hV5"/>
-                                    <constraint firstAttribute="height" constant="120" id="zr1-BI-Jrw"/>
+                                    <constraint firstAttribute="width" constant="80" id="prH-ik-hV5"/>
+                                    <constraint firstAttribute="height" constant="80" id="zr1-BI-Jrw"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -61,11 +61,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-gx-m0J" userLabel="ᐅ⃣">
-                                <rect key="frame" x="30" y="174" width="120" height="120"/>
+                                <rect key="frame" x="40" y="184" width="80" height="80"/>
                                 <accessibility key="accessibilityConfiguration" label="App document video"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="5qu-5W-8jv"/>
-                                    <constraint firstAttribute="height" constant="120" id="fOJ-B6-Du4"/>
+                                    <constraint firstAttribute="width" constant="80" id="5qu-5W-8jv"/>
+                                    <constraint firstAttribute="height" constant="80" id="fOJ-B6-Du4"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -77,11 +77,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foG-Jf-dmC" userLabel="⚙️">
-                                <rect key="frame" x="264" y="54" width="120" height="120"/>
+                                <rect key="frame" x="294" y="84" width="80" height="80"/>
                                 <accessibility key="accessibilityConfiguration" label="Setting link"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="gog-cX-Dmw"/>
-                                    <constraint firstAttribute="width" constant="120" id="v0F-kK-vZq"/>
+                                    <constraint firstAttribute="height" constant="80" id="gog-cX-Dmw"/>
+                                    <constraint firstAttribute="width" constant="80" id="v0F-kK-vZq"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -93,11 +93,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="🄰">
-                                <rect key="frame" x="263" y="174" width="120" height="120"/>
+                                <rect key="frame" x="294" y="184" width="80" height="80"/>
                                 <accessibility key="accessibilityConfiguration" label="AppStore link"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="LKx-h8-gu9"/>
-                                    <constraint firstAttribute="width" constant="120" id="SnX-PQ-gYa"/>
+                                    <constraint firstAttribute="height" constant="80" id="LKx-h8-gu9"/>
+                                    <constraint firstAttribute="width" constant="80" id="SnX-PQ-gYa"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -112,19 +112,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Jjx-C8-s6t" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="EU0-Iw-6KX"/>
+                            <constraint firstItem="Jjx-C8-s6t" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-20" id="EU0-Iw-6KX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xqj-zg-dTH" secondAttribute="trailing" constant="50" id="Hqz-KG-U8o"/>
                             <constraint firstItem="Xqj-zg-dTH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="I8K-tZ-ih8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TBA-gG-LHE" secondAttribute="trailing" constant="31" id="Mj4-tv-ZSg"/>
-                            <constraint firstItem="fss-gx-m0J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="RXc-eY-x16"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TBA-gG-LHE" secondAttribute="trailing" constant="40" id="Mj4-tv-ZSg"/>
+                            <constraint firstItem="fss-gx-m0J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="RXc-eY-x16"/>
                             <constraint firstAttribute="bottom" secondItem="Xqj-zg-dTH" secondAttribute="bottom" constant="60" id="Zqy-pM-Iml"/>
-                            <constraint firstItem="pdT-1r-y2w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="hJq-g6-h0C"/>
-                            <constraint firstItem="pdT-1r-y2w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="j94-oU-Dlh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="foG-Jf-dmC" secondAttribute="trailing" constant="30" id="jkp-LK-Xd4"/>
-                            <constraint firstItem="foG-Jf-dmC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="llz-y4-CkK"/>
-                            <constraint firstItem="fss-gx-m0J" firstAttribute="top" secondItem="pdT-1r-y2w" secondAttribute="bottom" id="p4h-Zv-TkM"/>
+                            <constraint firstItem="pdT-1r-y2w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="hJq-g6-h0C"/>
+                            <constraint firstItem="pdT-1r-y2w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="j94-oU-Dlh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="foG-Jf-dmC" secondAttribute="trailing" constant="40" id="jkp-LK-Xd4"/>
+                            <constraint firstItem="foG-Jf-dmC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="llz-y4-CkK"/>
+                            <constraint firstItem="fss-gx-m0J" firstAttribute="top" secondItem="pdT-1r-y2w" secondAttribute="bottom" constant="20" id="p4h-Zv-TkM"/>
                             <constraint firstItem="Xqj-zg-dTH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="rIG-tk-AgN"/>
-                            <constraint firstItem="TBA-gG-LHE" firstAttribute="top" secondItem="foG-Jf-dmC" secondAttribute="bottom" id="x4I-g0-zQ3"/>
+                            <constraint firstItem="TBA-gG-LHE" firstAttribute="top" secondItem="foG-Jf-dmC" secondAttribute="bottom" constant="20" id="x4I-g0-zQ3"/>
                             <constraint firstItem="Jjx-C8-s6t" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zVZ-we-m8h"/>
                         </constraints>
                     </view>
