@@ -1,4 +1,4 @@
-# Privacy Policy プライバシーポリシー
+# Privacy Policy for AppStore プライバシーポリシー(AppStore用)
 
 2021-12-02
 
