@@ -3,8 +3,8 @@
 
 __both + slow + wink + blink → boslowink__
 
-シンプルで一般的な電子書籍リーダー。特殊な機能は1つだけ。意識的に目を閉じる時間をわずかに長くさせた瞬き(boslowink)でページめくりが出来ます。  
-EN: Simple and normal ebook reader. Only a special feature. Flip a page with slightly-longish-voluntary-blink(boslowink).
+シンプルで一般的な固定レイアウト用の電子書籍リーダー。特殊な機能は1つだけ。意識的に目を閉じる時間をわずかに長くさせた瞬き(boslowink)でページめくりが出来ます。  
+EN: Simple and normal ebook reader for fixed-layout. Only a special feature. Flip a page with slightly-longish-voluntary-blink(boslowink).
 
 
 ## AppStore link
@@ -17,7 +17,7 @@ https://apps.apple.com/jp/app/id1444571751
 iOS / iPadOS ver 14.7 ~
 
 
-## Source code link
+## Sourcecode link
 
 https://github.com/FlipByBlink/FlipByBlink_ver3
 
