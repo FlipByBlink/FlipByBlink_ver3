@@ -1,7 +1,7 @@
 # FlipByBlink
 
 
-![Demo](/FlipByBlink_ver3/FlipByBlink_ver3/Assets.xcassets/🄳emo.dataset/🄳emo.GIF)
+![Demo](FlipByBlink_ver3/Assets.xcassets/🄳emo.dataset/🄳emo.GIF)
 
 
 シンプルで一般的な固定レイアウト用の電子書籍リーダー。特殊な機能は1つだけ。意識的に目を閉じる時間をわずかに長くさせた瞬き(boslowink)でページめくりが出来ます。
