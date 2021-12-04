@@ -37,9 +37,9 @@ https://developer.apple.com/documentation/arkit
 https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration
 
 
-# Privacy Policy for AppStore プライバシーポリシー(AppStore用)
+# Privacy Policy for AppStore
 
-2021-12-02
+2021-12-04
 
 __Japanese__
 
