@@ -1,7 +1,7 @@
 # FlipByBlink
 
 
-__both + slow + wink + blink → boslowink__
+**_both + slow + wink + blink → boslowink_**
 
 
 シンプルで一般的な固定レイアウト用の電子書籍リーダー。特殊な機能は1つだけ。意識的に目を閉じる時間をわずかに長くさせた瞬き(boslowink)でページめくりが出来ます。
@@ -14,12 +14,12 @@ EN: Simple and normal ebook reader for fixed-layout. Only a special feature. Fli
 https://apps.apple.com/jp/app/id1444571751
 
 
-## Suport OS
+## Support OS
 
 iOS / iPadOS ver 14.7 ~
 
 
-## Sourcecode link
+## Source code link
 
 https://github.com/FlipByBlink/FlipByBlink_ver3
 
@@ -41,7 +41,7 @@ https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration
 
 2021-12-04
 
-__Japanese__
+#### Japanese
 
 本アプリケーション FlipByBlink では下記のAPIを用いて顔認識を実行します。
 
@@ -51,7 +51,7 @@ __Japanese__
 
 参照: https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration
 
-__English__
+#### English
 
 This application will use the API to perform face tracking.
 
@@ -60,3 +60,4 @@ This application will use the API to perform face tracking.
 These data will be used only on the device for the purpose of page flipping feature only. The application will not store any of that data. It will not be passed on to the application's creator or any third party.
 
 ref. https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration
+
