@@ -18,10 +18,11 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             let 💾 = FileManager.default
             var 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0]
             📍.appendPathComponent("🄸mported.pdf")
-            if 💾.fileExists(atPath: 📍.path) == false {
-                📍 = Bundle.main.url(forResource: "🄿reset", withExtension: "pdf")!
+            if 💾.fileExists(atPath: 📍.path){
+                📚 = PDFDocument(url: 📍)
+            } else {
+                📚 = PDFDocument(data: NSDataAsset(name: "🄿reset")!.data)
             }
-            📚 = PDFDocument(url: 📍)
         }
     }
     

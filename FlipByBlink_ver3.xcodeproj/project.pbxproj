@@ -18,7 +18,6 @@
 		127E611227150C7100B44096 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 127E611027150C7100B44096 /* LaunchScreen.storyboard */; };
 		127E611A27150CAD00B44096 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 127E611927150CAD00B44096 /* README.md */; };
 		127E611C271568E600B44096 /* ▶️.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 127E611B271568E600B44096 /* ▶️.mp4 */; };
-		127E611E271568F700B44096 /* 🄿reset.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 127E611D271568F700B44096 /* 🄿reset.pdf */; };
 		12EA5A3A2715A90E00DF39D6 /* 📖_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EA5A392715A90E00DF39D6 /* 📖_ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +37,6 @@
 		127E611327150C7100B44096 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		127E611927150CAD00B44096 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		127E611B271568E600B44096 /* ▶️.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "▶️.mp4"; sourceTree = "<group>"; };
-		127E611D271568F700B44096 /* 🄿reset.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "🄿reset.pdf"; sourceTree = "<group>"; };
 		12EA5A392715A90E00DF39D6 /* 📖_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📖_ViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +81,6 @@
 				127E611027150C7100B44096 /* LaunchScreen.storyboard */,
 				127E611327150C7100B44096 /* Info.plist */,
 				122AC1D42720163700C90ECB /* Settings.bundle */,
-				127E611D271568F700B44096 /* 🄿reset.pdf */,
 				125222AF27166D590013E5ED /* 📄.pdf */,
 				127E611B271568E600B44096 /* ▶️.mp4 */,
 			);
@@ -151,7 +148,6 @@
 			files = (
 				122AC1D52720163700C90ECB /* Settings.bundle in Resources */,
 				127E611227150C7100B44096 /* LaunchScreen.storyboard in Resources */,
-				127E611E271568F700B44096 /* 🄿reset.pdf in Resources */,
 				127E610F27150C7100B44096 /* Assets.xcassets in Resources */,
 				1260AD80272D2ECC00FFC395 /* Localizable.strings in Resources */,
 				127E611A27150CAD00B44096 /* README.md in Resources */,
