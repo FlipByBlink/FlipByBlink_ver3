@@ -41,7 +41,7 @@ https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration
 
 2021-12-02
 
-## 日本語
+__Japanese__
 
 本アプリケーション FlipByBlink では下記のAPIを用いて顔認識を実行します。
 
@@ -51,7 +51,7 @@ https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration
 
 参照: https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration
 
-## English
+__English__
 
 This application will use the API to perform face tracking.
 
