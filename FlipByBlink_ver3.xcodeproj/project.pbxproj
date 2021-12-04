@@ -10,7 +10,6 @@
 		122AC1D52720163700C90ECB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 122AC1D42720163700C90ECB /* Settings.bundle */; };
 		125222B027166D590013E5ED /* 📄.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 125222AF27166D590013E5ED /* 📄.pdf */; };
 		1260AD80272D2ECC00FFC395 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1260AD82272D2ECC00FFC395 /* Localizable.strings */; };
-		127B848F27588ECC00392C27 /* PrivacyPolicy_for_AppStore.md in Resources */ = {isa = PBXBuildFile; fileRef = 127B848E27588ECC00392C27 /* PrivacyPolicy_for_AppStore.md */; };
 		127E610627150C6E00B44096 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127E610527150C6E00B44096 /* AppDelegate.swift */; };
 		127E610827150C6E00B44096 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127E610727150C6E00B44096 /* SceneDelegate.swift */; };
 		127E610A27150C6E00B44096 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127E610927150C6E00B44096 /* ViewController.swift */; };
@@ -29,7 +28,6 @@
 		1260AD7D272D2E4800FFC395 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		1260AD81272D2ECC00FFC395 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1260AD83272D2F3700FFC395 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		127B848E27588ECC00392C27 /* PrivacyPolicy_for_AppStore.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = PrivacyPolicy_for_AppStore.md; sourceTree = "<group>"; };
 		127E610227150C6E00B44096 /* FlipByBlink_ver3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipByBlink_ver3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		127E610527150C6E00B44096 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		127E610727150C6E00B44096 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				127E611927150CAD00B44096 /* README.md */,
-				127B848E27588ECC00392C27 /* PrivacyPolicy_for_AppStore.md */,
 				127E610427150C6E00B44096 /* FlipByBlink_ver3 */,
 				127E610327150C6E00B44096 /* Products */,
 			);
@@ -155,7 +152,6 @@
 				122AC1D52720163700C90ECB /* Settings.bundle in Resources */,
 				127E611227150C7100B44096 /* LaunchScreen.storyboard in Resources */,
 				127E611E271568F700B44096 /* 🄿reset.pdf in Resources */,
-				127B848F27588ECC00392C27 /* PrivacyPolicy_for_AppStore.md in Resources */,
 				127E610F27150C7100B44096 /* Assets.xcassets in Resources */,
 				1260AD80272D2ECC00FFC395 /* Localizable.strings in Resources */,
 				127E611A27150CAD00B44096 /* README.md in Resources */,
