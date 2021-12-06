@@ -14,7 +14,7 @@ _both + slow + wink + blink → boslowink_
 
 ## AppStore link
 
-https://apps.apple.com/jp/app/id1444571751
+https://apps.apple.com/app/id1444571751
 
 
 ## Support OS
