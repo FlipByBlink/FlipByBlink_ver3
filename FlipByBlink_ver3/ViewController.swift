@@ -74,11 +74,11 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         var 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0]
         📍.appendPathComponent("🄸mported.pdf")
         
-        if 💾.fileExists(atPath: 📍.path) {
-            try! 💾.removeItem(at: 📍)
-        }
+        try? 💾.removeItem(at: 📍)
         
-        try! 💾.copyItem(at: 📦, to: 📍)
+        try? 💾.copyItem(at: 📦, to: 📍)
+        
+        try? 💾.removeItem(at: 📦)
         
         📚 = PDFDocument(url: 📍)
         
