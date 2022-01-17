@@ -185,7 +185,8 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         
         📢.addTextField { 📋 in
             📋.keyboardType = .numberPad
-            📋.placeholder = NSLocalizedString("Page No.", comment: "")
+            let 🔖 = self.📖.currentPage!.pageRef!.pageNumber.description
+            📋.placeholder = NSLocalizedString(🔖, comment: "")
         }
         
         let 🆗 = NSLocalizedString("Jump", comment: "")
