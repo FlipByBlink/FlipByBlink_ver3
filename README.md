@@ -40,6 +40,13 @@ https://developer.apple.com/documentation/arkit
 https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration
 
 
+## In App Document
+
+[PDF](FlipByBlink_ver3/📄.pdf)
+
+[Video](FlipByBlink_ver3/▶️.mp4)
+
+
 # Privacy Policy for AppStore
 
 2021-12-04
