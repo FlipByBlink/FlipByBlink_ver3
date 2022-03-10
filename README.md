@@ -110,6 +110,15 @@ etc.
 [アプリ内のアプリドキュメントPDFを参照してください。 Please read AppDocumentPDF in App.](/FlipByBlink_ver3/📄.pdf)
 
 
+|
+
+|
+
+|
+
+|
+
+
 Privacy Policy for AppStore
 ======
 
@@ -134,3 +143,13 @@ This application will use the API to perform face tracking.
 These data will be used only on the device for the purpose of page flipping feature only. The application will not store any of that data. It will not be passed on to the application's creator or any third party.
 
 ref. https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration
+
+
+|
+
+|
+
+|
+
+|
+
