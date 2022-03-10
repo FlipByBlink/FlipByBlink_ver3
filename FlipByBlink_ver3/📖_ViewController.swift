@@ -1,3 +1,4 @@
+
 import UIKit
 import PDFKit
 import ARKit
@@ -38,11 +39,11 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             🔘.layer.borderWidth = 6
             🔘.layer.borderColor = UIColor.separator.cgColor
             
-            if UserDefaults.standard.bool(forKey: "👤 Real Preview") == false {
+            if UserDefaults.standard.bool(forKey: "👤🧑‍💼 Real Preview") == false {
                 🔘.scene.background.contents = UIColor.systemBackground
             }
             
-            if UserDefaults.standard.bool(forKey: "👤 Hide Preview") {
+            if UserDefaults.standard.bool(forKey: "👤🚫 Hide Preview") {
                 🔘.isHidden = true
             }
         }
@@ -50,7 +51,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        if UserDefaults.standard.bool(forKey: "👤 Always Preview") == false {
+        if UserDefaults.standard.bool(forKey: "👤🔁 Always Preview") == false {
             DispatchQueue.main.async {
                 UIView.animate(withDuration: 2, delay: 2) {
                     self.🔘.alpha = 0
@@ -61,7 +62,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         let 👤 = ARSCNFaceGeometry(device: renderer.device!)!
         👤.firstMaterial?.diffuse.contents = UIColor.systemGray
         
-        if UserDefaults.standard.bool(forKey: "👤 Real Preview") {
+        if UserDefaults.standard.bool(forKey: "👤🧑‍💼 Real Preview") {
             👤.firstMaterial?.diffuse.contents = UIColor.clear
         }
         
@@ -82,6 +83,10 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     var 🌡👀 = 0.0
     
     var 💤 = false
+    
+    var 🕰😉start = Date()
+    
+    var 🌡😉 = 0.0
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let 🪧 = anchor as? ARFaceAnchor else { return }
@@ -117,15 +122,33 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             }
         }
         
+        
         if UserDefaults.standard.bool(forKey: "😉 return") {
-            if abs( 🌡👀L - 🌡👀R ) > 0.5 {
-                DispatchQueue.main.async {
-                    self.📖.goToPreviousPage(nil)
+            
+            let New🌡😉 = abs( 🌡👀L - 🌡👀R )
+            
+            let 🎚😉 = 0.5
+            
+            if 🌡😉 < 🎚😉 {
+                if New🌡😉 > 🎚😉 {
+                    🕰😉start = Date()
                 }
-                
-                💤 = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
-                    self.💤 = false
+            }
+            
+            🌡😉 = New🌡😉
+            
+            if 💤 == false {
+                if New🌡😉 > 🎚😉 {
+                    if Date().timeIntervalSince(🕰😉start) > 0.5 {
+                        DispatchQueue.main.async {
+                            self.📖.goToPreviousPage(nil)
+                        }
+                        
+                        💤 = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
+                            self.💤 = false
+                        }
+                    }
                 }
             }
         }
@@ -137,7 +160,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             let 💬 = NSLocalizedString("🎉 Finish! 🎉", comment: "")
             let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
             present(📢, animated: true)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2 ) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5 ) {
                 📢.dismiss(animated: true)
             }
         }
@@ -257,5 +280,50 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     }
     
     
+    override func pressesBegan(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
+        super.pressesBegan(presses, with: event)
+        
+        for 🄿ress in presses {
+            switch 🄿ress.key?.keyCode {
+            case .keyboardRightArrow: 🄶oToNextPage()
+            case .keyboardDownArrow: 🅂kip5Page()
+            case .keyboardLeftArrow: 📖.goToPreviousPage(nil)
+            case .keyboardUpArrow: 🄱ack5Page()
+                
+            case .keyboardD: 🄶oToNextPage()
+            case .keyboardS: 🅂kip5Page()
+            case .keyboardA: 📖.goToPreviousPage(nil)
+            case .keyboardW: 🄱ack5Page()
+                
+            case .keyboardPageDown: 🄶oToNextPage()
+            case .keyboardPageUp: 📖.goToPreviousPage(nil)
+                
+            case .keyboardSpacebar:
+                if event?.modifierFlags == .shift {
+                    📖.goToPreviousPage(nil)
+                } else {
+                    🄶oToNextPage()
+                }
+                
+            default: print(🄿ress.key.debugDescription)
+            }
+            
+            func 🅂kip5Page() {
+                if 📖.canGoToNextPage {
+                    for _ in 1...5 {
+                        📖.goToNextPage(nil)
+                    }
+                } else {
+                    🄶oToNextPage()
+                }
+            }
+            
+            func 🄱ack5Page() {
+                for _ in 1...5 {
+                    📖.goToPreviousPage(nil)
+                }
+            }
+        }
+    }
 }
 
