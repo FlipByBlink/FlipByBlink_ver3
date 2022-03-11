@@ -11,11 +11,12 @@
 
 - カメラであなたの瞬きを認識
 
+
 - 無料、無広告、無トラッキング、非営利
 
 - Simple and normal ebook reader (for fixed-layout)
 
-- Only a special feature. Flip a page with slightly longish voluntary blink
+- Only a special feature. Turn a page with slightly longish voluntary blink
 
 - Support PDF format
 
@@ -43,9 +44,11 @@ iOS / iPadOS ver 14.7 ~
 
 参照: https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration
 
+
 To detect your blinking eyes, this app uses FaceTracking API of Apple’s framework ARKit. Therefore, it requires TrueDepth camera OR A12 Bionic or later chip.
 
 ref. https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration
+
 
 サポート対象外のデバイス UNSUPPORTED DEVICE
 ------
@@ -62,6 +65,7 @@ __iPod touch__ 7
 
 固定レイアウト方式の電子書籍を読むすべての人 All people who read fixed-layout ebooks
 
+
 ユースケース Use cases
 ------
 
@@ -72,6 +76,7 @@ __iPod touch__ 7
 - 身体障害を抱える方の読書
 
 など
+
 
 - General reading
 - Playing an instrument while looking at music score - Cooking while checking a recipe book
@@ -92,6 +97,7 @@ etc.
 
 基本的には「新規機能の追加」等は行わない予定です。 There are no plans to add new features fundamentally. 
 
+
 メンテナンスアップデート期間 Maintenance update schedule
 ------
 
@@ -110,13 +116,11 @@ etc.
 [アプリ内のアプリドキュメントPDFを参照してください。 Please read AppDocumentPDF in App.](/FlipByBlink_ver3/📄.pdf)
 
 
-|
 
-|
 
-|
+------------
 
-|
+
 
 
 Privacy Policy for AppStore
@@ -145,11 +149,9 @@ These data will be used only on the device for the purpose of page flipping feat
 ref. https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration
 
 
-|
 
-|
 
-|
+------------
 
-|
+
 
