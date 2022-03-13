@@ -119,12 +119,10 @@ etc.
 より詳細な情報 More information
 ============
 
-[アプリ内のアプリドキュメントPDFを参照してください。 Please read AppDocumentPDF in App.](/FlipByBlink_ver3/📄.pdf)
+[アプリ内のアプリドキュメントPDFを参照してください。 Please read AppDocumentPDF in App.](/FlipByBlink_ver3/📄.pdf)  
 
 
 
-
-------------
 
 ------------
 
@@ -134,7 +132,7 @@ etc.
 Privacy Policy for AppStore
 ============
 
-2021-12-04
+2021-12-04  
 
 #### Japanese
 
@@ -142,9 +140,9 @@ Privacy Policy for AppStore
 
 ・Apple Inc. “ARKit TrueDepth API”
 
-これらの情報はページめくり機能のみを目的として端末上だけで活用します。取得した情報を永続的に保存することはありません。また、それらの情報が本アプリケーション制作者や第三者に渡ることはありません。
+これらの情報はページめくり機能のみを目的として端末上だけで活用します。取得した情報を永続的に保存することはありません。また、それらの情報が本アプリケーション制作者や第三者に渡ることはありません。  
 
-参照: https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration
+参照: https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration  
 
 #### English
 
@@ -152,14 +150,12 @@ This application will use the API to perform face tracking.
 
 ・Apple Inc. “ARKit TrueDepth API”
 
-These data will be used only on the device for the purpose of page flipping feature only. The application will not store any of that data. It will not be passed on to the application's creator or any third party.
+These data will be used only on the device for the purpose of page flipping feature only. The application will not store any of that data. It will not be passed on to the application's creator or any third party.  
 
-ref. https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration
-
-
+ref. https://developer.apple.com/documentation/arkit/arfacetrackingconfiguration  
 
 
-------------
+
 
 ------------
 
