@@ -3,38 +3,34 @@
 
 ![](FlipByBlink_ver3/Assets.xcassets/🄳emo.dataset/🄳emo.GIF)
 
+
 - シンプルで一般的な電子書籍リーダー(固定レイアウト向け)
-
-- 特殊な機能は1つだけ。目を閉じる時間を意識的にわずかに長くさせた瞬きでページめくりが出来ます
-
+- 特殊な機能は1つだけ。目を閉じる時間を意識的にわずかに長くさせた瞬きでページめくりをします
 - PDFファイルに対応
-
 - カメラであなたの瞬きを認識
-
-
 - 無料、無広告、無トラッキング、非営利
 
+
 - Simple and normal ebook reader (for fixed-layout)
-
 - Only a special feature. Turn a page with slightly longish voluntary blink
-
 - Support PDF format
-
 - Recognize your blinking eyes using a camera
-
 - Free, non ad, non tracking, non profit
 
 
 🔗 AppStore URL
 ============
-
 https://apps.apple.com/app/id1444571751
 
 
 📺 コンセプトビデオ Concept video
 ============
-
 https://www.youtube.com/watch?v=MSFDIr26nvw
+
+
+📺 主な使い方ビデオ HowTo video
+------------
+https://www.youtube.com/watch?v=4j7SqDVLvUg
 
 
 サポートOS Suport OS
@@ -85,7 +81,8 @@ __iPod touch__ 7
 
 
 - General reading
-- Playing an instrument while looking at music score - Cooking while checking a recipe book
+- Playing an instrument while looking at music score
+- Cooking while checking a recipe book
 - Reading on the train or bus
 - Reading by people with physical disabilities
 
