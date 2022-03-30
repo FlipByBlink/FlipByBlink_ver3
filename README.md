@@ -28,7 +28,7 @@
 🔗 AppStore URL
 ============
 
-https://apps.apple.com/jp/app/id1444571751
+https://apps.apple.com/app/id1444571751
 
 
 📺 コンセプトビデオ Concept video
