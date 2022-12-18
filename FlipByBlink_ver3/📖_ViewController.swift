@@ -20,9 +20,15 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             
             📖.document = 📚
             
-            if 📚.documentURL?.lastPathComponent == "🄸mported.pdf" {
-                let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
-                📖.go(to: 📚.page(at: 🔖)!)
+            switch ⓕileType {
+                case .presetPDF:
+                    break
+                case .importedPDF:
+                    let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
+                    📖.go(to: 📚.page(at: 🔖)!)
+                case .importedZIP:
+                    //📖.isHidden = true
+                    assertionFailure()
             }
         }
     }
@@ -112,7 +118,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         if New🌡👀 > 🎚👀 {
             if Date().timeIntervalSince(🕰😑start) > 🎚😑second {
                 DispatchQueue.main.async {
-                    self.🄶oToNextPage()
+                    self.ⓖoToNextPage()
                 }
                 
                 💤 = true
@@ -141,7 +147,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
                 if New🌡😉 > 🎚😉 {
                     if Date().timeIntervalSince(🕰😉start) > 0.5 {
                         DispatchQueue.main.async {
-                            self.📖.goToPreviousPage(nil)
+                            self.ⓖoToPreviousPage()
                         }
                         
                         💤 = true
@@ -155,7 +161,39 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     }
     
     
-    func 🄶oToNextPage() {
+    @IBAction func 👆゛(_ sender: UITapGestureRecognizer) {
+        if sender.location(in: view).x > view.center.x {
+            ⓖoToNextPage()
+        } else {
+            ⓖoToPreviousPage()
+        }
+    }
+    
+    
+    @IBAction func 👆三三(_ sender: Any) {
+        ⓖoToNextPage()
+    }
+    
+    
+    @IBAction func 三三👆(_ sender: Any) {
+        ⓖoToPreviousPage()
+    }
+    
+    
+    @IBAction func 氵👌(_ sender: UIPinchGestureRecognizer) {
+        if sender.velocity > 0 {
+            ⓖoToNextPage()
+        } else {
+            ⓖoToPreviousPage()
+        }
+    }
+    
+    
+    @IBAction func ミ👆彡(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
+    func ⓖoToNextPage() {
         if 📖.canGoToNextPage == false {
             let 💬 = NSLocalizedString("🎉 Finish! 🎉", comment: "")
             let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
@@ -168,55 +206,53 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         📖.goToNextPage(nil)
     }
     
-    
-    @IBAction func 👆゛(_ sender: UITapGestureRecognizer) {
-        if sender.location(in: view).x > view.center.x {
-            🄶oToNextPage()
-        } else {
-            📖.goToPreviousPage(nil)
-        }
-    }
-    
-    
-    @IBAction func 👆三三(_ sender: Any) {
-        🄶oToNextPage()
-    }
-    
-    
-    @IBAction func 三三👆(_ sender: Any) {
+    func ⓖoToPreviousPage() {
         📖.goToPreviousPage(nil)
     }
     
+    var ⓟageCount: Int {
+        self.📚.pageCount
+    }
     
-    @IBAction func 氵👌(_ sender: UIPinchGestureRecognizer) {
-        if sender.velocity > 0 {
-            📖.goToNextPage(nil)
-        } else {
-            📖.goToPreviousPage(nil)
+    var ⓒurrentPageNumber: Int {
+        self.📖.currentPage!.pageRef!.pageNumber
+    }
+    
+    func ⓖo(to ⓟageNumber: Int) {
+        if let ⓟage = 📚.page(at: ⓟageNumber) {
+            📖.go(to: ⓟage)
         }
     }
     
-    
-    @IBAction func ミ👆彡(_ sender: Any) {
-        self.dismiss(animated: true)
+    enum 🄵ileType {
+        case presetPDF
+        //case appDocumentPDF
+        case importedPDF
+        case importedZIP
     }
     
+    var ⓕileType: 🄵ileType {
+        if 📚.documentURL?.lastPathComponent == "🄸mported.pdf" {
+            return .importedPDF
+        } else {
+            return .presetPDF
+        }
+    }
     
     @IBAction func 彡👆ミ(_ sender: Any) {
-        let 💬 = "1 〜 " + 📚.pageCount.description
+        let 💬 = "1 〜 " + ⓟageCount.description
         let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
         
         📢.addTextField { 📋 in
             📋.keyboardType = .numberPad
-            let 🔖 = self.📖.currentPage!.pageRef!.pageNumber.description
+            let 🔖 = self.ⓒurrentPageNumber.description
             📋.placeholder = NSLocalizedString(🔖, comment: "")
         }
         
         let 🆗 = NSLocalizedString("Jump", comment: "")
         📢.addAction(UIAlertAction(title: 🆗, style: .default) { _ in
             guard let 📝 = Int((📢.textFields?.first?.text)!) else { return }
-            guard let 🔖 = self.📖.document?.page(at: 📝 - 1 ) else { return }
-            self.📖.go(to: 🔖)
+            self.ⓖo(to: 📝 - 1)
         })
         
         let 🆖 = NSLocalizedString("Cancel", comment: "")
@@ -239,8 +275,8 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if 📚.documentURL?.lastPathComponent == "🄸mported.pdf" {
-            let 🔖 = 📖.currentPage!.pageRef!.pageNumber - 1
+        if ⓕileType == .importedPDF {
+            let 🔖 = ⓒurrentPageNumber - 1
             UserDefaults.standard.set(🔖, forKey: "🔖")
         }
     }
@@ -285,42 +321,38 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         
         for 🄿ress in presses {
             switch 🄿ress.key?.keyCode {
-            case .keyboardRightArrow: 🄶oToNextPage()
-            case .keyboardDownArrow: 🅂kip5Page()
-            case .keyboardLeftArrow: 📖.goToPreviousPage(nil)
-            case .keyboardUpArrow: 🄱ack5Page()
-                
-            case .keyboardD: 🄶oToNextPage()
-            case .keyboardS: 🅂kip5Page()
-            case .keyboardA: 📖.goToPreviousPage(nil)
-            case .keyboardW: 🄱ack5Page()
-                
-            case .keyboardPageDown: 🄶oToNextPage()
-            case .keyboardPageUp: 📖.goToPreviousPage(nil)
-                
-            case .keyboardSpacebar:
-                if event?.modifierFlags == .shift {
-                    📖.goToPreviousPage(nil)
-                } else {
-                    🄶oToNextPage()
-                }
-                
-            default: print(🄿ress.key.debugDescription)
+                case .keyboardRightArrow: ⓖoToNextPage()
+                case .keyboardDownArrow: 🅂kip5Page()
+                case .keyboardLeftArrow: ⓖoToPreviousPage()
+                case .keyboardUpArrow: 🄱ack5Page()
+                    
+                case .keyboardD: ⓖoToNextPage()
+                case .keyboardS: 🅂kip5Page()
+                case .keyboardA: ⓖoToPreviousPage()
+                case .keyboardW: 🄱ack5Page()
+                    
+                case .keyboardPageDown: ⓖoToNextPage()
+                case .keyboardPageUp: ⓖoToPreviousPage()
+                    
+                case .keyboardSpacebar:
+                    if event?.modifierFlags == .shift {
+                        ⓖoToPreviousPage()
+                    } else {
+                        ⓖoToNextPage()
+                    }
+                    
+                default: print(🄿ress.key.debugDescription)
             }
             
             func 🅂kip5Page() {
-                if 📖.canGoToNextPage {
-                    for _ in 1...5 {
-                        📖.goToNextPage(nil)
-                    }
-                } else {
-                    🄶oToNextPage()
+                for _ in 1...5 {
+                    ⓖoToNextPage()
                 }
             }
             
             func 🄱ack5Page() {
                 for _ in 1...5 {
-                    📖.goToPreviousPage(nil)
+                    ⓖoToPreviousPage()
                 }
             }
         }

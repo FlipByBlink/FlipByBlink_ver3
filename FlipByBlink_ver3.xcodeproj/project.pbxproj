@@ -19,6 +19,7 @@
 		127E611A27150CAD00B44096 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 127E611927150CAD00B44096 /* README.md */; };
 		127E611C271568E600B44096 /* ▶️.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 127E611B271568E600B44096 /* ▶️.mp4 */; };
 		12EA5A3A2715A90E00DF39D6 /* 📖_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EA5A392715A90E00DF39D6 /* 📖_ViewController.swift */; };
+		F5CD5D10294F0656004C3BF9 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = F5CD5D0F294F0656004C3BF9 /* ZIPFoundation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5CD5D10294F0656004C3BF9 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +105,9 @@
 			dependencies = (
 			);
 			name = FlipByBlink_ver3;
+			packageProductDependencies = (
+				F5CD5D0F294F0656004C3BF9 /* ZIPFoundation */,
+			);
 			productName = FlipByBlink_ver3;
 			productReference = 127E610227150C6E00B44096 /* FlipByBlink_ver3.app */;
 			productType = "com.apple.product-type.application";
@@ -132,6 +137,9 @@
 				ja,
 			);
 			mainGroup = 127E60F927150C6E00B44096;
+			packageReferences = (
+				F5CD5D0E294F0656004C3BF9 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+			);
 			productRefGroup = 127E610327150C6E00B44096 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -327,7 +335,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6696GEY228;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlipByBlink_ver3/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FlipByBlink;
@@ -343,7 +351,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.u-ryukyu.ie.e135753.FlipByBlink";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.u-ryukyu.ie.e135753.FlipByBlink.trialZIP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -357,7 +365,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6696GEY228;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlipByBlink_ver3/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FlipByBlink;
@@ -373,7 +381,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.u-ryukyu.ie.e135753.FlipByBlink";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.u-ryukyu.ie.e135753.FlipByBlink.trialZIP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -403,6 +411,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F5CD5D0E294F0656004C3BF9 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F5CD5D0F294F0656004C3BF9 /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5CD5D0E294F0656004C3BF9 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 127E60FA27150C6E00B44096 /* Project object */;
 }
