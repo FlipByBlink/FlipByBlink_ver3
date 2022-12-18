@@ -25,7 +25,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
                     break
                 case .importedPDF:
                     let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
-                    📖.go(to: 📚.page(at: 🔖)!)
+                    ⓖo(to: 🔖)
                 case .importedZIP:
                     //📖.isHidden = true
                     assertionFailure()
@@ -192,6 +192,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     @IBAction func ミ👆彡(_ sender: Any) {
         self.dismiss(animated: true)
     }
+    
     
     func ⓖoToNextPage() {
         if 📖.canGoToNextPage == false {
