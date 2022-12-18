@@ -3,11 +3,24 @@ import UIKit
 import PDFKit
 import ARKit
 
+enum 🄵ileType {
+    case presetPDF
+    //case appDocumentPDF
+    case importedPDF
+    case importedZIP
+}
 
 class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
-    
     var 📚: PDFDocument!
+    
+    var ⓕileType: 🄵ileType {
+        if 📚.documentURL?.lastPathComponent == "🄸mported.pdf" {
+            return .importedPDF
+        } else {
+            return .presetPDF
+        }
+    }
     
     
     @IBOutlet weak var 📖: PDFView! {
@@ -194,6 +207,29 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     }
     
     
+    @IBAction func 彡👆ミ(_ sender: Any) {
+        let 💬 = "1 〜 " + ⓟageCount.description
+        let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
+        
+        📢.addTextField { 📋 in
+            📋.keyboardType = .numberPad
+            let 🔖 = self.ⓒurrentPageNumber.description
+            📋.placeholder = NSLocalizedString(🔖, comment: "")
+        }
+        
+        let 🆗 = NSLocalizedString("Jump", comment: "")
+        📢.addAction(UIAlertAction(title: 🆗, style: .default) { _ in
+            guard let 📝 = Int((📢.textFields?.first?.text)!) else { return }
+            self.ⓖo(to: 📝 - 1)
+        })
+        
+        let 🆖 = NSLocalizedString("Cancel", comment: "")
+        📢.addAction(UIAlertAction(title: 🆖, style: .cancel))
+        
+        self.present(📢, animated: true)
+    }
+    
+    
     func ⓖoToNextPage() {
         if 📖.canGoToNextPage == false {
             let 💬 = NSLocalizedString("🎉 Finish! 🎉", comment: "")
@@ -223,43 +259,6 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         if let ⓟage = 📚.page(at: ⓟageNumber) {
             📖.go(to: ⓟage)
         }
-    }
-    
-    enum 🄵ileType {
-        case presetPDF
-        //case appDocumentPDF
-        case importedPDF
-        case importedZIP
-    }
-    
-    var ⓕileType: 🄵ileType {
-        if 📚.documentURL?.lastPathComponent == "🄸mported.pdf" {
-            return .importedPDF
-        } else {
-            return .presetPDF
-        }
-    }
-    
-    @IBAction func 彡👆ミ(_ sender: Any) {
-        let 💬 = "1 〜 " + ⓟageCount.description
-        let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
-        
-        📢.addTextField { 📋 in
-            📋.keyboardType = .numberPad
-            let 🔖 = self.ⓒurrentPageNumber.description
-            📋.placeholder = NSLocalizedString(🔖, comment: "")
-        }
-        
-        let 🆗 = NSLocalizedString("Jump", comment: "")
-        📢.addAction(UIAlertAction(title: 🆗, style: .default) { _ in
-            guard let 📝 = Int((📢.textFields?.first?.text)!) else { return }
-            self.ⓖo(to: 📝 - 1)
-        })
-        
-        let 🆖 = NSLocalizedString("Cancel", comment: "")
-        📢.addAction(UIAlertAction(title: 🆖, style: .cancel))
-        
-        self.present(📢, animated: true)
     }
     
     
