@@ -4,7 +4,7 @@ import UIKit
 import ZIPFoundation
 
 class ZIPBookView: UIImageView {
-    var zipBook: 📗ZipBookModel = .Bundleデータのサンプル
+    var zipBook: 📗ZipBookModel? = .Bundleデータのサンプル
     
     func setup() {
         loadImage()
@@ -15,16 +15,16 @@ class ZIPBookView: UIImageView {
     }
     
     func loadImage() {
-        self.image = zipBook.現在表示するUIImage
+        self.image = zipBook?.現在表示するUIImage
     }
     
     func goToNextPage() {
-        zipBook.次のページへ移動する()
+        zipBook?.次のページへ移動する()
         self.loadImage()
     }
     
     func goToPreviousPage() {
-        zipBook.前のページへ移動する()
+        zipBook?.前のページへ移動する()
         self.loadImage()
     }
 }
