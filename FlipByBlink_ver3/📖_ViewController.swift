@@ -22,6 +22,11 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         }
     }
     
+    @IBOutlet weak var zipBookView: ZIPBookView! {
+        didSet {
+            zipBookView.setup()
+        }
+    }
     
     @IBOutlet weak var 📖: PDFView! {
         didSet {
@@ -241,10 +246,12 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         }
         
         📖.goToNextPage(nil)
+        zipBookView.goToNextPage()
     }
     
     func ⓖoToPreviousPage() {
         📖.goToPreviousPage(nil)
+        zipBookView.goToPreviousPage()
     }
     
     var ⓟageCount: Int {
