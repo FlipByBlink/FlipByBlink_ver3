@@ -15,7 +15,9 @@ class ZIPBookView: UIImageView {
     }
     
     func loadImage() {
-        self.image = zipBook?.現在表示するUIImage
+        if let ⓤrl = zipBook?.現ページURL {
+            self.image = UIImage(contentsOfFile: ⓤrl.path)
+        }
     }
     
     func goToNextPage() {
@@ -57,18 +59,16 @@ struct 📗ZipBookModel {
         このページのPath(番号: 現ページ番号)
     }
     
-    public var ページ数: Int? {
-        ページPaths?.count
-    }
-    
-    var 現在表示するUIImage: UIImage? {
-        if let ⓟath = このページのPath(番号: 現ページ番号) {
-            let ⓤrl = 解凍フォルダーURL.appendingPathComponent(ⓟath)
-            guard let ⓓata = try? Data(contentsOf: ⓤrl) else { return nil }
-            return UIImage(data: ⓓata)
+    public var 現ページURL: URL? {
+        if let 現ページPath {
+            return 解凍フォルダーURL.appendingPathComponent(現ページPath)
         } else {
             return nil
         }
+    }
+    
+    public var ページ数: Int? {
+        ページPaths?.count
     }
     
     func ここへ移動できる(_ 番号: Int) -> Bool {
