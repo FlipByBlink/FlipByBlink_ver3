@@ -93,12 +93,12 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         
         if (segue.identifier == "📘") {
             🎮.📚 = 📚
+            if 📚.documentURL?.lastPathComponent == "🄸mported.pdf" {
+                🎮.ⓕileType = .importedPDF
+            }
         } else {
             let 📍 = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
             🎮.📚 = PDFDocument(url: 📍)
         }
     }
-    
-    
 }
-

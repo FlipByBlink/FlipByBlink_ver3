@@ -5,7 +5,7 @@ import ARKit
 
 enum 🄵ileType {
     case presetPDF
-    //case appDocumentPDF
+    case appDocumentPDF
     case importedPDF
     case importedZIP
 }
@@ -14,13 +14,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     var 📚: PDFDocument!
     
-    var ⓕileType: 🄵ileType {
-        if 📚.documentURL?.lastPathComponent == "🄸mported.pdf" {
-            return .importedPDF
-        } else {
-            return .presetPDF
-        }
-    }
+    var ⓕileType: 🄵ileType = .presetPDF
     
     @IBOutlet weak var zipBookView: ZIPBookView! {
         didSet {
@@ -37,17 +31,6 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             📖.accessibilityElementsHidden = true
             
             📖.document = 📚
-            
-            switch ⓕileType {
-                case .presetPDF:
-                    break
-                case .importedPDF:
-                    let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
-                    ⓖo(to: 🔖)
-                case .importedZIP:
-                    //📖.isHidden = true
-                    assertionFailure()
-            }
         }
     }
     
@@ -279,6 +262,24 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     }
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        switch ⓕileType {
+            case .presetPDF:
+                zipBookView.isHidden = true
+            case .appDocumentPDF:
+                zipBookView.isHidden = true
+            case .importedPDF:
+                let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
+                📖.go(to: 📚.page(at: 🔖)!)
+                zipBookView.isHidden = true
+            case .importedZIP:
+                📖.isHidden = true
+        }
+        UIApplication.shared.isIdleTimerDisabled = true
+    }
+    
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -300,8 +301,6 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             📢.addAction(UIAlertAction(title: 🆗, style: .default))
             present(📢, animated: true)
         }
-        
-        UIApplication.shared.isIdleTimerDisabled = true
     }
     
     
