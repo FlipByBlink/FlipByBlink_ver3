@@ -7,6 +7,8 @@ class ZIPBookView: UIImageView {
     var zipBook: 📗ZipBookModel? = .Bundleデータのサンプル
     
     func setup() {
+        //try! 💾ZIPContents.unzipAndSaveFiles(from: Bundle.main.url(forResource: "BundleZipFile", withExtension: "zip")!)
+        
         loadImage()
         self.layer.shadowRadius = 3
         self.layer.shadowOffset = .zero
