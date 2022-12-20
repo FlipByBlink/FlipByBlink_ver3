@@ -96,6 +96,9 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             if 📚.documentURL?.lastPathComponent == "🄸mported.pdf" {
                 🎮.ⓕileType = .importedPDF
             }
+            if true { //unzipフォルダーがあるなら
+                🎮.ⓕileType = .importedZIP
+            }
         } else {
             let 📍 = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
             🎮.📚 = PDFDocument(url: 📍)

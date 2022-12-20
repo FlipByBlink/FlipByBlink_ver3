@@ -266,15 +266,19 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         super.viewDidLoad()
         switch ⓕileType {
             case .presetPDF:
+                📖.isHidden = false
                 zipBookView.isHidden = true
             case .appDocumentPDF:
+                📖.isHidden = false
                 zipBookView.isHidden = true
             case .importedPDF:
                 let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
                 📖.go(to: 📚.page(at: 🔖)!)
+                📖.isHidden = false
                 zipBookView.isHidden = true
             case .importedZIP:
                 📖.isHidden = true
+                zipBookView.isHidden = false
         }
         UIApplication.shared.isIdleTimerDisabled = true
     }
