@@ -4,10 +4,10 @@ import UIKit
 import ZIPFoundation
 
 class ZIPBookView: UIImageView {
-    var zipBook: 📗ZipBookModel? = .Bundleデータのサンプル
+    var zipBook: 📗ZIPBook = 📗ZIPBook()
     
     func setup() {
-        //try! 💾ZIPContents.unzipAndSaveFiles(from: Bundle.main.url(forResource: "BundleZipFile", withExtension: "zip")!)
+        try! 💾ZIPContents.unzipAndSaveFiles(from: Bundle.main.url(forResource: "BundleZipFile", withExtension: "zip")!)
         
         loadImage()
         self.layer.shadowRadius = 3
@@ -17,138 +17,164 @@ class ZIPBookView: UIImageView {
     }
     
     func loadImage() {
-        if let ⓤrl = zipBook?.現ページURL {
+        if let ⓤrl = try? zipBook.currentPageURL {
             self.image = UIImage(contentsOfFile: ⓤrl.path)
         }
     }
     
     func goToNextPage() {
-        zipBook?.次のページへ移動する()
+        zipBook.goToNextPage()
         self.loadImage()
     }
     
     func goToPreviousPage() {
-        zipBook?.前のページへ移動する()
+        zipBook.goToPreviousPage()
         self.loadImage()
     }
 }
 
-struct 📗ZipBookModel {
-    var 解凍フォルダーURL: URL {
-        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("unzip")
-    }
+class 📗ZIPBook {
+    private(set) var currentPageNumber: Int = 1
     
-    var 現ページ番号: Int = 1
-    
-    private var ページPaths: [String]? {
-        //try? FileManager.default.contentsOfDirectory(atPath: Self.解凍フォルダーURL.path()).sorted()
-        if let ⓢubpaths = try? FileManager.default.subpathsOfDirectory(atPath: 解凍フォルダーURL.path).sorted() {
-            return ⓢubpaths.filter { ⓟath in
-                let ⓤrl = 解凍フォルダーURL.appendingPathComponent(ⓟath)
-                let ⓡesourceValues = try? ⓤrl.resourceValues(forKeys: [.isDirectoryKey])
-                if ⓡesourceValues?.isDirectory == true {
-                    return false
-                } else {
-                    return true
-                }
-            }
-        } else {
-            return nil
+    var currentPageURL: URL {
+        get throws {
+            try 💾ZIPContents.getPageURL(number: self.currentPageNumber)
         }
     }
     
-    public var 現ページPath: String? {
-        このページのPath(番号: 現ページ番号)
-    }
-    
-    public var 現ページURL: URL? {
-        if let 現ページPath {
-            return 解凍フォルダーURL.appendingPathComponent(現ページPath)
-        } else {
-            return nil
+    var pageCount: Int {
+        get throws {
+            try 💾ZIPContents.getPageSubpaths().count
         }
     }
     
-    public var ページ数: Int? {
-        ページPaths?.count
-    }
-    
-    func ここへ移動できる(_ 番号: Int) -> Bool {
-        if let ページPaths, ページPaths.indices.contains(番号) {
-            return true
-        } else {
+    func canGoToNextPage() -> Bool {
+        do {
+            return try 💾ZIPContents.pageExists(number: self.currentPageNumber + 1)
+        } catch {
+            assertionFailure("🚨" + error.localizedDescription)
             return false
         }
     }
     
-    func このページのPath(番号: Int) -> String? {
-        if !ここへ移動できる(番号) { return nil }
-        if let ページPaths {
-            return ページPaths[番号]
-        } else {
-            return nil
+    func goToNextPage() {
+        if self.canGoToNextPage() {
+            self.currentPageNumber += 1
         }
     }
     
-    mutating func 次のページへ移動する() {
-        if ここへ移動できる(現ページ番号 + 1) {
-            現ページ番号 += 1
-        }
-    }
-    
-    mutating func 前のページへ移動する() {
-        if ここへ移動できる(現ページ番号 - 1) {
-            現ページ番号 -= 1
-        }
-    }
-    
-    mutating func ジャンプ(_ ⓟageNumber: Int) {
-        if ここへ移動できる(ⓟageNumber) {
-            現ページ番号 = ⓟageNumber
-        }
-    }
-    
-    init?(_ ⓤrl: URL) {
+    func goToPreviousPage() {
         do {
-            try ファイルを取り込む(from: ⓤrl)
+            if try 💾ZIPContents.pageExists(number: self.currentPageNumber - 1) {
+                self.currentPageNumber -= 1
+            }
         } catch {
-            print("🚨", error.localizedDescription)
-            return nil
+            assertionFailure("🚨" + error.localizedDescription)
         }
     }
     
-    private func ファイルを取り込む(from ⓤrl: URL) throws {
-        if FileManager.default.fileExists(atPath: 解凍フォルダーURL.path) {
-            try FileManager.default.removeItem(at: 解凍フォルダーURL)
+    func go(to ⓟageNumber: Int) throws {
+        if try 💾ZIPContents.pageExists(number: ⓟageNumber) {
+            self.currentPageNumber = ⓟageNumber
+        } else {
+            throw 🚨Error.noPageExists
         }
-        try FileManager.default.unzipItem(at: ⓤrl, to: 解凍フォルダーURL)//, preferredEncoding: .utf8)
-        解凍フォルダーから画像ファイル以外を削除する()
+        enum 🚨Error: Error {
+            case noPageExists
+        }
+    }
+}
+
+struct 💾ZIPContents {
+    static func getPageSubpaths() throws -> [Int: String] {
+        try 📑pageSubpaths
     }
     
-    private func 解凍フォルダーから画像ファイル以外を削除する() {
-        if let ⓢubpaths = try? FileManager.default.subpathsOfDirectory(atPath: 解凍フォルダーURL.path) {
-            for ⓢubpath in ⓢubpaths {
-                let ⓤrl = 解凍フォルダーURL.appendingPathComponent(ⓢubpath)
-                if let ⓓata = try? Data(contentsOf: ⓤrl) {
-                    if UIImage(data: ⓓata) == nil {
-                        try? FileManager.default.removeItem(at: ⓤrl)
-                    }
+    static func pageExists(number ⓝumber: Int) throws -> Bool {
+        try 📑pageSubpaths.keys.contains(ⓝumber)
+    }
+    
+    static func getPageSubpath(number ⓝumber: Int) throws -> String {
+        try 📍pageSubpath(number: ⓝumber)
+    }
+    
+    static func getPageURL(number ⓝumber: Int) throws -> URL {
+        🔗unzipFolderURL.appendingPathComponent(try 📍pageSubpath(number: ⓝumber))
+    }
+    
+    static var dataExists: Bool {
+        FileManager.default.fileExists(atPath: 🔗unzipFolderURL.path)
+    }
+    
+    static func unzipAndSaveFiles(from ⓤrl: URL) throws {
+        if FileManager.default.fileExists(atPath: 🔗unzipFolderURL.path) {
+            try 🗑removeUnzipFolder()
+        }
+        try FileManager.default.unzipItem(at: ⓤrl, to: 🔗unzipFolderURL)//, preferredEncoding: .utf8)
+        try 🗑removeFilesExpectImages()
+    }
+    
+    static func removeUnzipFolder() {
+        try? 🗑removeUnzipFolder()
+    }
+    
+    //MARK: private code
+    private static var 📑pageSubpaths: [Int: String] {
+        get throws {
+            let ⓢubpaths = try FileManager.default.subpathsOfDirectory(atPath: 🔗unzipFolderURL.path).sorted()
+            let ⓢubpathsExpectDirecrory = try ⓢubpaths.filter { ⓢubpath in
+                try 🚩isNotDirecrory(ⓢubpath)
+            }
+            let ⓔmptyIndices: [Int: String] = [:]
+            return ⓢubpathsExpectDirecrory.reduce(into: ⓔmptyIndices) { ⓟartialResult, ⓢubpath in
+                if let ⓘndex = ⓢubpathsExpectDirecrory.firstIndex(of: ⓢubpath) {
+                    ⓟartialResult[ⓘndex + 1] = ⓢubpath
                 }
             }
         }
     }
     
-    static var Bundleデータのサンプル: Self {
-        let ⓤrl = Bundle.main.url(forResource: "BundleZipFile", withExtension: "zip")!
-        return Self(ⓤrl)!
+    private static func 📍pageSubpath(number ⓝumber: Int) throws -> String {
+        let ⓟageSubpaths = try 📑pageSubpaths
+        if let ⓢubpath = ⓟageSubpaths[ⓝumber] {
+            return ⓢubpath
+        } else {
+            assertionFailure(#function)
+            throw 🚨Error.improperPageNumber
+        }
+        enum 🚨Error: Error {
+            case improperPageNumber
+        }
     }
     
-    static var DataAssetのサンプル: Self {
-        let データアセット: Data = NSDataAsset(name: "SampleZIP")!.data
-        let ⓣemporaryDirectoryUrl = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
-        let データURL: URL = ⓣemporaryDirectoryUrl.appendingPathComponent("zipFile.zip")
-        try? FileManager.default.removeItem(at: データURL)
-        FileManager.default.createFile(atPath: データURL.path, contents: データアセット)
-        return Self(データURL)!
+    private static var 🔗unzipFolderURL: URL {
+        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("unzip")
+    }
+    
+    private static func 🗑removeUnzipFolder() throws {
+        try FileManager.default.removeItem(at: 🔗unzipFolderURL)
+    }
+    
+    private static func 🗑removeFilesExpectImages() throws {
+        let ⓢubpaths = try FileManager.default.subpathsOfDirectory(atPath: 🔗unzipFolderURL.path)
+        for ⓢubpath in ⓢubpaths {
+            if try 🚩isNotDirecrory(ⓢubpath) {
+                let ⓤrl = 🔗unzipFolderURL.appendingPathComponent(ⓢubpath)
+                let ⓓata = try Data(contentsOf: ⓤrl)
+                if UIImage(data: ⓓata) == nil {
+                    try FileManager.default.removeItem(at: ⓤrl)
+                }
+            }
+        }
+    }
+    
+    private static func 🚩isNotDirecrory(_ ⓢubpath: String) throws -> Bool {
+        let ⓤrl = 🔗unzipFolderURL.appendingPathComponent(ⓢubpath)
+        let ⓡesourceValues = try ⓤrl.resourceValues(forKeys: [.isDirectoryKey])
+        if ⓡesourceValues.isDirectory == true {
+            return false
+        } else {
+            return true
+        }
     }
 }
