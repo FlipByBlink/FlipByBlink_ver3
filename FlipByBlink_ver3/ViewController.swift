@@ -60,8 +60,8 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     
     @IBAction func 📁() {
-        let 🏷 = UTType(filenameExtension: "pdf")!
-        let 🎮 = UIDocumentPickerViewController(forOpeningContentTypes: [🏷], asCopy: true)
+        let ⓣypes = [UTType.pdf, UTType.zip]
+        let 🎮 = UIDocumentPickerViewController(forOpeningContentTypes: ⓣypes, asCopy: true)
         🎮.delegate = self
         self.present(🎮, animated: true)
     }
@@ -71,20 +71,25 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     func 🅂tore(_ 📦:URL) {
-        let 💾 = FileManager.default
-        var 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        📍.appendPathComponent("🄸mported.pdf")
-        
-        try? 💾.removeItem(at: 📍)
-        💾ZIPContents.removeUnzipFolder()
-        
-        try? 💾.copyItem(at: 📦, to: 📍)
-        
-        try? 💾.removeItem(at: 📦)
-        
-        📚 = PDFDocument(url: 📍)
-        
-        UserDefaults.standard.set(0, forKey: "🔖")
+        if 📦.pathExtension == "pdf" {
+            let 💾 = FileManager.default
+            var 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            📍.appendPathComponent("🄸mported.pdf")
+            
+            try? 💾.removeItem(at: 📍)
+            💾ZIPContents.removeUnzipFolder()
+            
+            try? 💾.copyItem(at: 📦, to: 📍)
+            
+            try? 💾.removeItem(at: 📦)
+            
+            📚 = PDFDocument(url: 📍)
+            
+            UserDefaults.standard.set(0, forKey: "🔖")
+        }
+        if 📦.pathExtension == "zip" {
+            try! 💾ZIPContents.unzipAndSaveFiles(from: Bundle.main.url(forResource: "BundleZipFile", withExtension: "zip")!)
+        }
     }
     
     
