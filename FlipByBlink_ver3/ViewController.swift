@@ -7,6 +7,8 @@ import ARKit
 
 class ViewController: UIViewController, UIDocumentPickerDelegate {
     
+    var ⓕile: 🄵ile.MainContent = .presetPDF
+    
     
     @IBOutlet weak var 📘: UIButton! {
         didSet {
@@ -16,20 +18,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             📘.layer.shadowOffset = .zero
             📘.imageView?.contentMode = .scaleAspectFit
             
-            if FileManager.default.fileExists(atPath: 🄵ile.importedPDFURL.path){
-                📚 = PDFDocument(url: 🄵ile.importedPDFURL)
-            } else {
-                📚 = PDFDocument(data: 🄵ile.presetPDFData)
-            }
-        }
-    }
-    
-    
-    var 📚: PDFDocument! {
-        didSet {
-            let 📐 = CGSize(width: 2000, height: 2000)
-            let 🖼 = 📚.page(at: 0)?.thumbnail(of: 📐, for: .mediaBox)
-            📘.setImage(🖼, for: .normal)
+            self.loadFileStatus()
         }
     }
     
@@ -64,29 +53,17 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        🅂tore(urls.first!)
+        do {
+            try 🄵ile.store(from: urls.first!)
+            loadFileStatus()
+        } catch {
+            print("🚨", #function, error.localizedDescription)
+        }
     }
     
-    func 🅂tore(_ 📦:URL) {
-        if 📦.pathExtension == "pdf" {
-            let 💾 = FileManager.default
-            var 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            📍.appendPathComponent("🄸mported.pdf")
-            
-            try? 💾.removeItem(at: 📍)
-            💾ZIPContents.removeUnzipFolder()
-            
-            try? 💾.copyItem(at: 📦, to: 📍)
-            
-            try? 💾.removeItem(at: 📦)
-            
-            📚 = PDFDocument(url: 📍)
-            
-            UserDefaults.standard.set(0, forKey: "🔖")
-        }
-        if 📦.pathExtension == "zip" {
-            try! 💾ZIPContents.unzipAndSaveFiles(from: Bundle.main.url(forResource: "BundleZipFile", withExtension: "zip")!)
-        }
+    func loadFileStatus() {
+        ⓕile.reload()
+        📘.setImage(ⓕile.coverImage, for: .normal)
     }
     
     
@@ -95,16 +72,21 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         let 🎮 = segue.destination as! 📖_ViewController
         
         if (segue.identifier == "📘") {
-            🎮.📚 = 📚
-            if 📚.documentURL?.lastPathComponent == "🄸mported.pdf" {
-                🎮.ⓟresentedFile = .importedPDF
-            }
-            if 💾ZIPContents.dataExists {
-                🎮.ⓟresentedFile = .importedZIP
+            🎮.📚 = PDFDocument()
+            switch ⓕile {
+                case .presetPDF:
+                    🎮.ⓟresentedFile = .presetPDF
+                    🎮.📚 = PDFDocument(data: 🄵ile.presetPDFData)!
+                case .importedPDF:
+                    if let ⓓocument = PDFDocument(url: 🄵ile.importedPDFURL) {
+                        🎮.ⓟresentedFile = .importedPDF
+                        🎮.📚 = ⓓocument
+                    }
+                case .importedZIP:
+                    🎮.ⓟresentedFile = .importedZIP
             }
         } else {
-            let 📍 = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
-            🎮.📚 = PDFDocument(url: 📍)
+            🎮.📚 = PDFDocument(url: 🄵ile.appdocumentPDFURL)!
         }
     }
 }
@@ -118,7 +100,8 @@ struct 🄵ile {
         var coverImage: UIImage? {
             switch self {
                 case .presetPDF:
-                    return UIImage(data: NSDataAsset(name: "🄿reset")!.data)
+                    let ⓓocument = PDFDocument(data: NSDataAsset(name: "🄿reset")!.data)
+                    return ⓓocument?.page(at: 0)?.thumbnail(of: .init(width: 1000, height: 1000), for: .mediaBox)
                 case .importedPDF:
                     let ⓓocument = PDFDocument(url: 🄵ile.importedPDFURL)
                     return ⓓocument?.page(at: 0)?.thumbnail(of: .init(width: 1000, height: 1000), for: .mediaBox)
@@ -138,7 +121,8 @@ struct 🄵ile {
                 case (false, true):
                     self = .importedZIP
                 default:
-                    assertionFailure()
+//                    assertionFailure()
+                    print("🚨", #function)
             }
         }
     }
@@ -170,13 +154,17 @@ struct 🄵ile {
                 if ⓕm.fileExists(atPath: Self.importedPDFURL.path) {
                     try ⓕm.removeItem(at: Self.importedPDFURL)
                 }
-                //💾ZIPContents.removeUnzipFolder()
                 try ⓕm.copyItem(at: 📦, to: Self.importedPDFURL)
                 try ⓕm.removeItem(at: 📦)
-                //📚 = PDFDocument(url: Self.importedPDFURL)
-                //UserDefaults.standard.set(0, forKey: "🔖")
+                💾ZIPContents.removeUnzipFolder()
+                UserDefaults.standard.set(0, forKey: "🔖")
             case "zip":
                 try 💾ZIPContents.unzipAndSaveFiles(from: 📦)
+                try FileManager.default.removeItem(at: 📦)
+                if FileManager.default.fileExists(atPath: Self.importedPDFURL.path) {
+                    try FileManager.default.removeItem(at: Self.importedPDFURL)
+                }
+                UserDefaults.standard.set(0, forKey: "🔖")
             default:
                 print("🚨 improper file")
         }

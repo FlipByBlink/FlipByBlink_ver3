@@ -5,7 +5,7 @@ import ARKit
 
 class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
-    var 📚: PDFDocument!
+    var 📚: PDFDocument = PDFDocument()
     
     var ⓟresentedFile: 🄵ile.PresentedFile = .presetPDF
     
@@ -302,7 +302,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
                 📖.isHidden = true
                 📗zipBookView.isHidden = false
                 let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
-                📗zipBookView.go(to: 🔖)
+                📗zipBookView.go(to: 🔖) //FIXME: 修正
         }
         UIApplication.shared.isIdleTimerDisabled = true
     }
