@@ -106,7 +106,7 @@ struct 🄵ile {
                     let ⓓocument = PDFDocument(url: 🄵ile.importedPDFURL)
                     return ⓓocument?.page(at: 0)?.thumbnail(of: .init(width: 1000, height: 1000), for: .mediaBox)
                 case .importedZIP:
-                    return UIImage(contentsOfFile: try! 💾ZIPContents.getPageURL(number: 1).path)
+                    return UIImage(contentsOfFile: try! 💾ZIPContents.getPageURL(number: 0).path)
             }
         }
         

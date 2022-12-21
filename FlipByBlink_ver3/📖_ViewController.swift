@@ -201,7 +201,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         let 🆗 = NSLocalizedString("Jump", comment: "")
         📢.addAction(UIAlertAction(title: 🆗, style: .default) { _ in
             guard let 📝 = Int((📢.textFields?.first?.text)!) else { return }
-            self.ⓖo(to: 📝)
+            self.ⓖo(to: 📝 - 1)
         })
         
         let 🆖 = NSLocalizedString("Cancel", comment: "")
@@ -266,7 +266,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     func ⓖo(to ⓟageNumber: Int) {
         switch ⓟresentedFile {
             case .presetPDF, .appDocumentPDF, .importedPDF:
-                if let ⓟage = 📚.page(at: ⓟageNumber - 1) {
+                if let ⓟage = 📚.page(at: ⓟageNumber) {
                     📖.go(to: ⓟage)
                 }
             case .importedZIP:

@@ -44,7 +44,7 @@ class ZIPBookView: UIImageView {
     }
     
     var currentPageNumber: Int {
-        zipBook.currentPageNumber
+        zipBook.currentPageNumber + 1
     }
     
     func go(to ⓟageNumber: Int) {
@@ -58,7 +58,7 @@ class ZIPBookView: UIImageView {
 }
 
 class 📗ZIPBook {
-    private(set) var currentPageNumber: Int = 1
+    private(set) var currentPageNumber: Int = 0
     
     var currentPageURL: URL {
         get throws {
@@ -152,7 +152,7 @@ struct 💾ZIPContents {
             let ⓔmptyIndices: [Int: String] = [:]
             return ⓢubpathsExpectDirecrory.reduce(into: ⓔmptyIndices) { ⓟartialResult, ⓢubpath in
                 if let ⓘndex = ⓢubpathsExpectDirecrory.firstIndex(of: ⓢubpath) {
-                    ⓟartialResult[ⓘndex + 1] = ⓢubpath
+                    ⓟartialResult[ⓘndex] = ⓢubpath
                 }
             }
         }
