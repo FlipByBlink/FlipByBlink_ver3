@@ -159,6 +159,10 @@ struct 🄵ile {
         return ⓤrl.appendingPathComponent("🄸mported.pdf")
     }
     
+    static var appdocumentPDFURL: URL {
+        Bundle.main.url(forResource: "📄", withExtension: "pdf")!
+    }
+    
     static func store(from 📦: URL) throws {
         switch 📦.pathExtension {
             case "pdf":

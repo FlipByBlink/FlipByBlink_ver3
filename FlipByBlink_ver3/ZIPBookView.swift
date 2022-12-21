@@ -38,7 +38,7 @@ class ZIPBookView: UIImageView {
         do {
             return try zipBook.pageCount
         } catch {
-            print("🚨", error.localizedDescription)
+            print("🚨pageCount:", error.localizedDescription)
             return 0
         }
     }
@@ -52,7 +52,7 @@ class ZIPBookView: UIImageView {
             try zipBook.go(to: ⓟageNumber)
             self.loadImage()
         } catch {
-            print("🚨", error.localizedDescription)
+            print("🚨", #function, error.localizedDescription)
         }
     }
 }
