@@ -109,29 +109,38 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
 }
 
-enum 🄵ile {
-    case presetPDF
-    case importedPDF
-    case importedZIP
+struct 🄵ile {
+    enum MainContent {
+        case presetPDF
+        case importedPDF
+        case importedZIP
+        
+        var coverImage: UIImage? {
+            switch self {
+                case .presetPDF:
+                    return UIImage(data: NSDataAsset(name: "🄿reset")!.data)
+                case .importedPDF:
+                    let ⓓocument = PDFDocument(url: 🄵ile.importedPDFURL)
+                    return ⓓocument?.page(at: 0)?.thumbnail(of: .init(width: 1000, height: 1000), for: .mediaBox)
+                case .importedZIP:
+                    return UIImage(contentsOfFile: try! 💾ZIPContents.getPageURL(number: 1).path)
+            }
+        }
+    }
+    
+    enum PresentedFile {
+        case presetPDF
+        case appDocumentPDF
+        case importedPDF
+        case importedZIP
+    }
     
     static var presetPDFData: Data {
         NSDataAsset(name: "🄿reset")!.data
     }
     
     static var importedPDFURL: URL {
-        let ⓓocumentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        return ⓓocumentDirectoryURL.appendingPathComponent("🄸mported.pdf")
-    }
-    
-    var coverImage: UIImage? {
-        switch self {
-            case .presetPDF:
-                return UIImage(data: NSDataAsset(name: "🄿reset")!.data)
-            case .importedPDF:
-                let ⓓocument = PDFDocument(url: Self.importedPDFURL)
-                return ⓓocument?.page(at: 0)?.thumbnail(of: .init(width: 1000, height: 1000), for: .mediaBox)
-            case .importedZIP:
-                return UIImage(contentsOfFile: try! 💾ZIPContents.getPageURL(number: 1).path)
-        }
+        let ⓤrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        return ⓤrl.appendingPathComponent("🄸mported.pdf")
     }
 }

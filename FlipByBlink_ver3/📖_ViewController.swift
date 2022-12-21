@@ -3,18 +3,11 @@ import UIKit
 import PDFKit
 import ARKit
 
-enum 🄿resentedFile {
-    case presetPDF
-    case appDocumentPDF
-    case importedPDF
-    case importedZIP
-}
-
 class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
     var 📚: PDFDocument!
     
-    var ⓟresentedFile: 🄿resentedFile = .presetPDF
+    var ⓟresentedFile: 🄵ile.PresentedFile = .presetPDF
     
     @IBOutlet weak var 📗zipBookView: ZIPBookView! {
         didSet {
