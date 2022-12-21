@@ -310,10 +310,12 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        if ⓟresentedFile == .importedPDF {
-            let 🔖 = ⓒurrentPageNumber - 1
-            UserDefaults.standard.set(🔖, forKey: "🔖")
+        switch ⓟresentedFile {
+            case .importedPDF, .importedZIP:
+                let 🔖 = ⓒurrentPageNumber - 1
+                UserDefaults.standard.set(🔖, forKey: "🔖")
+            default:
+                break
         }
     }
     
