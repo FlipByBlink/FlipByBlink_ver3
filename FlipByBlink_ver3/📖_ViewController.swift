@@ -9,11 +9,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     var ⓟresentedFile: 🄵ile.PresentedFile = .presetPDF
     
-    @IBOutlet weak var 📗zipBookView: ZIPBookView! {
-        didSet {
-            📗zipBookView.setup()
-        }
-    }
+    @IBOutlet weak var 📗zipBookView: ZIPBookView!
     
     @IBOutlet weak var 📖: PDFView! {
         didSet {
@@ -302,7 +298,8 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
                 📖.isHidden = true
                 📗zipBookView.isHidden = false
                 let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
-                📗zipBookView.go(to: 🔖) //FIXME: 修正
+                📗zipBookView.go(to: 🔖)
+                📗zipBookView.setup()
         }
         UIApplication.shared.isIdleTimerDisabled = true
     }
