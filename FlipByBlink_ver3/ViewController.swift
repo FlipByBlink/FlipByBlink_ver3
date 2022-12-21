@@ -126,6 +126,21 @@ struct 🄵ile {
                     return UIImage(contentsOfFile: try! 💾ZIPContents.getPageURL(number: 1).path)
             }
         }
+        
+        mutating func reload() {
+            let 🚩importedPDFExists = FileManager.default.fileExists(atPath: 🄵ile.importedPDFURL.path)
+            let 🚩importedZIPExists = 💾ZIPContents.dataExists
+            switch (🚩importedPDFExists, 🚩importedZIPExists) {
+                case (false, false):
+                    self = .presetPDF
+                case (true, false):
+                    self = .importedPDF
+                case (false, true):
+                    self = .importedZIP
+                default:
+                    assertionFailure()
+            }
+        }
     }
     
     enum PresentedFile {
@@ -142,5 +157,24 @@ struct 🄵ile {
     static var importedPDFURL: URL {
         let ⓤrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         return ⓤrl.appendingPathComponent("🄸mported.pdf")
+    }
+    
+    static func store(from 📦: URL) throws {
+        switch 📦.pathExtension {
+            case "pdf":
+                let ⓕm = FileManager()
+                if ⓕm.fileExists(atPath: Self.importedPDFURL.path) {
+                    try ⓕm.removeItem(at: Self.importedPDFURL)
+                }
+                //💾ZIPContents.removeUnzipFolder()
+                try ⓕm.copyItem(at: 📦, to: Self.importedPDFURL)
+                try ⓕm.removeItem(at: 📦)
+                //📚 = PDFDocument(url: Self.importedPDFURL)
+                //UserDefaults.standard.set(0, forKey: "🔖")
+            case "zip":
+                try 💾ZIPContents.unzipAndSaveFiles(from: 📦)
+            default:
+                print("🚨 improper file")
+        }
     }
 }
