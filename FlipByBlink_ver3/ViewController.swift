@@ -100,14 +100,37 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         if (segue.identifier == "📘") {
             🎮.📚 = 📚
             if 📚.documentURL?.lastPathComponent == "🄸mported.pdf" {
-                🎮.ⓕileType = .importedPDF
+                🎮.ⓟresentedFile = .importedPDF
             }
             if 💾ZIPContents.dataExists {
-                🎮.ⓕileType = .importedZIP
+                🎮.ⓟresentedFile = .importedZIP
             }
         } else {
             let 📍 = Bundle.main.url(forResource: "📄", withExtension: "pdf")!
             🎮.📚 = PDFDocument(url: 📍)
+        }
+    }
+}
+
+enum 🄵ileType {
+    case presetPDF
+    case importedPDF
+    case importedZIP
+    
+    static var importedPDFURL: URL {
+        let ⓓocumentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        return ⓓocumentDirectoryURL.appendingPathComponent("🄸mported.pdf")
+    }
+    
+    var coverImage: UIImage? {
+        switch self {
+            case .presetPDF:
+                return UIImage(data: NSDataAsset(name: "🄿reset")!.data)
+            case .importedPDF:
+                let ⓓocument = PDFDocument(url: Self.importedPDFURL)
+                return ⓓocument?.page(at: 0)?.thumbnail(of: .init(width: 1000, height: 1000), for: .mediaBox)
+            case .importedZIP:
+                return UIImage(contentsOfFile: try! 💾ZIPContents.getPageURL(number: 1).path)
         }
     }
 }

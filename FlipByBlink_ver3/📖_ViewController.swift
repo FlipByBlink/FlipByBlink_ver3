@@ -3,7 +3,7 @@ import UIKit
 import PDFKit
 import ARKit
 
-enum 🄵ileType {
+enum 🄿resentedFile {
     case presetPDF
     case appDocumentPDF
     case importedPDF
@@ -14,7 +14,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     var 📚: PDFDocument!
     
-    var ⓕileType: 🄵ileType = .presetPDF
+    var ⓟresentedFile: 🄿resentedFile = .presetPDF
     
     @IBOutlet weak var 📗zipBookView: ZIPBookView! {
         didSet {
@@ -219,7 +219,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     func ⓖoToNextPage() {
         let ⓒanGoToNextPage: Bool = {
-            switch ⓕileType {
+            switch ⓟresentedFile {
                 case .presetPDF, .appDocumentPDF, .importedPDF:
                     return 📖.canGoToNextPage
                 case .importedZIP:
@@ -235,7 +235,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             }
         }
         
-        switch ⓕileType {
+        switch ⓟresentedFile {
             case .presetPDF, .appDocumentPDF, .importedPDF:
                 📖.goToNextPage(nil)
             case .importedZIP:
@@ -244,7 +244,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     }
     
     func ⓖoToPreviousPage() {
-        switch ⓕileType {
+        switch ⓟresentedFile {
             case .presetPDF, .appDocumentPDF, .importedPDF:
                 📖.goToPreviousPage(nil)
             case .importedZIP:
@@ -253,7 +253,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     }
     
     var ⓟageCount: Int {
-        switch ⓕileType {
+        switch ⓟresentedFile {
             case .presetPDF, .appDocumentPDF, .importedPDF:
                 return self.📚.pageCount
             case .importedZIP:
@@ -262,7 +262,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     }
     
     var ⓒurrentPageNumber: Int {
-        switch ⓕileType {
+        switch ⓟresentedFile {
             case .presetPDF, .appDocumentPDF, .importedPDF:
                 return self.📖.currentPage!.pageRef!.pageNumber
             case .importedZIP:
@@ -271,7 +271,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     }
     
     func ⓖo(to ⓟageNumber: Int) {
-        switch ⓕileType {
+        switch ⓟresentedFile {
             case .presetPDF, .appDocumentPDF, .importedPDF:
                 if let ⓟage = 📚.page(at: ⓟageNumber - 1) {
                     📖.go(to: ⓟage)
@@ -294,7 +294,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        switch ⓕileType {
+        switch ⓟresentedFile {
             case .presetPDF, .appDocumentPDF:
                 📖.isHidden = false
                 📗zipBookView.isHidden = true
@@ -318,7 +318,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if ⓕileType == .importedPDF {
+        if ⓟresentedFile == .importedPDF {
             let 🔖 = ⓒurrentPageNumber - 1
             UserDefaults.standard.set(🔖, forKey: "🔖")
         }
