@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,11 +12,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FlipByBlink_ver3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-C8-s6t" userLabel="📁">
-                                <rect key="frame" x="157" y="335" width="100" height="100"/>
+                                <rect key="frame" x="250" y="180" width="100" height="100"/>
                                 <accessibility key="accessibilityConfiguration" label="Import book"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="BOl-uS-8R9"/>
@@ -33,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="📘">
-                                <rect key="frame" x="50" y="455" width="314" height="381"/>
+                                <rect key="frame" x="50" y="300" width="500" height="240"/>
                                 <accessibility key="accessibilityConfiguration" label="Open book"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="book.closed.fill" catalog="system">
@@ -45,7 +43,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="📄">
-                                <rect key="frame" x="40" y="88" width="80" height="80"/>
+                                <rect key="frame" x="40" y="40" width="80" height="80"/>
                                 <accessibility key="accessibilityConfiguration" label="App document PDF"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="prH-ik-hV5"/>
@@ -61,7 +59,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-gx-m0J" userLabel="ᐅ⃣">
-                                <rect key="frame" x="40" y="188" width="80" height="80"/>
+                                <rect key="frame" x="40" y="140" width="80" height="80"/>
                                 <accessibility key="accessibilityConfiguration" label="App document video"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="5qu-5W-8jv"/>
@@ -77,7 +75,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foG-Jf-dmC" userLabel="⚙️">
-                                <rect key="frame" x="294" y="88" width="80" height="80"/>
+                                <rect key="frame" x="480" y="40" width="80" height="80"/>
                                 <accessibility key="accessibilityConfiguration" label="Setting link"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="gog-cX-Dmw"/>
@@ -93,7 +91,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="🄰">
-                                <rect key="frame" x="294" y="188" width="80" height="80"/>
+                                <rect key="frame" x="480" y="140" width="80" height="80"/>
                                 <accessibility key="accessibilityConfiguration" label="AppStore link"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="LKx-h8-gu9"/>
@@ -141,25 +139,25 @@
             <objects>
                 <viewController title="📖_ViewController" id="IjJ-xR-P41" customClass="📖_ViewController" customModule="FlipByBlink_ver3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rYi-nH-sce">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ia4-iP-RyQ" customClass="PDFView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LPV-xR-75u" customClass="ZIPBookView" customModule="FlipByBlink_ver3" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LyC-I6-pPf">
-                                <rect key="frame" x="-40" y="696" width="240" height="240"/>
+                                <rect key="frame" x="-40" y="400" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LyC-I6-pPf" secondAttribute="height" id="3MH-0k-RRc"/>
                                     <constraint firstAttribute="width" constant="240" id="VDL-i8-e1v"/>
                                 </constraints>
                             </arscnView>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="🏁" translatesAutoresizingMaskIntoConstraints="NO" id="mZk-e0-0Gm" userLabel="🏁">
-                                <rect key="frame" x="244" y="706" width="200" height="200"/>
+                                <rect key="frame" x="430" y="410" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="GW2-R6-Etf"/>
                                     <constraint firstAttribute="height" constant="200" id="Tfr-Fl-cJq"/>
@@ -193,9 +191,9 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="zipBookView" destination="LPV-xR-75u" id="sZc-yT-1eT"/>
                         <outlet property="🏁" destination="mZk-e0-0Gm" id="GE2-63-tw0"/>
                         <outlet property="📖" destination="Ia4-iP-RyQ" id="irD-ua-aSI"/>
+                        <outlet property="📗zipBookView" destination="LPV-xR-75u" id="sZc-yT-1eT"/>
                         <outlet property="🔘" destination="LyC-I6-pPf" id="EeC-Dp-o6q"/>
                     </connections>
                 </viewController>

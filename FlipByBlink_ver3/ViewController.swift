@@ -76,6 +76,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         📍.appendPathComponent("🄸mported.pdf")
         
         try? 💾.removeItem(at: 📍)
+        💾ZIPContents.removeUnzipFolder()
         
         try? 💾.copyItem(at: 📦, to: 📍)
         
@@ -96,7 +97,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             if 📚.documentURL?.lastPathComponent == "🄸mported.pdf" {
                 🎮.ⓕileType = .importedPDF
             }
-            if true { //unzipフォルダーがあるなら
+            if 💾ZIPContents.dataExists {
                 🎮.ⓕileType = .importedZIP
             }
         } else {

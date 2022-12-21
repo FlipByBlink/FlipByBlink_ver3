@@ -22,6 +22,10 @@ class ZIPBookView: UIImageView {
         }
     }
     
+    var canGoToNextPage: Bool {
+        zipBook.canGoToNextPage()
+    }
+    
     func goToNextPage() {
         zipBook.goToNextPage()
         self.loadImage()
@@ -30,6 +34,28 @@ class ZIPBookView: UIImageView {
     func goToPreviousPage() {
         zipBook.goToPreviousPage()
         self.loadImage()
+    }
+    
+    var pageCount: Int {
+        do {
+            return try zipBook.pageCount
+        } catch {
+            print("🚨", error.localizedDescription)
+            return 0
+        }
+    }
+    
+    var currentPageNumber: Int {
+        zipBook.currentPageNumber
+    }
+    
+    func go(to ⓟageNumber: Int) {
+        do {
+            try zipBook.go(to: ⓟageNumber)
+            self.loadImage()
+        } catch {
+            print("🚨", error.localizedDescription)
+        }
     }
 }
 

@@ -16,9 +16,9 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     var ⓕileType: 🄵ileType = .presetPDF
     
-    @IBOutlet weak var zipBookView: ZIPBookView! {
+    @IBOutlet weak var 📗zipBookView: ZIPBookView! {
         didSet {
-            zipBookView.setup()
+            📗zipBookView.setup()
         }
     }
     
@@ -208,7 +208,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         let 🆗 = NSLocalizedString("Jump", comment: "")
         📢.addAction(UIAlertAction(title: 🆗, style: .default) { _ in
             guard let 📝 = Int((📢.textFields?.first?.text)!) else { return }
-            self.ⓖo(to: 📝 - 1)
+            self.ⓖo(to: 📝)
         })
         
         let 🆖 = NSLocalizedString("Cancel", comment: "")
@@ -217,9 +217,16 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         self.present(📢, animated: true)
     }
     
-    
     func ⓖoToNextPage() {
-        if 📖.canGoToNextPage == false {
+        let ⓒanGoToNextPage: Bool = {
+            switch ⓕileType {
+                case .presetPDF, .appDocumentPDF, .importedPDF:
+                    return 📖.canGoToNextPage
+                case .importedZIP:
+                    return 📗zipBookView.zipBook.canGoToNextPage()
+            }
+        }()
+        if ⓒanGoToNextPage == false {
             let 💬 = NSLocalizedString("🎉 Finish! 🎉", comment: "")
             let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
             present(📢, animated: true)
@@ -228,26 +235,49 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             }
         }
         
-        📖.goToNextPage(nil)
-        zipBookView.goToNextPage()
+        switch ⓕileType {
+            case .presetPDF, .appDocumentPDF, .importedPDF:
+                📖.goToNextPage(nil)
+            case .importedZIP:
+                📗zipBookView.goToNextPage()
+        }
     }
     
     func ⓖoToPreviousPage() {
-        📖.goToPreviousPage(nil)
-        zipBookView.goToPreviousPage()
+        switch ⓕileType {
+            case .presetPDF, .appDocumentPDF, .importedPDF:
+                📖.goToPreviousPage(nil)
+            case .importedZIP:
+                📗zipBookView.goToPreviousPage()
+        }
     }
     
     var ⓟageCount: Int {
-        self.📚.pageCount
+        switch ⓕileType {
+            case .presetPDF, .appDocumentPDF, .importedPDF:
+                return self.📚.pageCount
+            case .importedZIP:
+                return 📗zipBookView.pageCount
+        }
     }
     
     var ⓒurrentPageNumber: Int {
-        self.📖.currentPage!.pageRef!.pageNumber
+        switch ⓕileType {
+            case .presetPDF, .appDocumentPDF, .importedPDF:
+                return self.📖.currentPage!.pageRef!.pageNumber
+            case .importedZIP:
+                return 📗zipBookView.currentPageNumber
+        }
     }
     
     func ⓖo(to ⓟageNumber: Int) {
-        if let ⓟage = 📚.page(at: ⓟageNumber) {
-            📖.go(to: ⓟage)
+        switch ⓕileType {
+            case .presetPDF, .appDocumentPDF, .importedPDF:
+                if let ⓟage = 📚.page(at: ⓟageNumber - 1) {
+                    📖.go(to: ⓟage)
+                }
+            case .importedZIP:
+                📗zipBookView.go(to: ⓟageNumber)
         }
     }
     
@@ -265,20 +295,17 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         switch ⓕileType {
-            case .presetPDF:
+            case .presetPDF, .appDocumentPDF:
                 📖.isHidden = false
-                zipBookView.isHidden = true
-            case .appDocumentPDF:
-                📖.isHidden = false
-                zipBookView.isHidden = true
+                📗zipBookView.isHidden = true
             case .importedPDF:
                 let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
                 📖.go(to: 📚.page(at: 🔖)!)
                 📖.isHidden = false
-                zipBookView.isHidden = true
+                📗zipBookView.isHidden = true
             case .importedZIP:
                 📖.isHidden = true
-                zipBookView.isHidden = false
+                📗zipBookView.isHidden = false
         }
         UIApplication.shared.isIdleTimerDisabled = true
     }
