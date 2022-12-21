@@ -9,6 +9,11 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     var ⓕile: 🄵ile.MainContent = .presetPDF
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.loadFileStatus()
+    }
+    
     
     @IBOutlet weak var 📘: UIButton! {
         didSet {
@@ -17,8 +22,6 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             📘.layer.shadowRadius = 4
             📘.layer.shadowOffset = .zero
             📘.imageView?.contentMode = .scaleAspectFit
-            
-            self.loadFileStatus()
         }
     }
     
@@ -121,8 +124,7 @@ struct 🄵ile {
                 case (false, true):
                     self = .importedZIP
                 default:
-//                    assertionFailure()
-                    print("🚨", #function)
+                    assertionFailure()
             }
         }
     }
@@ -166,7 +168,7 @@ struct 🄵ile {
                 }
                 UserDefaults.standard.set(0, forKey: "🔖")
             default:
-                print("🚨 improper file")
+                assertionFailure()
         }
     }
 }
