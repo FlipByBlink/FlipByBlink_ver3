@@ -16,13 +16,10 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             📘.layer.shadowOffset = .zero
             📘.imageView?.contentMode = .scaleAspectFit
             
-            let 💾 = FileManager.default
-            var 📍 = 💾.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            📍.appendPathComponent("🄸mported.pdf")
-            if 💾.fileExists(atPath: 📍.path){
-                📚 = PDFDocument(url: 📍)
+            if FileManager.default.fileExists(atPath: 🄵ile.importedPDFURL.path){
+                📚 = PDFDocument(url: 🄵ile.importedPDFURL)
             } else {
-                📚 = PDFDocument(data: NSDataAsset(name: "🄿reset")!.data)
+                📚 = PDFDocument(data: 🄵ile.presetPDFData)
             }
         }
     }
@@ -112,10 +109,14 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
 }
 
-enum 🄵ileType {
+enum 🄵ile {
     case presetPDF
     case importedPDF
     case importedZIP
+    
+    static var presetPDFData: Data {
+        NSDataAsset(name: "🄿reset")!.data
+    }
     
     static var importedPDFURL: URL {
         let ⓓocumentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
