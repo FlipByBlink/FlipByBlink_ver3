@@ -10,7 +10,9 @@ class 📗ZIPBookView: UIImageView {
         }
     }
     
-    var pageImages: [Int: UIImage] = 💾ZIPContents.getPageImages()
+    var pageURLs: [Int: URL] = 💾ZIPContents.getPageURLs()
+    //pageImagesからpageURLsへの変更で大きなファイルによるメモリークラッシュは落きなくなった
+    //しかし、サクサク感が減ったかもしれない
     
     func setup() {
         self.loadImage()
@@ -25,15 +27,20 @@ class 📗ZIPBookView: UIImageView {
     }
     
     var currentPageImage: UIImage? {
-        self.pageImages[self.currentPageNumber]
+        if let ⓤrl = self.pageURLs[self.currentPageNumber] {
+            return UIImage(contentsOfFile: ⓤrl.path)
+        } else {
+            print("🚨 not exists current page image.")
+            return nil
+        }
     }
     
     var pageCount: Int {
-        self.pageImages.count
+        self.pageURLs.count
     }
     
     func canGoToNextPage() -> Bool {
-        self.pageImages[self.currentPageNumber + 1] != nil
+        self.pageURLs[self.currentPageNumber + 1] != nil
     }
     
     func goToNextPage() {
@@ -43,30 +50,26 @@ class 📗ZIPBookView: UIImageView {
     }
     
     func goToPreviousPage() {
-        if self.pageImages[self.currentPageNumber - 1] != nil {
+        if self.pageURLs[self.currentPageNumber - 1] != nil {
             self.currentPageNumber -= 1
         }
     }
     
     func go(to ⓟageNumber: Int) {
-        if self.pageImages[ⓟageNumber] != nil {
+        if self.pageURLs[ⓟageNumber] != nil {
             self.currentPageNumber = ⓟageNumber
         }
     }
 }
 
 struct 💾ZIPContents {
-    static func getPageImages() -> [Int: UIImage] {
+    static func getPageURLs() -> [Int: URL] {
         do {
-            return try 📑pageImages
+            return try 📑pageURLs
         } catch {
             print("🚨", #function, error.localizedDescription)
             return [:]
         }
-    }
-    
-    static func getPageURLs() throws -> [Int: URL] {
-        try 📑pageURLs
     }
     
     static func getCoverImage() throws -> UIImage? {
@@ -94,24 +97,6 @@ struct 💾ZIPContents {
     }
     
     //MARK: private code
-    private static var 📑pageImages: [Int: UIImage] {
-        get throws {
-            var ⓢubpaths = try FileManager.default.subpathsOfDirectory(atPath: 🔗unzipFolderURL.path)
-            try ⓢubpaths.removeAll { try 🚩isDirecrory($0) }
-            ⓢubpaths.sort { $0.localizedStandardCompare($1) == .orderedAscending }
-            //alternative: ⓢubpaths.sort { $0.compare($1, options: .numeric) == .orderedAscending }
-            let ⓔmptyIndices: [Int: UIImage] = [:]
-            return ⓢubpaths.reduce(into: ⓔmptyIndices) { ⓟartialResult, ⓢubpath in
-                if let ⓘndex = ⓢubpaths.firstIndex(of: ⓢubpath) {
-                    let ⓤrl = 🔗unzipFolderURL.appendingPathComponent(ⓢubpath)
-                    if let ⓘmage = UIImage(contentsOfFile: ⓤrl.path) {
-                        ⓟartialResult[ⓘndex] = ⓘmage
-                    }
-                }
-            }
-        }
-    }
-    
     private static var 📑pageURLs: [Int: URL] {
         get throws {
             var ⓢubpaths = try FileManager.default.subpathsOfDirectory(atPath: 🔗unzipFolderURL.path)
