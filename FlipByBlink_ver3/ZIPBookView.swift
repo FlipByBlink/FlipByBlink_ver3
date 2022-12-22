@@ -3,11 +3,17 @@ import Foundation
 import UIKit
 import ZIPFoundation
 
-class ZIPBookView: UIImageView {
-    var zipBook: 📗ZIPBook = 📗ZIPBook()
+class 📗ZIPBookView: UIImageView {
+    private(set) var currentPageNumber: Int = 0 {
+        didSet {
+            self.loadImage()
+        }
+    }
+    
+    var pageImages: [Int: UIImage] = 💾ZIPContents.getPageImages()
     
     func setup() {
-        loadImage()
+        self.loadImage()
         self.layer.shadowRadius = 3
         self.layer.shadowOffset = .zero
         self.layer.shadowOpacity = 1
@@ -15,70 +21,19 @@ class ZIPBookView: UIImageView {
     }
     
     func loadImage() {
-        if let ⓤrl = try? zipBook.currentPageURL {
-            self.image = UIImage(contentsOfFile: ⓤrl.path)
-        }
+        self.image = self.currentPageImage
     }
     
-    var canGoToNextPage: Bool {
-        zipBook.canGoToNextPage()
-    }
-    
-    func goToNextPage() {
-        zipBook.goToNextPage()
-        self.loadImage()
-    }
-    
-    func goToPreviousPage() {
-        zipBook.goToPreviousPage()
-        self.loadImage()
+    var currentPageImage: UIImage? {
+        self.pageImages[self.currentPageNumber]
     }
     
     var pageCount: Int {
-        do {
-            return try zipBook.pageCount
-        } catch {
-            print("🚨pageCount:", error.localizedDescription)
-            return 0
-        }
-    }
-    
-    var currentPageNumber: Int {
-        zipBook.currentPageNumber + 1
-    }
-    
-    func go(to ⓟageNumber: Int) {
-        do {
-            try zipBook.go(to: ⓟageNumber)
-            self.loadImage()
-        } catch {
-            print("🚨", #function, error.localizedDescription)
-        }
-    }
-}
-
-class 📗ZIPBook {
-    private(set) var currentPageNumber: Int = 0
-    
-    var currentPageURL: URL {
-        get throws {
-            try 💾ZIPContents.getPageURL(number: self.currentPageNumber)
-        }
-    }
-    
-    var pageCount: Int {
-        get throws {
-            try 💾ZIPContents.getPageSubpaths().count
-        }
+        self.pageImages.count
     }
     
     func canGoToNextPage() -> Bool {
-        do {
-            return try 💾ZIPContents.pageExists(number: self.currentPageNumber + 1)
-        } catch {
-            assertionFailure("🚨" + error.localizedDescription)
-            return false
-        }
+        self.pageImages[self.currentPageNumber + 1] != nil
     }
     
     func goToNextPage() {
@@ -88,42 +43,38 @@ class 📗ZIPBook {
     }
     
     func goToPreviousPage() {
-        do {
-            if try 💾ZIPContents.pageExists(number: self.currentPageNumber - 1) {
-                self.currentPageNumber -= 1
-            }
-        } catch {
-            assertionFailure("🚨" + error.localizedDescription)
+        if self.pageImages[self.currentPageNumber - 1] != nil {
+            self.currentPageNumber -= 1
         }
     }
     
-    func go(to ⓟageNumber: Int) throws {
-        if try 💾ZIPContents.pageExists(number: ⓟageNumber) {
+    func go(to ⓟageNumber: Int) {
+        if self.pageImages[ⓟageNumber] != nil {
             self.currentPageNumber = ⓟageNumber
-        } else {
-            throw 🚨Error.noPageExists
-        }
-        enum 🚨Error: Error {
-            case noPageExists
         }
     }
 }
 
 struct 💾ZIPContents {
-    static func getPageSubpaths() throws -> [Int: String] {
-        try 📑pageSubpaths
+    static func getPageImages() -> [Int: UIImage] {
+        do {
+            return try 📑pageImages
+        } catch {
+            print("🚨", #function, error.localizedDescription)
+            return [:]
+        }
     }
     
-    static func pageExists(number ⓝumber: Int) throws -> Bool {
-        try 📑pageSubpaths.keys.contains(ⓝumber)
+    static func getPageURLs() throws -> [Int: URL] {
+        try 📑pageURLs
     }
     
-    static func getPageSubpath(number ⓝumber: Int) throws -> String {
-        try 📍pageSubpath(number: ⓝumber)
-    }
-    
-    static func getPageURL(number ⓝumber: Int) throws -> URL {
-        🔗unzipFolderURL.appendingPathComponent(try 📍pageSubpath(number: ⓝumber))
+    static func getCoverImage() throws -> UIImage? {
+        if let ⓤrl = try 📑pageURLs[0] {
+            return UIImage(contentsOfFile: ⓤrl.path)
+        } else {
+            return nil
+        }
     }
     
     static var dataExists: Bool {
@@ -143,31 +94,36 @@ struct 💾ZIPContents {
     }
     
     //MARK: private code
-    private static var 📑pageSubpaths: [Int: String] {
+    private static var 📑pageImages: [Int: UIImage] {
         get throws {
-            let ⓢubpaths = try FileManager.default.subpathsOfDirectory(atPath: 🔗unzipFolderURL.path).sorted()
-            let ⓢubpathsExpectDirecrory = try ⓢubpaths.filter { ⓢubpath in
-                try 🚩isNotDirecrory(ⓢubpath)
-            }
-            let ⓔmptyIndices: [Int: String] = [:]
-            return ⓢubpathsExpectDirecrory.reduce(into: ⓔmptyIndices) { ⓟartialResult, ⓢubpath in
-                if let ⓘndex = ⓢubpathsExpectDirecrory.firstIndex(of: ⓢubpath) {
-                    ⓟartialResult[ⓘndex] = ⓢubpath
+            var ⓢubpaths = try FileManager.default.subpathsOfDirectory(atPath: 🔗unzipFolderURL.path)
+            try ⓢubpaths.removeAll { try 🚩isDirecrory($0) }
+            ⓢubpaths.sort { $0.localizedStandardCompare($1) == .orderedAscending }
+            //alternative: ⓢubpaths.sort { $0.compare($1, options: .numeric) == .orderedAscending }
+            let ⓔmptyIndices: [Int: UIImage] = [:]
+            return ⓢubpaths.reduce(into: ⓔmptyIndices) { ⓟartialResult, ⓢubpath in
+                if let ⓘndex = ⓢubpaths.firstIndex(of: ⓢubpath) {
+                    let ⓤrl = 🔗unzipFolderURL.appendingPathComponent(ⓢubpath)
+                    if let ⓘmage = UIImage(contentsOfFile: ⓤrl.path) {
+                        ⓟartialResult[ⓘndex] = ⓘmage
+                    }
                 }
             }
         }
     }
     
-    private static func 📍pageSubpath(number ⓝumber: Int) throws -> String {
-        let ⓟageSubpaths = try 📑pageSubpaths
-        if let ⓢubpath = ⓟageSubpaths[ⓝumber] {
-            return ⓢubpath
-        } else {
-            assertionFailure(#function)
-            throw 🚨Error.improperPageNumber
-        }
-        enum 🚨Error: Error {
-            case improperPageNumber
+    private static var 📑pageURLs: [Int: URL] {
+        get throws {
+            var ⓢubpaths = try FileManager.default.subpathsOfDirectory(atPath: 🔗unzipFolderURL.path)
+            try ⓢubpaths.removeAll { try 🚩isDirecrory($0) }
+            ⓢubpaths.sort { $0.localizedStandardCompare($1) == .orderedAscending }
+            //alternative: ⓢubpaths.sort { $0.compare($1, options: .numeric) == .orderedAscending }
+            let ⓔmptyIndices: [Int: URL] = [:]
+            return ⓢubpaths.reduce(into: ⓔmptyIndices) { ⓟartialResult, ⓢubpath in
+                if let ⓘndex = ⓢubpaths.firstIndex(of: ⓢubpath) {
+                    ⓟartialResult[ⓘndex] = 🔗unzipFolderURL.appendingPathComponent(ⓢubpath)
+                }
+            }
         }
     }
     
@@ -182,7 +138,7 @@ struct 💾ZIPContents {
     private static func 🗑removeFilesExpectImages() throws {
         let ⓢubpaths = try FileManager.default.subpathsOfDirectory(atPath: 🔗unzipFolderURL.path)
         for ⓢubpath in ⓢubpaths {
-            if try 🚩isNotDirecrory(ⓢubpath) {
+            if try 🚩isDirecrory(ⓢubpath) == false {
                 let ⓤrl = 🔗unzipFolderURL.appendingPathComponent(ⓢubpath)
                 let ⓓata = try Data(contentsOf: ⓤrl)
                 if UIImage(data: ⓓata) == nil {
@@ -192,13 +148,9 @@ struct 💾ZIPContents {
         }
     }
     
-    private static func 🚩isNotDirecrory(_ ⓢubpath: String) throws -> Bool {
+    private static func 🚩isDirecrory(_ ⓢubpath: String) throws -> Bool {
         let ⓤrl = 🔗unzipFolderURL.appendingPathComponent(ⓢubpath)
         let ⓡesourceValues = try ⓤrl.resourceValues(forKeys: [.isDirectoryKey])
-        if ⓡesourceValues.isDirectory == true {
-            return false
-        } else {
-            return true
-        }
+        return ⓡesourceValues.isDirectory == true
     }
 }

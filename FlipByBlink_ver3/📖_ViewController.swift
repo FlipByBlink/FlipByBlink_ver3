@@ -9,7 +9,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     var ⓟresentedFile: 🄵ile.PresentedFile = .presetPDF
     
-    @IBOutlet weak var 📗zipBookView: ZIPBookView!
+    @IBOutlet weak var 📗zipBookView: 📗ZIPBookView!
     
     @IBOutlet weak var 📖: PDFView! {
         didSet {
@@ -212,7 +212,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
                 case .presetPDF, .appDocumentPDF, .importedPDF:
                     return 📖.canGoToNextPage
                 case .importedZIP:
-                    return 📗zipBookView.zipBook.canGoToNextPage()
+                    return 📗zipBookView.canGoToNextPage()
             }
         }()
         if ⓒanGoToNextPage == false {
