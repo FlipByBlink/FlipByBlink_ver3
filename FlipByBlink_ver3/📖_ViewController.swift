@@ -255,7 +255,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             case .presetPDF, .appDocumentPDF, .importedPDF:
                 return self.📖.currentPage!.pageRef!.pageNumber
             case .importedZIP:
-                return 📗zipBookView.currentPageNumber
+                return 📗zipBookView.currentPageNumber + 1
         }
     }
     
