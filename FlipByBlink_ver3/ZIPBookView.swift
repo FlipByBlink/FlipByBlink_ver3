@@ -92,9 +92,10 @@ struct 💾ZIPContents {
         }
     }
     
-    static func getCoverImage() throws -> UIImage? {
+    static func getCoverImage(of ⓢize: CGSize) throws -> UIImage? {
         if let ⓤrl = try 📑pageURLs[0] {
-            return UIImage(contentsOfFile: ⓤrl.path)
+            let ⓘmage = UIImage(contentsOfFile: ⓤrl.path)
+            return ⓘmage?.preparingThumbnail(of: ⓢize)
         } else {
             return nil
         }

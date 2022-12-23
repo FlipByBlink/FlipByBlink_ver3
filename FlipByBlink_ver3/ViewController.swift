@@ -66,7 +66,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     func loadFileStatus() {
         ⓕile.reload()
-        📘.setImage(ⓕile.coverImage, for: .normal)
+        📘.setImage(ⓕile.getCoverImage(of: self.📘.frame.size), for: .normal)
     }
     
     
@@ -100,16 +100,17 @@ struct 🄵ile {
         case importedPDF
         case importedZIP
         
-        var coverImage: UIImage? {
+        func getCoverImage(of ⓢize: CGSize) -> UIImage? {
+            let ⓘmageSize = ⓢize.applying(CGAffineTransform(scaleX: 3, y: 3))
             switch self {
                 case .presetPDF:
                     let ⓓocument = PDFDocument(data: NSDataAsset(name: "🄿reset")!.data)
-                    return ⓓocument?.page(at: 0)?.thumbnail(of: .init(width: 1000, height: 1000), for: .mediaBox)
+                    return ⓓocument?.page(at: 0)?.thumbnail(of: ⓘmageSize, for: .mediaBox)
                 case .importedPDF:
                     let ⓓocument = PDFDocument(url: 🄵ile.importedPDFURL)
-                    return ⓓocument?.page(at: 0)?.thumbnail(of: .init(width: 1000, height: 1000), for: .mediaBox)
+                    return ⓓocument?.page(at: 0)?.thumbnail(of: ⓘmageSize, for: .mediaBox)
                 case .importedZIP:
-                    return try! 💾ZIPContents.getCoverImage()
+                    return try! 💾ZIPContents.getCoverImage(of: ⓘmageSize)
             }
         }
         
