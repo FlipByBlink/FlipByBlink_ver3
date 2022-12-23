@@ -8,26 +8,26 @@ class 📗ZIPBookView: UIImageView {
     
     private(set) var currentPageNumber: Int = 0
     
-    private var nextPageImage: UIImage? = nil
-    private var previousPageImage: UIImage? = nil
+    private var preloadedNextPageImage: UIImage? = nil
+    private var preloadedPreviousPageImage: UIImage? = nil
     
     func canGoToNextPage() -> Bool {
         self.pageURLs[self.currentPageNumber + 1] != nil
     }
     
     func goToNextPage() {
-        if let ⓝextPageImage = self.nextPageImage {
+        if let ⓝextPageImage = self.preloadedNextPageImage {
             self.image = ⓝextPageImage
-            self.nextPageImage = nil
+            self.preloadedNextPageImage = nil
             self.currentPageNumber += 1
             self.preloadImages()
         }
     }
     
     func goToPreviousPage() {
-        if let ⓟreviousPageImage = self.previousPageImage {
+        if let ⓟreviousPageImage = self.preloadedPreviousPageImage {
             self.image = ⓟreviousPageImage
-            self.previousPageImage = nil
+            self.preloadedPreviousPageImage = nil
             self.currentPageNumber -= 1
             self.preloadImages()
         }
@@ -53,31 +53,31 @@ class 📗ZIPBookView: UIImageView {
     }
     
     private func preloadImages() {
-        let ⓝextPageNumber = currentPageNumber + 1
-        let ⓟreviousPageNumber = currentPageNumber - 1
+        let ⓝextPageNumber = self.currentPageNumber + 1
+        let ⓟreviousPageNumber = self.currentPageNumber - 1
         if let ⓤrl = self.pageURLs[ⓝextPageNumber] {
             let ⓘmage = UIImage(contentsOfFile: ⓤrl.path)
             ⓘmage?.prepareForDisplay { ⓟreparedImage in
                 DispatchQueue.main.async {
                     if self.currentPageNumber + 1 == ⓝextPageNumber {
-                        self.nextPageImage = ⓟreparedImage
+                        self.preloadedNextPageImage = ⓟreparedImage
                     }
                 }
             }
         } else {
-            self.nextPageImage = nil
+            self.preloadedNextPageImage = nil
         }
         if let ⓤrl = self.pageURLs[ⓟreviousPageNumber] {
             let ⓘmage = UIImage(contentsOfFile: ⓤrl.path)
             ⓘmage?.prepareForDisplay { ⓟreparedImage in
                 DispatchQueue.main.async {
                     if self.currentPageNumber - 1 == ⓟreviousPageNumber {
-                        self.previousPageImage = ⓟreparedImage
+                        self.preloadedPreviousPageImage = ⓟreparedImage
                     }
                 }
             }
         } else {
-            self.previousPageImage = nil
+            self.preloadedPreviousPageImage = nil
         }
     }
 }
