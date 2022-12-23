@@ -9,28 +9,26 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     var ⓕile: 🄵ile.MainContent = .presetPDF
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadFileStatus()
+        
+        self.📘.layer.shadowColor = UIColor.gray.cgColor
+        self.📘.layer.shadowOpacity = 0.8
+        self.📘.layer.shadowRadius = 4
+        self.📘.layer.shadowOffset = .zero
+        self.📘.imageView?.contentMode = .scaleAspectFit
     }
     
     
-    @IBOutlet weak var 📘: UIButton! {
-        didSet {
-            📘.layer.shadowColor = UIColor.gray.cgColor
-            📘.layer.shadowOpacity = 0.8
-            📘.layer.shadowRadius = 4
-            📘.layer.shadowOffset = .zero
-            📘.imageView?.contentMode = .scaleAspectFit
-        }
-    }
+    @IBOutlet weak var 📘: UIButton!
     
     
     @IBAction func ᐅ⃣() {
         let 📍 = Bundle.main.url(forResource: "▶️", withExtension: "mp4")!
         let 🎮 = AVPlayerViewController()
-        let 📺 = AVPlayer(url: 📍)
-        🎮.player = 📺
+        🎮.player = AVPlayer(url: 📍)
         self.present(🎮, animated: true)
     }
     
@@ -58,15 +56,16 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         do {
             try 🄵ile.store(from: urls.first!)
-            loadFileStatus()
+            self.loadFileStatus()
         } catch {
             print("🚨", #function, error.localizedDescription)
         }
     }
     
     func loadFileStatus() {
-        ⓕile.reload()
-        📘.setImage(ⓕile.getCoverImage(of: self.📘.frame.size), for: .normal)
+        self.ⓕile.reload()
+        let ⓘmage = self.ⓕile.getCoverImage(of: self.📘.frame.size)
+        self.📘.setImage(ⓘmage, for: .normal)
     }
     
     
@@ -76,7 +75,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         
         if (segue.identifier == "📘") {
             🎮.📚 = PDFDocument()
-            switch ⓕile {
+            switch self.ⓕile {
                 case .presetPDF:
                     🎮.ⓟresentedFile = .presetPDF
                     🎮.📚 = PDFDocument(data: 🄵ile.presetPDFData)!
