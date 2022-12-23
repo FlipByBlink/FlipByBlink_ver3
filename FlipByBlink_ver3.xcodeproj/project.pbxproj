@@ -20,6 +20,7 @@
 		127E611C271568E600B44096 /* ▶️.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 127E611B271568E600B44096 /* ▶️.mp4 */; };
 		12EA5A3A2715A90E00DF39D6 /* 📖_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EA5A392715A90E00DF39D6 /* 📖_ViewController.swift */; };
 		F51589D02950637000395DD5 /* ZIPBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51589CF2950637000395DD5 /* ZIPBookView.swift */; };
+		F543D33C2955942800463A5E /* CBZIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F543D33B2955942800463A5E /* CBZIcon.png */; };
 		F5CD5D10294F0656004C3BF9 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = F5CD5D0F294F0656004C3BF9 /* ZIPFoundation */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		127E611B271568E600B44096 /* ▶️.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "▶️.mp4"; sourceTree = "<group>"; };
 		12EA5A392715A90E00DF39D6 /* 📖_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📖_ViewController.swift"; sourceTree = "<group>"; };
 		F51589CF2950637000395DD5 /* ZIPBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZIPBookView.swift; sourceTree = "<group>"; };
+		F543D33B2955942800463A5E /* CBZIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CBZIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				122AC1D42720163700C90ECB /* Settings.bundle */,
 				125222AF27166D590013E5ED /* 📄.pdf */,
 				127E611B271568E600B44096 /* ▶️.mp4 */,
+				F543D33B2955942800463A5E /* CBZIcon.png */,
 			);
 			path = FlipByBlink_ver3;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				122AC1D52720163700C90ECB /* Settings.bundle in Resources */,
+				F543D33C2955942800463A5E /* CBZIcon.png in Resources */,
 				127E611227150C7100B44096 /* LaunchScreen.storyboard in Resources */,
 				127E610F27150C7100B44096 /* Assets.xcassets in Resources */,
 				1260AD80272D2ECC00FFC395 /* Localizable.strings in Resources */,
