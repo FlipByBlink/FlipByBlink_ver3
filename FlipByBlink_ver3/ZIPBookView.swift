@@ -4,39 +4,26 @@ import UIKit
 import ZIPFoundation
 
 class 📗ZIPBookView: UIImageView {
-    private(set) var currentPageNumber: Int = 0 {
-        didSet {
-            self.loadImage()
-        }
-    }
+    private(set) var currentPageNumber: Int = 0
     
     var pageURLs: [Int: URL] = 💾ZIPContents.getPageURLs()
-    //pageImagesからpageURLsへの変更で大きなファイルによるメモリークラッシュは落きなくなった
-    //しかし、サクサク感が減ったかもしれない
     
-    func setup() {
-        self.loadImage()
-        self.layer.shadowRadius = 3
-        self.layer.shadowOffset = .zero
-        self.layer.shadowOpacity = 1
-        self.layer.shadowColor = UIColor.gray.cgColor
-    }
+    var nextPateImage: UIImage? = nil
     
-    func loadImage() {
-        self.image = self.currentPageImage
-    }
-    
-    var currentPageImage: UIImage? {
-        if let ⓤrl = self.pageURLs[self.currentPageNumber] {
-            return UIImage(contentsOfFile: ⓤrl.path)
+    func loadNextImage() {
+        let ⓝextPageNumber = currentPageNumber + 1
+        if let ⓤrl = self.pageURLs[ⓝextPageNumber] {
+            let ⓘmage = UIImage(contentsOfFile: ⓤrl.path)
+            ⓘmage?.prepareForDisplay { ⓟreparedImage in
+                DispatchQueue.main.async {
+                    if self.currentPageNumber + 1 == ⓝextPageNumber {
+                        self.nextPateImage = ⓟreparedImage
+                    }
+                }
+            }
         } else {
-            print("🚨 not exists current page image.")
-            return nil
+            self.nextPateImage = nil
         }
-    }
-    
-    var pageCount: Int {
-        self.pageURLs.count
     }
     
     func canGoToNextPage() -> Bool {
@@ -44,21 +31,35 @@ class 📗ZIPBookView: UIImageView {
     }
     
     func goToNextPage() {
-        if self.canGoToNextPage() {
+        if self.nextPateImage != nil {
+            self.image = self.nextPateImage
+            self.nextPateImage = nil
             self.currentPageNumber += 1
+            self.loadNextImage()
         }
     }
     
     func goToPreviousPage() {
-        if self.pageURLs[self.currentPageNumber - 1] != nil {
-            self.currentPageNumber -= 1
-        }
+        self.go(to: currentPageNumber - 1)
     }
     
     func go(to ⓟageNumber: Int) {
-        if self.pageURLs[ⓟageNumber] != nil {
+        if let ⓤrl = self.pageURLs[ⓟageNumber] {
+            self.image = UIImage(contentsOfFile: ⓤrl.path)
             self.currentPageNumber = ⓟageNumber
+            self.loadNextImage()
         }
+    }
+    
+    var pageCount: Int {
+        self.pageURLs.count
+    }
+    
+    func setup() {
+        self.layer.shadowRadius = 3
+        self.layer.shadowOffset = .zero
+        self.layer.shadowOpacity = 1
+        self.layer.shadowColor = UIColor.gray.cgColor
     }
 }
 
