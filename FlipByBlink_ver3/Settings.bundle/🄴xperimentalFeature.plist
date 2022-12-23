@@ -2,13 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>StringsTable</key>
+	<string>🄴xperimentalFeature</string>
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
 			<key>Type</key>
 			<string>PSMultiValueSpecifier</string>
 			<key>Title</key>
-			<string>🎚😑second</string>
+			<string>🎚😑 blink duration (second)</string>
 			<key>Key</key>
 			<string>🎚😑second</string>
 			<key>DefaultValue</key>
@@ -38,7 +40,7 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>😉 return</string>
+			<string>😉 return 1 page with one eye wink</string>
 			<key>Key</key>
 			<string>😉 return</string>
 			<key>DefaultValue</key>
