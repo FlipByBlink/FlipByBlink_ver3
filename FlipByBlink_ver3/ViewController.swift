@@ -13,16 +13,18 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadFileStatus()
-        
-        self.📘.layer.shadowColor = UIColor.gray.cgColor
-        self.📘.layer.shadowOpacity = 0.8
-        self.📘.layer.shadowRadius = 4
-        self.📘.layer.shadowOffset = .zero
-        self.📘.imageView?.contentMode = .scaleAspectFit
     }
     
     
-    @IBOutlet weak var 📘: UIButton!
+    @IBOutlet weak var 📘: UIButton! {
+        didSet {
+            self.📘.layer.shadowColor = UIColor.gray.cgColor
+            self.📘.layer.shadowOpacity = 0.8
+            self.📘.layer.shadowRadius = 4
+            self.📘.layer.shadowOffset = .zero
+            self.📘.imageView?.contentMode = .scaleAspectFit
+        }
+    }
     
     
     @IBAction func ᐅ⃣() {
@@ -51,7 +53,12 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         let 🎮 = UIDocumentPickerViewController(forOpeningContentTypes: ⓣypes, asCopy: true)
         🎮.delegate = self
         self.present(🎮, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.🌀indicatorView.startAnimating()
+        }
     }
+    
+    @IBOutlet weak var 🌀indicatorView: UIActivityIndicatorView!
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         do {
@@ -60,6 +67,11 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         } catch {
             print("🚨", #function, error.localizedDescription)
         }
+        self.🌀indicatorView.stopAnimating()
+    }
+    
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        self.🌀indicatorView.stopAnimating()
     }
     
     func loadFileStatus() {

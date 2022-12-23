@@ -108,14 +108,19 @@
                                     <action selector="🄰" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mqx-1T-IYS"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="lqh-70-6js">
+                                <rect key="frame" x="178" y="596.66666666666663" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Jjx-C8-s6t" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-20" id="EU0-Iw-6KX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xqj-zg-dTH" secondAttribute="trailing" constant="50" id="Hqz-KG-U8o"/>
+                            <constraint firstItem="lqh-70-6js" firstAttribute="centerY" secondItem="Xqj-zg-dTH" secondAttribute="centerY" id="HsE-ac-7VY"/>
                             <constraint firstItem="Xqj-zg-dTH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="I8K-tZ-ih8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TBA-gG-LHE" secondAttribute="trailing" constant="40" id="Mj4-tv-ZSg"/>
+                            <constraint firstItem="lqh-70-6js" firstAttribute="centerX" secondItem="Xqj-zg-dTH" secondAttribute="centerX" id="OkJ-kB-wia"/>
                             <constraint firstItem="fss-gx-m0J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="RXc-eY-x16"/>
                             <constraint firstAttribute="bottom" secondItem="Xqj-zg-dTH" secondAttribute="bottom" constant="60" id="Zqy-pM-Iml"/>
                             <constraint firstItem="pdT-1r-y2w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="hJq-g6-h0C"/>
@@ -129,6 +134,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="🌀indicatorView" destination="lqh-70-6js" id="EjN-Jg-ga9"/>
                         <outlet property="📘" destination="Xqj-zg-dTH" id="MhU-Vk-u7L"/>
                     </connections>
                 </viewController>
