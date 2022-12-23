@@ -64,7 +64,9 @@
 			<key>UTTypeDescription</key>
 			<string>Comic book archive (ZIP)</string>
 			<key>UTTypeIconFiles</key>
-			<array/>
+			<array>
+				<string>CBZIcon.png</string>
+			</array>
 			<key>UTTypeIdentifier</key>
 			<string>net.aaaakkkkssssttttnnnn.cbz</string>
 			<key>UTTypeTagSpecification</key>
