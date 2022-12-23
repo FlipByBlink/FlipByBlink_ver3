@@ -88,11 +88,19 @@
 				127E611027150C7100B44096 /* LaunchScreen.storyboard */,
 				127E611327150C7100B44096 /* Info.plist */,
 				122AC1D42720163700C90ECB /* Settings.bundle */,
+				F543D33D295596F700463A5E /* Others */,
+			);
+			path = FlipByBlink_ver3;
+			sourceTree = "<group>";
+		};
+		F543D33D295596F700463A5E /* Others */ = {
+			isa = PBXGroup;
+			children = (
 				125222AF27166D590013E5ED /* 📄.pdf */,
 				127E611B271568E600B44096 /* ▶️.mp4 */,
 				F543D33B2955942800463A5E /* CBZIcon.png */,
 			);
-			path = FlipByBlink_ver3;
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
