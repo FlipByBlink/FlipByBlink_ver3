@@ -4,7 +4,7 @@ import UIKit
 import ZIPFoundation
 
 class 📗ZIPBookView: UIImageView {
-    var pageURLs: [Int: URL] = 💾ZIPContents.getPageURLs()
+    private var pageURLs: [Int: URL] = 💾ZIPContents.getPageURLs()
     
     private(set) var currentPageNumber: Int = 0
     
@@ -16,8 +16,8 @@ class 📗ZIPBookView: UIImageView {
     }
     
     func goToNextPage() {
-        if self.nextPageImage != nil {
-            self.image = self.nextPageImage
+        if let ⓝextPageImage = self.nextPageImage {
+            self.image = ⓝextPageImage
             self.nextPageImage = nil
             self.currentPageNumber += 1
             self.preloadImages()
@@ -25,8 +25,8 @@ class 📗ZIPBookView: UIImageView {
     }
     
     func goToPreviousPage() {
-        if self.previousPageImage != nil {
-            self.image = self.previousPageImage
+        if let ⓟreviousPageImage = self.previousPageImage {
+            self.image = ⓟreviousPageImage
             self.previousPageImage = nil
             self.currentPageNumber -= 1
             self.preloadImages()
