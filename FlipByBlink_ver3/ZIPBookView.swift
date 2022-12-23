@@ -97,7 +97,7 @@ struct 💾ZIPContents {
             let ⓘmage = UIImage(contentsOfFile: ⓤrl.path)
             return ⓘmage?.preparingThumbnail(of: ⓢize)
         } else {
-            return nil
+            return UIImage(systemName: "exclamationmark.triangle")
         }
     }
     
