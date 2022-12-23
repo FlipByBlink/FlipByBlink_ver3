@@ -13,34 +13,34 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     @IBOutlet weak var 📖: PDFView! {
         didSet {
-            📖.autoScales = true
-            📖.displayMode = .singlePage
-            📖.displaysPageBreaks = false
-            📖.isUserInteractionEnabled = false
-            📖.accessibilityElementsHidden = true
+            self.📖.autoScales = true
+            self.📖.displayMode = .singlePage
+            self.📖.displaysPageBreaks = false
+            self.📖.isUserInteractionEnabled = false
+            self.📖.accessibilityElementsHidden = true
             
-            📖.document = 📚
+            self.📖.document = self.📚
         }
     }
     
     
     @IBOutlet weak var 🔘: ARSCNView! {
         didSet {
-            🔘.delegate = self
-            🔘.session.delegate = self
+            self.🔘.delegate = self
+            self.🔘.session.delegate = self
             let 🎛 = ARFaceTrackingConfiguration()
-            🔘.session.run(🎛)
+            self.🔘.session.run(🎛)
             
-            🔘.layer.cornerRadius = 🔘.frame.height/2
-            🔘.layer.borderWidth = 6
-            🔘.layer.borderColor = UIColor.separator.cgColor
+            self.🔘.layer.cornerRadius = self.🔘.frame.height/2
+            self.🔘.layer.borderWidth = 6
+            self.🔘.layer.borderColor = UIColor.separator.cgColor
             
             if UserDefaults.standard.bool(forKey: "👤🧑‍💼 Real Preview") == false {
-                🔘.scene.background.contents = UIColor.systemBackground
+                self.🔘.scene.background.contents = UIColor.systemBackground
             }
             
             if UserDefaults.standard.bool(forKey: "👤🚫 Hide Preview") {
-                🔘.isHidden = true
+                self.🔘.isHidden = true
             }
         }
     }
@@ -108,7 +108,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         if New🌡👀 > 🎚👀 {
             if Date().timeIntervalSince(🕰😑start) > 🎚😑second {
                 DispatchQueue.main.async {
-                    self.ⓖoToNextPage()
+                    self.ⓖoToNextPageWithLastPageAlert()
                 }
                 
                 💤 = true
@@ -153,28 +153,28 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     @IBAction func 👆゛(_ sender: UITapGestureRecognizer) {
         if sender.location(in: view).x > view.center.x {
-            ⓖoToNextPage()
+            self.ⓖoToNextPageWithLastPageAlert()
         } else {
-            ⓖoToPreviousPage()
+            self.ⓖoToPreviousPage()
         }
     }
     
     
     @IBAction func 👆三三(_ sender: Any) {
-        ⓖoToNextPage()
+        self.ⓖoToNextPageWithLastPageAlert()
     }
     
     
     @IBAction func 三三👆(_ sender: Any) {
-        ⓖoToPreviousPage()
+        self.ⓖoToPreviousPage()
     }
     
     
     @IBAction func 氵👌(_ sender: UIPinchGestureRecognizer) {
         if sender.velocity > 0 {
-            ⓖoToNextPage()
+            self.ⓖoToNextPage()
         } else {
-            ⓖoToPreviousPage()
+            self.ⓖoToPreviousPage()
         }
     }
     
@@ -185,7 +185,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     
     @IBAction func 彡👆ミ(_ sender: Any) {
-        let 💬 = "1 〜 " + ⓟageCount.description
+        let 💬 = "1 〜 " + self.ⓟageCount.description
         let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
         
         📢.addTextField { 📋 in
@@ -206,67 +206,73 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         self.present(📢, animated: true)
     }
     
+    
+    var ⓒanGoToNextPage: Bool {
+        switch self.ⓟresentedFile {
+            case .presetPDF, .appDocumentPDF, .importedPDF:
+                return self.📖.canGoToNextPage
+            case .importedZIP:
+                return self.📗zipBookView.canGoToNextPage()
+        }
+    }
+    
     func ⓖoToNextPage() {
-        let ⓒanGoToNextPage: Bool = {
-            switch ⓟresentedFile {
-                case .presetPDF, .appDocumentPDF, .importedPDF:
-                    return 📖.canGoToNextPage
-                case .importedZIP:
-                    return 📗zipBookView.canGoToNextPage()
-            }
-        }()
-        if ⓒanGoToNextPage == false {
+        switch self.ⓟresentedFile {
+            case .presetPDF, .appDocumentPDF, .importedPDF:
+                self.📖.goToNextPage(nil)
+            case .importedZIP:
+                self.📗zipBookView.goToNextPage()
+        }
+    }
+    
+    func ⓖoToNextPageWithLastPageAlert() {
+        if self.ⓒanGoToNextPage == false {
             let 💬 = NSLocalizedString("🎉 Finish! 🎉", comment: "")
             let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
             present(📢, animated: true)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5 ) {
                 📢.dismiss(animated: true)
             }
-        }
-        
-        switch ⓟresentedFile {
-            case .presetPDF, .appDocumentPDF, .importedPDF:
-                📖.goToNextPage(nil)
-            case .importedZIP:
-                📗zipBookView.goToNextPage()
+        } else {
+            self.ⓖoToNextPage()
         }
     }
     
     func ⓖoToPreviousPage() {
-        switch ⓟresentedFile {
+        switch self.ⓟresentedFile {
             case .presetPDF, .appDocumentPDF, .importedPDF:
-                📖.goToPreviousPage(nil)
+                self.📖.goToPreviousPage(nil)
             case .importedZIP:
-                📗zipBookView.goToPreviousPage()
+                self.📗zipBookView.goToPreviousPage()
         }
     }
     
     var ⓟageCount: Int {
-        switch ⓟresentedFile {
+        switch self.ⓟresentedFile {
             case .presetPDF, .appDocumentPDF, .importedPDF:
                 return self.📚.pageCount
             case .importedZIP:
-                return 📗zipBookView.pageCount
+                return self.📗zipBookView.pageCount
         }
     }
     
     var ⓒurrentPageNumber: Int {
-        switch ⓟresentedFile {
+        switch self.ⓟresentedFile {
             case .presetPDF, .appDocumentPDF, .importedPDF:
                 return self.📖.currentPage!.pageRef!.pageNumber
             case .importedZIP:
-                return 📗zipBookView.currentPageNumber + 1
+                return self.📗zipBookView.currentPageNumber + 1
         }
     }
     
     func ⓖo(to ⓟageNumber: Int) {
-        switch ⓟresentedFile {
+        switch self.ⓟresentedFile {
             case .presetPDF, .appDocumentPDF, .importedPDF:
-                if let ⓟage = 📚.page(at: ⓟageNumber) {
-                    📖.go(to: ⓟage)
+                if let ⓟage = self.📚.page(at: ⓟageNumber) {
+                    self.📖.go(to: ⓟage)
                 }
             case .importedZIP:
-                📗zipBookView.go(to: ⓟageNumber)
+                self.📗zipBookView.go(to: ⓟageNumber)
         }
     }
     
@@ -283,23 +289,23 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        switch ⓟresentedFile {
+        switch self.ⓟresentedFile {
             case .presetPDF, .appDocumentPDF:
-                📖.isHidden = false
-                📗zipBookView.isHidden = true
+                self.📖.isHidden = false
+                self.📗zipBookView.isHidden = true
             case .importedPDF:
-                📖.isHidden = false
-                📗zipBookView.isHidden = true
+                self.📖.isHidden = false
+                self.📗zipBookView.isHidden = true
                 let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
                 if let ⓟage = 📚.page(at: 🔖) {
-                    📖.go(to: ⓟage)
+                    self.📖.go(to: ⓟage)
                 }
             case .importedZIP:
-                📖.isHidden = true
-                📗zipBookView.isHidden = false
+                self.📖.isHidden = true
+                self.📗zipBookView.isHidden = false
                 let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
-                📗zipBookView.go(to: 🔖)
-                📗zipBookView.setup()
+                self.📗zipBookView.go(to: 🔖)
+                self.📗zipBookView.setup()
         }
         UIApplication.shared.isIdleTimerDisabled = true
     }
@@ -307,9 +313,9 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        switch ⓟresentedFile {
+        switch self.ⓟresentedFile {
             case .importedPDF, .importedZIP:
-                let 🔖 = ⓒurrentPageNumber - 1
+                let 🔖 = self.ⓒurrentPageNumber - 1
                 UserDefaults.standard.set(🔖, forKey: "🔖")
             default:
                 break
@@ -343,7 +349,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     @IBOutlet weak var 🏁: UIImageView! {
         didSet {
             if UserDefaults.standard.bool(forKey: "🏁 Display share-info") {
-                🏁.isHidden = false
+                self.🏁.isHidden = false
             }
         }
     }
@@ -354,24 +360,24 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         
         for 🄿ress in presses {
             switch 🄿ress.key?.keyCode {
-                case .keyboardRightArrow: ⓖoToNextPage()
+                case .keyboardRightArrow: self.ⓖoToNextPageWithLastPageAlert()
                 case .keyboardDownArrow: 🅂kip5Page()
-                case .keyboardLeftArrow: ⓖoToPreviousPage()
+                case .keyboardLeftArrow: self.ⓖoToPreviousPage()
                 case .keyboardUpArrow: 🄱ack5Page()
                     
-                case .keyboardD: ⓖoToNextPage()
+                case .keyboardD: self.ⓖoToNextPageWithLastPageAlert()
                 case .keyboardS: 🅂kip5Page()
-                case .keyboardA: ⓖoToPreviousPage()
+                case .keyboardA: self.ⓖoToPreviousPage()
                 case .keyboardW: 🄱ack5Page()
                     
-                case .keyboardPageDown: ⓖoToNextPage()
-                case .keyboardPageUp: ⓖoToPreviousPage()
+                case .keyboardPageDown: self.ⓖoToNextPageWithLastPageAlert()
+                case .keyboardPageUp: self.ⓖoToPreviousPage()
                     
                 case .keyboardSpacebar:
                     if event?.modifierFlags == .shift {
-                        ⓖoToPreviousPage()
+                        self.ⓖoToPreviousPage()
                     } else {
-                        ⓖoToNextPage()
+                        self.ⓖoToNextPageWithLastPageAlert()
                     }
                     
                 default: print(🄿ress.key.debugDescription)
@@ -379,13 +385,13 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             
             func 🅂kip5Page() {
                 for _ in 1...5 {
-                    ⓖoToNextPage()
+                    self.ⓖoToNextPageWithLastPageAlert()
                 }
             }
             
             func 🄱ack5Page() {
                 for _ in 1...5 {
-                    ⓖoToPreviousPage()
+                    self.ⓖoToPreviousPage()
                 }
             }
         }
