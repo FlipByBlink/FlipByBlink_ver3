@@ -49,7 +49,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     
     @IBAction func 📁() {
-        let ⓣypes = [UTType.pdf, UTType.zip]
+        let ⓣypes = [UTType.pdf, UTType.zip, UTType(filenameExtension: "cbz")!]
         let 🎮 = UIDocumentPickerViewController(forOpeningContentTypes: ⓣypes, asCopy: true)
         🎮.delegate = self
         self.present(🎮, animated: true)
@@ -172,7 +172,7 @@ struct 🄵ile {
                 try ⓕm.removeItem(at: 📦)
                 💾ZIPContents.removeUnzipFolder()
                 UserDefaults.standard.set(0, forKey: "🔖")
-            case "zip":
+            case "zip", "cbz":
                 try 💾ZIPContents.unzipAndSaveFiles(from: 📦)
                 try FileManager.default.removeItem(at: 📦)
                 if FileManager.default.fileExists(atPath: Self.importedPDFURL.path) {
