@@ -87,7 +87,6 @@ struct 💾ZIPContents {
         do {
             return try 📑pageURLs
         } catch {
-            print("🚨", #function, error.localizedDescription)
             return [:]
         }
     }
