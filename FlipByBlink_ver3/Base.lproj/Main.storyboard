@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-C8-s6t" userLabel="📁">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-C8-s6t" userLabel="📁openDocumentPickerButton">
                                 <rect key="frame" x="146.66666666666666" y="318.66666666666669" width="100" height="100"/>
                                 <accessibility key="accessibilityConfiguration" label="Import book"/>
                                 <constraints>
@@ -32,7 +32,7 @@
                                     <action selector="📁openDocumentPicker" destination="BYZ-38-t0r" eventType="touchUpInside" id="s5n-UT-kHY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="📘">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="📘openBookButton">
                                 <rect key="frame" x="50" y="438.66666666666674" width="293" height="353.33333333333326"/>
                                 <accessibility key="accessibilityConfiguration" label="Open book"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -44,7 +44,7 @@
                                     <segue destination="IjJ-xR-P41" kind="presentation" identifier="📘" modalPresentationStyle="fullScreen" id="2D6-ez-ffp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="📄">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="📄openAppDocumentButton">
                                 <rect key="frame" x="40" y="99" width="80" height="80"/>
                                 <accessibility key="accessibilityConfiguration" label="App document PDF"/>
                                 <constraints>
@@ -60,7 +60,7 @@
                                     <segue destination="IjJ-xR-P41" kind="presentation" id="MG5-0J-yhC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-gx-m0J" userLabel="ᐅ⃣">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-gx-m0J" userLabel="ᐅ⃣playVideoButton">
                                 <rect key="frame" x="40" y="199" width="80" height="80"/>
                                 <accessibility key="accessibilityConfiguration" label="App document video"/>
                                 <constraints>
@@ -76,7 +76,7 @@
                                     <action selector="ᐅ⃣playVideo" destination="BYZ-38-t0r" eventType="touchUpInside" id="456-tk-tab"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foG-Jf-dmC" userLabel="⚙️">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foG-Jf-dmC" userLabel="⚙️openSettingButton">
                                 <rect key="frame" x="273" y="99" width="80" height="80"/>
                                 <accessibility key="accessibilityConfiguration" label="Setting link"/>
                                 <constraints>
@@ -92,7 +92,7 @@
                                     <action selector="🛠️openSetting" destination="BYZ-38-t0r" eventType="touchUpInside" id="bgy-Lw-G3T"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="🄰">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="A⃣openAppStorePage">
                                 <rect key="frame" x="273" y="199" width="80" height="80"/>
                                 <accessibility key="accessibilityConfiguration" label="AppStore link"/>
                                 <constraints>
@@ -142,10 +142,10 @@
             </objects>
             <point key="canvasLocation" x="139" y="77"/>
         </scene>
-        <!--📖_ViewController-->
+        <!--📖ReadingViewController-->
         <scene sceneID="fjY-Rb-ag9">
             <objects>
-                <viewController title="📖_ViewController" id="IjJ-xR-P41" customClass="📖ReadingViewController" customModule="FlipByBlink_ver3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="📖ReadingViewController" id="IjJ-xR-P41" customClass="📖ReadingViewController" customModule="FlipByBlink_ver3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rYi-nH-sce">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,7 +163,7 @@
                                     <constraint firstAttribute="width" constant="240" id="VDL-i8-e1v"/>
                                 </constraints>
                             </arscnView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="🏁" translatesAutoresizingMaskIntoConstraints="NO" id="mZk-e0-0Gm" userLabel="🏁">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="🏁" translatesAutoresizingMaskIntoConstraints="NO" id="mZk-e0-0Gm" userLabel="🏁imageForShare">
                                 <rect key="frame" x="223" y="662" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="GW2-R6-Etf"/>
