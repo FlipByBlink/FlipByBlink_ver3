@@ -14,6 +14,12 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         self.loadFileStatus()
     }
     
+    private func loadFileStatus() {
+        self.loadedFile.reload()
+        let ⓘmage = self.loadedFile.getCoverImage(of: self.📘.frame.size)
+        self.📘.setImage(ⓘmage, for: .normal)
+    }
+    
     @IBOutlet weak var 📘: UIButton! {
         didSet {
             self.📘.imageView?.contentMode = .scaleAspectFit
@@ -26,9 +32,9 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     @IBAction func ᐅ⃣() {
         let ⓤrl = Bundle.main.url(forResource: "▶️", withExtension: "mp4")!
-        let 🎮 = AVPlayerViewController()
-        🎮.player = AVPlayer(url: ⓤrl)
-        self.present(🎮, animated: true)
+        let ⓥc = AVPlayerViewController()
+        ⓥc.player = AVPlayer(url: ⓤrl)
+        self.present(ⓥc, animated: true)
     }
     
     // ⚙️
@@ -44,9 +50,9 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     @IBAction func 📁() {
         let ⓣypes = [UTType.pdf, UTType.zip, UTType(filenameExtension: "cbz")!]
-        let 🎮 = UIDocumentPickerViewController(forOpeningContentTypes: ⓣypes, asCopy: true)
-        🎮.delegate = self
-        self.present(🎮, animated: true)
+        let ⓥc = UIDocumentPickerViewController(forOpeningContentTypes: ⓣypes, asCopy: true)
+        ⓥc.delegate = self
+        self.present(ⓥc, animated: true)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.🌀indicatorView.startAnimating()
         }
@@ -54,6 +60,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     @IBOutlet weak var 🌀indicatorView: UIActivityIndicatorView!
     
+    // UIDocumentPickerDelegate
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         do {
             try 🄵ile.store(from: urls.first!)
@@ -68,12 +75,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         self.🌀indicatorView.stopAnimating()
     }
     
-    private func loadFileStatus() {
-        self.loadedFile.reload()
-        let ⓘmage = self.loadedFile.getCoverImage(of: self.📘.frame.size)
-        self.📘.setImage(ⓘmage, for: .normal)
-    }
-    
+    // SceneDelegate.scene(_ :, openURLContexts:)
     func importFileFromOtherApp(url ⓤrl: URL) throws {
         try 🄵ile.store(from: ⓤrl)
         self.loadFileStatus()
