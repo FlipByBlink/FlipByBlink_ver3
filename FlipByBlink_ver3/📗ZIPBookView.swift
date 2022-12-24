@@ -48,8 +48,8 @@ class 📗ZIPBookView: UIImageView {
     func setup() {
         self.layer.shadowRadius = 3
         self.layer.shadowOffset = .zero
-        self.layer.shadowOpacity = 1
-        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOpacity = 0.25
+        self.layer.shadowColor = UIColor.black.cgColor
     }
     
     private func preloadImages() {

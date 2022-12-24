@@ -18,11 +18,11 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     @IBOutlet weak var 📘: UIButton! {
         didSet {
-            self.📘.layer.shadowColor = UIColor.gray.cgColor
-            self.📘.layer.shadowOpacity = 0.8
-            self.📘.layer.shadowRadius = 4
-            self.📘.layer.shadowOffset = .zero
             self.📘.imageView?.contentMode = .scaleAspectFit
+            self.📘.layer.shadowColor = UIColor.black.cgColor
+            self.📘.layer.shadowOpacity = 0.25
+            self.📘.layer.shadowRadius = 3
+            self.📘.layer.shadowOffset = .zero
         }
     }
     
