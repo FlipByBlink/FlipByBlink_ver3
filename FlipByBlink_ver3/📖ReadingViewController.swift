@@ -18,7 +18,6 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
             self.📓pdfBookView.displaysPageBreaks = false
             self.📓pdfBookView.isUserInteractionEnabled = false
             self.📓pdfBookView.accessibilityElementsHidden = true
-            
             self.📓pdfBookView.document = self.pdfDocument
         }
     }
@@ -72,72 +71,72 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
         }
     }
     
-    private var 🌡👀 = 0.0
+    private var 🌡👀value = 0.0
+
+    private let 🎚👀threshold = 0.8
     
-    private var 💤 = false
+    private var 💤suspend = false
     
     private var 🕰😉start = Date.now
     
-    private var 🌡😉 = 0.0
+    private var 🌡😉oneEyeValue = 0.0
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        guard let 🪧 = anchor as? ARFaceAnchor else { return }
+        guard let ⓐnchor = anchor as? ARFaceAnchor else { return }
         guard let 👤 = node.geometry as? ARSCNFaceGeometry else { return }
-        👤.update(from: 🪧.geometry)
+        👤.update(from: ⓐnchor.geometry)
         
-        guard let 🌡👀L = 🪧.blendShapes[.eyeBlinkLeft]?.doubleValue else { return }
-        guard let 🌡👀R = 🪧.blendShapes[.eyeBlinkRight]?.doubleValue else { return }
-        let New🌡👀 = ( 🌡👀L + 🌡👀R ) / 2
+        guard let 🌡👀valueL = ⓐnchor.blendShapes[.eyeBlinkLeft]?.doubleValue else { return }
+        guard let 🌡👀valueR = ⓐnchor.blendShapes[.eyeBlinkRight]?.doubleValue else { return }
+        let 🌡👀newValue = ( 🌡👀valueL + 🌡👀valueR ) / 2
         
-        let 🎚👀 = 0.8
-        
-        if 🌡👀 < 🎚👀 {
-            if New🌡👀 > 🎚👀 {
+        if 🌡👀value < 🎚👀threshold {
+            if 🌡👀newValue > 🎚👀threshold {
                 🕰😑start = Date.now
             }
         }
         
-        🌡👀 = New🌡👀
+        🌡👀value = 🌡👀newValue
         
-        if 💤 { return }
+        if 💤suspend { return }
         
-        if New🌡👀 > 🎚👀 {
+        if 🌡👀newValue > 🎚👀threshold {
             if Date.now.timeIntervalSince(🕰😑start) > 🎚😑second {
                 DispatchQueue.main.async {
                     self.goToNextPageWithLastPageAlert()
                 }
                 
-                💤 = true
+                💤suspend = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
-                    self.💤 = false
+                    self.💤suspend = false
                 }
             }
         }
         
         if UserDefaults.standard.bool(forKey: "😉 return") {
-            let New🌡😉 = abs( 🌡👀L - 🌡👀R )
+            let 🌡😉newOneEyeValue = abs( 🌡👀valueL - 🌡👀valueR )
             
-            let 🎚😉 = 0.5
+            let 🎚😉oneEyeThreshold = 0.5
             
-            if 🌡😉 < 🎚😉 {
-                if New🌡😉 > 🎚😉 {
+            if 🌡😉oneEyeValue < 🎚😉oneEyeThreshold {
+                if 🌡😉newOneEyeValue > 🎚😉oneEyeThreshold {
                     🕰😉start = Date.now
                     🕰😉start = Date.now
                 }
             }
             
-            🌡😉 = New🌡😉
+            🌡😉oneEyeValue = 🌡😉newOneEyeValue
             
-            if 💤 == false {
-                if New🌡😉 > 🎚😉 {
+            if 💤suspend == false {
+                if 🌡😉newOneEyeValue > 🎚😉oneEyeThreshold {
                     if Date.now.timeIntervalSince(🕰😉start) > 0.5 {
                         DispatchQueue.main.async {
                             self.goToPreviousPage()
                         }
                         
-                        💤 = true
+                        💤suspend = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
-                            self.💤 = false
+                            self.💤suspend = false
                         }
                     }
                 }
@@ -174,8 +173,9 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
     }
     
     @IBAction func 彡👆ミswipeUp(_ sender: Any) {
-        let 💬 = "1 〜 " + self.pageCount.description
-        let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
+        let 📢 = UIAlertController(title: "1 〜 " + self.pageCount.description,
+                                   message: nil,
+                                   preferredStyle: .alert)
         
         📢.addTextField { 📋 in
             📋.keyboardType = .numberPad
@@ -185,8 +185,9 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
         
         let 🆗 = NSLocalizedString("Jump", comment: "")
         📢.addAction(UIAlertAction(title: 🆗, style: .default) { _ in
-            guard let 📝 = Int((📢.textFields?.first?.text)!) else { return }
-            self.go(to: 📝 - 1)
+            if let 📝 = Int((📢.textFields?.first?.text)!) {
+                self.go(to: 📝 - 1)
+            }
         })
         
         let 🆖 = NSLocalizedString("Cancel", comment: "")
@@ -304,7 +305,6 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         if ARFaceTrackingConfiguration.isSupported == false {
             let 😱 = NSLocalizedString("😱 Sorry 😱", comment: "")
             let 💬 = NSLocalizedString("can't work", comment: "")
@@ -317,7 +317,6 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
             self.📓pdfBookView.sizeToFit()
         }
