@@ -385,7 +385,7 @@
 				DEVELOPMENT_TEAM = 6696GEY228;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlipByBlink_ver3/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = FlipByBlink;
+				INFOPLIST_KEY_CFBundleDisplayName = "FBB Debug";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "👀 Blink detection by camera. 📷";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
