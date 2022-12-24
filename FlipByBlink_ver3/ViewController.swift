@@ -4,7 +4,6 @@ import AVKit
 import PDFKit
 import ARKit
 
-
 class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     private var loadedFile: 🄵ile.MainContent = .presetPDF
@@ -89,15 +88,15 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             🎮.📚 = PDFDocument()
             switch self.loadedFile {
                 case .presetPDF:
-                    🎮.ⓟresentedFile = .presetPDF
+                    🎮.presentedFile = .presetPDF
                     🎮.📚 = PDFDocument(data: 🄵ile.presetPDFData)!
                 case .importedPDF:
                     if let ⓓocument = PDFDocument(url: 🄵ile.importedPDFURL) {
-                        🎮.ⓟresentedFile = .importedPDF
+                        🎮.presentedFile = .importedPDF
                         🎮.📚 = ⓓocument
                     }
                 case .importedZIP:
-                    🎮.ⓟresentedFile = .importedZIP
+                    🎮.presentedFile = .importedZIP
             }
         } else {
             🎮.📚 = PDFDocument(url: 🄵ile.appdocumentPDFURL)!
@@ -161,20 +160,20 @@ struct 🄵ile {
         Bundle.main.url(forResource: "📄", withExtension: "pdf")!
     }
     
-    static func store(from 📦: URL) throws {
-        switch 📦.pathExtension {
+    static func store(from 📦url: URL) throws {
+        switch 📦url.pathExtension {
             case "pdf":
                 let ⓕm = FileManager()
                 if ⓕm.fileExists(atPath: Self.importedPDFURL.path) {
                     try ⓕm.removeItem(at: Self.importedPDFURL)
                 }
-                try ⓕm.copyItem(at: 📦, to: Self.importedPDFURL)
-                try ⓕm.removeItem(at: 📦)
+                try ⓕm.copyItem(at: 📦url, to: Self.importedPDFURL)
+                try ⓕm.removeItem(at: 📦url)
                 💾ZIPContents.removeUnzipFolder()
                 UserDefaults.standard.set(0, forKey: "🔖")
             case "zip", "cbz":
-                try 💾ZIPContents.unzipAndSaveFiles(from: 📦)
-                try FileManager.default.removeItem(at: 📦)
+                try 💾ZIPContents.unzipAndSaveFiles(from: 📦url)
+                try FileManager.default.removeItem(at: 📦url)
                 if FileManager.default.fileExists(atPath: Self.importedPDFURL.path) {
                     try FileManager.default.removeItem(at: Self.importedPDFURL)
                 }

@@ -2,12 +2,9 @@
 import UIKit
 import PDFKit
 
-
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    
     var window: UIWindow?
-    
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         if let 🎮 = window?.rootViewController as? ViewController {
@@ -21,7 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
 
-    
     //===="Xcode template source code"====
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -44,7 +40,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     //====================================
-    
-    
 }
-
