@@ -5,9 +5,7 @@ import ZIPFoundation
 
 class 📗ZIPBookView: UIImageView {
     private var pageURLs: [Int: URL] = 💾ZIPContents.getPageURLs()
-    
-    private(set) var currentPageNumber: Int = 0
-    
+    private var currentPageNumber: Int = 0
     private var preloadedNextPageImage: UIImage? = nil
     private var preloadedPreviousPageImage: UIImage? = nil
     
@@ -43,6 +41,10 @@ class 📗ZIPBookView: UIImageView {
     
     var pageCount: Int {
         self.pageURLs.count
+    }
+    
+    var representedCurrentPageNumber: Int {
+        self.currentPageNumber + 1
     }
     
     func setLayerShadow() {
