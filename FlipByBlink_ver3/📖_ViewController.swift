@@ -66,7 +66,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     }
     
     
-    var 🕰😑start = Date()
+    var 🕰😑start = Date.now
     
     var 🎚😑second: Double {
         if let 🎚 = UserDefaults.standard.string(forKey: "🎚😑second") {
@@ -80,7 +80,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     var 💤 = false
     
-    var 🕰😉start = Date()
+    var 🕰😉start = Date.now
     
     var 🌡😉 = 0.0
     
@@ -97,7 +97,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         
         if 🌡👀 < 🎚👀 {
             if New🌡👀 > 🎚👀 {
-                🕰😑start = Date()
+                🕰😑start = Date.now
             }
         }
         
@@ -106,7 +106,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         if 💤 { return }
         
         if New🌡👀 > 🎚👀 {
-            if Date().timeIntervalSince(🕰😑start) > 🎚😑second {
+            if Date.now.timeIntervalSince(🕰😑start) > 🎚😑second {
                 DispatchQueue.main.async {
                     self.ⓖoToNextPageWithLastPageAlert()
                 }
@@ -127,7 +127,8 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             
             if 🌡😉 < 🎚😉 {
                 if New🌡😉 > 🎚😉 {
-                    🕰😉start = Date()
+                    🕰😉start = Date.now
+                    🕰😉start = Date.now
                 }
             }
             
@@ -135,7 +136,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
             
             if 💤 == false {
                 if New🌡😉 > 🎚😉 {
-                    if Date().timeIntervalSince(🕰😉start) > 0.5 {
+                    if Date.now.timeIntervalSince(🕰😉start) > 0.5 {
                         DispatchQueue.main.async {
                             self.ⓖoToPreviousPage()
                         }
