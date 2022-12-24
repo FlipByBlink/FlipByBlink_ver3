@@ -3,7 +3,7 @@ import UIKit
 import PDFKit
 import ARKit
 
-class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
+class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
     var pdfDocument: PDFDocument = PDFDocument()
     
@@ -11,15 +11,15 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     
     @IBOutlet weak var 📗zipBookView: 📗ZIPBookView!
     
-    @IBOutlet weak var 📖pdfBookView: PDFView! {
+    @IBOutlet weak var 📓pdfBookView: PDFView! {
         didSet {
-            self.📖pdfBookView.autoScales = true
-            self.📖pdfBookView.displayMode = .singlePage
-            self.📖pdfBookView.displaysPageBreaks = false
-            self.📖pdfBookView.isUserInteractionEnabled = false
-            self.📖pdfBookView.accessibilityElementsHidden = true
+            self.📓pdfBookView.autoScales = true
+            self.📓pdfBookView.displayMode = .singlePage
+            self.📓pdfBookView.displaysPageBreaks = false
+            self.📓pdfBookView.isUserInteractionEnabled = false
+            self.📓pdfBookView.accessibilityElementsHidden = true
             
-            self.📖pdfBookView.document = self.pdfDocument
+            self.📓pdfBookView.document = self.pdfDocument
         }
     }
     
@@ -27,8 +27,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         didSet {
             self.🔘arView.delegate = self
             self.🔘arView.session.delegate = self
-            let 🎛 = ARFaceTrackingConfiguration()
-            self.🔘arView.session.run(🎛)
+            self.🔘arView.session.run(ARFaceTrackingConfiguration())
             
             self.🔘arView.layer.cornerRadius = self.🔘arView.frame.height/2
             self.🔘arView.layer.borderWidth = 6
@@ -199,7 +198,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     private var canGoToNextPage: Bool {
         switch self.presentedFile {
             case .presetPDF, .appDocumentPDF, .importedPDF:
-                return self.📖pdfBookView.canGoToNextPage
+                return self.📓pdfBookView.canGoToNextPage
             case .importedZIP:
                 return self.📗zipBookView.canGoToNextPage()
         }
@@ -208,7 +207,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     private func goToNextPage() {
         switch self.presentedFile {
             case .presetPDF, .appDocumentPDF, .importedPDF:
-                self.📖pdfBookView.goToNextPage(nil)
+                self.📓pdfBookView.goToNextPage(nil)
             case .importedZIP:
                 self.📗zipBookView.goToNextPage()
         }
@@ -230,7 +229,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     private func goToPreviousPage() {
         switch self.presentedFile {
             case .presetPDF, .appDocumentPDF, .importedPDF:
-                self.📖pdfBookView.goToPreviousPage(nil)
+                self.📓pdfBookView.goToPreviousPage(nil)
             case .importedZIP:
                 self.📗zipBookView.goToPreviousPage()
         }
@@ -248,7 +247,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     private var currentPageNumber: Int {
         switch self.presentedFile {
             case .presetPDF, .appDocumentPDF, .importedPDF:
-                return self.📖pdfBookView.currentPage!.pageRef!.pageNumber
+                return self.📓pdfBookView.currentPage!.pageRef!.pageNumber
             case .importedZIP:
                 return self.📗zipBookView.representedCurrentPageNumber
         }
@@ -258,7 +257,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         switch self.presentedFile {
             case .presetPDF, .appDocumentPDF, .importedPDF:
                 if let ⓟage = self.pdfDocument.page(at: ⓟageNumber) {
-                    self.📖pdfBookView.go(to: ⓟage)
+                    self.📓pdfBookView.go(to: ⓟage)
                 }
             case .importedZIP:
                 self.📗zipBookView.go(to: ⓟageNumber)
@@ -273,17 +272,17 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         super.viewDidLoad()
         switch self.presentedFile {
             case .presetPDF, .appDocumentPDF:
-                self.📖pdfBookView.isHidden = false
+                self.📓pdfBookView.isHidden = false
                 self.📗zipBookView.isHidden = true
             case .importedPDF:
-                self.📖pdfBookView.isHidden = false
+                self.📓pdfBookView.isHidden = false
                 self.📗zipBookView.isHidden = true
                 let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
                 if let ⓟage = pdfDocument.page(at: 🔖) {
-                    self.📖pdfBookView.go(to: ⓟage)
+                    self.📓pdfBookView.go(to: ⓟage)
                 }
             case .importedZIP:
-                self.📖pdfBookView.isHidden = true
+                self.📓pdfBookView.isHidden = true
                 self.📗zipBookView.isHidden = false
                 let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
                 self.📗zipBookView.go(to: 🔖)
@@ -320,7 +319,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
         super.viewWillTransition(to: size, with: coordinator)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
-            self.📖pdfBookView.sizeToFit()
+            self.📓pdfBookView.sizeToFit()
         }
     }
     

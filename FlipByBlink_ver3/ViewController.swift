@@ -82,24 +82,24 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     // 📘openBookButton or 📄openAppDocumentButton
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let 🎮 = segue.destination as! 📖_ViewController
+        let 📖vc = segue.destination as! 📖ReadingViewController
         
         if (segue.identifier == "📘") {
-            🎮.pdfDocument = PDFDocument()
+            📖vc.pdfDocument = PDFDocument()
             switch self.loadedFile {
                 case .presetPDF:
-                    🎮.presentedFile = .presetPDF
-                    🎮.pdfDocument = PDFDocument(data: 🄵ile.presetPDFData)!
+                    📖vc.presentedFile = .presetPDF
+                    📖vc.pdfDocument = PDFDocument(data: 🄵ile.presetPDFData)!
                 case .importedPDF:
                     if let ⓓocument = PDFDocument(url: 🄵ile.importedPDFURL) {
-                        🎮.presentedFile = .importedPDF
-                        🎮.pdfDocument = ⓓocument
+                        📖vc.presentedFile = .importedPDF
+                        📖vc.pdfDocument = ⓓocument
                     }
                 case .importedZIP:
-                    🎮.presentedFile = .importedZIP
+                    📖vc.presentedFile = .importedZIP
             }
         } else {
-            🎮.pdfDocument = PDFDocument(url: 🄵ile.appdocumentPDFURL)!
+            📖vc.pdfDocument = PDFDocument(url: 🄵ile.appdocumentPDFURL)!
         }
     }
 }

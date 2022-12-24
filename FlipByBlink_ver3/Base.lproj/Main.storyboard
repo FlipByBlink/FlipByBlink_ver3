@@ -145,7 +145,7 @@
         <!--📖_ViewController-->
         <scene sceneID="fjY-Rb-ag9">
             <objects>
-                <viewController title="📖_ViewController" id="IjJ-xR-P41" customClass="📖_ViewController" customModule="FlipByBlink_ver3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="📖_ViewController" id="IjJ-xR-P41" customClass="📖ReadingViewController" customModule="FlipByBlink_ver3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rYi-nH-sce">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -199,7 +199,7 @@
                     </view>
                     <connections>
                         <outlet property="🏁imageForShare" destination="mZk-e0-0Gm" id="GE2-63-tw0"/>
-                        <outlet property="📖pdfBookView" destination="Ia4-iP-RyQ" id="irD-ua-aSI"/>
+                        <outlet property="📓pdfBookView" destination="Ia4-iP-RyQ" id="irD-ua-aSI"/>
                         <outlet property="📗zipBookView" destination="LPV-xR-75u" id="sZc-yT-1eT"/>
                         <outlet property="🔘arView" destination="LyC-I6-pPf" id="EeC-Dp-o6q"/>
                     </connections>
