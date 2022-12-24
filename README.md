@@ -4,15 +4,15 @@
 
 - シンプルで一般的な電子書籍リーダー(固定レイアウト向け)
 - 特殊な機能は1つだけ。目を閉じる時間を意識的にわずかに長くさせた瞬きでページめくりをします
-- PDFファイルに対応
+- PDFファイルやZIPファイルに対応
 - カメラであなたの瞬きを認識
-- 無料、無広告、無トラッキング、非営利
+- 無料、無広告、無トラッキング
 
 - Simple and normal ebook reader (for fixed-layout)
 - Only a special feature. Turn a page with slightly longish voluntary blink
-- Support PDF format
+- Support PDF / ZIP format
 - Recognize your blinking eyes using a camera
-- Free, non ad, non tracking, non profit
+- Free, non ad, non tracking
 
 🔗 AppStore URL
 ================
@@ -28,7 +28,7 @@ https://www.youtube.com/watch?v=4j7SqDVLvUg
 
 サポートOS Suport OS
 ===================
-iOS / iPadOS ver 14.7 ~
+iOS / iPadOS ver 15.0 ~
 
 サポートデバイス Support device
 =============================
@@ -86,10 +86,15 @@ etc.
 ===================================================
 ソースコードを公開していますが、”オープンソースソフトウェア”ではありません。将来的にオープンソースソフトウェアとして運用していく可能性はありますが、現時点では未定です。 The source code is open to public, but it is not “Open-source software". There is a possibility that I will make it “Open-source software" in the future, but it is undecided at this time.
 
+外部ライブラリ Library
+--------------------
+__ZIPFoundation__
+
+https://github.com/weichsel/ZIPFoundation
+
 より詳細な情報 More information
 ==============================
 [アプリ内のアプリドキュメントPDFを参照してください。 Please read AppDocumentPDF in App.](/FlipByBlink_ver3/📄.pdf)  
-
 
 ------------
 
