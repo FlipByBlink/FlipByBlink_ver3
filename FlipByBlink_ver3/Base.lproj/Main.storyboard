@@ -29,7 +29,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="60"/>
                                 </state>
                                 <connections>
-                                    <action selector="📁" destination="BYZ-38-t0r" eventType="touchUpInside" id="s5n-UT-kHY"/>
+                                    <action selector="📁openDocumentPicker" destination="BYZ-38-t0r" eventType="touchUpInside" id="s5n-UT-kHY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="📘">
@@ -73,7 +73,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="ᐅ⃣" destination="BYZ-38-t0r" eventType="touchUpInside" id="456-tk-tab"/>
+                                    <action selector="ᐅ⃣playVideo" destination="BYZ-38-t0r" eventType="touchUpInside" id="456-tk-tab"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foG-Jf-dmC" userLabel="⚙️">
@@ -89,7 +89,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="🅂etting" destination="BYZ-38-t0r" eventType="touchUpInside" id="bgy-Lw-G3T"/>
+                                    <action selector="🛠️openSetting" destination="BYZ-38-t0r" eventType="touchUpInside" id="bgy-Lw-G3T"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="🄰">
@@ -105,7 +105,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="🄰" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mqx-1T-IYS"/>
+                                    <action selector="A⃣openAppStorePage" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mqx-1T-IYS"/>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="lqh-70-6js">
@@ -135,7 +135,7 @@
                     </view>
                     <connections>
                         <outlet property="🌀indicatorView" destination="lqh-70-6js" id="EjN-Jg-ga9"/>
-                        <outlet property="📘" destination="Xqj-zg-dTH" id="MhU-Vk-u7L"/>
+                        <outlet property="📘openBookButton" destination="Xqj-zg-dTH" id="MhU-Vk-u7L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -198,41 +198,41 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="🏁" destination="mZk-e0-0Gm" id="GE2-63-tw0"/>
-                        <outlet property="📖" destination="Ia4-iP-RyQ" id="irD-ua-aSI"/>
+                        <outlet property="🏁imageForShare" destination="mZk-e0-0Gm" id="GE2-63-tw0"/>
+                        <outlet property="📖pdfBookView" destination="Ia4-iP-RyQ" id="irD-ua-aSI"/>
                         <outlet property="📗zipBookView" destination="LPV-xR-75u" id="sZc-yT-1eT"/>
-                        <outlet property="🔘" destination="LyC-I6-pPf" id="EeC-Dp-o6q"/>
+                        <outlet property="🔘arView" destination="LyC-I6-pPf" id="EeC-Dp-o6q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFC-sz-BSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="JT0-9W-Dfh" userLabel="👆゛">
+                <tapGestureRecognizer id="JT0-9W-Dfh" userLabel="👆゛tap">
                     <connections>
-                        <action selector="👆゛:" destination="IjJ-xR-P41" id="En5-Og-7qc"/>
+                        <action selector="👆゛tap:" destination="IjJ-xR-P41" id="nU2-cC-Sy3"/>
                     </connections>
                 </tapGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="m3i-fT-Cye" userLabel="👆三三">
+                <swipeGestureRecognizer direction="left" id="m3i-fT-Cye" userLabel="👆三三swipeLeft">
                     <connections>
-                        <action selector="👆三三:" destination="IjJ-xR-P41" id="dKJ-L1-jo3"/>
+                        <action selector="👆三三swipeLeft:" destination="IjJ-xR-P41" id="2IJ-fQ-odX"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="YPd-mr-dWd" userLabel="三三👆">
+                <swipeGestureRecognizer direction="right" id="YPd-mr-dWd" userLabel="三三👆swipeRight">
                     <connections>
-                        <action selector="三三👆:" destination="IjJ-xR-P41" id="ywO-3G-dfw"/>
+                        <action selector="三三👆swipeRight:" destination="IjJ-xR-P41" id="dv9-OB-hNq"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <pinchGestureRecognizer id="EaB-8y-eM4" userLabel="氵👌">
+                <pinchGestureRecognizer id="EaB-8y-eM4" userLabel="氵👌pinch">
                     <connections>
-                        <action selector="氵👌:" destination="IjJ-xR-P41" id="VL5-gq-hfG"/>
+                        <action selector="氵👌pinch:" destination="IjJ-xR-P41" id="cAW-U2-PE2"/>
                     </connections>
                 </pinchGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="nPK-qC-y9t" userLabel="ミ👆彡">
+                <swipeGestureRecognizer direction="down" id="nPK-qC-y9t" userLabel="ミ👆彡swipeDown">
                     <connections>
-                        <action selector="ミ👆彡:" destination="IjJ-xR-P41" id="5P1-3J-dA0"/>
+                        <action selector="ミ👆彡swipeDown:" destination="IjJ-xR-P41" id="sdc-eV-VvN"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="up" id="7Ax-W5-ZQm" userLabel="彡👆ミ">
+                <swipeGestureRecognizer direction="up" id="7Ax-W5-ZQm" userLabel="彡👆ミswipeUp">
                     <connections>
-                        <action selector="彡👆ミ:" destination="IjJ-xR-P41" id="Xw1-uY-Ypd"/>
+                        <action selector="彡👆ミswipeUp:" destination="IjJ-xR-P41" id="Knq-9c-Ipg"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

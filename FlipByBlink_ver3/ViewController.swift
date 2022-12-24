@@ -15,21 +15,21 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     
     private func loadFileStatus() {
         self.loadedFile.reload()
-        let ⓘmage = self.loadedFile.getCoverImage(of: self.📘.frame.size)
-        self.📘.setImage(ⓘmage, for: .normal)
+        let ⓘmage = self.loadedFile.getCoverImage(of: self.📘openBookButton.frame.size)
+        self.📘openBookButton.setImage(ⓘmage, for: .normal)
     }
     
-    @IBOutlet weak var 📘: UIButton! {
+    @IBOutlet weak var 📘openBookButton: UIButton! {
         didSet {
-            self.📘.imageView?.contentMode = .scaleAspectFit
-            self.📘.layer.shadowColor = UIColor.black.cgColor
-            self.📘.layer.shadowOpacity = 0.25
-            self.📘.layer.shadowRadius = 3
-            self.📘.layer.shadowOffset = .zero
+            self.📘openBookButton.imageView?.contentMode = .scaleAspectFit
+            self.📘openBookButton.layer.shadowColor = UIColor.black.cgColor
+            self.📘openBookButton.layer.shadowOpacity = 0.25
+            self.📘openBookButton.layer.shadowRadius = 3
+            self.📘openBookButton.layer.shadowOffset = .zero
         }
     }
     
-    @IBAction func ᐅ⃣() {
+    @IBAction func ᐅ⃣playVideo() {
         let ⓤrl = Bundle.main.url(forResource: "▶️", withExtension: "mp4")!
         let ⓥc = AVPlayerViewController()
         ⓥc.player = AVPlayer(url: ⓤrl)
@@ -37,17 +37,17 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     }
     
     // ⚙️
-    @IBAction func 🅂etting() {
+    @IBAction func 🛠️openSetting() {
         let ⓤrl = URL(string: UIApplication.openSettingsURLString)!
         UIApplication.shared.open(ⓤrl)
     }
     
-    @IBAction func 🄰() {
+    @IBAction func A⃣openAppStorePage() {
         let ⓤrl = URL(string: "https://apps.apple.com/jp/app/id1444571751")!
         UIApplication.shared.open(ⓤrl)
     }
     
-    @IBAction func 📁() {
+    @IBAction func 📁openDocumentPicker() {
         let ⓣypes = [UTType.pdf, UTType.zip, UTType(filenameExtension: "cbz")!]
         let ⓥc = UIDocumentPickerViewController(forOpeningContentTypes: ⓣypes, asCopy: true)
         ⓥc.delegate = self
@@ -80,26 +80,26 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         self.loadFileStatus()
     }
     
-    // 📘 or 📄
+    // 📘openBookButton or 📄openAppDocumentButton
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let 🎮 = segue.destination as! 📖_ViewController
         
         if (segue.identifier == "📘") {
-            🎮.📚 = PDFDocument()
+            🎮.pdfDocument = PDFDocument()
             switch self.loadedFile {
                 case .presetPDF:
                     🎮.presentedFile = .presetPDF
-                    🎮.📚 = PDFDocument(data: 🄵ile.presetPDFData)!
+                    🎮.pdfDocument = PDFDocument(data: 🄵ile.presetPDFData)!
                 case .importedPDF:
                     if let ⓓocument = PDFDocument(url: 🄵ile.importedPDFURL) {
                         🎮.presentedFile = .importedPDF
-                        🎮.📚 = ⓓocument
+                        🎮.pdfDocument = ⓓocument
                     }
                 case .importedZIP:
                     🎮.presentedFile = .importedZIP
             }
         } else {
-            🎮.📚 = PDFDocument(url: 🄵ile.appdocumentPDFURL)!
+            🎮.pdfDocument = PDFDocument(url: 🄵ile.appdocumentPDFURL)!
         }
     }
 }
