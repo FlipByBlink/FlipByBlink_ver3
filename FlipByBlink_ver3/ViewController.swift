@@ -47,6 +47,8 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         UIApplication.shared.open(ⓤrl)
     }
     
+    @IBOutlet weak var 🌀indicatorView: UIActivityIndicatorView!
+    
     @IBAction func 📁openDocumentPicker() {
         let ⓣypes = [UTType.pdf, UTType.zip, UTType(filenameExtension: "cbz")!]
         let ⓥc = UIDocumentPickerViewController(forOpeningContentTypes: ⓣypes, asCopy: true)
@@ -56,8 +58,6 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             self.🌀indicatorView.startAnimating()
         }
     }
-    
-    @IBOutlet weak var 🌀indicatorView: UIActivityIndicatorView!
     
     // UIDocumentPickerDelegate
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
@@ -83,8 +83,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     // 📘openBookButton or 📄openAppDocumentButton
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let 📖vc = segue.destination as! 📖ReadingViewController
-        
-        if (segue.identifier == "📘") {
+        if segue.identifier == "📘" {
             📖vc.pdfDocument = PDFDocument()
             switch self.loadedFile {
                 case .presetPDF:
