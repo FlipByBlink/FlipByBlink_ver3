@@ -41,7 +41,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="200"/>
                                 </state>
                                 <connections>
-                                    <segue destination="IjJ-xR-P41" kind="presentation" identifier="📘" modalPresentationStyle="overFullScreen" id="2D6-ez-ffp"/>
+                                    <segue destination="IjJ-xR-P41" kind="presentation" identifier="📘" modalPresentationStyle="fullScreen" id="2D6-ez-ffp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="📄">
