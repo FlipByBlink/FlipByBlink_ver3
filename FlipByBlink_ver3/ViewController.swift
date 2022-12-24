@@ -7,14 +7,12 @@ import ARKit
 
 class ViewController: UIViewController, UIDocumentPickerDelegate {
     
-    var ⓛoadedFile: 🄵ile.MainContent = .presetPDF
-    
+    private var loadedFile: 🄵ile.MainContent = .presetPDF
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ⓛoadFileStatus()
+        self.loadFileStatus()
     }
-    
     
     @IBOutlet weak var 📘: UIButton! {
         didSet {
@@ -26,27 +24,23 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         }
     }
     
-    
     @IBAction func ᐅ⃣() {
-        let 📍 = Bundle.main.url(forResource: "▶️", withExtension: "mp4")!
+        let ⓤrl = Bundle.main.url(forResource: "▶️", withExtension: "mp4")!
         let 🎮 = AVPlayerViewController()
-        🎮.player = AVPlayer(url: 📍)
+        🎮.player = AVPlayer(url: ⓤrl)
         self.present(🎮, animated: true)
     }
     
-    
     // ⚙️
     @IBAction func 🅂etting() {
-        let 📍 = URL(string: UIApplication.openSettingsURLString)!
-        UIApplication.shared.open(📍)
+        let ⓤrl = URL(string: UIApplication.openSettingsURLString)!
+        UIApplication.shared.open(ⓤrl)
     }
-    
     
     @IBAction func 🄰() {
-        let 📍 = URL(string: "https://apps.apple.com/jp/app/id1444571751")!
-        UIApplication.shared.open(📍)
+        let ⓤrl = URL(string: "https://apps.apple.com/jp/app/id1444571751")!
+        UIApplication.shared.open(ⓤrl)
     }
-    
     
     @IBAction func 📁() {
         let ⓣypes = [UTType.pdf, UTType.zip, UTType(filenameExtension: "cbz")!]
@@ -63,7 +57,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         do {
             try 🄵ile.store(from: urls.first!)
-            self.ⓛoadFileStatus()
+            self.loadFileStatus()
         } catch {
             print("🚨", #function, error.localizedDescription)
         }
@@ -74,12 +68,16 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         self.🌀indicatorView.stopAnimating()
     }
     
-    func ⓛoadFileStatus() {
-        self.ⓛoadedFile.reload()
-        let ⓘmage = self.ⓛoadedFile.getCoverImage(of: self.📘.frame.size)
+    private func loadFileStatus() {
+        self.loadedFile.reload()
+        let ⓘmage = self.loadedFile.getCoverImage(of: self.📘.frame.size)
         self.📘.setImage(ⓘmage, for: .normal)
     }
     
+    func importFileFromOtherApp(url ⓤrl: URL) throws {
+        try 🄵ile.store(from: ⓤrl)
+        self.loadFileStatus()
+    }
     
     // 📘 or 📄
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -87,7 +85,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         
         if (segue.identifier == "📘") {
             🎮.📚 = PDFDocument()
-            switch self.ⓛoadedFile {
+            switch self.loadedFile {
                 case .presetPDF:
                     🎮.ⓟresentedFile = .presetPDF
                     🎮.📚 = PDFDocument(data: 🄵ile.presetPDFData)!

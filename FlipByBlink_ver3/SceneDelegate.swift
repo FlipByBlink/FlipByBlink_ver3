@@ -12,8 +12,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         if let 🎮 = window?.rootViewController as? ViewController {
             do {
-                try 🄵ile.store(from: URLContexts.first!.url)
-                🎮.ⓛoadFileStatus()
+                if let ⓤrl = URLContexts.first?.url {
+                    try 🎮.importFileFromOtherApp(url: ⓤrl)
+                }
             } catch {
                 print("🚨", #function, error.localizedDescription)
             }
