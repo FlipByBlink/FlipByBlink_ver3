@@ -7,12 +7,12 @@ import ARKit
 
 class ViewController: UIViewController, UIDocumentPickerDelegate {
     
-    var ⓕile: 🄵ile.MainContent = .presetPDF
+    var ⓛoadedFile: 🄵ile.MainContent = .presetPDF
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadFileStatus()
+        self.ⓛoadFileStatus()
     }
     
     
@@ -63,7 +63,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         do {
             try 🄵ile.store(from: urls.first!)
-            self.loadFileStatus()
+            self.ⓛoadFileStatus()
         } catch {
             print("🚨", #function, error.localizedDescription)
         }
@@ -74,9 +74,9 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         self.🌀indicatorView.stopAnimating()
     }
     
-    func loadFileStatus() {
-        self.ⓕile.reload()
-        let ⓘmage = self.ⓕile.getCoverImage(of: self.📘.frame.size)
+    func ⓛoadFileStatus() {
+        self.ⓛoadedFile.reload()
+        let ⓘmage = self.ⓛoadedFile.getCoverImage(of: self.📘.frame.size)
         self.📘.setImage(ⓘmage, for: .normal)
     }
     
@@ -87,7 +87,7 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
         
         if (segue.identifier == "📘") {
             🎮.📚 = PDFDocument()
-            switch self.ⓕile {
+            switch self.ⓛoadedFile {
                 case .presetPDF:
                     🎮.ⓟresentedFile = .presetPDF
                     🎮.📚 = PDFDocument(data: 🄵ile.presetPDFData)!

@@ -13,7 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let 🎮 = window?.rootViewController as? ViewController {
             do {
                 try 🄵ile.store(from: URLContexts.first!.url)
-                🎮.loadFileStatus()
+                🎮.ⓛoadFileStatus()
             } catch {
                 print("🚨", #function, error.localizedDescription)
             }

@@ -45,7 +45,7 @@ class 📗ZIPBookView: UIImageView {
         self.pageURLs.count
     }
     
-    func setup() {
+    func setLayerShadow() {
         self.layer.shadowRadius = 3
         self.layer.shadowOffset = .zero
         self.layer.shadowOpacity = 0.25

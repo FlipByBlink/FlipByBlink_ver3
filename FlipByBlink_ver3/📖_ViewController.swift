@@ -305,7 +305,7 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
                 self.📗zipBookView.isHidden = false
                 let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
                 self.📗zipBookView.go(to: 🔖)
-                self.📗zipBookView.setup()
+                self.📗zipBookView.setLayerShadow()
         }
         UIApplication.shared.isIdleTimerDisabled = true
     }
@@ -358,17 +358,17 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
     override func pressesBegan(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
         super.pressesBegan(presses, with: event)
         
-        for 🄿ress in presses {
-            switch 🄿ress.key?.keyCode {
+        for ⓟress in presses {
+            switch ⓟress.key?.keyCode {
                 case .keyboardRightArrow: self.ⓖoToNextPageWithLastPageAlert()
-                case .keyboardDownArrow: 🅂kip5Page()
+                case .keyboardDownArrow: ⓢkip5Page()
                 case .keyboardLeftArrow: self.ⓖoToPreviousPage()
-                case .keyboardUpArrow: 🄱ack5Page()
+                case .keyboardUpArrow: ⓑack5Page()
                     
                 case .keyboardD: self.ⓖoToNextPageWithLastPageAlert()
-                case .keyboardS: 🅂kip5Page()
+                case .keyboardS: ⓢkip5Page()
                 case .keyboardA: self.ⓖoToPreviousPage()
-                case .keyboardW: 🄱ack5Page()
+                case .keyboardW: ⓑack5Page()
                     
                 case .keyboardPageDown: self.ⓖoToNextPageWithLastPageAlert()
                 case .keyboardPageUp: self.ⓖoToPreviousPage()
@@ -380,16 +380,16 @@ class 📖_ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegat
                         self.ⓖoToNextPageWithLastPageAlert()
                     }
                     
-                default: print(🄿ress.key.debugDescription)
+                default: print(ⓟress.key.debugDescription)
             }
             
-            func 🅂kip5Page() {
+            func ⓢkip5Page() {
                 for _ in 1...5 {
                     self.ⓖoToNextPageWithLastPageAlert()
                 }
             }
             
-            func 🄱ack5Page() {
+            func ⓑack5Page() {
                 for _ in 1...5 {
                     self.ⓖoToPreviousPage()
                 }
