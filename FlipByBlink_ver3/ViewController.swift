@@ -101,6 +101,8 @@ class ViewController: UIViewController, UIDocumentPickerDelegate {
             📖vc.pdfDocument = PDFDocument(url: 🄵ile.appdocumentPDFURL)!
         }
     }
+    
+    override var prefersStatusBarHidden: Bool { true }
 }
 
 struct 🄵ile {
