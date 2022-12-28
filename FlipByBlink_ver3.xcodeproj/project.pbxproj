@@ -18,7 +18,10 @@
 		127E611227150C7100B44096 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 127E611027150C7100B44096 /* LaunchScreen.storyboard */; };
 		127E611A27150CAD00B44096 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 127E611927150CAD00B44096 /* README.md */; };
 		127E611C271568E600B44096 /* ▶️.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 127E611B271568E600B44096 /* ▶️.mp4 */; };
-		12EA5A3A2715A90E00DF39D6 /* 📖_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EA5A392715A90E00DF39D6 /* 📖_ViewController.swift */; };
+		12EA5A3A2715A90E00DF39D6 /* 📖ReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EA5A392715A90E00DF39D6 /* 📖ReadingViewController.swift */; };
+		F51589D02950637000395DD5 /* 📗ZIPBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51589CF2950637000395DD5 /* 📗ZIPBookView.swift */; };
+		F543D33C2955942800463A5E /* CBZIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F543D33B2955942800463A5E /* CBZIcon.png */; };
+		F5CD5D10294F0656004C3BF9 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = F5CD5D0F294F0656004C3BF9 /* ZIPFoundation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +40,9 @@
 		127E611327150C7100B44096 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		127E611927150CAD00B44096 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		127E611B271568E600B44096 /* ▶️.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "▶️.mp4"; sourceTree = "<group>"; };
-		12EA5A392715A90E00DF39D6 /* 📖_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📖_ViewController.swift"; sourceTree = "<group>"; };
+		12EA5A392715A90E00DF39D6 /* 📖ReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📖ReadingViewController.swift"; sourceTree = "<group>"; };
+		F51589CF2950637000395DD5 /* 📗ZIPBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📗ZIPBookView.swift"; sourceTree = "<group>"; };
+		F543D33B2955942800463A5E /* CBZIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CBZIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5CD5D10294F0656004C3BF9 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +79,8 @@
 			children = (
 				127E610B27150C6E00B44096 /* Main.storyboard */,
 				127E610927150C6E00B44096 /* ViewController.swift */,
-				12EA5A392715A90E00DF39D6 /* 📖_ViewController.swift */,
+				12EA5A392715A90E00DF39D6 /* 📖ReadingViewController.swift */,
+				F51589CF2950637000395DD5 /* 📗ZIPBookView.swift */,
 				127E610527150C6E00B44096 /* AppDelegate.swift */,
 				127E610727150C6E00B44096 /* SceneDelegate.swift */,
 				1260AD82272D2ECC00FFC395 /* Localizable.strings */,
@@ -81,10 +88,19 @@
 				127E611027150C7100B44096 /* LaunchScreen.storyboard */,
 				127E611327150C7100B44096 /* Info.plist */,
 				122AC1D42720163700C90ECB /* Settings.bundle */,
-				125222AF27166D590013E5ED /* 📄.pdf */,
-				127E611B271568E600B44096 /* ▶️.mp4 */,
+				F543D33D295596F700463A5E /* Others */,
 			);
 			path = FlipByBlink_ver3;
+			sourceTree = "<group>";
+		};
+		F543D33D295596F700463A5E /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				125222AF27166D590013E5ED /* 📄.pdf */,
+				127E611B271568E600B44096 /* ▶️.mp4 */,
+				F543D33B2955942800463A5E /* CBZIcon.png */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,6 +119,9 @@
 			dependencies = (
 			);
 			name = FlipByBlink_ver3;
+			packageProductDependencies = (
+				F5CD5D0F294F0656004C3BF9 /* ZIPFoundation */,
+			);
 			productName = FlipByBlink_ver3;
 			productReference = 127E610227150C6E00B44096 /* FlipByBlink_ver3.app */;
 			productType = "com.apple.product-type.application";
@@ -132,6 +151,9 @@
 				ja,
 			);
 			mainGroup = 127E60F927150C6E00B44096;
+			packageReferences = (
+				F5CD5D0E294F0656004C3BF9 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+			);
 			productRefGroup = 127E610327150C6E00B44096 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -147,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				122AC1D52720163700C90ECB /* Settings.bundle in Resources */,
+				F543D33C2955942800463A5E /* CBZIcon.png in Resources */,
 				127E611227150C7100B44096 /* LaunchScreen.storyboard in Resources */,
 				127E610F27150C7100B44096 /* Assets.xcassets in Resources */,
 				1260AD80272D2ECC00FFC395 /* Localizable.strings in Resources */,
@@ -165,8 +188,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				127E610A27150C6E00B44096 /* ViewController.swift in Sources */,
-				12EA5A3A2715A90E00DF39D6 /* 📖_ViewController.swift in Sources */,
+				12EA5A3A2715A90E00DF39D6 /* 📖ReadingViewController.swift in Sources */,
 				127E610627150C6E00B44096 /* AppDelegate.swift in Sources */,
+				F51589D02950637000395DD5 /* 📗ZIPBookView.swift in Sources */,
 				127E610827150C6E00B44096 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,7 +279,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -311,7 +335,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -326,24 +350,26 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = 6696GEY228;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlipByBlink_ver3/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = FlipByBlink;
+				INFOPLIST_KEY_CFBundleDisplayName = "FBB Debug";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "👀 Blink detection by camera. 📷";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.u-ryukyu.ie.e135753.FlipByBlink";
+				MARKETING_VERSION = 3.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.u-ryukyu.ie.e135753.FlipByBlink.debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -356,23 +382,25 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = 6696GEY228;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlipByBlink_ver3/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = FlipByBlink;
+				INFOPLIST_KEY_CFBundleDisplayName = "FBB Debug";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "👀 Blink detection by camera. 📷";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.2;
+				MARKETING_VERSION = 3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.u-ryukyu.ie.e135753.FlipByBlink";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -403,6 +431,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F5CD5D0E294F0656004C3BF9 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F5CD5D0F294F0656004C3BF9 /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5CD5D0E294F0656004C3BF9 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 127E60FA27150C6E00B44096 /* Project object */;
 }

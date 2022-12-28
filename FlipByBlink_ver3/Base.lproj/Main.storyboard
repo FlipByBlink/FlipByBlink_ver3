@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FlipByBlink_ver3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-C8-s6t" userLabel="📁">
-                                <rect key="frame" x="157" y="335" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-C8-s6t" userLabel="📁openDocumentPickerButton">
+                                <rect key="frame" x="146.66666666666666" y="318.66666666666669" width="100" height="100"/>
                                 <accessibility key="accessibilityConfiguration" label="Import book"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="BOl-uS-8R9"/>
@@ -29,11 +29,11 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="60"/>
                                 </state>
                                 <connections>
-                                    <action selector="📁" destination="BYZ-38-t0r" eventType="touchUpInside" id="s5n-UT-kHY"/>
+                                    <action selector="📁openDocumentPicker" destination="BYZ-38-t0r" eventType="touchUpInside" id="s5n-UT-kHY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="📘">
-                                <rect key="frame" x="50" y="455" width="314" height="381"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-zg-dTH" userLabel="📘openBookButton">
+                                <rect key="frame" x="50" y="438.66666666666674" width="293" height="353.33333333333326"/>
                                 <accessibility key="accessibilityConfiguration" label="Open book"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="book.closed.fill" catalog="system">
@@ -44,8 +44,8 @@
                                     <segue destination="IjJ-xR-P41" kind="presentation" identifier="📘" modalPresentationStyle="fullScreen" id="2D6-ez-ffp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="📄">
-                                <rect key="frame" x="40" y="88" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-1r-y2w" userLabel="📄openAppDocumentButton">
+                                <rect key="frame" x="40" y="99" width="80" height="80"/>
                                 <accessibility key="accessibilityConfiguration" label="App document PDF"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="prH-ik-hV5"/>
@@ -60,8 +60,8 @@
                                     <segue destination="IjJ-xR-P41" kind="presentation" id="MG5-0J-yhC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-gx-m0J" userLabel="ᐅ⃣">
-                                <rect key="frame" x="40" y="188" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-gx-m0J" userLabel="ᐅ⃣playVideoButton">
+                                <rect key="frame" x="40" y="199" width="80" height="80"/>
                                 <accessibility key="accessibilityConfiguration" label="App document video"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="5qu-5W-8jv"/>
@@ -73,11 +73,11 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="ᐅ⃣" destination="BYZ-38-t0r" eventType="touchUpInside" id="456-tk-tab"/>
+                                    <action selector="ᐅ⃣playVideo" destination="BYZ-38-t0r" eventType="touchUpInside" id="456-tk-tab"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foG-Jf-dmC" userLabel="⚙️">
-                                <rect key="frame" x="294" y="88" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foG-Jf-dmC" userLabel="⚙️openSettingButton">
+                                <rect key="frame" x="273" y="99" width="80" height="80"/>
                                 <accessibility key="accessibilityConfiguration" label="Setting link"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="gog-cX-Dmw"/>
@@ -89,11 +89,11 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="🅂etting" destination="BYZ-38-t0r" eventType="touchUpInside" id="bgy-Lw-G3T"/>
+                                    <action selector="🛠️openSetting" destination="BYZ-38-t0r" eventType="touchUpInside" id="bgy-Lw-G3T"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="🄰">
-                                <rect key="frame" x="294" y="188" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-gG-LHE" userLabel="A⃣openAppStorePage">
+                                <rect key="frame" x="273" y="199" width="80" height="80"/>
                                 <accessibility key="accessibilityConfiguration" label="AppStore link"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="LKx-h8-gu9"/>
@@ -105,17 +105,22 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="🄰" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mqx-1T-IYS"/>
+                                    <action selector="A⃣openAppStorePage" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mqx-1T-IYS"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="lqh-70-6js">
+                                <rect key="frame" x="178" y="596.66666666666663" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Jjx-C8-s6t" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-20" id="EU0-Iw-6KX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xqj-zg-dTH" secondAttribute="trailing" constant="50" id="Hqz-KG-U8o"/>
+                            <constraint firstItem="lqh-70-6js" firstAttribute="centerY" secondItem="Xqj-zg-dTH" secondAttribute="centerY" id="HsE-ac-7VY"/>
                             <constraint firstItem="Xqj-zg-dTH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="I8K-tZ-ih8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TBA-gG-LHE" secondAttribute="trailing" constant="40" id="Mj4-tv-ZSg"/>
+                            <constraint firstItem="lqh-70-6js" firstAttribute="centerX" secondItem="Xqj-zg-dTH" secondAttribute="centerX" id="OkJ-kB-wia"/>
                             <constraint firstItem="fss-gx-m0J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="RXc-eY-x16"/>
                             <constraint firstAttribute="bottom" secondItem="Xqj-zg-dTH" secondAttribute="bottom" constant="60" id="Zqy-pM-Iml"/>
                             <constraint firstItem="pdT-1r-y2w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="hJq-g6-h0C"/>
@@ -129,34 +134,37 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="📘" destination="Xqj-zg-dTH" id="MhU-Vk-u7L"/>
+                        <outlet property="🌀indicatorView" destination="lqh-70-6js" id="EjN-Jg-ga9"/>
+                        <outlet property="📘openBookButton" destination="Xqj-zg-dTH" id="MhU-Vk-u7L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="77"/>
         </scene>
-        <!--📖_ViewController-->
+        <!--📖ReadingViewController-->
         <scene sceneID="fjY-Rb-ag9">
             <objects>
-                <viewController title="📖_ViewController" id="IjJ-xR-P41" customClass="📖_ViewController" customModule="FlipByBlink_ver3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="📖ReadingViewController" id="IjJ-xR-P41" customClass="📖ReadingViewController" customModule="FlipByBlink_ver3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rYi-nH-sce">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ia4-iP-RyQ" customClass="PDFView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LPV-xR-75u" customClass="📗ZIPBookView" customModule="FlipByBlink_ver3" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LyC-I6-pPf">
-                                <rect key="frame" x="-40" y="696" width="240" height="240"/>
+                                <rect key="frame" x="-40" y="652" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LyC-I6-pPf" secondAttribute="height" id="3MH-0k-RRc"/>
                                     <constraint firstAttribute="width" constant="240" id="VDL-i8-e1v"/>
                                 </constraints>
                             </arscnView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="🏁" translatesAutoresizingMaskIntoConstraints="NO" id="mZk-e0-0Gm" userLabel="🏁">
-                                <rect key="frame" x="244" y="706" width="200" height="200"/>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="🏁" translatesAutoresizingMaskIntoConstraints="NO" id="mZk-e0-0Gm" userLabel="🏁imageForShare">
+                                <rect key="frame" x="223" y="662" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="GW2-R6-Etf"/>
                                     <constraint firstAttribute="height" constant="200" id="Tfr-Fl-cJq"/>
@@ -164,11 +172,16 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gsE-Ko-KT3"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="width" secondItem="rYi-nH-sce" secondAttribute="width" id="3Kc-GZ-FQH"/>
+                            <constraint firstItem="LPV-xR-75u" firstAttribute="centerY" secondItem="rYi-nH-sce" secondAttribute="centerY" id="8Mg-nF-CtT"/>
+                            <constraint firstItem="LPV-xR-75u" firstAttribute="width" secondItem="rYi-nH-sce" secondAttribute="width" id="Fvw-2q-HmT"/>
+                            <constraint firstItem="LPV-xR-75u" firstAttribute="height" secondItem="rYi-nH-sce" secondAttribute="height" id="He6-Zc-Lls"/>
                             <constraint firstItem="mZk-e0-0Gm" firstAttribute="trailing" secondItem="rYi-nH-sce" secondAttribute="trailing" constant="30" id="XMU-Xk-aE3"/>
                             <constraint firstAttribute="bottom" secondItem="LyC-I6-pPf" secondAttribute="bottom" constant="-40" id="XQf-MQ-5Th"/>
+                            <constraint firstItem="LPV-xR-75u" firstAttribute="centerX" secondItem="rYi-nH-sce" secondAttribute="centerX" id="k4o-R3-Otk"/>
                             <constraint firstAttribute="bottom" secondItem="mZk-e0-0Gm" secondAttribute="bottom" constant="-10" id="mO8-UL-rrl"/>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="centerX" secondItem="rYi-nH-sce" secondAttribute="centerX" id="r0B-9N-x1c"/>
                             <constraint firstItem="Ia4-iP-RyQ" firstAttribute="centerY" secondItem="rYi-nH-sce" secondAttribute="centerY" id="slM-cy-tsg"/>
@@ -185,40 +198,41 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="🏁" destination="mZk-e0-0Gm" id="GE2-63-tw0"/>
-                        <outlet property="📖" destination="Ia4-iP-RyQ" id="irD-ua-aSI"/>
-                        <outlet property="🔘" destination="LyC-I6-pPf" id="EeC-Dp-o6q"/>
+                        <outlet property="🏁imageForShare" destination="mZk-e0-0Gm" id="GE2-63-tw0"/>
+                        <outlet property="📓pdfBookView" destination="Ia4-iP-RyQ" id="irD-ua-aSI"/>
+                        <outlet property="📗zipBookView" destination="LPV-xR-75u" id="sZc-yT-1eT"/>
+                        <outlet property="🔘arView" destination="LyC-I6-pPf" id="EeC-Dp-o6q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFC-sz-BSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="JT0-9W-Dfh" userLabel="👆゛">
+                <tapGestureRecognizer id="JT0-9W-Dfh" userLabel="👆゛tap">
                     <connections>
-                        <action selector="👆゛:" destination="IjJ-xR-P41" id="En5-Og-7qc"/>
+                        <action selector="👆゛tap:" destination="IjJ-xR-P41" id="nU2-cC-Sy3"/>
                     </connections>
                 </tapGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="m3i-fT-Cye" userLabel="👆三三">
+                <swipeGestureRecognizer direction="left" id="m3i-fT-Cye" userLabel="👆三三swipeLeft">
                     <connections>
-                        <action selector="👆三三:" destination="IjJ-xR-P41" id="dKJ-L1-jo3"/>
+                        <action selector="👆三三swipeLeft:" destination="IjJ-xR-P41" id="2IJ-fQ-odX"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="YPd-mr-dWd" userLabel="三三👆">
+                <swipeGestureRecognizer direction="right" id="YPd-mr-dWd" userLabel="三三👆swipeRight">
                     <connections>
-                        <action selector="三三👆:" destination="IjJ-xR-P41" id="ywO-3G-dfw"/>
+                        <action selector="三三👆swipeRight:" destination="IjJ-xR-P41" id="dv9-OB-hNq"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <pinchGestureRecognizer id="EaB-8y-eM4" userLabel="氵👌">
+                <pinchGestureRecognizer id="EaB-8y-eM4" userLabel="氵👌pinch">
                     <connections>
-                        <action selector="氵👌:" destination="IjJ-xR-P41" id="VL5-gq-hfG"/>
+                        <action selector="氵👌pinch:" destination="IjJ-xR-P41" id="cAW-U2-PE2"/>
                     </connections>
                 </pinchGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="nPK-qC-y9t" userLabel="ミ👆彡">
+                <swipeGestureRecognizer direction="down" id="nPK-qC-y9t" userLabel="ミ👆彡swipeDown">
                     <connections>
-                        <action selector="ミ👆彡:" destination="IjJ-xR-P41" id="5P1-3J-dA0"/>
+                        <action selector="ミ👆彡swipeDown:" destination="IjJ-xR-P41" id="sdc-eV-VvN"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="up" id="7Ax-W5-ZQm" userLabel="彡👆ミ">
+                <swipeGestureRecognizer direction="up" id="7Ax-W5-ZQm" userLabel="彡👆ミswipeUp">
                     <connections>
-                        <action selector="彡👆ミ:" destination="IjJ-xR-P41" id="Xw1-uY-Ypd"/>
+                        <action selector="彡👆ミswipeUp:" destination="IjJ-xR-P41" id="Knq-9c-Ipg"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -241,9 +255,6 @@
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

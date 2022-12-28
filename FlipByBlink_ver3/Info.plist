@@ -14,7 +14,29 @@
 				<string>com.adobe.pdf</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>ZIP</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.pkware.zip-archive</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>CBZ</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>net.aaaakkkkssssttttnnnn.cbz</string>
+			</array>
+		</dict>
 	</array>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -34,5 +56,29 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Comic book archive (ZIP)</string>
+			<key>UTTypeIconFiles</key>
+			<array>
+				<string>CBZIcon.png</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>net.aaaakkkkssssttttnnnn.cbz</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>cbz</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>
