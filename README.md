@@ -14,6 +14,8 @@
 - Recognize your blinking eyes using a camera
 - Free, non ad, non tracking
 
+<img src="FlipByBlink_ver3/Assets.xcassets/ConceptImage.imageset/ConceptImage.png" width="600">
+
 🔗 AppStore URL
 ================
 https://apps.apple.com/app/id1444571751
