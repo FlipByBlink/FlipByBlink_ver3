@@ -391,7 +391,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FlipByBlink_ver3/Supporting files/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "FBB Debug";
+				INFOPLIST_KEY_CFBundleDisplayName = FlipByBlink;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "📷 Blink detection by camera. 👀";
@@ -423,7 +423,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FlipByBlink_ver3/Supporting files/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "FBB Debug";
+				INFOPLIST_KEY_CFBundleDisplayName = FlipByBlink;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "📷 Blink detection by camera. 👀";
