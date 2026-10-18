@@ -17,7 +17,7 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
             self.📓pdfBookView.isUserInteractionEnabled = false
             self.📓pdfBookView.accessibilityElementsHidden = true
             self.📓pdfBookView.displaysRTL = 🅄serDefaults.isRTL
-            self.📓pdfBookView.displayMode = 🅄serDefaults.isMultiPagesEnabled ? .twoUp : .singlePage
+            self.📓pdfBookView.displayMode = 🅄serDefaults.isTwoPageEnabled ? .twoUp : .singlePage
             self.📓pdfBookView.displaysAsBook = 🅄serDefaults.isFirstPageDisplayedAsSinglePage
             self.📓pdfBookView.document = self.pdfDocument
         }

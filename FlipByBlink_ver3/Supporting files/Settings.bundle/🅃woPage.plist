@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>StringsTable</key>
-	<string>🄼ultiPages</string>
+	<string>🅃woPage</string>
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>📖 Multi pages</string>
+			<string>📖 Show Two-Page</string>
 			<key>Key</key>
-			<string>📖 Multi pages</string>
+			<string>📖 Show Two-Page</string>
 			<key>DefaultValue</key>
 			<false/>
 		</dict>
