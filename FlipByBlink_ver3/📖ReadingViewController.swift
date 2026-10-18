@@ -195,9 +195,9 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
                                                 message: nil,
                                                 preferredStyle: .alert)
         
-        ⓐlertController.addTextField { textField in
-            textField.keyboardType = .numberPad
-            textField.placeholder = NSLocalizedString(self.currentPageNumber.description, comment: "")
+        ⓐlertController.addTextField {
+            $0.keyboardType = .numberPad
+            $0.placeholder = NSLocalizedString(self.currentPageNumber.description, comment: "")
         }
         
         ⓐlertController.addAction(
@@ -211,7 +211,8 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
             }
         )
         
-        ⓐlertController.addAction(.init(title: NSLocalizedString("Cancel", comment: ""), style: .cancel))
+        ⓐlertController.addAction(.init(title: NSLocalizedString("Cancel", comment: ""),
+                                        style: .cancel))
         
         self.present(ⓐlertController, animated: true)
     }

@@ -22,6 +22,7 @@
 		1DB5EF5A30849A95001BB7E4 /* 🅄serDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB5EF5930849A95001BB7E4 /* 🅄serDefaults.swift */; };
 		1DB5EF5C3084B038001BB7E4 /* 🄵ile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB5EF5B3084B038001BB7E4 /* 🄵ile.swift */; };
 		1DB5EF5E3084B12C001BB7E4 /* 🅉IPContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB5EF5D3084B12B001BB7E4 /* 🅉IPContents.swift */; };
+		1DB5EF613084B6EE001BB7E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DB5EF5F3084B6EE001BB7E4 /* InfoPlist.strings */; };
 		F51589D02950637000395DD5 /* 📗ZIPBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51589CF2950637000395DD5 /* 📗ZIPBookView.swift */; };
 		F543D33C2955942800463A5E /* CBZIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F543D33B2955942800463A5E /* CBZIcon.png */; };
 		F5CD5D10294F0656004C3BF9 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = F5CD5D0F294F0656004C3BF9 /* ZIPFoundation */; };
@@ -47,6 +48,8 @@
 		1DB5EF5930849A95001BB7E4 /* 🅄serDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🅄serDefaults.swift"; sourceTree = "<group>"; };
 		1DB5EF5B3084B038001BB7E4 /* 🄵ile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🄵ile.swift"; sourceTree = "<group>"; };
 		1DB5EF5D3084B12B001BB7E4 /* 🅉IPContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🅉IPContents.swift"; sourceTree = "<group>"; };
+		1DB5EF603084B6EE001BB7E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1DB5EF623084B6FE001BB7E4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F51589CF2950637000395DD5 /* 📗ZIPBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📗ZIPBookView.swift"; sourceTree = "<group>"; };
 		F543D33B2955942800463A5E /* CBZIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CBZIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,24 +95,25 @@
 				1DB5EF5B3084B038001BB7E4 /* 🄵ile.swift */,
 				1DB5EF5930849A95001BB7E4 /* 🅄serDefaults.swift */,
 				1DB5EF5D3084B12B001BB7E4 /* 🅉IPContents.swift */,
-				1260AD82272D2ECC00FFC395 /* Localizable.strings */,
-				127E610E27150C7100B44096 /* Assets.xcassets */,
-				127E611027150C7100B44096 /* LaunchScreen.storyboard */,
-				127E611327150C7100B44096 /* Info.plist */,
-				122AC1D42720163700C90ECB /* Settings.bundle */,
-				F543D33D295596F700463A5E /* Others */,
+				F543D33D295596F700463A5E /* Supporting files */,
 			);
 			path = FlipByBlink_ver3;
 			sourceTree = "<group>";
 		};
-		F543D33D295596F700463A5E /* Others */ = {
+		F543D33D295596F700463A5E /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				127E611327150C7100B44096 /* Info.plist */,
+				127E610E27150C7100B44096 /* Assets.xcassets */,
+				1DB5EF5F3084B6EE001BB7E4 /* InfoPlist.strings */,
+				1260AD82272D2ECC00FFC395 /* Localizable.strings */,
+				122AC1D42720163700C90ECB /* Settings.bundle */,
+				127E611027150C7100B44096 /* LaunchScreen.storyboard */,
 				125222AF27166D590013E5ED /* 📄.pdf */,
 				127E611B271568E600B44096 /* ▶️.mp4 */,
 				F543D33B2955942800463A5E /* CBZIcon.png */,
 			);
-			path = Others;
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +190,7 @@
 				127E611C271568E600B44096 /* ▶️.mp4 in Resources */,
 				127E610D27150C6E00B44096 /* Main.storyboard in Resources */,
 				125222B027166D590013E5ED /* 📄.pdf in Resources */,
+				1DB5EF613084B6EE001BB7E4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +239,15 @@
 				127E611127150C7100B44096 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1DB5EF5F3084B6EE001BB7E4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DB5EF603084B6EE001BB7E4 /* en */,
+				1DB5EF623084B6FE001BB7E4 /* ja */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -372,11 +386,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FlipByBlink_ver3/Info.plist;
+				INFOPLIST_FILE = "FlipByBlink_ver3/Supporting files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "FBB Debug";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
-				INFOPLIST_KEY_NSCameraUsageDescription = "👀 Blink detection by camera. 📷";
+				INFOPLIST_KEY_NSCameraUsageDescription = "📷 Blink detection by camera. 👀";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -404,11 +418,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FlipByBlink_ver3/Info.plist;
+				INFOPLIST_FILE = "FlipByBlink_ver3/Supporting files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "FBB Debug";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
-				INFOPLIST_KEY_NSCameraUsageDescription = "👀 Blink detection by camera. 📷";
+				INFOPLIST_KEY_NSCameraUsageDescription = "📷 Blink detection by camera. 👀";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
