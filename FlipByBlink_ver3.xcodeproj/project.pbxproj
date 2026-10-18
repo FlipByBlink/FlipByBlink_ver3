@@ -20,6 +20,8 @@
 		127E611C271568E600B44096 /* ▶️.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 127E611B271568E600B44096 /* ▶️.mp4 */; };
 		12EA5A3A2715A90E00DF39D6 /* 📖ReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EA5A392715A90E00DF39D6 /* 📖ReadingViewController.swift */; };
 		1DB5EF5A30849A95001BB7E4 /* 🅄serDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB5EF5930849A95001BB7E4 /* 🅄serDefaults.swift */; };
+		1DB5EF5C3084B038001BB7E4 /* 🄵ile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB5EF5B3084B038001BB7E4 /* 🄵ile.swift */; };
+		1DB5EF5E3084B12C001BB7E4 /* 🅉IPContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB5EF5D3084B12B001BB7E4 /* 🅉IPContents.swift */; };
 		F51589D02950637000395DD5 /* 📗ZIPBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51589CF2950637000395DD5 /* 📗ZIPBookView.swift */; };
 		F543D33C2955942800463A5E /* CBZIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F543D33B2955942800463A5E /* CBZIcon.png */; };
 		F5CD5D10294F0656004C3BF9 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = F5CD5D0F294F0656004C3BF9 /* ZIPFoundation */; };
@@ -43,6 +45,8 @@
 		127E611B271568E600B44096 /* ▶️.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "▶️.mp4"; sourceTree = "<group>"; };
 		12EA5A392715A90E00DF39D6 /* 📖ReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📖ReadingViewController.swift"; sourceTree = "<group>"; };
 		1DB5EF5930849A95001BB7E4 /* 🅄serDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🅄serDefaults.swift"; sourceTree = "<group>"; };
+		1DB5EF5B3084B038001BB7E4 /* 🄵ile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🄵ile.swift"; sourceTree = "<group>"; };
+		1DB5EF5D3084B12B001BB7E4 /* 🅉IPContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🅉IPContents.swift"; sourceTree = "<group>"; };
 		F51589CF2950637000395DD5 /* 📗ZIPBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📗ZIPBookView.swift"; sourceTree = "<group>"; };
 		F543D33B2955942800463A5E /* CBZIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CBZIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,13 +83,15 @@
 		127E610427150C6E00B44096 /* FlipByBlink_ver3 */ = {
 			isa = PBXGroup;
 			children = (
+				127E610527150C6E00B44096 /* AppDelegate.swift */,
+				127E610727150C6E00B44096 /* SceneDelegate.swift */,
 				127E610B27150C6E00B44096 /* Main.storyboard */,
 				127E610927150C6E00B44096 /* ViewController.swift */,
 				12EA5A392715A90E00DF39D6 /* 📖ReadingViewController.swift */,
 				F51589CF2950637000395DD5 /* 📗ZIPBookView.swift */,
-				127E610527150C6E00B44096 /* AppDelegate.swift */,
-				127E610727150C6E00B44096 /* SceneDelegate.swift */,
+				1DB5EF5B3084B038001BB7E4 /* 🄵ile.swift */,
 				1DB5EF5930849A95001BB7E4 /* 🅄serDefaults.swift */,
+				1DB5EF5D3084B12B001BB7E4 /* 🅉IPContents.swift */,
 				1260AD82272D2ECC00FFC395 /* Localizable.strings */,
 				127E610E27150C7100B44096 /* Assets.xcassets */,
 				127E611027150C7100B44096 /* LaunchScreen.storyboard */,
@@ -192,7 +198,9 @@
 			files = (
 				1DB5EF5A30849A95001BB7E4 /* 🅄serDefaults.swift in Sources */,
 				127E610A27150C6E00B44096 /* ViewController.swift in Sources */,
+				1DB5EF5E3084B12C001BB7E4 /* 🅉IPContents.swift in Sources */,
 				12EA5A3A2715A90E00DF39D6 /* 📖ReadingViewController.swift in Sources */,
+				1DB5EF5C3084B038001BB7E4 /* 🄵ile.swift in Sources */,
 				127E610627150C6E00B44096 /* AppDelegate.swift in Sources */,
 				F51589D02950637000395DD5 /* 📗ZIPBookView.swift in Sources */,
 				127E610827150C6E00B44096 /* SceneDelegate.swift in Sources */,

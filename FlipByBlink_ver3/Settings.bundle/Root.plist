@@ -60,9 +60,9 @@
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 			<key>Title</key>
-			<string>📖 Multi page</string>
+			<string>📖 Multi pages (PDF only)</string>
 			<key>File</key>
-			<string>🄼ultiPage</string>
+			<string>🄼ultiPages</string>
 		</dict>
 		<dict>
 			<key>Type</key>

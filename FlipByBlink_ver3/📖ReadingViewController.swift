@@ -1,4 +1,3 @@
-
 import UIKit
 import PDFKit
 import ARKit
@@ -18,7 +17,7 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
             self.📓pdfBookView.isUserInteractionEnabled = false
             self.📓pdfBookView.accessibilityElementsHidden = true
             self.📓pdfBookView.displaysRTL = 🅄serDefaults.isRTL
-            self.📓pdfBookView.displayMode = 🅄serDefaults.isMultiPageEnabled ? .twoUp : .singlePage
+            self.📓pdfBookView.displayMode = 🅄serDefaults.isMultiPagesEnabled ? .twoUp : .singlePage
             self.📓pdfBookView.displaysAsBook = 🅄serDefaults.isFirstPageDisplayedAsSinglePage
             self.📓pdfBookView.document = self.pdfDocument
         }
@@ -53,23 +52,23 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
             }
         }
         
-        let 👤 = ARSCNFaceGeometry(device: renderer.device!)!
-        👤.firstMaterial?.diffuse.contents = UIColor.systemGray
+        let faceGeometry = ARSCNFaceGeometry(device: renderer.device!)!
+        faceGeometry.firstMaterial?.diffuse.contents = UIColor.systemGray
         
         if 🅄serDefaults.isRealPreviewEnabled {
-            👤.firstMaterial?.diffuse.contents = UIColor.clear
+            faceGeometry.firstMaterial?.diffuse.contents = UIColor.clear
         }
         
-        return SCNNode(geometry: 👤)
+        return SCNNode(geometry: faceGeometry)
     }
     
     private var 🕰😑start = Date.now
 
     private var 🎚😑second: Double {
-        if let stringValue = 🅄serDefaults.blinkDurationSecond {
-            return Double(stringValue)!
+        if let ⓢtring = 🅄serDefaults.blinkDurationSecond {
+            Double(ⓢtring)!
         } else {
-            return 0.15
+            0.15
         }
     }
     
@@ -85,8 +84,8 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let ⓐnchor = anchor as? ARFaceAnchor else { return }
-        guard let 👤 = node.geometry as? ARSCNFaceGeometry else { return }
-        👤.update(from: ⓐnchor.geometry)
+        guard let ⓕaceGeometry = node.geometry as? ARSCNFaceGeometry else { return }
+        ⓕaceGeometry.update(from: ⓐnchor.geometry)
         
         guard let 🌡👀valueL = ⓐnchor.blendShapes[.eyeBlinkLeft]?.doubleValue else { return }
         guard let 🌡👀valueR = ⓐnchor.blendShapes[.eyeBlinkRight]?.doubleValue else { return }
@@ -147,8 +146,8 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
     }
     
     @IBAction func 👆゛tap(_ sender: UITapGestureRecognizer) {
-        let isRight = sender.location(in: view).x > view.center.x
-        if isRight {
+        let ⓘsRight = sender.location(in: view).x > view.center.x
+        if ⓘsRight {
             if 🅄serDefaults.isRTL {
                 self.goToPreviousPage()
             } else {
@@ -192,27 +191,29 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
     }
     
     @IBAction func 彡👆ミswipeUp(_ sender: Any) {
-        let 📢 = UIAlertController(title: "1 〜 " + self.pageCount.description,
-                                   message: nil,
-                                   preferredStyle: .alert)
+        let ⓐlertController = UIAlertController(title: "1 〜 " + self.pageCount.description,
+                                                message: nil,
+                                                preferredStyle: .alert)
         
-        📢.addTextField { 📋 in
-            📋.keyboardType = .numberPad
-            let 🔖 = self.currentPageNumber.description
-            📋.placeholder = NSLocalizedString(🔖, comment: "")
+        ⓐlertController.addTextField { textField in
+            textField.keyboardType = .numberPad
+            textField.placeholder = NSLocalizedString(self.currentPageNumber.description, comment: "")
         }
         
-        let 🆗 = NSLocalizedString("Jump", comment: "")
-        📢.addAction(UIAlertAction(title: 🆗, style: .default) { _ in
-            if let 📝 = Int((📢.textFields?.first?.text)!) {
-                self.go(to: 📝 - 1)
+        ⓐlertController.addAction(
+            UIAlertAction(
+                title: NSLocalizedString("Jump", comment: ""),
+                style: .default
+            ) { _ in
+                if let intValue = Int((ⓐlertController.textFields?.first?.text)!) {
+                    self.go(to: intValue - 1)
+                }
             }
-        })
+        )
         
-        let 🆖 = NSLocalizedString("Cancel", comment: "")
-        📢.addAction(UIAlertAction(title: 🆖, style: .cancel))
+        ⓐlertController.addAction(.init(title: NSLocalizedString("Cancel", comment: ""), style: .cancel))
         
-        self.present(📢, animated: true)
+        self.present(ⓐlertController, animated: true)
     }
     
     private var canGoToNextPage: Bool {
@@ -235,11 +236,12 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
     
     private func goToNextPageWithLastPageAlert() {
         if self.canGoToNextPage == false {
-            let 💬 = NSLocalizedString("🎉 Finish! 🎉", comment: "")
-            let 📢 = UIAlertController(title: 💬, message: nil, preferredStyle: .alert)
-            present(📢, animated: true)
+            let alertController = UIAlertController(title: NSLocalizedString("🎉 Finish! 🎉", comment: ""),
+                                                    message: nil,
+                                                    preferredStyle: .alert)
+            self.present(alertController, animated: true)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5 ) {
-                📢.dismiss(animated: true)
+                alertController.dismiss(animated: true)
             }
         } else {
             self.goToNextPage()
@@ -322,12 +324,12 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if ARFaceTrackingConfiguration.isSupported == false {
-            let 😱 = NSLocalizedString("😱 Sorry 😱", comment: "")
-            let 💬 = NSLocalizedString("can't work", comment: "")
-            let 📢 = UIAlertController(title: 😱, message: 💬, preferredStyle: .alert)
-            let 🆗 = NSLocalizedString("OK", comment: "")
-            📢.addAction(UIAlertAction(title: 🆗, style: .default))
-            present(📢, animated: true)
+            let ⓐlertController = UIAlertController(title: NSLocalizedString("😱 Sorry 😱", comment: ""),
+                                                    message: NSLocalizedString("can't work", comment: ""),
+                                                    preferredStyle: .alert)
+            ⓐlertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""),
+                                                    style: .default))
+            self.present(ⓐlertController, animated: true)
         }
     }
     

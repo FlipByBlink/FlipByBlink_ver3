@@ -1,16 +1,14 @@
-
 import UIKit
-import PDFKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        if let 🎮 = window?.rootViewController as? ViewController {
+        if let ⓡootViewController = window?.rootViewController as? ViewController {
             do {
                 if let ⓤrl = URLContexts.first?.url {
-                    try 🎮.importFileFromOtherApp(url: ⓤrl)
+                    try ⓡootViewController.importFileFromOtherApp(url: ⓤrl)
                 }
             } catch {
                 print("🚨", #function, error.localizedDescription)
