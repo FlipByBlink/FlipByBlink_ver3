@@ -11,7 +11,7 @@ extension 🅄serDefaults {
     static var isShareInfoDisplayed: Bool { Self.api.bool(forKey: "🏁 Display share-info") }
     static var isRTL: Bool { Self.api.bool(forKey: "⬅️ From right-to-left") }
     
-    static var isMultiPagesEnabled: Bool { Self.api.bool(forKey: "📖 Show multi pages") }
+    static var isMultiPagesEnabled: Bool { Self.api.bool(forKey: "📖 Multi pages") }
     static var isFirstPageDisplayedAsSinglePage: Bool { Self.api.bool(forKey: "📙 Display the first page as a single page") }
     
     static var blinkDurationSecond: String? { Self.api.string(forKey: "🎚😑second") }
