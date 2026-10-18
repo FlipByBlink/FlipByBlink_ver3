@@ -14,10 +14,11 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
     @IBOutlet weak var 📓pdfBookView: PDFView! {
         didSet {
             self.📓pdfBookView.autoScales = true
-            self.📓pdfBookView.displayMode = .singlePage
             self.📓pdfBookView.displaysPageBreaks = false
             self.📓pdfBookView.isUserInteractionEnabled = false
             self.📓pdfBookView.accessibilityElementsHidden = true
+            self.📓pdfBookView.displayMode = UserDefaults.standard.bool(forKey: "📖 Show multi page") ? .twoUp : .singlePage
+            self.📓pdfBookView.displaysAsBook = UserDefaults.standard.bool(forKey: "📙 Display the first page as a single page")
             self.📓pdfBookView.document = self.pdfDocument
         }
     }

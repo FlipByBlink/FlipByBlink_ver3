@@ -49,6 +49,14 @@
 		<dict>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>📖 Multi page</string>
+			<key>File</key>
+			<string>🄼ultiPage</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
 			<key>File</key>
 			<string>🄴xperimentalFeature</string>
 			<key>Title</key>
