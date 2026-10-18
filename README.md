@@ -1,6 +1,6 @@
 📖 FlipByBlink 👀
 ==================
-![demo video](FlipByBlink_ver3/Supporting files/Assets.xcassets/🄳emo.dataset/🄳emo.GIF)
+![demo video](FlipByBlink_ver3/Supporting%20files/Assets.xcassets/🄳emo.dataset/🄳emo.GIF)
 
 - シンプルで一般的な電子書籍リーダー(固定レイアウト向け)
 - 特殊な機能は1つだけ。目を閉じる時間を意識的にわずかに長くさせた瞬きでページめくりをします
@@ -76,7 +76,7 @@ https://github.com/weichsel/ZIPFoundation
 
 より詳細な情報 More information
 -------------------------------
-[アプリ内のアプリドキュメントPDFを参照してください。 Please read AppDocumentPDF in App.](/FlipByBlink_ver3/Supporting files/📄.pdf)
+[アプリ内のアプリドキュメントPDFを参照してください。 Please read AppDocumentPDF in App.](FlipByBlink_ver3/Supporting%20files/📄.pdf)
 
 
 * * *
