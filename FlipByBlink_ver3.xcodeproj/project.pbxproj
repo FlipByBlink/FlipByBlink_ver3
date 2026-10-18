@@ -23,6 +23,7 @@
 		1DB5EF5C3084B038001BB7E4 /* 🄵ile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB5EF5B3084B038001BB7E4 /* 🄵ile.swift */; };
 		1DB5EF5E3084B12C001BB7E4 /* 🅉IPContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB5EF5D3084B12B001BB7E4 /* 🅉IPContents.swift */; };
 		1DB5EF613084B6EE001BB7E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DB5EF5F3084B6EE001BB7E4 /* InfoPlist.strings */; };
+		1DB5EF643084BA21001BB7E4 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 1DB5EF633084BA21001BB7E4 /* PrivacyInfo.xcprivacy */; };
 		F51589D02950637000395DD5 /* 📗ZIPBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51589CF2950637000395DD5 /* 📗ZIPBookView.swift */; };
 		F543D33C2955942800463A5E /* CBZIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F543D33B2955942800463A5E /* CBZIcon.png */; };
 		F5CD5D10294F0656004C3BF9 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = F5CD5D0F294F0656004C3BF9 /* ZIPFoundation */; };
@@ -50,6 +51,7 @@
 		1DB5EF5D3084B12B001BB7E4 /* 🅉IPContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🅉IPContents.swift"; sourceTree = "<group>"; };
 		1DB5EF603084B6EE001BB7E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1DB5EF623084B6FE001BB7E4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1DB5EF633084BA21001BB7E4 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		F51589CF2950637000395DD5 /* 📗ZIPBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📗ZIPBookView.swift"; sourceTree = "<group>"; };
 		F543D33B2955942800463A5E /* CBZIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CBZIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				125222AF27166D590013E5ED /* 📄.pdf */,
 				127E611B271568E600B44096 /* ▶️.mp4 */,
 				F543D33B2955942800463A5E /* CBZIcon.png */,
+				1DB5EF633084BA21001BB7E4 /* PrivacyInfo.xcprivacy */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				122AC1D52720163700C90ECB /* Settings.bundle in Resources */,
+				1DB5EF643084BA21001BB7E4 /* PrivacyInfo.xcprivacy in Resources */,
 				F543D33C2955942800463A5E /* CBZIcon.png in Resources */,
 				127E611227150C7100B44096 /* LaunchScreen.storyboard in Resources */,
 				127E610F27150C7100B44096 /* Assets.xcassets in Resources */,
@@ -384,7 +388,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FlipByBlink_ver3/Supporting files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "FBB Debug";
@@ -402,7 +406,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.1;
+				MARKETING_VERSION = 3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.u-ryukyu.ie.e135753.FlipByBlink.debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -416,7 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FlipByBlink_ver3/Supporting files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "FBB Debug";
@@ -434,7 +438,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.1;
+				MARKETING_VERSION = 3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.u-ryukyu.ie.e135753.FlipByBlink";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
