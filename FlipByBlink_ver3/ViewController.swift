@@ -171,14 +171,14 @@ struct 🄵ile {
                 try ⓕm.copyItem(at: 📦url, to: Self.importedPDFURL)
                 try ⓕm.removeItem(at: 📦url)
                 💾ZIPContents.removeUnzipFolder()
-                UserDefaults.standard.set(0, forKey: "🔖")
+                🅄serDefaults.setBookmarkNumber(0)
             case "zip", "cbz":
                 try 💾ZIPContents.unzipAndSaveFiles(from: 📦url)
                 try FileManager.default.removeItem(at: 📦url)
                 if FileManager.default.fileExists(atPath: Self.importedPDFURL.path) {
                     try FileManager.default.removeItem(at: Self.importedPDFURL)
                 }
-                UserDefaults.standard.set(0, forKey: "🔖")
+                🅄serDefaults.setBookmarkNumber(0)
             default:
                 assertionFailure()
         }

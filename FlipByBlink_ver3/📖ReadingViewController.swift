@@ -17,8 +17,9 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
             self.📓pdfBookView.displaysPageBreaks = false
             self.📓pdfBookView.isUserInteractionEnabled = false
             self.📓pdfBookView.accessibilityElementsHidden = true
-            self.📓pdfBookView.displayMode = UserDefaults.standard.bool(forKey: "📖 Show multi page") ? .twoUp : .singlePage
-            self.📓pdfBookView.displaysAsBook = UserDefaults.standard.bool(forKey: "📙 Display the first page as a single page")
+            self.📓pdfBookView.displaysRTL = 🅄serDefaults.isRTL
+            self.📓pdfBookView.displayMode = 🅄serDefaults.isMultiPageEnabled ? .twoUp : .singlePage
+            self.📓pdfBookView.displaysAsBook = 🅄serDefaults.isFirstPageDisplayedAsSinglePage
             self.📓pdfBookView.document = self.pdfDocument
         }
     }
@@ -33,18 +34,18 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
             self.🔘arView.layer.borderWidth = 6
             self.🔘arView.layer.borderColor = UIColor.separator.cgColor
             
-            if UserDefaults.standard.bool(forKey: "👤🧑‍💼 Real Preview") == false {
+            if 🅄serDefaults.isRealPreviewEnabled == false {
                 self.🔘arView.scene.background.contents = UIColor.systemBackground
             }
             
-            if UserDefaults.standard.bool(forKey: "👤🚫 Hide Preview") {
+            if 🅄serDefaults.isPreviewHidden {
                 self.🔘arView.isHidden = true
             }
         }
     }
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        if UserDefaults.standard.bool(forKey: "👤🔁 Always Preview") == false {
+        if 🅄serDefaults.isPreviewAlwaysVisible == false {
             DispatchQueue.main.async {
                 UIView.animate(withDuration: 2, delay: 2) {
                     self.🔘arView.alpha = 0
@@ -55,7 +56,7 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
         let 👤 = ARSCNFaceGeometry(device: renderer.device!)!
         👤.firstMaterial?.diffuse.contents = UIColor.systemGray
         
-        if UserDefaults.standard.bool(forKey: "👤🧑‍💼 Real Preview") {
+        if 🅄serDefaults.isRealPreviewEnabled {
             👤.firstMaterial?.diffuse.contents = UIColor.clear
         }
         
@@ -65,8 +66,8 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
     private var 🕰😑start = Date.now
 
     private var 🎚😑second: Double {
-        if let 🎚 = UserDefaults.standard.string(forKey: "🎚😑second") {
-            return Double(🎚)!
+        if let stringValue = 🅄serDefaults.blinkDurationSecond {
+            return Double(stringValue)!
         } else {
             return 0.15
         }
@@ -114,7 +115,7 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
             }
         }
         
-        if UserDefaults.standard.bool(forKey: "😉 return") {
+        if 🅄serDefaults.isOneEyeBlinkEnabled {
             let 🌡😉newOneEyeValue = abs( 🌡👀valueL - 🌡👀valueR )
             
             let 🎚😉oneEyeThreshold = 0.5
@@ -146,19 +147,36 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
     }
     
     @IBAction func 👆゛tap(_ sender: UITapGestureRecognizer) {
-        if sender.location(in: view).x > view.center.x {
-            self.goToNextPageWithLastPageAlert()
+        let isRight = sender.location(in: view).x > view.center.x
+        if isRight {
+            if 🅄serDefaults.isRTL {
+                self.goToPreviousPage()
+            } else {
+                self.goToNextPageWithLastPageAlert()
+            }
         } else {
-            self.goToPreviousPage()
+            if 🅄serDefaults.isRTL {
+                self.goToNextPageWithLastPageAlert()
+            } else {
+                self.goToPreviousPage()
+            }
         }
     }
     
     @IBAction func 👆三三swipeLeft(_ sender: Any) {
-        self.goToNextPageWithLastPageAlert()
+        if 🅄serDefaults.isRTL {
+            self.goToPreviousPage()
+        } else {
+            self.goToNextPageWithLastPageAlert()
+        }
     }
     
     @IBAction func 三三👆swipeRight(_ sender: Any) {
-        self.goToPreviousPage()
+        if 🅄serDefaults.isRTL {
+            self.goToNextPageWithLastPageAlert()
+        } else {
+            self.goToPreviousPage()
+        }
     }
     
     @IBAction func 氵👌pinch(_ sender: UIPinchGestureRecognizer) {
@@ -279,15 +297,13 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
             case .importedPDF:
                 self.📓pdfBookView.isHidden = false
                 self.📗zipBookView.isHidden = true
-                let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
-                if let ⓟage = pdfDocument.page(at: 🔖) {
+                if let ⓟage = self.pdfDocument.page(at: 🅄serDefaults.bookmarkNumber) {
                     self.📓pdfBookView.go(to: ⓟage)
                 }
             case .importedZIP:
                 self.📓pdfBookView.isHidden = true
                 self.📗zipBookView.isHidden = false
-                let 🔖 = UserDefaults.standard.integer(forKey: "🔖")
-                self.📗zipBookView.go(to: 🔖)
+                self.📗zipBookView.go(to: 🅄serDefaults.bookmarkNumber)
                 self.📗zipBookView.setLayerShadow()
         }
         UIApplication.shared.isIdleTimerDisabled = true
@@ -297,8 +313,7 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
         super.viewWillDisappear(animated)
         switch self.presentedFile {
             case .importedPDF, .importedZIP:
-                let 🔖 = self.currentPageNumber - 1
-                UserDefaults.standard.set(🔖, forKey: "🔖")
+                🅄serDefaults.setBookmarkNumber(self.currentPageNumber - 1)
             default:
                 break
         }
@@ -325,7 +340,7 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
     
     @IBOutlet weak var 🏁imageForShare: UIImageView! {
         didSet {
-            if UserDefaults.standard.bool(forKey: "🏁 Display share-info") {
+            if 🅄serDefaults.isShareInfoDisplayed {
                 self.🏁imageForShare.isHidden = false
             }
         }
@@ -335,18 +350,27 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
         super.pressesBegan(presses, with: event)
         for ⓟress in presses {
             switch ⓟress.key?.keyCode {
-                case .keyboardRightArrow: self.goToNextPageWithLastPageAlert()
-                case .keyboardDownArrow: ⓢkip5Page()
-                case .keyboardLeftArrow: self.goToPreviousPage()
-                case .keyboardUpArrow: ⓑack5Page()
+                case .keyboardRightArrow, .keyboardD:
+                    if 🅄serDefaults.isRTL {
+                        self.goToPreviousPage()
+                    } else {
+                        self.goToNextPageWithLastPageAlert()
+                    }
+                case .keyboardDownArrow, .keyboardS:
+                    ⓢkip5Page()
+                case .keyboardLeftArrow, .keyboardA:
+                    if 🅄serDefaults.isRTL {
+                        self.goToNextPageWithLastPageAlert()
+                    } else {
+                        self.goToPreviousPage()
+                    }
+                case .keyboardUpArrow, .keyboardW:
+                    ⓑack5Page()
                     
-                case .keyboardD: self.goToNextPageWithLastPageAlert()
-                case .keyboardS: ⓢkip5Page()
-                case .keyboardA: self.goToPreviousPage()
-                case .keyboardW: ⓑack5Page()
-                    
-                case .keyboardPageDown: self.goToNextPageWithLastPageAlert()
-                case .keyboardPageUp: self.goToPreviousPage()
+                case .keyboardPageDown:
+                    self.goToNextPageWithLastPageAlert()
+                case .keyboardPageUp:
+                    self.goToPreviousPage()
                     
                 case .keyboardSpacebar:
                     if event?.modifierFlags == .shift {
@@ -355,7 +379,8 @@ class 📖ReadingViewController: UIViewController, ARSCNViewDelegate, ARSessionD
                         self.goToNextPageWithLastPageAlert()
                     }
                     
-                default: print(ⓟress.key.debugDescription)
+                default:
+                    print(ⓟress.key.debugDescription)
             }
             
             func ⓢkip5Page() {
